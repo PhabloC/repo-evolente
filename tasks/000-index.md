@@ -1,0 +1,1332 @@
+# Backlog unico do projeto
+
+## Resumo do projeto
+
+**Evolente** — plataforma de acompanhamento do desenvolvimento infantil para profissionais da saude/educacao e responsaveis, com web (React/Vite), backend e app mobile (master + responsavel).
+
+## Perfil do projeto
+
+- stack web escolhida: front-end (React/Vite)
+- mobile: sim
+
+## Progressive disclosure
+
+- contexto mínimo global: `AGENTS.md`, `GUIDE.md`, `.agents/context-map.md`
+- regra: carregar contexto sob demanda apenas por gatilho declarado na task
+- handoffs: `.agents/state/handoffs/`
+
+## Slices verticais
+
+- `tasks/slices/001-fundacao-contrato-base.md` - Slice 001: contrato, identidade e shells — **done**
+- `tasks/slices/002-autenticacao.md` - Slice 002: login e recuperacao de senha — **done**
+- `tasks/slices/003-onboarding-profissional.md` - Slice 003: cadastro profissional — **done**
+- `tasks/slices/004-onboarding-responsavel-anamnese.md` - Slice 004: responsavel, crianca e anamnese — **done**
+- `tasks/slices/005-assinatura-liberacao-acesso.md` - Slice 005: pagamento e gate — **done**
+- `tasks/slices/006-catalogo-conteudos-master.md` - Slice 006: catalogo audio/video + storage — **done**
+- `tasks/slices/007-gestao-pacientes-profissional.md` - Slice 007: pacientes e vinculo — **done**
+- `tasks/slices/008-trilhas-semanais-evolucao.md` - Slice 008: trilhas e evolucao — **done**
+- `tasks/slices/009-administracao-master.md` - Slice 009: admin master web/mobile — **done**
+- `tasks/slices/010-app-responsavel-home-notificacoes.md` - Slice 010: home/perfil/notificacoes — **done**
+- `tasks/slices/011-relatorios-evolucao.md` - Slice 011: relatorios PDF — **done**
+- `tasks/slices/012-login-visual-acesso-livre.md` - Slice 012: login visual + acesso livre web — **done**
+- `tasks/slices/013-lucide-icones-web.md` - Slice 013: Lucide React padrao de icones web — **done**
+- `tasks/slices/014-template-auth-unificado.md` - Slice 014: template auth unificado web — **done**
+- `tasks/slices/015-auth-obrigatoria-web.md` - Slice 015: autenticacao obrigatoria web — **done**
+- `tasks/slices/016-politica-senha-forte-web.md` - Slice 016: politica de senha forte web — **done**
+- `tasks/slices/017-redesign-interface-interna-web.md` - Slice 017: redesign da interface interna web — **done**
+- `tasks/slices/018-fidelidade-visual-dashboard-pacientes-web.md` - Slice 018: fidelidade visual dashboard e pacientes web — **done**
+- `tasks/slices/019-referencia-shell-dashboard-ambiental-web.md` - Slice 019: reproducao de shell dashboard por referencia externa — **done**
+- `tasks/slices/020-lucide-icones-mobile.md` - Slice 020: Lucide React Native padrao de icones mobile — **done**
+- `tasks/slices/021-login-biometrico-mobile.md` - Slice 021: login biometrico mobile — **done**
+- `tasks/slices/022-linguagem-visual-print-telas-mobile.md` - Slice 022: linguagem visual do print nas telas mobile — **done**
+- `tasks/slices/023-resiliencia-api-app-responsavel-mobile.md` - Slice 023: resiliencia da API no app do responsavel — **done**
+- `tasks/slices/024-hardening-auth-acessibilidade-mobile.md` - Slice 024: hardening de auth, storage e acessibilidade mobile — **done**
+- `tasks/slices/025-hardening-exportacoes-admin-backend.md` - Slice 025: hardening de exportacoes e consultas admin no backend — **done**
+- `tasks/slices/026-jogos-terapeuticos-alfabeto.md` - Slice 026: jogos terapeuticos e alfabeto falado — **done**
+- `tasks/slices/027-fotos-de-perfil-em-bucket.md` - Slice 027: fotos de perfil em bucket — **done**
+- `tasks/slices/028-runtime-jogos-mobile-extensivel.md` - Slice 028: runtime de jogos mobile extensivel — **done**
+- `tasks/slices/029-catalogo-inicial-jogos-terapeuticos.md` - Slice 029: catalogo inicial de jogos terapeuticos — **done**
+- `tasks/slices/030-escrita-guiada-de-letras.md` - Slice 030: escrita guiada de letras — **done**
+- `tasks/slices/031-jogo-caca-palavras.md` - Slice 031: jogo caça-palavras — **done**
+- `tasks/slices/032-jogo-memoria.md` - Slice 032: jogo da memória educativo — **done**
+- `tasks/slices/033-integridade-referencial-postgres.md` - Slice 033: foreign keys de integridade referencial — **done**
+- `tasks/slices/034-jogo-memoria-articulacao.md` - Slice 034: jogo da memória de articulação — **in_progress**
+- `tasks/slices/035-jogo-dos-erros.md` - Slice 035: jogo dos erros (articulação) — **done**
+- `tasks/slices/036-qual-esta-faltando.md` - Slice 036: qual está faltando (cognição) — **done**
+- `tasks/slices/037-ache-a-sombra-correta.md` - Slice 037: ache a sombra correta (cognição) — **done**
+- `tasks/slices/038-quebra-cabeca.md` - Slice 038: quebra-cabeça (cognição) — **done**
+- `tasks/slices/039-gateway-asaas-assinatura.md` - Slice 039: gateway Asaas e ciclo de assinatura — **done**
+- `tasks/slices/040-pare-e-va-semaforo.md` - Slice 040: pare e vá semáforo (atenção) — **done**
+- `tasks/slices/041-quem-e-o-intruso.md` - Slice 041: quem é o intruso (cognição) — **done**
+- `tasks/slices/042-complete-a-frase.md` - Slice 042: complete a frase (frases) — **done**
+- `tasks/slices/043-complete-a-palavra.md` - Slice 043: complete a palavra (leitura e escrita) — **done**
+- `tasks/slices/044-jogo-das-emocoes.md` - Slice 044: jogo das emoções (socioemocionais) — **done**
+- `tasks/slices/045-fluencia-em-acao.md` - Slice 045: fluência em ação (fluência) — **done**
+- `tasks/slices/046-dialogos-em-acao.md` - Slice 046: diálogos em ação (diálogo) — **done**
+- `tasks/slices/047-trilha-self-serve-responsavel-mobile.md` - Slice 047: trilha self-serve do responsável no mobile — **done**
+- `tasks/slices/048-narracao-intro-conclusao-jogos.md` - Slice 048: narração intro/conclusão dos jogos — **done**
+
+Historico de governanca do scaffold: `tasks/archive/scaffold/`
+
+## Classificacao do design-system por stack
+
+- front: artefato documental — `design-system/front/Design_System_Evolente_Desktop.md`
+- mobile: artefato documental — `design-system/mobile/Design_System_Evolente_App_Mobile.md`
+- brandbook (paleta): `design-system/front/brandbook/` (Task 225)
+- prints de telas: `design-system/front/prints/login-desktop.png` (login desktop — Slice 012); `design-system/front/prints/jogo-memoria-articulacao-modo-medio.png` (cartas modo médio — Slice 034 / Tasks 408–410); `design-system/front/prints/jogo-memoria-articulacao-modo-intermediario.png` (cartas modo intermediário — Slice 034 / Task 412); `design-system/front/prints/jogo-dos-erros-articulacao.png` (jogo dos erros — Slice 035 / Task 414); `design-system/front/prints/qual-esta-faltando-cognicao.png` (qual está faltando — Slice 036 / Task 415); `design-system/front/prints/ache-a-sombra-correta-cognicao.png` (ache a sombra correta — Slice 037 / Task 416); `design-system/front/prints/quebra-cabeca-cognicao.png` (quebra-cabeça — Slice 038 / Task 417); `design-system/front/prints/pare-e-va-semaforo-atencao.png` (pare e vá semáforo — Slice 040 / Task 429); `design-system/front/prints/quem-e-o-intruso-cognicao.png` (quem é o intruso — Slice 041 / Task 430); `design-system/front/prints/complete-a-frase-linguagem.png` (complete a frase — Slice 042 / Task 432); `design-system/front/prints/complete-a-palavra-ortografia.png` (complete a palavra — Slice 043 / Task 433); `design-system/front/prints/jogo-das-emocoes-socioemocionais.png` (jogo das emoções — Slice 044 / Task 434); `design-system/front/prints/fluencia-em-acao.png` (fluência em ação — Slice 045 / Task 436); `design-system/front/prints/dialogos-em-acao.png` (diálogos em ação — Slice 046 / Task 437); `design-system/mobile/prints/login-mobile.png` (login mobile — Slice 002 / Tasks 094+096); `design-system/mobile/prints/home-responsavel-referencia.png` (home responsavel — Slice 010 / Task 123)
+
+## Review consolidada da spec
+
+- permissoes: master, profissional, responsavel; crianca sem login; mobile = master + responsavel
+- decisoes humanas pendentes: push, campos de clinica, multi-vinculo
+- decisoes humanas confirmadas (pagamento): gateway Asaas; profissional R$ 79/mês; responsável R$ 49/mês; mensal; cartão/PIX/boleto; master isento; ciclo PENDING→ACTIVE→OVERDUE→SUSPENDED→CANCELED; OVERDUE 3 dias → SUSPENDED (inativa conta); cancel/refund → CANCELED com bloqueio imediato
+- conflito: DS mobile menciona gamificacao — requisito prevalece (fora de escopo)
+- novo slice 026: jogos reentram em escopo de forma controlada, sem gamificacao e com execucao no app do responsavel
+- novo slice 039: substitui provider fake pelo Asaas (Slice 005 permanece done)
+
+## Premissas adotadas
+
+- Gateway Asaas e valores definidos (Slice 039); push ainda a definir
+- Midia em storage
+- Inativar, nao excluir
+- Profissional multi-especialidade
+- Master isento de pagamento
+
+## Estrategia de execucao
+
+1. Slice 001 → 002 → 003/004 → 005
+2. 006 → 007 → 008
+3. 009 → 010 → 011
+4. Uma task por vez via `executar-task`
+
+## Tasks por tipo
+
+### Shared
+
+- Task 001 - Contrato OpenAPI base — done
+- Task 025 - Relatorios PDF/CSV — done
+- Task 030 - Politica de senha forte e confirmacao no reset — done (`tasks/change-requests/030-politica-senha-forte-web.md`)
+- Task 031 - Atalho dev na raiz para backend + frontend — done (`tasks/change-requests/031-atalho-dev-raiz-backend-frontend.md`)
+- Task 032 - Remover formas de fundo da tela auth web — done (`tasks/change-requests/032-remover-formas-fundo-auth-web.md`)
+- Task 033 - SVG animado elegante no fundo auth web — done (`tasks/change-requests/033-svg-animado-fundo-auth-web.md`)
+- Task 034 - Recriar fundo ilustrado auth web — done (`tasks/change-requests/034-recriar-fundo-ilustrado-auth-web.md`)
+- Task 035 - Remover fundo auth web — done (`tasks/change-requests/035-remover-fundo-auth-web.md`)
+- Task 036 - Redesign do shell e dashboard web — done (`tasks/change-requests/036-redesign-shell-dashboard-web.md`)
+- Task 037 - Redesign de pacientes e planejamentos web — done (`tasks/change-requests/037-redesign-pacientes-planejamentos-web.md`)
+- Task 038 - Redesign de biblioteca e relatorios web — done (`tasks/change-requests/038-redesign-biblioteca-relatorios-web.md`)
+- Task 039 - Redesign de administracao e configuracoes web — done (`tasks/change-requests/039-redesign-admin-configuracoes-web.md`)
+- Task 040 - Refinar dashboard e pacientes por prints — done (`tasks/change-requests/040-refinar-dashboard-pacientes-por-prints.md`)
+- Task 041 - Reproduzir shell e dashboard por nova referencia — done (`tasks/change-requests/041-reproduzir-shell-dashboard-referencia-web.md`)
+- Task 043 - Reorganizar modulo master em overview e paginas dedicadas — done (`tasks/change-requests/043-reorganizar-modulo-master-overview-web.md`)
+- Task 044 - Refinar modais web por referencia visual — done (`tasks/change-requests/044-refinar-modais-web-referencia-visual.md`)
+- Task 046 - Coluna de responsavel e refino da paginacao em pacientes — done (`tasks/change-requests/046-coluna-responsavel-e-refino-paginacao-pacientes.md`)
+- Task 047 - Refinar relatorios web por referencia visual — done (`tasks/change-requests/047-refinar-relatorios-web-por-referencia-visual.md`)
+- Task 048 - Refinar tabela de planejamentos por referencia visual — done (`tasks/change-requests/048-refinar-tabela-planejamentos-por-referencia-visual.md`)
+- Task 049 - Gitignore local nas stacks backend, front-end e mobile — done (`tasks/change-requests/049-gitignore-stacks-backend-front-end-mobile.md`)
+- Task 051 - Refinar perfil do paciente web — done (`tasks/change-requests/051-refinar-perfil-paciente-web.md`)
+- Task 052 - Refinar perfil do usuario em configuracoes web — done (`tasks/change-requests/052-refinar-perfil-usuario-configuracoes-web.md`)
+- Task 053 - Refinar dashboard profissional web — done (`tasks/change-requests/053-refinar-dashboard-profissional-web.md`)
+- Task 054 - Renovação automática da sessão web — done (`tasks/change-requests/054-renovacao-automatica-sessao-web.md`)
+- Task 055 - Refinar home do dashboard profissional para uso operacional — done (`tasks/change-requests/055-refinar-home-dashboard-profissional-operacional.md`)
+- Task 056 - Conectar dashboard profissional a dados reais — done (`tasks/change-requests/056-dashboard-profissional-dados-reais.md`)
+- Task 057 - Refinar alinhamento do card de prioridades no dashboard — done (`tasks/change-requests/057-refinar-alinhamento-card-prioridades-dashboard.md`)
+- Task 058 - Ajustar dashboard para duas colunas apos as metricas — done (`tasks/change-requests/058-dashboard-duas-colunas-apos-metricas.md`)
+- Task 059 - Centralizar icone de alerta no card de prioridades — done (`tasks/change-requests/059-centralizar-icone-alerta-card-prioridades.md`)
+- Task 060 - Centralizar SVG do sino no badge de prioridades — done (`tasks/change-requests/060-centralizar-svg-do-sino-no-badge.md`)
+- Task 061 - Alinhar atalhos do card de prioridades no dashboard — done (`tasks/change-requests/061-alinhar-atalhos-card-prioridades-dashboard.md`)
+- Task 062 - Reposicionar card de cadência no dashboard — done (`tasks/change-requests/062-reposicionar-card-cadencia-dashboard.md`)
+- Task 063 - Equalizar largura do CTA de cadência no dashboard — done (`tasks/change-requests/063-equalizar-largura-cta-cadencia-dashboard.md`)
+- Task 064 - Reduzir altura do CTA de cadência no dashboard — done (`tasks/change-requests/064-reduzir-altura-cta-cadencia-dashboard.md`)
+- Task 065 - Adicionar ícone ao CTA de planejamentos no dashboard — done (`tasks/change-requests/065-adicionar-icone-cta-planejamentos-dashboard.md`)
+- Task 066 - Refinar tabela de pacientes por referência visual — done (`tasks/change-requests/066-refinar-tabela-pacientes-referencia-visual.md`)
+- Task 067 - Adicionar barra de progresso visual na tabela de pacientes — done (`tasks/change-requests/067-adicionar-barra-progresso-tabela-pacientes.md`)
+- Task 294 - Integrar progresso real na tabela de pacientes web — done (`tasks/change-requests/294-integrar-progresso-real-na-tabela-de-pacientes-web.md`)
+- Task 296 - Ícones no dropdown de ações da tabela de pacientes — done (`tasks/change-requests/296-icones-no-dropdown-de-acoes-da-tabela-de-pacientes.md`)
+- Task 297 - Unificar design dos CTAs de dashboard, pacientes e planejamentos web — done (`tasks/change-requests/297-unificar-design-dos-ctas-de-dashboard-pacientes-e-planejamentos-web.md`)
+- Task 298 - Corrigir busca expansível no header web — done (`tasks/change-requests/298-corrigir-busca-expansivel-no-header-web.md`)
+- Task 299 - Scroll horizontal na grade semanal do planejamento web — done (`tasks/change-requests/299-scroll-horizontal-na-grade-semanal-do-planejamento-web.md`)
+- Task 300 - Arraste com mãozinha na grade semanal do planejamento web — done (`tasks/change-requests/300-arraste-com-maozinha-na-grade-semanal-do-planejamento-web.md`)
+- Task 301 - Corrigir overflow e arraste da grade semanal web — done (`tasks/change-requests/301-corrigir-overflow-e-arraste-da-grade-semanal-web.md`)
+- Task 302 - Refinar seção de evolução da trilha web — done (`tasks/change-requests/302-refinar-secao-de-evolucao-da-trilha-web.md`)
+- Task 303 - Corrigir renderização do gráfico de evolução web — done (`tasks/change-requests/303-corrigir-renderizacao-do-grafico-de-evolucao-web.md`)
+- Task 304 - Scroll no card de histórico recente web — done (`tasks/change-requests/304-scroll-no-card-de-historico-recente-web.md`)
+- Task 305 - Evitar deslocamento do subtítulo ao abrir busca web — done (`tasks/change-requests/305-evitar-deslocamento-do-subtitulo-ao-abrir-busca-web.md`)
+- Task 306 - Corrigir header da trilha da criança ao abrir busca web — done (`tasks/change-requests/306-corrigir-header-da-trilha-da-crianca-ao-abrir-busca-web.md`)
+- Task 307 - Limitar largura do heading no header da trilha web — done (`tasks/change-requests/307-limitar-largura-do-heading-no-header-da-trilha-web.md`)
+- Task 308 - Limitar largura maxima das acoes do header web — done (`tasks/change-requests/308-limitar-largura-maxima-das-acoes-do-header-web.md`)
+- Task 309 - Manter sugestao da anamnese como rascunho ate salvar trilha web — done (`tasks/change-requests/309-manter-sugestao-da-anamnese-como-rascunho-ate-salvar-trilha-web.md`)
+- Task 310 - Refinar card de status e sugestao da trilha web — done (`tasks/change-requests/310-refinar-card-de-status-e-sugestao-da-trilha-web.md`)
+- Task 311 - Mover feedback da sugestao para baixo dos botoes da trilha web — done (`tasks/change-requests/311-mover-feedback-da-sugestao-para-baixo-dos-botoes-da-trilha-web.md`)
+- Task 312 - Adicionar confirmacao antes de salvar semana na trilha web — done (`tasks/change-requests/312-adicionar-confirmacao-antes-de-salvar-semana-na-trilha-web.md`)
+- Task 313 - Unificar componente global de tabelas web — done (`tasks/change-requests/313-unificar-componente-global-de-tabelas-web.md`)
+- Task 314 - Estruturar conteúdo do relatório da criança — done (`tasks/change-requests/314-estruturar-conteudo-do-relatorio-da-crianca.md`)
+- Task 315 - Ajustar botão Baixar na tabela de relatórios web — done (`tasks/change-requests/315-ajustar-botao-baixar-na-tabela-de-relatorios-web.md`)
+- Task 316 - Extrair variant info do botão e aplicar no Baixar de relatórios — done (`tasks/change-requests/316-extrair-variant-info-do-botao-e-aplicar-no-baixar-relatorios.md`)
+- Task 317 - Excluir relatórios gerados na tela de relatórios — done (`tasks/change-requests/317-excluir-relatorios-gerados-na-tela-de-relatorios.md`)
+- Task 318 - Reduzir ação de excluir para ícone na tabela de relatórios — done (`tasks/change-requests/318-reduzir-acao-de-excluir-para-icone-na-tabela-de-relatorios.md`)
+- Task 319 - Reordenar ação Disponibilizar na tabela de relatórios — done (`tasks/change-requests/319-reordenar-acao-disponibilizar-na-tabela-de-relatorios.md`)
+- Task 320 - Restaurar acentuação nos relatórios PDF — done (`tasks/change-requests/320-restaurar-acentuacao-nos-relatorios-pdf.md`)
+- Task 321 - Migrar geração de PDF para Puppeteer com layout personalizado — done (`tasks/change-requests/321-migrar-geracao-de-pdf-para-puppeteer-com-layout-personalizado.md`)
+- Task 322 - Formatar datas do PDF em dd/mm/aaaa — done (`tasks/change-requests/322-formatar-datas-do-pdf-em-dd-mm-aaaa.md`)
+- Task 323 - Adicionar confirmação ao disponibilizar relatório — done (`tasks/change-requests/323-adicionar-confirmacao-ao-disponibilizar-relatorio.md`)
+- Task 324 - Reabrir criacao de atividades audio e video na biblioteca master — done (`tasks/change-requests/324-reabrir-criacao-audio-video-na-biblioteca-master.md`)
+- Task 325 - Compactar ações da biblioteca em ícones — done (`tasks/change-requests/325-compactar-acoes-da-biblioteca-em-icones.md`)
+- Task 326 - Excluir conteúdos da biblioteca master — done (`tasks/change-requests/326-excluir-conteudos-da-biblioteca-master.md`)
+- Task 327 - Adicionar visualização de atividade na biblioteca master — done (`tasks/change-requests/327-adicionar-visualizacao-de-atividade-na-biblioteca-master.md`)
+- Task 328 - Ajustar acentuação e badge de status na biblioteca — done (`tasks/change-requests/328-ajustar-acentuacao-e-badge-de-status-na-biblioteca.md`)
+- Task 329 - Vincular áudios gravados no Alfabeto falado — done (`tasks/change-requests/329-vincular-audios-gravados-no-alfabeto-falado.md`)
+- Task 330 - Deixar botões de ação da biblioteca totalmente redondos — done (`tasks/change-requests/330-deixar-botoes-de-acao-da-biblioteca-totalmente-redondos.md`)
+- Task 331 - Vincular foto do paciente na aba de usuários web — done (`tasks/change-requests/331-vincular-foto-paciente-na-aba-usuarios-web.md`)
+- Task 332 - Avatar redondo nas abas profissionais e admins da página de usuários web — done (`tasks/change-requests/332-avatar-redondo-abas-profissionais-admins-usuarios-web.md`)
+- Task 333 - Refinar feedback e máscara no criar usuário master web — done (`tasks/change-requests/333-refinar-feedback-e-mascara-no-criar-usuario-master-web.md`)
+- Task 334 - Refinar design da biblioteca master web — done (`tasks/change-requests/334-refinar-design-da-biblioteca-master-web.md`)
+- Task 335 - Refinar metadados dos cards da biblioteca web — done (`tasks/change-requests/335-refinar-metadados-dos-cards-da-biblioteca-web.md`)
+- Task 336 - Reduzir cards dos jogos na biblioteca web — done (`tasks/change-requests/336-reduzir-cards-dos-jogos-na-biblioteca-web.md`)
+- Task 337 - Aproximar cards de jogos da biblioteca da referência web — done (`tasks/change-requests/337-aproximar-cards-de-jogos-da-biblioteca-da-referencia-web.md`)
+- Task 338 - Corrigir quebra dos cards de jogos na biblioteca web — done (`tasks/change-requests/338-corrigir-quebra-dos-cards-de-jogos-na-biblioteca-web.md`)
+- Task 339 - Refinar badges dos cards de jogo na biblioteca web — done (`tasks/change-requests/339-refinar-badges-dos-cards-de-jogo-na-biblioteca-web.md`)
+- Task 340 - Adicionar paginação na tabela da biblioteca web — done (`tasks/change-requests/340-adicionar-paginacao-na-tabela-da-biblioteca-web.md`)
+- Task 341 - Refinar input de upload da biblioteca web — done (`tasks/change-requests/341-refinar-input-de-upload-da-biblioteca-web.md`)
+- Task 342 - Encostar capa dos jogos nas bordas do card — done (`tasks/change-requests/342-encostar-capa-dos-jogos-nas-bordas-do-card.md`)
+- Task 343 - Jogo da memória educativo com assets no bucket — done (`tasks/change-requests/343-jogo-memoria-educativo-com-assets-no-bucket.md`)
+- Task 344 - Capa e verso dedicados no jogo da memória — done (`tasks/change-requests/344-capa-e-verso-dedicados-jogo-memoria.md`)
+- Task 345 - Animação de flip nas cartas do jogo da memória web — done (`tasks/change-requests/345-animacao-flip-cartas-jogo-memoria-web.md`)
+- Task 346 - Reposicionar CTA do dashboard profissional abaixo do header — done (`tasks/change-requests/346-reposicionar-cta-do-dashboard-profissional-abaixo-do-header.md`)
+- Task 347 - Reposicionar CTAs de pacientes e planejamentos abaixo do header — done (`tasks/change-requests/347-reposicionar-ctas-de-pacientes-e-planejamentos-abaixo-do-header.md`)
+- Task 348 - Reposicionar ações do perfil do paciente abaixo do header — done (`tasks/change-requests/348-reposicionar-acoes-do-perfil-do-paciente-abaixo-do-header.md`)
+- Task 349 - Reposicionar ações da trilha do paciente abaixo do header — done (`tasks/change-requests/349-reposicionar-acoes-da-trilha-do-paciente-abaixo-do-header.md`)
+- Task 350 - Bloquear upload de foto no perfil web do paciente para profissional — done (`tasks/change-requests/350-bloquear-upload-de-foto-no-perfil-web-do-paciente-para-profissional.md`)
+- Task 351 - Refinar botões e resumo da semana na trilha web — done (`tasks/change-requests/351-refinar-botoes-e-resumo-da-semana-na-trilha-web.md`)
+- Task 352 - Remover gradientes dos botões do sistema web — done (`tasks/change-requests/352-remover-gradientes-dos-botoes-do-sistema-web.md`)
+- Task 353 - Varredura final de controles interativos com gradiente web — done (`tasks/change-requests/353-varredura-final-de-controles-interativos-com-gradiente-web.md`)
+- Task 354 - Refinar subtítulo do dashboard web — done (`tasks/change-requests/354-refinar-subtitulo-do-dashboard-web.md`)
+- Task 355 - Adicionar ação de visualizar na tabela editorial da biblioteca web — done (`tasks/change-requests/355-adicionar-acao-de-visualizar-na-tabela-editorial-da-biblioteca-web.md`)
+- Task 356 - Refinar hover e badge dos cards de jogos no modo profissional web — done (`tasks/change-requests/356-refinar-hover-e-badge-dos-cards-de-jogos-no-modo-profissional-web.md`)
+- Task 401 - Atualizar abas e objetivo da biblioteca web — done (`tasks/change-requests/401-atualizar-abas-e-objetivo-da-biblioteca-web.md`)
+- Task 402 - Restaurar aba Todas na biblioteca web — done (`tasks/change-requests/402-restaurar-aba-todas-na-biblioteca-web.md`)
+- Task 403 - Alinhar dropdown de categorias da biblioteca web — done (`tasks/change-requests/403-alinhar-dropdown-categorias-biblioteca-web.md`)
+- Task 404 - Adicionar botão Salvar conteúdo no topo do modal — done (`tasks/change-requests/404-adicionar-botao-salvar-conteudo-no-topo-do-modal.md`)
+- Task 405 - Filtrar jogos da biblioteca pelas abas de categoria — done (`tasks/change-requests/405-filtrar-jogos-biblioteca-pelas-abas-categoria.md`)
+- Task 406 - Refinar design do card de jogo na biblioteca web — done (`tasks/change-requests/406-refinar-design-card-jogo-biblioteca-web.md`)
+- Task 486 - Hardening da biblioteca web para config de jogos e preview — done (`tasks/change-requests/486-hardening-biblioteca-web-config-preview.md`)
+- Task 407 - Aliviar custo da lava goo do sidebar web — done (`tasks/change-requests/407-aliviar-custo-lava-goo-sidebar-web.md`)
+- Task 408 - Memória articulação: assets, contrato e catálogo — done (`tasks/change-requests/408-memoria-articulacao-assets-contrato-catalogo.md`)
+- Task 409 - Memória articulação: prévia web e runtime mobile — done (`tasks/change-requests/409-memoria-articulacao-previa-web-runtime-mobile.md`)
+- Task 410 - Memória articulação: capa dedicada e polish do prompt — todo (`tasks/change-requests/410-memoria-articulacao-capa-e-polish-prompt.md`)
+- Task 411 - Permitir múltiplos conteúdos memory por categoria no banco — done (`tasks/change-requests/411-permitir-multiplos-conteudos-memory-por-categoria.md`)
+- Task 412 - Memória articulação: modo intermediário — done (`tasks/change-requests/412-memoria-articulacao-modo-intermediario.md`)
+- Task 413 - Memória articulação: modo fácil — done (`tasks/change-requests/413-memoria-articulacao-modo-facil.md`)
+- Task 414 - Jogo dos erros: catálogo, assets, prévia e runtime — done (`tasks/change-requests/414-jogo-dos-erros-catalogo-runtime.md`)
+- Task 415 - Qual está faltando: catálogo, assets, prévia e runtime — done (`tasks/change-requests/415-qual-esta-faltando-catalogo-runtime.md`)
+- Task 416 - Ache a sombra correta: catálogo, assets, prévia e runtime — done (`tasks/change-requests/416-ache-a-sombra-correta-catalogo-runtime.md`)
+- Task 417 - Quebra-cabeça: catálogo, assets, prévia e runtime — done (`tasks/change-requests/417-quebra-cabeca-catalogo-runtime.md`)
+- Task 418 - Quebra-cabeça: peças com formato de encaixe — done (`tasks/change-requests/418-quebra-cabeca-formato-pecas.md`)
+- Task 429 - Pare e Vá Semáforo: catálogo, assets, prévia e runtime — done (`tasks/change-requests/429-pare-e-va-semaforo-catalogo-runtime.md`)
+- Task 430 - Quem é o intruso: catálogo, assets, prévia e runtime — done (`tasks/change-requests/430-quem-e-o-intruso-catalogo-runtime.md`)
+- Task 431 - Quem é o intruso: mais grupos e imagens — done (`tasks/change-requests/431-quem-e-o-intruso-mais-grupos.md`)
+- Task 432 - Complete a frase: catálogo, TTS, prévia e runtime — done (`tasks/change-requests/432-complete-a-frase-catalogo-runtime.md`)
+- Task 433 - Complete a palavra: catálogo, níveis, TTS e runtime — done (`tasks/change-requests/433-complete-a-palavra-catalogo-runtime.md`)
+- Task 434 - Jogo das Emoções: catálogo, prévia e runtime — done (`tasks/change-requests/434-jogo-das-emocoes-catalogo-runtime.md`)
+- Task 436 - Fluência em Ação: catálogo, prévia e runtime — done (`tasks/change-requests/436-fluencia-em-acao-catalogo-runtime.md`)
+- Task 437 - Diálogos em Ação: catálogo, prévia e runtime — done (`tasks/change-requests/437-dialogos-em-acao-catalogo-runtime.md`)
+- Task 438 - Paginação dos jogos e cache da biblioteca web — done (`tasks/change-requests/438-paginacao-e-cache-biblioteca-web.md`)
+- Task 439 - Redesenhar dashboard profissional web — done (`tasks/change-requests/439-redesenhar-dashboard-profissional-web.md`)
+- Task 440 - Melhorar métricas dos cards do dashboard profissional — done (`tasks/change-requests/440-melhorar-metricas-cards-dashboard-profissional.md`)
+- Task 441 - Reorganizar grade atividades, relatórios e carrossel do dashboard — done (`tasks/change-requests/441-reorganizar-grade-atividades-relatorios-carrossel-dashboard.md`)
+- Task 442 - Alinhar botão gerar relatório na mesma linha dos filtros — done (`tasks/change-requests/442-alinhar-botao-gerar-relatorio-mesma-linha-filtros.md`)
+- Task 443 - Exibir foto do paciente na tabela de relatórios web — done (`tasks/change-requests/443-foto-paciente-tabela-relatorios-web.md`)
+- Task 444 - Alinhar filtros e ações do histórico de relatórios na mesma linha — done (`tasks/change-requests/444-alinhar-filtros-acoes-historico-relatorios-mesma-linha.md`)
+- Task 445 - Renomear botão limpar filtros para Limpar na página de relatórios — done (`tasks/change-requests/445-renomear-botao-limpar-filtros-relatorios.md`)
+- Task 446 - Trocar cor do botão Ir para planejamentos nos relatórios — done (`tasks/change-requests/446-trocar-cor-botao-ir-para-planejamentos-relatorios.md`)
+- Task 447 - Adicionar gráficos ao dashboard master web — done (`tasks/change-requests/447-adicionar-graficos-dashboard-master-web.md`)
+- Task 448 - Melhorar layout dos cards de módulos do dashboard master — done (`tasks/change-requests/448-melhorar-layout-cards-modulos-dashboard-master.md`)
+- Task 449 - Renomear título do dashboard master para Dashboard — done (`tasks/change-requests/449-renomear-titulo-dashboard-master.md`)
+- Task 450 - Redesenhar modal de novo usuário master — done (`tasks/change-requests/450-redesenhar-modal-novo-usuario-master.md`)
+- Task 451 - Corrigir espaçamento e ícones do modal de usuário master — done (`tasks/change-requests/451-corrigir-espacamento-icones-modal-usuario-master.md`)
+- Task 452 - Melhorar layout do modal de inativar usuário — done (`tasks/change-requests/452-melhorar-layout-modal-inativar-usuario.md`)
+- Task 453 - Enxugar e melhorar layout da página de relatórios web — cancelled/reverted (`tasks/change-requests/453-enxugar-layout-pagina-relatorios-web.md`)
+- Task 454 - Enxugar página de relatórios do admin web — done (`tasks/change-requests/454-enxugar-pagina-relatorios-admin-web.md`)
+- Task 455 - Exportações CSV laranja e PDF nos relatórios admin — done (`tasks/change-requests/455-exportacoes-csv-laranja-e-pdf-relatorios-admin.md`)
+- Task 456 - Template de e-mail de recuperação de senha com logo S3 — done (`tasks/change-requests/456-template-email-recuperacao-senha-logo-s3.md`)
+- Task 457 - Evitar timeout no password-recovery por SMTP lento — done (`tasks/change-requests/457-evitar-timeout-password-recovery-smtp.md`)
+- Task 458 - Logo PNG no e-mail de recuperação (compatível com clientes) — done (`tasks/change-requests/458-logo-png-email-recuperacao-senha.md`)
+- Task 459 - Melhorar layout do modal Nova atividade da biblioteca — done (`tasks/change-requests/459-melhorar-layout-modal-nova-atividade-biblioteca.md`)
+- Task 460 - Melhorar prévia sem capa no modal Nova atividade — done (`tasks/change-requests/460-melhorar-previa-capa-modal-nova-atividade.md`)
+- Task 461 - Scroll na seção Dados do modal Nova atividade — done (`tasks/change-requests/461-scroll-secao-dados-modal-nova-atividade.md`)
+- Task 462 - Remover margem branca da prévia de capa — done (`tasks/change-requests/462-remover-margem-branca-previa-capa.md`)
+- Task 463 - Compactar espaçamento da aba Arquivo no modal — done (`tasks/change-requests/463-compactar-espacamento-aba-arquivo-modal.md`)
+- Task 464 - Preencher espaço em branco dos modais de setup dos jogos — done (`tasks/change-requests/464-espaco-branco-modais-setup-jogos.md`)
+- Task 465 - Remover margem branca do modal de prévia de vídeo — done (`tasks/change-requests/465-remover-margem-branca-modal-previa-video.md`)
+- Task 466 - Alinhar modal de excluir relatório ao modal de inativar — done (`tasks/change-requests/466-alinhar-modal-excluir-relatorio-inativar.md`)
+- Task 467 - Alinhar modal de inativar paciente no perfil — done (`tasks/change-requests/467-alinhar-modal-inativar-paciente-perfil.md`)
+- Task 468 - Alinhar modal de inativar trilha — done (`tasks/change-requests/468-alinhar-modal-inativar-trilha.md`)
+- Task 469 - Modal de confirmação para cancelar assinatura — done (`tasks/change-requests/469-modal-confirmacao-cancelar-assinatura.md`)
+- Task 470 - Bolhas do sidebar animam no scroll em modo leve — done (`tasks/change-requests/470-bolhas-sidebar-modo-leve-scroll.md`)
+- Task 471 - Efeito de vidro no sidebar igual ao login — done (`tasks/change-requests/471-efeito-vidro-sidebar-igual-login.md`)
+- Task 472 - Reforçar vidro do sidebar (blur + transparência) — done (`tasks/change-requests/472-reforcar-vidro-sidebar-blur-transparencia.md`)
+- Task 473 - Efeito de vidro suave na área de conteúdo — done (`tasks/change-requests/473-efeito-vidro-area-conteudo.md`)
+- Task 474 - Igualar vidro do conteúdo ao sidebar com atmosfera compartilhada — done (`tasks/change-requests/474-igualar-vidro-conteudo-sidebar.md`)
+- Task 497 - Igualar fundo do sidebar ao background da página — done/reverted (`tasks/change-requests/497-igualar-fundo-sidebar-background-pagina.md`)
+- Task 499 - Reverter fundo do sidebar web ao vidro anterior — done (`tasks/change-requests/499-reverter-fundo-sidebar-web-vidro.md`)
+- Task 500 - Contrato: trilha self-serve do responsável — done (`tasks/change-requests/500-contrato-trilha-self-serve-responsavel.md`)
+- Task 506 - Permitir responsável montar trilha mesmo com vínculo — done (`tasks/change-requests/506-permitir-responsavel-montar-trilha.md`)
+- Task 508 - Aviso ao criar trilha própria com vínculo e trilha existentes — done (`tasks/change-requests/508-aviso-trilha-propria-com-vinculo.md`)
+- Task 475 - Quebra-cabeça: 10 níveis com dificuldade progressiva — done (`tasks/change-requests/475-quebra-cabeca-10-niveis-dificuldade.md`)
+- Task 476 - Quebra-cabeça: artes novas para níveis 6–10 — done (`tasks/change-requests/476-quebra-cabeca-artes-novas.md`)
+- Task 477 - Corrigir MailAdapter: nodemailer e imports — done (`tasks/change-requests/477-corrigir-mail-adapter-nodemailer.md`)
+- Task 478 - Quebra-cabeça: seletor de dificuldade no setup — done (`tasks/change-requests/478-quebra-cabeca-seletor-dificuldade.md`)
+- Task 479 - Quebra-cabeça: 5 cenas por dificuldade — done (`tasks/change-requests/479-quebra-cabeca-5-cenas-por-dificuldade.md`)
+- Task 480 - Capa do modal de setup ocupando toda a altura — done (`tasks/change-requests/480-capa-modal-setup-altura-total.md`)
+- Task 481 - Jogo dos erros: capa modal dedicada — done (`tasks/change-requests/481-jogo-dos-erros-capa-modal.md`)
+- Task 482 - Jogo dos erros: usar capa modal no setup — done (`tasks/change-requests/482-jogo-dos-erros-usar-capa-modal-setup.md`)
+- Task 510 - Jogo dos erros: trocar imagens da rodada 1 — done (`tasks/change-requests/510-jogo-dos-erros-trocar-rodada-1.md`)
+- Task 511 - Jogo dos erros: trocar imagens das rodadas 2–5 — done (`tasks/change-requests/511-jogo-dos-erros-trocar-rodadas-2-a-5.md`)
+- Task 512 - Jogo dos erros: adicionar rodada 6 (praia) — done (`tasks/change-requests/512-jogo-dos-erros-adicionar-rodada-6-praia.md`)
+- Task 513 - Jogo dos erros: adicionar rodada 8 (biblioteca) — done (`tasks/change-requests/513-jogo-dos-erros-adicionar-rodada-8-biblioteca.md`)
+- Task 514 - Jogo dos erros: adicionar rodadas 9 e 10 — done (`tasks/change-requests/514-jogo-dos-erros-adicionar-rodadas-9-e-10.md`)
+- Task 515 - Jogo dos erros: adicionar rodada 7 (fazenda) — done (`tasks/change-requests/515-jogo-dos-erros-adicionar-rodada-7-fazenda.md`)
+- Task 516 - Jogo dos erros: imagens empilhadas no modal de prévia — done (`tasks/change-requests/516-jogo-dos-erros-imagens-empilhadas-preview.md`)
+- Task 517 - Jogo dos erros: corrigir hotspot do coração no quadro (imagem2) — done (`tasks/change-requests/517-jogo-dos-erros-corrigir-hotspot-quadro-imagem2.md`)
+- Task 518 - Jogo dos erros: recalibrar hotspots da imagem3 (rodada 3) — done (`tasks/change-requests/518-jogo-dos-erros-recalibrar-hotspots-imagem3.md`)
+- Task 519 - Jogo dos erros: recalibrar hotspots das imagens 4–6 — done (`tasks/change-requests/519-jogo-dos-erros-recalibrar-hotspots-imagens-4-6.md`)
+- Task 520 - Jogo dos erros: restaurar estrela acima do menino na imagem5 B — done (`tasks/change-requests/520-jogo-dos-erros-estrela-menino-imagem5.md`)
+- Task 521 - Jogo dos erros: trocar rodada 7 para sala musical — done (`tasks/change-requests/521-jogo-dos-erros-trocar-rodada-7-sala-musical.md`)
+- Task 522 - Jogo dos erros: recalibrar hotspots imagens 5, 6, 7 e 9 — done (`tasks/change-requests/522-jogo-dos-erros-recalibrar-hotspots-5-6-7-9.md`)
+- Task 523 - Jogo dos erros: estrela do meio (img5) e balde (img6) — done (`tasks/change-requests/523-jogo-dos-erros-estrela-meio-e-balde.md`)
+- Task 524 - Jogo dos erros mobile: aspect ratio 4/3 — done (`tasks/change-requests/524-jogo-dos-erros-mobile-aspect-ratio-4-3.md`)
+
+- Task 435 - Jogo das Emoções: capas no S3 — done (`tasks/change-requests/435-jogo-das-emocoes-capas-s3.md`)
+- Task 419 - Contrato OpenAPI Asaas/assinatura — done (`tasks/change-requests/419-contrato-openapi-asaas-assinatura.md`)
+- Task 423 - Cancelamento/reembolso web e gate mobile — done (`tasks/change-requests/423-cancelamento-reembolso-web-e-gate-mobile.md`)
+- Handoff: `.agents/state/handoffs/TASK-419.md`
+- Handoff: `.agents/state/handoffs/TASK-423.md`
+- Task 357 - Adicionar card de relatórios no perfil mobile — done (`tasks/change-requests/357-adicionar-card-de-relatorios-no-perfil-mobile.md`)
+- Task 358 - Notificar paciente ao disponibilizar relatório — done (`tasks/change-requests/358-notificar-paciente-ao-disponibilizar-relatorio.md`)
+- Task 369 - Abrir lista e download de relatórios a partir do perfil mobile — done (`tasks/change-requests/369-abrir-lista-e-download-de-relatorios-a-partir-do-perfil-mobile.md`)
+- Task 370 - Exibir tab bar do responsável nas edições de perfil e relatórios mobile — done (`tasks/change-requests/370-exibir-tab-bar-do-responsavel-nas-edicoes-de-perfil-e-relatorios-mobile.md`)
+- Task 371 - Corrigir abertura do arquivo baixado nos relatórios mobile Android — done (`tasks/change-requests/371-corrigir-abertura-do-arquivo-baixado-nos-relatorios-mobile-android.md`)
+- Task 372 - Agrupar relatórios por mês na tela mobile do responsável — done (`tasks/change-requests/372-agrupar-relatorios-por-mes-na-tela-mobile-do-responsavel.md`)
+- Task 359 - Alinhar sino de Últimos avisos ao Resumo rápido mobile — done (`tasks/change-requests/359-alinhar-sino-de-ultimos-avisos-ao-resumo-rapido-mobile.md`)
+- Task 360 - Deixar branco o bg do sino em Últimos avisos mobile — done (`tasks/change-requests/360-deixar-branco-o-bg-do-sino-em-ultimos-avisos-mobile.md`)
+- Task 361 - Liberar dias anteriores e marcar dia finalizado na trilha mobile — done (`tasks/change-requests/361-liberar-dias-anteriores-e-marcar-dia-finalizado-na-trilha-mobile.md`)
+- Task 362 - Usar check.webp no dia finalizado da trilha mobile — done (`tasks/change-requests/362-usar-check-webp-no-dia-finalizado-da-trilha-mobile.md`)
+- Task 363 - Arredondar check.webp na trilha e avisos mobile — done (`tasks/change-requests/363-arredondar-check-webp-na-trilha-e-avisos-mobile.md`)
+- Task 364 - Reduzir check.webp arredondado na trilha e avisos mobile — done (`tasks/change-requests/364-reduzir-check-webp-arredondado-na-trilha-e-avisos-mobile.md`)
+- Task 365 - Evitar corte do check.webp na trilha e avisos mobile — done (`tasks/change-requests/365-evitar-corte-do-check-webp-na-trilha-e-avisos-mobile.md`)
+- Task 366 - Aumentar respiro do check.webp na trilha e avisos mobile — done (`tasks/change-requests/366-aumentar-respiro-do-check-webp-na-trilha-e-avisos-mobile.md`)
+- Task 367 - Voltar check.webp para cover na trilha e avisos mobile — done (`tasks/change-requests/367-voltar-check-webp-para-cover-na-trilha-e-avisos-mobile.md`)
+- Task 368 - Voltar check.webp para contain na trilha e avisos mobile — done (`tasks/change-requests/368-voltar-check-webp-para-contain-na-trilha-e-avisos-mobile.md`)
+- Task 362 - Refinar feedback de sucesso ao disponibilizar relatório web — done (`tasks/change-requests/362-refinar-feedback-de-sucesso-ao-disponibilizar-relatorio-web.md`)
+- Task 364 - Separar criação de relatório da filtragem na página web — done (`tasks/change-requests/364-separar-criacao-de-relatorio-da-filtragem-na-pagina-web.md`)
+- Task 365 - Refinar filtro no topo e por datas na página de relatórios web — done (`tasks/change-requests/365-refinar-filtro-no-topo-e-por-datas-na-pagina-de-relatorios-web.md`)
+- Task 366 - Aumentar espaço entre gerar relatório e tabela web — done (`tasks/change-requests/366-aumentar-espaco-entre-gerar-relatorio-e-tabela-web.md`)
+- Task 373 - Remover criação de relatório CSV e manter apenas PDF — done (`tasks/change-requests/373-remover-criacao-de-relatorio-csv-e-manter-apenas-pdf.md`)
+- Task 374 - Player nativo e refino da atividade de vídeo mobile — done (`tasks/change-requests/374-player-nativo-e-refino-da-atividade-de-video-mobile.md`)
+- Task 375 - Refinar hierarquia da atividade de vídeo mobile — done (`tasks/change-requests/375-refinar-hierarquia-da-atividade-de-video-mobile.md`)
+- Task 376 - Adicionar orientação abaixo do vídeo mobile — done (`tasks/change-requests/376-adicionar-orientacao-abaixo-do-video-mobile.md`)
+- Task 377 - Usar bg-app nas páginas de jogos mobile — done (`tasks/change-requests/377-usar-bg-app-nas-paginas-de-jogos-mobile.md`)
+- Task 378 - Usar bg-app nas páginas de vídeo mobile — done (`tasks/change-requests/378-usar-bg-app-nas-paginas-de-video-mobile.md`)
+- Task 379 - Mover descrição e objetivo para card abaixo do vídeo mobile — done (`tasks/change-requests/379-mover-descricao-e-objetivo-para-card-abaixo-do-video-mobile.md`)
+- Task 380 - Mover ações de jogo e vídeo para o corpo da tela mobile — done (`tasks/change-requests/380-mover-acoes-de-jogo-e-video-para-o-corpo-da-tela-mobile.md`)
+- Task 381 - Remover faixa superior residual em jogo e vídeo mobile — done (`tasks/change-requests/381-remover-faixa-superior-residual-em-jogo-e-video-mobile.md`)
+- Task 382 - Propagar description do conteúdo para o vídeo mobile — done (`tasks/change-requests/382-propagar-description-do-conteudo-para-o-video-mobile.md`)
+- Task 383 - Adicionar respiro superior no título de jogo e vídeo mobile — done (`tasks/change-requests/383-adicionar-respiro-superior-no-titulo-de-jogo-e-video-mobile.md`)
+- Task 384 - Restaurar botões nativos da nav bar Android mobile — done (`tasks/change-requests/384-restaurar-botoes-nativos-da-nav-bar-android-mobile.md`)
+- Task 385 - Remover fundo branco base dos renderers de jogo mobile — done (`tasks/change-requests/385-remover-fundo-branco-base-dos-renderers-de-jogo-mobile.md`)
+- Task 386 - Corrigir contagem e espaçamento do hero da trilha mobile — done (`tasks/change-requests/386-corrigir-contagem-e-espacamento-do-hero-da-trilha-mobile.md`)
+- Task 387 - Preservar renovação de token no download de relatórios mobile — done (`tasks/change-requests/387-preservar-renovacao-de-token-no-download-de-relatorios-mobile.md`)
+- Task 388 - Consumir parâmetro de aba inicial no shell do responsável mobile — done (`tasks/change-requests/388-consumir-parametro-de-aba-inicial-no-shell-do-responsavel-mobile.md`)
+- Task 389 - Tratar período do relatório como data civil no mobile — done (`tasks/change-requests/389-tratar-periodo-do-relatorio-como-data-civil-no-mobile.md`)
+- Task 390 - Alinhar agrupamento mensal dos relatórios mobile ao fuso local — done (`tasks/change-requests/390-alinhar-agrupamento-mensal-dos-relatorios-mobile-ao-fuso-local.md`)
+- Task 391 - Filtrar relatórios indisponíveis no perfil do responsável mobile — done (`tasks/change-requests/391-filtrar-relatorios-indisponiveis-no-perfil-do-responsavel-mobile.md`)
+- Task 392 - Não revelar cartas fechadas ao leitor de tela no jogo da memória mobile — done (`tasks/change-requests/392-nao-revelar-cartas-fechadas-ao-leitor-de-tela-no-jogo-da-memoria-mobile.md`)
+- Task 393 - Reverter criação de atividade quando o upload falhar na biblioteca web — done (`tasks/change-requests/393-reverter-criacao-quando-upload-falhar-na-biblioteca-web.md`)
+- Task 394 - Recarregar progressos descartados pela paginação de pacientes web — done (`tasks/change-requests/394-recarregar-progressos-descartados-pela-paginacao-de-pacientes-web.md`)
+- Task 395 - Preservar filtro ao atualizar relatórios web — done (`tasks/change-requests/395-preservar-filtro-ao-atualizar-relatorios-web.md`)
+- Task 396 - Filtrar atividades planejadas por data no relatório — done (`tasks/change-requests/396-filtrar-atividades-planejadas-por-data-no-relatorio.md`)
+- Task 397 - Vincular foto do profissional na aba de usuários web — done (`tasks/change-requests/397-vincular-foto-profissional-na-aba-usuarios-web.md`)
+- Task 398 - Avatar redondo do profissional na aba pacientes de usuários web — done (`tasks/change-requests/398-avatar-redondo-profissional-aba-pacientes-usuarios-web.md`)
+- Task 372 - Ajustar sobra lateral no modal do catálogo web — done (`tasks/change-requests/372-ajustar-sobra-lateral-no-modal-do-catalogo-web.md`)
+- Task 363 - Transformar "Gerado em" em badge na tabela de relatórios web — done (`tasks/change-requests/363-transformar-gerado-em-em-badge-na-tabela-de-relatorios-web.md`)
+- Task 068 - Consolidar ações da tabela de pacientes em dropdown — done (`tasks/change-requests/068-acoes-dropdown-tabela-pacientes.md`)
+- Task 069 - Desacoplar dropdown da tabela de pacientes — done (`tasks/change-requests/069-desacoplar-dropdown-tabela-pacientes.md`)
+- Task 070 - Adicionar textura animada suave no sidebar web — done (`tasks/change-requests/070-textura-animada-suave-sidebar-web.md`)
+- Task 071 - Alinhar paginação de planejamentos com pacientes — done (`tasks/change-requests/071-alinhar-paginacao-planejamentos-com-pacientes.md`)
+- Task 072 - Efeito de fundo nas telas de login e cadastro — cancelled (`tasks/change-requests/072-efeito-fundo-auth-login-cadastro.md`)
+- Task 073 - Endurecer auth refresh e hidratacao web — done (`tasks/change-requests/073-endurecer-auth-refresh-e-hidratacao-web.md`)
+- Task 075 - Reduzir pressao no dashboard e higienizar sidebar — done (`tasks/change-requests/075-reduzir-pressao-no-dashboard-e-higienizar-sidebar.md`)
+- Task 076 - Criar READMEs operacionais das stacks — done (`tasks/change-requests/076-criar-readmes-operacionais-das-stacks.md`)
+- Task 085 - Exportações CSV de relatórios do master web e API — done (`tasks/change-requests/085-exportacoes-csv-relatorios-master-web-e-api.md`)
+- Task 086 - Ajustar grade de exportações em relatórios do master web — done (`tasks/change-requests/086-ajustar-grade-exportacoes-relatorios-master-web.md`)
+- Task 087 - Ajustar grade do catálogo de relatórios do master web — done (`tasks/change-requests/087-ajustar-grade-catalogo-relatorios-master-web.md`)
+- Task 088 - Clareza e paginação da tabela de logs do admin web — done (`tasks/change-requests/088-clareza-e-paginacao-tabela-logs-admin-web.md`)
+- Task 089 - Corrigir pageSize de usuários no fluxo de logs do admin web — done (`tasks/change-requests/089-corrigir-page-size-users-nos-logs-admin-web.md`)
+- Task 090 - Sincronizar dropdowns do sidebar web — done (`tasks/change-requests/090-sincronizar-dropdowns-sidebar-web.md`)
+- Task 151 - Hardening de exportacoes e consultas admin no backend — done (`tasks/change-requests/151-hardening-exportacoes-admin-backend.md`) [revalidada em 2026-07-23 com stream incremental dos logs]
+- Task 156 - API de jogos terapeuticos e conteudos jogaveis — done (`tasks/change-requests/156-api-jogos-terapeuticos-e-conteudos-jogaveis.md`)
+- Task 159 - Storage S3-compativel com MinIO no backend — done (`tasks/change-requests/159-storage-s3-compativel-minio-backend.md`)
+- Task 160 - Prefixo de ambiente no storage de conteudos — done (`tasks/change-requests/160-prefixo-de-ambiente-no-storage-de-conteudos.md`)
+- Task 161 - Mapa de uso do bucket no projeto — done (`tasks/change-requests/161-mapa-de-uso-do-bucket-no-projeto.md`)
+- Task 162 - Fotos de perfil web e bucket — done (`tasks/change-requests/162-fotos-de-perfil-web-e-bucket.md`)
+- Task 295 - Foto e fallback nativo nas tabelas de pacientes e planejamentos web — done (`tasks/change-requests/295-foto-e-fallback-nativo-nas-tabelas-de-pacientes-e-planejamentos-web.md`)
+- Task 169 - Segundo jogo escrita guiada de letras — done (`tasks/change-requests/169-segundo-jogo-escrita-guiada-de-letras.md`)
+- Task 170 - Tolerancia da validacao de escrita de letras — done (`tasks/change-requests/170-tolerancia-validacao-escrita-de-letras.md`)
+- Task 171 - Recalibrar tolerancia da escrita sem aceitar rabisco — done (`tasks/change-requests/171-recalibrar-tolerancia-escrita-sem-aceitar-rabisco.md`)
+- Task 172 - Distinguir O de U na validacao de escrita — done (`tasks/change-requests/172-distinguir-o-de-u-na-validacao-de-escrita.md`)
+- Task 173 - Alfabeto completo no jogo de escrita de letras — done (`tasks/change-requests/173-alfabeto-completo-jogo-escrita-de-letras.md`)
+- Task 174 - Tolerancia de tracos tortos na letra M — done (`tasks/change-requests/174-tolerancia-tracos-tortos-letra-m.md`)
+- Task 174 - Imagens do alfabeto falado no bucket — done (`tasks/change-requests/174-imagens-do-alfabeto-falado-no-bucket.md`)
+- Task 253 - Corrigir sincronização do avatar e remoção de telefone no perfil mobile — done (`tasks/change-requests/253-corrigir-sincronizacao-avatar-e-remocao-telefone-perfil-mobile.md`)
+- Task 255 - Hardening do bootstrap do catálogo de jogos no backend — done (`tasks/change-requests/255-hardening-bootstrap-catalogo-jogos-backend.md`)
+- Task 256 - Hardening da troca de avatar no bucket backend — done (`tasks/change-requests/256-hardening-troca-avatar-bucket-backend.md`)
+- Task 483 - Fluência: áudio gravado por etapa no runtime mobile — done (`tasks/change-requests/483-fluencia-audio-gravado-runtime-mobile.md`)
+- Task 484 - Hardening do dashboard master mobile para assinaturas e logs — done (`tasks/change-requests/484-hardening-dashboard-master-mobile-assinaturas-logs.md`)
+- Task 485 - Compatibilizar quebra-cabeça legado sem `difficulty` no mobile — done (`tasks/change-requests/485-compatibilizar-quebra-cabeca-legado-sem-difficulty-mobile.md`)
+### Front
+
+- Task 003 - Shell web React — done
+- Task 006 - Telas auth web — done
+- Task 009 - Fluxo cadastro profissional web — done
+- Task 011 - Fluxo cadastro responsavel web — done
+- Task 013 - Tela pagamento web — done
+- Task 015 - UI catalogo master web — done
+- Task 017 - Dashboard pacientes web — done (vínculo apenas por código no fluxo do profissional)
+- Task 019 - UI montagem trilha web — done
+- Task 022 — done
+- Task 422 - Tela checkout Asaas web — done (`tasks/change-requests/422-tela-checkout-asaas-web.md`)
+- Task 424 - Página de planos do master com valores Asaas — done (`tasks/change-requests/424-pagina-planos-master-valores-asaas.md`)
+- Task 425 - Gate de assinatura: confirmação e valores oficiais — done (`tasks/change-requests/425-gate-assinatura-confirmacao-e-valores.md`)
+- Task 426 - Fundo capa na tela de login web — done (`tasks/change-requests/426-fundo-capa-login-web.md`)
+- Task 427 - Efeito de vidro sobre a capa do login web — done (`tasks/change-requests/427-efeito-vidro-capa-login-web.md`)
+- Task 428 - Capa e vidro nas telas auth de cadastro e recovery — done (`tasks/change-requests/428-capa-vidro-auth-cadastro-recovery.md`)
+- Task 026 - Login visual e acesso livre web — done (`tasks/change-requests/026-login-visual-acesso-livre-web.md`)
+- Task 027 - Lucide React padrao de icones web — done (`tasks/change-requests/027-lucide-icones-web.md`)
+- Task 028 - Template login em cadastro/recovery — done (`tasks/change-requests/028-template-auth-login-cadastro-recovery.md`)
+- Task 029 - Reativar autenticacao obrigatoria web — done (`tasks/change-requests/029-auth-obrigatoria-web.md`)
+- Task 032 - Remover formas de fundo da tela auth web — done (`tasks/change-requests/032-remover-formas-fundo-auth-web.md`)
+- Task 033 - SVG animado elegante no fundo auth web — done (`tasks/change-requests/033-svg-animado-fundo-auth-web.md`)
+- Task 034 - Recriar fundo ilustrado auth web — done (`tasks/change-requests/034-recriar-fundo-ilustrado-auth-web.md`)
+- Task 045 - Paginacao na tabela de pacientes web — done (`tasks/change-requests/045-paginacao-tabela-pacientes-web.md`)
+- Task 046 - Coluna de responsavel e refino da paginacao em pacientes — done (`tasks/change-requests/046-coluna-responsavel-e-refino-paginacao-pacientes.md`)
+- Task 047 - Refinar relatorios web por referencia visual — done (`tasks/change-requests/047-refinar-relatorios-web-por-referencia-visual.md`)
+- Task 362 - Refinar feedback de sucesso ao disponibilizar relatório web — done (`tasks/change-requests/362-refinar-feedback-de-sucesso-ao-disponibilizar-relatorio-web.md`)
+- Task 364 - Separar criação de relatório da filtragem na página web — done (`tasks/change-requests/364-separar-criacao-de-relatorio-da-filtragem-na-pagina-web.md`)
+- Task 365 - Refinar filtro no topo e por datas na página de relatórios web — done (`tasks/change-requests/365-refinar-filtro-no-topo-e-por-datas-na-pagina-de-relatorios-web.md`)
+- Task 366 - Aumentar espaço entre gerar relatório e tabela web — done (`tasks/change-requests/366-aumentar-espaco-entre-gerar-relatorio-e-tabela-web.md`)
+- Task 363 - Transformar "Gerado em" em badge na tabela de relatórios web — done (`tasks/change-requests/363-transformar-gerado-em-em-badge-na-tabela-de-relatorios-web.md`)
+- Task 048 - Refinar tabela de planejamentos por referencia visual — done (`tasks/change-requests/048-refinar-tabela-planejamentos-por-referencia-visual.md`)
+- Task 050 - Paginacao e coluna de responsavel na tabela de planejamentos — done (`tasks/change-requests/050-paginacao-e-coluna-responsavel-planejamentos.md`)
+- Task 071 - Alinhar paginação de planejamentos com pacientes — done (`tasks/change-requests/071-alinhar-paginacao-planejamentos-com-pacientes.md`)
+- Task 072 - Efeito de fundo nas telas de login e cadastro — cancelled (`tasks/change-requests/072-efeito-fundo-auth-login-cadastro.md`)
+- Task 074 - Corrigir data local e buscas redundantes em pacientes — done (`tasks/change-requests/074-corrigir-data-local-e-buscas-redundantes-em-pacientes.md`)
+- Task 294 - Integrar progresso real na tabela de pacientes web — done (`tasks/change-requests/294-integrar-progresso-real-na-tabela-de-pacientes-web.md`)
+- Task 295 - Foto e fallback nativo nas tabelas de pacientes e planejamentos web — done (`tasks/change-requests/295-foto-e-fallback-nativo-nas-tabelas-de-pacientes-e-planejamentos-web.md`)
+- Task 077 - Refinar design da pagina de usuarios do admin web — done (`tasks/change-requests/077-refinar-usuarios-admin-web.md`)
+- Task 078 - Adicionar paginação na tabela de usuários do admin web — done (`tasks/change-requests/078-paginacao-usuarios-admin-web.md`)
+- Task 079 - Remover scroll externo do shell web — done (`tasks/change-requests/079-remover-scroll-externo-shell-web.md`)
+- Task 080 - Adicionar confirmação ao inativar usuários no admin web — done (`tasks/change-requests/080-confirmacao-inativar-usuarios-admin-web.md`)
+- Task 081 - Limpar textos redundantes acima da tabela de usuários do admin — done (`tasks/change-requests/081-limpar-textos-superiores-tabela-usuarios-admin.md`)
+- Task 082 - Refinar card de profissionais e vínculos no admin web — done (`tasks/change-requests/082-refinar-card-profissionais-vinculos-admin-web.md`)
+- Task 083 - Estruturar central de relatórios do master web — done (`tasks/change-requests/083-estruturar-central-relatorios-master-web.md`)
+- Task 084 - Ajustar texto do hero em relatórios do master web — done (`tasks/change-requests/084-ajustar-texto-hero-relatorios-master-web.md`)
+- Task 091 - Ajustar subtitulo e placeholders no modal de conteudo web — done (`tasks/change-requests/091-ajustar-subtitulo-e-placeholders-modal-conteudo-web.md`)
+- Task 152 - Hardening do shell e do admin web no frontend — done (`tasks/change-requests/152-hardening-shell-admin-web-frontend.md`)
+- Task 153 - Otimizar logs, paginação e exportações concorrentes no admin web — done (`tasks/change-requests/153-otimizar-logs-paginacao-e-exportacoes-admin-web.md`)
+- Task 154 - Restaurar bloqueio do scroll externo no shell web — done (`tasks/change-requests/154-restaurar-bloqueio-scroll-externo-shell-web.md`)
+- Task 155 - Criar usuário master na página de usuários web — done (`tasks/change-requests/155-criar-usuario-master-na-pagina-de-usuarios-web.md`)
+- Task 157 - Biblioteca e planejamentos web para jogos terapeuticos — done (`tasks/change-requests/157-biblioteca-e-planejamentos-web-para-jogos-terapeuticos.md`)
+- Task 164 - Remover criacao de conteudo na biblioteca web — done (`tasks/change-requests/164-remover-criacao-de-conteudo-na-biblioteca-web.md`)
+- Task 165 - Bootstrap do primeiro jogo e card na biblioteca — done (`tasks/change-requests/165-bootstrap-do-primeiro-jogo-e-card-na-biblioteca.md`)
+- Task 166 - Acoes hover nos cards de jogo da biblioteca — done (`tasks/change-requests/166-acoes-hover-nos-cards-de-jogo-da-biblioteca.md`)
+- Task 168 - Preview jogavel no visualizar do card da biblioteca — done (`tasks/change-requests/168-preview-jogavel-no-visualizar-do-card-da-biblioteca.md`)
+- Task 175 - Ajustar visual do modal de visualizar jogo — done (`tasks/change-requests/175-ajustar-visual-modal-visualizar-jogo.md`)
+- Task 176 - Remover botao Fechar do rodape do modal de visualizar jogo — done (`tasks/change-requests/176-remover-botao-fechar-rodape-modal-visualizar-jogo.md`)
+- Task 177 - Remover scroll-behavior smooth global no front-end — done (`tasks/change-requests/177-remover-scroll-behavior-smooth-global.md`)
+- Task 178 - Remover backdrop-filter blur do Modal web — done (`tasks/change-requests/178-remover-backdrop-filter-blur-modal.md`)
+- Task 179 - Linha pontilhada no traco escrito do modal de letras — done (`tasks/change-requests/179-linha-pontilhada-guia-modal-escrita-letras.md`)
+- Task 180 - Capa do jogo Escreva a letra no bucket — done (`tasks/change-requests/180-capa-jogo-escreva-a-letra-no-bucket.md`)
+- Task 181 - Icones Lucide em todos os botoes do front-end — done (`tasks/change-requests/181-icones-lucide-em-todos-os-botoes-front.md`)
+- Task 182 - Avatar no sidebar e na página de usuários web — done (`tasks/change-requests/182-avatar-sidebar-e-pagina-usuarios-web.md`)
+- Task 183 - Redesign da página de usuários admin web — done (`tasks/change-requests/183-redesign-pagina-usuarios-admin-web.md`)
+- Task 184 - Botão de filtro só ícone circular na página de usuários — done (`tasks/change-requests/184-botao-filtro-icone-circular-usuarios-web.md`)
+- Task 185 - Icones nas abas da página de usuários web — done (`tasks/change-requests/185-icones-abas-pagina-usuarios-web.md`)
+- Task 186 - Border radius 8px nos modais web — done (`tasks/change-requests/186-border-radius-8px-modais-web.md`)
+- Task 187 - Botão inativar só ícone na página de usuários — done (`tasks/change-requests/187-botao-inativar-icone-usuarios-web.md`)
+- Task 188 - Refinar modal de confirmação de inativação de usuários — done (`tasks/change-requests/188-refinar-modal-confirmacao-inativacao-usuarios.md`)
+- Task 189 - Ajustar footer do modal de inativação de usuários — done (`tasks/change-requests/189-footer-modal-inativacao-botoes-lado-a-lado.md`)
+- Task 190 - Ajustar largura e footer do modal de inativação — done (`tasks/change-requests/190-largura-e-footer-modal-inativacao.md`)
+- Task 191 - Corrigir footer do modal de inativação — done (`tasks/change-requests/191-corrigir-footer-modal-inativacao.md`)
+- Task 192 - Colunas de vínculo profissional-paciente na página de usuários — done (`tasks/change-requests/192-colunas-vinculo-profissional-paciente-usuarios.md`)
+- Task 193 - Refinar coluna profissional na tabela de pacientes — done (`tasks/change-requests/193-refinar-coluna-profissional-tabela-pacientes.md`)
+- Task 194 - Bolinha à esquerda no badge de status da tabela de usuários — done (`tasks/change-requests/194-bolinha-esquerda-badge-status-usuarios.md`)
+- Task 195 - Abrir pacientes vinculados ao clicar no profissional — done (`tasks/change-requests/195-abrir-pacientes-vinculados-ao-clicar-profissional.md`)
+- Task 196 - Trocar ícone do botão Novo usuário para SavePlus — done (`tasks/change-requests/196-icone-save-plus-botao-novo-usuario.md`)
+- Task 197 - Ícone SavePlus no botão criar usuário master — done (`tasks/change-requests/197-icone-save-plus-criar-usuario-master.md`)
+- Task 198 - Visualizar jogo no perfil profissional da biblioteca — done (`tasks/change-requests/198-visualizar-jogo-no-perfil-profissional-da-biblioteca.md`)
+- Task 199 - Refinar modal de catálogo dos planejamentos para jogos — done (`tasks/change-requests/199-refinar-modal-catalogo-planejamentos-jogos.md`)
+- Task 200 - Toggle de seleção nos cards do modal de catálogo — done (`tasks/change-requests/200-toggle-de-selecao-nos-cards-do-modal-catalogo.md`)
+- Task 201 - Ícone vermelho para remover item da trilha — done (`tasks/change-requests/201-icone-vermelho-remover-item-da-trilha.md`)
+- Task 202 - Corrigir layout do card diário da trilha — done (`tasks/change-requests/202-corrigir-layout-do-card-diario-da-trilha.md`)
+- Task 203 - Cores dos CTAs de anamnese e inativação da trilha — done (`tasks/change-requests/203-cores-cta-planejamento-anamnese-e-inativacao.md`)
+- Task 204 - Tela imersiva para execução de atividade no mobile — done (`tasks/change-requests/204-tela-imersiva-para-execucao-de-atividade-mobile.md`)
+- Task 205 - Refino fullscreen e confirmação na atividade mobile — done (`tasks/change-requests/205-refino-fullscreen-e-confirmacao-na-atividade-mobile.md`)
+- Task 206 - Tela de atividade sem padding com ações no topo mobile — done (`tasks/change-requests/206-tela-atividade-sem-padding-com-acoes-no-topo-mobile.md`)
+- Task 207 - Rota real para execução de atividade mobile — done (`tasks/change-requests/207-rota-real-para-execucao-de-atividade-mobile.md`)
+- Task 208 - Header da home: Olá, avatar à esquerda, lupa e sino — done (`tasks/change-requests/208-header-home-ola-avatar-lupa-sino-mobile.md`)
+- Task 209 - Lupa da home: busca local de atividades e avisos — done (`tasks/change-requests/209-lupa-busca-local-home-responsavel-mobile.md`)
+- Task 210 - Ícone log-out no topo do perfil mobile — done (`tasks/change-requests/210-icone-logout-topo-perfil-mobile.md`)
+- Task 211 - Header do perfil: voltar, título central e sem textos extras — done (`tasks/change-requests/211-header-perfil-voltar-titulo-central-mobile.md`)
+- Task 212 - Avatar padrão da criança por sexo no mobile — done (`tasks/change-requests/212-avatar-padrao-crianca-por-sexo-mobile.md`)
+- Task 213 - Home: ícone usuário no topo e campo de busca em largura total — done (`tasks/change-requests/213-home-icone-usuario-e-campo-busca-largura-total.md`)
+- Task 214 - Remover cards de atalho Trilha/Avisos/Perfil da home mobile — done (`tasks/change-requests/214-remover-cards-atalho-home-responsavel-mobile.md`)
+- Task 215 - Busca inline na home sem modal — done (`tasks/change-requests/215-busca-inline-home-sem-modal-mobile.md`)
+- Task 216 - Bordas dos elementos mobile com radius 8px — done (`tasks/change-requests/216-bordas-radius-8px-mobile.md`)
+- Task 217 - Cards 8px; botões com radius anterior — done (`tasks/change-requests/217-cards-8px-botoes-radius-anterior-mobile.md`)
+- Task 218 - Teclado sobre a tab bar sem empurrá-la — done (`tasks/change-requests/218-teclado-sobre-tabbar-sem-empurrar-mobile.md`)
+- Task 219 - Cabeçalho de Atividades e Avisos igual ao Perfil — done (`tasks/change-requests/219-cabecalho-atividades-avisos-igual-perfil-mobile.md`)
+- Task 220 - Espaçamento superior nas páginas mobile — done (`tasks/change-requests/220-espacamento-superior-paginas-mobile.md`)
+- Task 221 - Trilha: dias da semana em accordion — done (`tasks/change-requests/221-trilha-dias-semana-accordion-mobile.md`)
+- Task 222 - Título “Trilha semanal” centralizado na trilha mobile — done (`tasks/change-requests/222-titulo-trilha-semanal-centralizado-mobile.md`)
+- Task 223 - Capa do jogo no ícone da trilha mobile — done (`tasks/change-requests/223-capa-jogo-icone-trilha-mobile.md`)
+- Task 224 - Melhorar design do botão Abrir atividade na trilha — done (`tasks/change-requests/224-melhorar-botao-abrir-atividade-trilha-mobile.md`)
+- Task 225 - Botão Abrir com Play circular + paleta brandbook no DS — done (`tasks/change-requests/225-botao-abrir-play-circular-e-paleta-brandbook.md`)
+- Task 226 - Página do jogo sem divisão de fundo no topo — done (`tasks/change-requests/226-pagina-jogo-sem-divisao-fundo-topo-mobile.md`)
+- Task 227 - Organizar botões do jogo de escrever mobile — done (`tasks/change-requests/227-organizar-botoes-jogo-escrever-mobile.md`)
+- Task 228 - Ajustes UI jogo escrever: remover lápis, tools iguais, Validar — done (`tasks/change-requests/228-ajustes-ui-jogo-escrever-validar-mobile.md`)
+- Task 229 - Área de escrita com risquinhos como na web — done (`tasks/change-requests/229-area-escrita-risquinhos-igual-web-mobile.md`)
+- Task 230 - Feedback de acerto em verde no jogo escrever — done (`tasks/change-requests/230-feedback-acerto-verde-jogo-escrever-mobile.md`)
+- Task 231 - Confirmação ao concluir atividade no accordion — done (`tasks/change-requests/231-confirmacao-concluir-accordion-trilha-mobile.md`)
+- Task 232 - Modal de confirmação com design do aviso de erro — done (`tasks/change-requests/232-modal-confirmacao-design-aviso-erro-mobile.md`)
+- Task 233 - Ícones à esquerda nos accordions da trilha — done (`tasks/change-requests/233-icones-esquerda-accordion-trilha-mobile.md`)
+- Task 234 - Corrigir fundo SVG do hero de atividades — done (`tasks/change-requests/234-corrigir-fundo-svg-hero-atividades-mobile.md`)
+- Task 235 - Hero SVG em modo cover — done (`tasks/change-requests/235-hero-svg-modo-cover-mobile.md`)
+- Task 236 - Deslocar fundo SVG da trilha para não cortar o desenho — done (`tasks/change-requests/236-deslocar-fundo-svg-trilha-esquerda-mobile.md`)
+- Task 237 - Encurtar copy do hero de atividades e resetar fundo — done (`tasks/change-requests/237-encurtar-copy-hero-atividades-mobile.md`)
+- Task 238 - API: editar perfil responsável e criança — done (`tasks/change-requests/238-api-editar-perfil-responsavel-crianca.md`)
+- Task 239 - Mobile: editar dados do responsável e da criança — done (`tasks/change-requests/239-mobile-editar-dados-responsavel-crianca.md`)
+- Task 240 - Copy do hero do perfil sem contagem de crianças — done (`tasks/change-requests/240-copy-hero-perfil-sem-contagem-criancas-mobile.md`)
+- Task 241 - Título singular “Criança” no perfil mobile — done (`tasks/change-requests/241-titulo-singular-crianca-perfil-mobile.md`)
+- Task 242 - Espaço superior da trilha igual ao perfil — done (`tasks/change-requests/242-espaco-superior-trilha-igual-perfil-mobile.md`)
+- Task 243 - Redesign das telas de edição de perfil + avatar — done (`tasks/change-requests/243-redesign-edicao-perfil-avatar-mobile.md`)
+- Task 244 - Bolhas decorativas no fundo do app mobile — done (`tasks/change-requests/244-bolhas-fundo-app-mobile.md`)
+- Task 245 - Overlay liquid glass sobre as bolhas do fundo mobile — done (`tasks/change-requests/245-liquid-glass-fundo-bolhas-mobile.md`)
+- Task 246 - Melhorar design do card de avisos da home mobile — done (`tasks/change-requests/246-melhorar-card-avisos-home-mobile.md`)
+- Task 247 - Fix transição edição perfil + máscara telefone — done (`tasks/change-requests/247-fix-transicao-edicao-perfil-mascara-telefone-mobile.md`)
+- Task 248 - Melhorar cards da página de avisos mobile — done (`tasks/change-requests/248-melhorar-cards-pagina-avisos-mobile.md`)
+- Task 249 - Jogo caça-palavras (catálogo + runtime) — done (`tasks/change-requests/249-jogo-caca-palavras-catalogo-runtime.md`)
+- Task 254 - Corrigir fala e fluxo assíncrono da escrita guiada mobile — done (`tasks/change-requests/254-corrigir-fala-e-fluxo-assincrono-escrita-guiada-mobile.md`)
+- Task 250 - Prévia jogável do caça-palavras na biblioteca web — done (`tasks/change-requests/250-previa-jogavel-caca-palavras-biblioteca-web.md`)
+- Task 251 - Animação de conclusão do caça-palavras no mobile — done (`tasks/change-requests/251-animacao-conclusao-caca-palavras-mobile.md`)
+- Task 257 - Hardening de assets e bootstrap do caça-palavras no backend — done (`tasks/change-requests/257-hardening-caca-palavras-assets-e-bootstrap-backend.md`)
+- Task 258 - Normalizar telefone no criar usuário master web — done (`tasks/change-requests/258-normalizar-telefone-no-criar-usuario-master-web.md`)
+- Task 259 - Corrigir fallback de config ao trocar tipo de jogo web — done (`tasks/change-requests/259-corrigir-fallback-de-config-ao-trocar-tipo-de-jogo-web.md`)
+- Task 260 - Limpar avisos na tela mobile — done (`tasks/change-requests/260-limpar-avisos-na-tela-mobile.md`)
+- Task 261 - Persistir limpeza de avisos no mobile — done (`tasks/change-requests/261-persistir-limpeza-de-avisos-mobile.md`)
+- Task 262 - Usar assets bell e check nos avisos mobile — done (`tasks/change-requests/262-usar-assets-bell-e-check-nos-avisos-mobile.md`)
+- Task 264 - Usar bell-off no estado de avisos limpos mobile — done (`tasks/change-requests/264-usar-bell-off-no-estado-de-avisos-limpos-mobile.md`)
+- Task 265 - Corrigir path dos assets de avisos mobile — done (`tasks/change-requests/265-corrigir-path-dos-assets-de-avisos-mobile.md`)
+- Task 263 - Usar asset calendar na página de atividades mobile — done (`tasks/change-requests/263-usar-asset-calendar-na-pagina-de-atividades-mobile.md`)
+- Task 266 - Corrigir path do asset calendar na página de atividades mobile — done (`tasks/change-requests/266-corrigir-path-do-asset-calendar-na-pagina-de-atividades-mobile.md`)
+- Task 267 - Remover borda das imagens na IconPill mobile — done (`tasks/change-requests/267-remover-borda-das-imagens-na-icon-pill-mobile.md`)
+- Task 268 - Usar bell na home com asset local mobile — done (`tasks/change-requests/268-usar-bell-na-home-com-asset-local-mobile.md`)
+- Task 269 - Remover canto arredondado das imagens da IconPill mobile — done (`tasks/change-requests/269-remover-canto-arredondado-das-imagens-da-icon-pill-mobile.md`)
+- Task 270 - Aumentar radius dos heroes mobile com bg ilustrado — done (`tasks/change-requests/270-aumentar-radius-dos-heroes-mobile-com-bg-ilustrado.md`)
+- Task 271 - Aumentar ainda mais o radius dos heroes mobile — done (`tasks/change-requests/271-aumentar-ainda-mais-o-radius-dos-heroes-mobile.md`)
+- Task 273 - Refinar card de avisos da home mobile com bg e status — done (`tasks/change-requests/273-refinar-card-de-avisos-da-home-mobile-com-bg-e-status.md`)
+- Task 274 - Refinar tipografia e profundidade do card de avisos home mobile — done (`tasks/change-requests/274-refinar-tipografia-e-profundidade-do-card-de-avisos-home-mobile.md`)
+- Task 275 - Corrigir renderizacao do bg trilha no card de avisos home mobile — done (`tasks/change-requests/275-corrigir-renderizacao-do-bg-trilha-no-card-de-avisos-home-mobile.md`)
+- Task 276 - Corrigir bg e sombra do card de avisos home mobile — done (`tasks/change-requests/276-corrigir-bg-e-sombra-do-card-de-avisos-home-mobile.md`)
+- Task 277 - Forcar trilha.webp 100 porcento no bg do card de avisos home mobile — done (`tasks/change-requests/277-forcar-trilha-webp-100-porcento-no-bg-do-card-de-avisos-home-mobile.md`)
+- Task 278 - Profundidade e bg trilha no card de avisos home mobile — done (`tasks/change-requests/278-profundidade-e-bg-trilha-card-avisos-home-mobile.md`)
+- Task 279 - Reduzir tamanho do bg trilha no card de avisos home mobile — done (`tasks/change-requests/279-reduzir-tamanho-bg-trilha-card-avisos-home-mobile.md`)
+- Task 280 - Corrigir sombra quadrada e bg trilha no card de avisos home mobile — done (`tasks/change-requests/280-corrigir-sombra-quadrada-e-bg-trilha-card-avisos-home-mobile.md`)
+- Task 281 - Remover bg trilha e mover sombra para o card de avisos home mobile — done (`tasks/change-requests/281-remover-bg-trilha-e-mover-sombra-para-card-avisos-home-mobile.md`)
+- Task 282 - Alinhar cards da pagina de avisos ao estilo do card da home mobile — done (`tasks/change-requests/282-alinhar-cards-pagina-avisos-ao-estilo-home-mobile.md`)
+- Task 283 - Icones nos status Em dia e Limpos da pagina de avisos mobile — done (`tasks/change-requests/283-icones-status-em-dia-e-limpos-pagina-avisos-mobile.md`)
+- Task 284 - Alinhar cards da pagina de perfil ao estilo do card da home mobile — done (`tasks/change-requests/284-alinhar-cards-pagina-perfil-ao-estilo-home-mobile.md`)
+- Task 285 - Refinar metadados do card de responsavel no perfil mobile — done (`tasks/change-requests/285-refinar-metadados-card-responsavel-perfil-mobile.md`)
+- Task 286 - Refinar card da crianca no perfil mobile — done (`tasks/change-requests/286-refinar-card-crianca-perfil-mobile.md`)
+- Task 287 - Foto de perfil nos cards de responsavel e crianca no perfil mobile — done (`tasks/change-requests/287-foto-perfil-cards-responsavel-crianca-perfil-mobile.md`)
+- Task 288 - Fundo de bolhas nas telas de edicao de perfil mobile — done (`tasks/change-requests/288-fundo-bolhas-telas-edicao-perfil-mobile.md`)
+- Task 289 - Sombra nos cards e icone no salvar das edicoes de perfil mobile — done (`tasks/change-requests/289-sombra-cards-e-icone-salvar-edicao-perfil-mobile.md`)
+- Task 290 - Revelar bolhas no stack das telas de edicao de perfil mobile — done (`tasks/change-requests/290-revelar-bolhas-stack-edicao-perfil-mobile.md`)
+- Task 291 - Icone de telefone no input de telefone da edicao do responsavel mobile — done (`tasks/change-requests/291-icone-telefone-input-edicao-responsavel-mobile.md`)
+- Task 292 - Melhorar design da secao intro das edicoes de perfil mobile — done (`tasks/change-requests/292-melhorar-design-intro-edicoes-perfil-mobile.md`)
+- Task 357 - Adicionar card de relatórios no perfil mobile — done (`tasks/change-requests/357-adicionar-card-de-relatorios-no-perfil-mobile.md`)
+- Task 369 - Abrir lista e download de relatórios a partir do perfil mobile — done (`tasks/change-requests/369-abrir-lista-e-download-de-relatorios-a-partir-do-perfil-mobile.md`)
+- Task 370 - Exibir tab bar do responsável nas edições de perfil e relatórios mobile — done (`tasks/change-requests/370-exibir-tab-bar-do-responsavel-nas-edicoes-de-perfil-e-relatorios-mobile.md`)
+- Task 371 - Corrigir abertura do arquivo baixado nos relatórios mobile Android — done (`tasks/change-requests/371-corrigir-abertura-do-arquivo-baixado-nos-relatorios-mobile-android.md`)
+- Task 372 - Agrupar relatórios por mês na tela mobile do responsável — done (`tasks/change-requests/372-agrupar-relatorios-por-mes-na-tela-mobile-do-responsavel.md`)
+- Task 293 - Ofensiva estilo Duolingo na pagina de atividades mobile — done (`tasks/change-requests/293-ofensiva-duolingo-pagina-atividades-mobile.md`)
+- Task 525 - Ofensiva mobile: acender fogo com streak ativo — done (`tasks/change-requests/525-ofensiva-mobile-acender-fogo-com-streak-ativo.md`)
+- Task 526 - Narração intro/parabéns dos jogos + letras alfabeto (S3 + mobile) — done (`tasks/change-requests/526-narracao-intro-parabens-jogos-s3-mobile.md`)
+- Task 527 - Feedbacks curtos compartilhados (Prioridade 2) — done (`tasks/change-requests/527-feedbacks-curtos-compartilhados-voz.md`)
+- Task 528 - Escreva a letra: reusar áudios do Alfabeto falado — done (`tasks/change-requests/528-escreva-letra-reusa-audios-alfabeto.md`)
+- Task 538 - Religar introAudioUrl do catálogo (web/mobile) — done (`tasks/change-requests/538-religar-intro-audio-catalogo-jogos.md`)
+- Task 539 - Prévia web Diálogos: falar prompt ao iniciar situação — done (`tasks/change-requests/539-dialogos-previa-web-prompt-audio.md`)
+- Task 540 - Prévia web Fluência: Ouvir usa áudio gravado da etapa — done (`tasks/change-requests/540-fluencia-previa-web-audio-gravado.md`)
+- Task 541 - Prévia web Complete a frase: áudio gravado no acerto — done (`tasks/change-requests/541-complete-frase-previa-web-audio-gravado.md`)
+- Task 542 - Religar e usar feedbacks curtos (muito bem / tente / quase / isso) — done (`tasks/change-requests/542-feedbacks-curtos-religar-e-usar-web.md`)
+- Task 543 - Escreva a letra: frase-base + áudio da letra — done (`tasks/change-requests/543-escreva-letra-prompt-mais-letra.md`)
+- Task 544 - Descubra a palavra: áudios por categoria/dificuldade — done (`tasks/change-requests/544-descubra-palavra-audios-por-categoria.md`)
+- Task 545 - Alinhar opções da anamnese (tópico 6) às categorias da biblioteca — done (`tasks/change-requests/545-alinhar-opcoes-anamnese-categorias-biblioteca.md`)
+- Task 546 - Jogo das Emoções: áudios de situação/estratégia — done (`tasks/change-requests/546-jogo-emocoes-audios-situacao-estrategia.md`)
+- Task 547 - Prévia web: parar áudio ao fechar e não cortar o parabéns — done (`tasks/change-requests/547-previa-web-parar-audio-ao-fechar-e-concluir.md`)
+- Task 548 - Demo mobile: persistir add/remove na trilha — done (`tasks/change-requests/548-demo-mobile-persistir-add-remove-trilha.md`)
+- Task 549 - Login mobile: autofill só desligado com teclado compacto — done (`tasks/change-requests/549-login-mobile-autofill-so-no-compacto.md`)
+- Task 550 - Mobile: parar fala ao sair do jogo e não cortar o elogio na escrita — done (`tasks/change-requests/550-mobile-parar-fala-ao-sair-e-fila-escrita.md`)
+- Task 551 - PATCH da trilha para responsável com canManage — done (`tasks/change-requests/551-patch-trilha-responsavel-canmanage.md`)
+- Task 552 - Bootstrap Descubra a palavra: mesclar palavras por ID — done (`tasks/change-requests/552-bootstrap-descubra-palavra-mesclar-por-id.md`)
+- Task 553 - Bootstrap: preservar intro/conclusão personalizados — done (`tasks/change-requests/553-bootstrap-preservar-intro-conclusao-custom.md`)
+- Task 272 - Alinhar CTAs dos heroes home e trilha mobile — done (`tasks/change-requests/272-alinhar-ctas-dos-heroes-home-e-trilha-mobile.md`)
+- Task 272 - Alinhar CTAs dos heroes home e trilha mobile — done (`tasks/change-requests/272-alinhar-ctas-dos-heroes-home-e-trilha-mobile.md`)
+- Task 271 - Aumentar ainda mais o radius dos heroes mobile — done (`tasks/change-requests/271-aumentar-ainda-mais-o-radius-dos-heroes-mobile.md`)
+- Task 270 - Aumentar radius dos heroes mobile com bg ilustrado — done (`tasks/change-requests/270-aumentar-radius-dos-heroes-mobile-com-bg-ilustrado.md`)
+- Task 268 - Usar bell na home com asset local mobile — done (`tasks/change-requests/268-usar-bell-na-home-com-asset-local-mobile.md`)
+- Task 269 - Remover canto arredondado das imagens da IconPill mobile — done (`tasks/change-requests/269-remover-canto-arredondado-das-imagens-da-icon-pill-mobile.md`)
+- Task 267 - Remover borda das imagens na IconPill mobile — done (`tasks/change-requests/267-remover-borda-das-imagens-na-icon-pill-mobile.md`)
+- Task 252 - Redesign da grade semanal na trilha do paciente — done (`tasks/change-requests/252-redesign-grade-semanal-trilha-paciente.md`)
+
+### Back
+
+- Task 002 - Fundacao backend identidade — done
+- Task 005 - API autenticacao — done
+- Task 008 - API cadastro profissional — done
+- Task 010 - API cadastro responsavel/anamnese — done
+- Task 012 - API assinatura/gate — done
+- Task 014 - API conteudos/storage — done
+- Task 016 - API pacientes/vinculo — done
+- Task 018 - API trilhas/evolucao — done
+- Task 021 — done
+- Task 151 - Hardening de exportacoes e consultas admin no backend — done (`tasks/change-requests/151-hardening-exportacoes-admin-backend.md`) [revalidada em 2026-07-23 com stream incremental dos logs]
+- Task 399 - Foreign keys de integridade referencial no Postgres — done (`tasks/change-requests/399-foreign-keys-integridade-referencial-postgres.md`)
+- Task 400 - Preservar trail_items ao regravar trilha com FKs — done (`tasks/change-requests/400-preservar-trail-items-ao-regravar-trilha-com-fks.md`)
+- Task 420 - Provider Asaas e checkout mensal — done (`tasks/change-requests/420-provider-asaas-checkout-mensal.md`)
+- Task 421 - Webhook Asaas e ciclo (atraso/cancel/refund) — done (`tasks/change-requests/421-webhook-ciclo-atraso-cancel-refund-asaas.md`)
+- Task 487 - Hardening do supersede de checkout Asaas — done (`tasks/change-requests/487-hardening-supersede-checkout-asaas.md`)
+- Task 488 - Hardening do bootstrap e dos assets de jogos no backend — done (`tasks/change-requests/488-hardening-bootstrap-assets-jogos-backend.md`)
+- Task 489 - Hardening do PATCH do perfil próprio no backend — done (`tasks/change-requests/489-hardening-patch-perfil-proprio-backend.md`)
+- Task 490 - Hardening de logs e lookups admin no backend — done (`tasks/change-requests/490-hardening-admin-logs-e-lookups-backend.md`)
+- Task 501 - Backend: trilha self-serve do responsável — done (`tasks/change-requests/501-backend-trilha-self-serve-responsavel.md`)
+- Task 506 - Permitir responsável montar trilha mesmo com vínculo — done (`tasks/change-requests/506-permitir-responsavel-montar-trilha.md`)
+- Task 508 - Aviso ao criar trilha própria com vínculo e trilha existentes — done (`tasks/change-requests/508-aviso-trilha-propria-com-vinculo.md`)
+- Task 551 - PATCH da trilha para responsável com canManage — done (`tasks/change-requests/551-patch-trilha-responsavel-canmanage.md`)
+- Task 552 - Bootstrap Descubra a palavra: mesclar palavras por ID — done (`tasks/change-requests/552-bootstrap-descubra-palavra-mesclar-por-id.md`)
+- Task 553 - Bootstrap: preservar intro/conclusão personalizados — done (`tasks/change-requests/553-bootstrap-preservar-intro-conclusao-custom.md`)
+- Task 491 - Limpar sessão de perfil não suportado no boot mobile — done (`tasks/change-requests/491-limpar-sessao-perfil-nao-suportado-no-boot-mobile.md`)
+- Task 492 - Elevar campos do login e esconder menina/nuvem com teclado — done (`tasks/change-requests/492-elevar-campos-login-esconder-menina-nuvem-teclado.md`)
+- Task 493 - Esconder hero do login e subir form ao focar inputs — done (`tasks/change-requests/493-esconder-hero-login-subir-form-teclado.md`)
+- Task 494 - Corrigir overshoot do login com Samsung Pass / pan — done (`tasks/change-requests/494-corrigir-overshoot-login-samsung-pass-pan.md`)
+- Task 495 - Login com resize: form no topo acima do teclado — done (`tasks/change-requests/495-login-resize-form-topo-acima-teclado.md`)
+- Task 496 - Estabilizar elevação do login e baixar um pouco o form — done (`tasks/change-requests/496-estabilizar-elevacao-login-baixar-form.md`)
+- Task 497 - Igualar fundo do sidebar ao background da página — done/reverted (`tasks/change-requests/497-igualar-fundo-sidebar-background-pagina.md`)
+- Task 498 - Igualar fundo da tab bar mobile ao background da página — done (`tasks/change-requests/498-igualar-fundo-tabbar-background-pagina-mobile.md`)
+- Task 499 - Reverter fundo do sidebar web ao vidro anterior — done (`tasks/change-requests/499-reverter-fundo-sidebar-web-vidro.md`)
+
+### Mobile
+
+- Task 004 - Shell mobile Expo — done
+- Task 007 - Telas auth mobile — done
+- Task 020 — done
+- Task 023 — done
+- Task 024 — done
+- Task 092 - Ajustar execucao web do Expo mobile — done (`tasks/change-requests/092-ajustar-execucao-web-expo-mobile.md`)
+- Task 093 - Refinar telas auth mobile com placeholders e visualizacao de senha — done (`tasks/change-requests/093-refinar-auth-mobile-placeholders-visualizacao-senha.md`)
+- Task 094 - Login mobile fiel ao print sem CTA de cadastro — done (`tasks/change-requests/094-login-mobile-fiel-ao-print-sem-cadastro.md`)
+- Task 095 - Lucide React Native padrao de icones mobile — done (`tasks/change-requests/095-lucide-icones-mobile.md`)
+- Task 096 - Refinar fidelidade visual do login mobile ao print — done (`tasks/change-requests/096-refinar-fidelidade-login-mobile-print.md`)
+- Task 097 - Ajustar menina atras da nuvem e espaçar shapes do login mobile — done (`tasks/change-requests/097-ajustar-menina-nuvem-e-shapes-login-mobile.md`)
+- Task 098 - Ajustar nuvem, input de e-mail e shapes do login mobile — done (`tasks/change-requests/098-ajustar-nuvem-input-e-shapes-login-mobile.md`)
+- Task 099 - Corrigir camada da menina atras da nuvem no login mobile — done (`tasks/change-requests/099-corrigir-camada-menina-atras-nuvem-login-mobile.md`)
+- Task 100 - Restaurar login mobile fiel ao print original — done (`tasks/change-requests/100-restaurar-login-mobile-fiel-ao-print.md`)
+- Task 101 - Usar asset unico menina_nuvem no login mobile — done (`tasks/change-requests/101-login-mobile-asset-menina-nuvem.md`)
+- Task 102 - Ajustar copy e shapes ao lado da logo no login mobile — done (`tasks/change-requests/102-ajustar-copy-e-shapes-logo-login-mobile.md`)
+- Task 103 - Remover formas geometricas do login mobile — done (`tasks/change-requests/103-remover-shapes-geometricos-login-mobile.md`)
+- Task 104 - Alinhar formulario da recuperacao de senha mobile ao login — done (`tasks/change-requests/104-alinhar-formulario-recuperacao-senha-mobile.md`)
+- Task 105 - Layout da recuperacao de senha igual ao login mobile — done (`tasks/change-requests/105-layout-recuperacao-igual-login-mobile.md`)
+- Task 106 - Bloquear scroll nas telas de login e recuperacao mobile — done (`tasks/change-requests/106-bloquear-scroll-login-e-recuperacao-mobile.md`)
+- Task 107 - Restaurar espacamento do auth mobile sem scroll — done (`tasks/change-requests/107-restaurar-espacamento-auth-sem-scroll-mobile.md`)
+- Task 108 - Splash loading com selo e textos girando — done (`tasks/change-requests/108-splash-loading-selo-textos-girando-mobile.md`)
+- Task 109 - Background animado nas telas de login e recuperacao mobile — done (`tasks/change-requests/109-background-animado-login-recuperacao-mobile.md`)
+- Task 110 - Refinar fundo auth mobile com movimento lava lamp — done (`tasks/change-requests/110-fundo-auth-mobile-lava-lamp.md`)
+- Task 111 - Aproximar fundo auth mobile da lava goo do sidebar — done (`tasks/change-requests/111-goo-lava-auth-mobile.md`)
+- Task 112 - Remover fundo animado do auth mobile — done (`tasks/change-requests/112-remover-fundo-auth-mobile.md`)
+- Task 113 - Exibir erro de login em modal central no mobile — done (`tasks/change-requests/113-modal-erro-login-mobile.md`)
+- Task 114 - Elevar login mobile ao abrir teclado — done (`tasks/change-requests/114-elevar-login-com-teclado-mobile.md`)
+- Task 115 - Reduzir subida do login mobile ao abrir teclado — done (`tasks/change-requests/115-reduzir-subida-login-teclado-mobile.md`)
+- Task 116 - Remover encolhimento lateral da nuvem no login mobile — done (`tasks/change-requests/116-remover-encolhimento-lateral-nuvem-login-mobile.md`)
+- Task 117 - Elevar recuperacao de senha mobile ao abrir teclado — done (`tasks/change-requests/117-elevar-recuperacao-com-teclado-mobile.md`)
+- Task 118 - Restaurar subtitulo da recuperacao de senha mobile — done (`tasks/change-requests/118-restaurar-subtitulo-recuperacao-mobile.md`)
+- Task 119 - Restaurar copy completa nas telas auth mobile — done (`tasks/change-requests/119-restaurar-copy-auth-mobile.md`)
+- Task 120 - Corrigir acesso da API no login mobile em ambiente local — done (`tasks/change-requests/120-corrigir-login-mobile-api-local.md`)
+- Task 121 - Login com biometria (digital/Face ID) no mobile — done (`tasks/change-requests/121-login-biometrico-mobile.md`)
+- Task 122 - Melhorar design da home do responsavel no mobile — done (`tasks/change-requests/122-melhorar-design-home-responsavel-mobile.md`)
+- Task 123 - Aproximar a home do responsavel do print de referencia — done (`tasks/change-requests/123-home-responsavel-fiel-ao-print-referencia.md`)
+- Task 208 - Header da home: Olá, avatar à esquerda, lupa e sino — done (`tasks/change-requests/208-header-home-ola-avatar-lupa-sino-mobile.md`)
+- Task 209 - Lupa da home: busca local de atividades e avisos — done (`tasks/change-requests/209-lupa-busca-local-home-responsavel-mobile.md`)
+- Task 210 - Ícone log-out no topo do perfil mobile — done (`tasks/change-requests/210-icone-logout-topo-perfil-mobile.md`)
+- Task 211 - Header do perfil: voltar, título central e sem textos extras — done (`tasks/change-requests/211-header-perfil-voltar-titulo-central-mobile.md`)
+- Task 212 - Avatar padrão da criança por sexo no mobile — done (`tasks/change-requests/212-avatar-padrao-crianca-por-sexo-mobile.md`)
+- Task 213 - Home: ícone usuário no topo e campo de busca em largura total — done (`tasks/change-requests/213-home-icone-usuario-e-campo-busca-largura-total.md`)
+- Task 214 - Remover cards de atalho Trilha/Avisos/Perfil da home mobile — done (`tasks/change-requests/214-remover-cards-atalho-home-responsavel-mobile.md`)
+- Task 215 - Busca inline na home sem modal — done (`tasks/change-requests/215-busca-inline-home-sem-modal-mobile.md`)
+- Task 216 - Bordas dos elementos mobile com radius 8px — done (`tasks/change-requests/216-bordas-radius-8px-mobile.md`)
+- Task 217 - Cards 8px; botões com radius anterior — done (`tasks/change-requests/217-cards-8px-botoes-radius-anterior-mobile.md`)
+- Task 218 - Teclado sobre a tab bar sem empurrá-la — done (`tasks/change-requests/218-teclado-sobre-tabbar-sem-empurrar-mobile.md`)
+- Task 219 - Cabeçalho de Atividades e Avisos igual ao Perfil — done (`tasks/change-requests/219-cabecalho-atividades-avisos-igual-perfil-mobile.md`)
+- Task 220 - Espaçamento superior nas páginas mobile — done (`tasks/change-requests/220-espacamento-superior-paginas-mobile.md`)
+- Task 221 - Trilha: dias da semana em accordion — done (`tasks/change-requests/221-trilha-dias-semana-accordion-mobile.md`)
+- Task 222 - Título “Trilha semanal” centralizado na trilha mobile — done (`tasks/change-requests/222-titulo-trilha-semanal-centralizado-mobile.md`)
+- Task 223 - Capa do jogo no ícone da trilha mobile — done (`tasks/change-requests/223-capa-jogo-icone-trilha-mobile.md`)
+- Task 224 - Melhorar design do botão Abrir atividade na trilha — done (`tasks/change-requests/224-melhorar-botao-abrir-atividade-trilha-mobile.md`)
+- Task 225 - Botão Abrir com Play circular + paleta brandbook no DS — done (`tasks/change-requests/225-botao-abrir-play-circular-e-paleta-brandbook.md`)
+- Task 226 - Página do jogo sem divisão de fundo no topo — done (`tasks/change-requests/226-pagina-jogo-sem-divisao-fundo-topo-mobile.md`)
+- Task 227 - Organizar botões do jogo de escrever mobile — done (`tasks/change-requests/227-organizar-botoes-jogo-escrever-mobile.md`)
+- Task 228 - Ajustes UI jogo escrever: remover lápis, tools iguais, Validar — done (`tasks/change-requests/228-ajustes-ui-jogo-escrever-validar-mobile.md`)
+- Task 229 - Área de escrita com risquinhos como na web — done (`tasks/change-requests/229-area-escrita-risquinhos-igual-web-mobile.md`)
+- Task 230 - Feedback de acerto em verde no jogo escrever — done (`tasks/change-requests/230-feedback-acerto-verde-jogo-escrever-mobile.md`)
+- Task 231 - Confirmação ao concluir atividade no accordion — done (`tasks/change-requests/231-confirmacao-concluir-accordion-trilha-mobile.md`)
+- Task 232 - Modal de confirmação com design do aviso de erro — done (`tasks/change-requests/232-modal-confirmacao-design-aviso-erro-mobile.md`)
+- Task 233 - Ícones à esquerda nos accordions da trilha — done (`tasks/change-requests/233-icones-esquerda-accordion-trilha-mobile.md`)
+- Task 234 - Corrigir fundo SVG do hero de atividades — done (`tasks/change-requests/234-corrigir-fundo-svg-hero-atividades-mobile.md`)
+- Task 235 - Hero SVG em modo cover — done (`tasks/change-requests/235-hero-svg-modo-cover-mobile.md`)
+- Task 236 - Deslocar fundo SVG da trilha para não cortar o desenho — done (`tasks/change-requests/236-deslocar-fundo-svg-trilha-esquerda-mobile.md`)
+- Task 237 - Encurtar copy do hero de atividades e resetar fundo — done (`tasks/change-requests/237-encurtar-copy-hero-atividades-mobile.md`)
+- Task 238 - API: editar perfil responsável e criança — done (`tasks/change-requests/238-api-editar-perfil-responsavel-crianca.md`)
+- Task 239 - Mobile: editar dados do responsável e da criança — done (`tasks/change-requests/239-mobile-editar-dados-responsavel-crianca.md`)
+- Task 240 - Copy do hero do perfil sem contagem de crianças — done (`tasks/change-requests/240-copy-hero-perfil-sem-contagem-criancas-mobile.md`)
+- Task 241 - Título singular “Criança” no perfil mobile — done (`tasks/change-requests/241-titulo-singular-crianca-perfil-mobile.md`)
+- Task 242 - Espaço superior da trilha igual ao perfil — done (`tasks/change-requests/242-espaco-superior-trilha-igual-perfil-mobile.md`)
+- Task 243 - Redesign das telas de edição de perfil + avatar — done (`tasks/change-requests/243-redesign-edicao-perfil-avatar-mobile.md`)
+- Task 244 - Bolhas decorativas no fundo do app mobile — done (`tasks/change-requests/244-bolhas-fundo-app-mobile.md`)
+- Task 245 - Overlay liquid glass sobre as bolhas do fundo mobile — done (`tasks/change-requests/245-liquid-glass-fundo-bolhas-mobile.md`)
+- Task 246 - Melhorar design do card de avisos da home mobile — done (`tasks/change-requests/246-melhorar-card-avisos-home-mobile.md`)
+- Task 247 - Fix transição edição perfil + máscara telefone — done (`tasks/change-requests/247-fix-transicao-edicao-perfil-mascara-telefone-mobile.md`)
+- Task 248 - Melhorar cards da página de avisos mobile — done (`tasks/change-requests/248-melhorar-cards-pagina-avisos-mobile.md`)
+- Task 260 - Limpar avisos na tela mobile — done (`tasks/change-requests/260-limpar-avisos-na-tela-mobile.md`)
+- Task 261 - Persistir limpeza de avisos no mobile — done (`tasks/change-requests/261-persistir-limpeza-de-avisos-mobile.md`)
+- Task 262 - Usar assets bell e check nos avisos mobile — done (`tasks/change-requests/262-usar-assets-bell-e-check-nos-avisos-mobile.md`)
+- Task 264 - Usar bell-off no estado de avisos limpos mobile — done (`tasks/change-requests/264-usar-bell-off-no-estado-de-avisos-limpos-mobile.md`)
+- Task 265 - Corrigir path dos assets de avisos mobile — done (`tasks/change-requests/265-corrigir-path-dos-assets-de-avisos-mobile.md`)
+- Task 263 - Usar asset calendar na página de atividades mobile — done (`tasks/change-requests/263-usar-asset-calendar-na-pagina-de-atividades-mobile.md`)
+- Task 266 - Corrigir path do asset calendar na página de atividades mobile — done (`tasks/change-requests/266-corrigir-path-do-asset-calendar-na-pagina-de-atividades-mobile.md`)
+- Task 249 - Jogo caça-palavras (catálogo + runtime) — done (`tasks/change-requests/249-jogo-caca-palavras-catalogo-runtime.md`)
+- Task 250 - Prévia jogável do caça-palavras na biblioteca web — done (`tasks/change-requests/250-previa-jogavel-caca-palavras-biblioteca-web.md`)
+- Task 251 - Animação de conclusão do caça-palavras no mobile — done (`tasks/change-requests/251-animacao-conclusao-caca-palavras-mobile.md`)
+- Task 252 - Redesign da grade semanal na trilha do paciente — done (`tasks/change-requests/252-redesign-grade-semanal-trilha-paciente.md`)
+- Task 124 - Aplicar linguagem visual do print nas demais telas mobile — done (`tasks/change-requests/124-linguagem-visual-print-demais-telas-mobile.md`)
+- Task 125 - Resiliencia da API nas telas do responsavel mobile — done (`tasks/change-requests/125-resiliencia-api-telas-responsavel-mobile.md`)
+- Task 126 - Exigir dados reais nas telas do responsavel mobile — done (`tasks/change-requests/126-exigir-dados-reais-telas-responsavel-mobile.md`)
+- Task 127 - Refresh automatico da sessao no mobile — done (`tasks/change-requests/127-refresh-automatico-sessao-mobile.md`)
+- Task 491 - Limpar sessão de perfil não suportado no boot mobile — done (`tasks/change-requests/491-limpar-sessao-perfil-nao-suportado-no-boot-mobile.md`)
+- Task 492 - Elevar campos do login e esconder menina/nuvem com teclado — done (`tasks/change-requests/492-elevar-campos-login-esconder-menina-nuvem-teclado.md`)
+- Task 493 - Esconder hero do login e subir form ao focar inputs — done (`tasks/change-requests/493-esconder-hero-login-subir-form-teclado.md`)
+- Task 494 - Corrigir overshoot do login com Samsung Pass / pan — done (`tasks/change-requests/494-corrigir-overshoot-login-samsung-pass-pan.md`)
+- Task 495 - Login com resize: form no topo acima do teclado — done (`tasks/change-requests/495-login-resize-form-topo-acima-teclado.md`)
+- Task 496 - Estabilizar elevação do login e baixar um pouco o form — done (`tasks/change-requests/496-estabilizar-elevacao-login-baixar-form.md`)
+- Task 498 - Igualar fundo da tab bar mobile ao background da página — done (`tasks/change-requests/498-igualar-fundo-tabbar-background-pagina-mobile.md`)
+- Task 502 - Mobile: UI trilha self-serve — done (`tasks/change-requests/502-mobile-trilha-self-serve-ui.md`)
+- Task 503 - Mobile: abas Trilhas e Biblioteca na área Trilha — done (`tasks/change-requests/503-mobile-abas-trilhas-biblioteca.md`)
+- Task 504 - Mobile: ícones e refino visual das sub-abas Trilhas/Biblioteca — done (`tasks/change-requests/504-mobile-icones-subabas-trilhas-biblioteca.md`)
+- Task 505 - Mobile: refinar UI da aba Biblioteca da trilha — done (`tasks/change-requests/505-mobile-refinar-ui-biblioteca-trilha.md`)
+- Task 507 - Mobile: cards da Biblioteca no estilo do acervo master — done (`tasks/change-requests/507-mobile-cards-biblioteca-estilo-master.md`)
+- Task 509 - Mobile: equalizar tamanho dos cards da Biblioteca — done (`tasks/change-requests/509-mobile-equalizar-cards-biblioteca.md`)
+- Task 548 - Demo mobile: persistir add/remove na trilha — done (`tasks/change-requests/548-demo-mobile-persistir-add-remove-trilha.md`)
+- Task 549 - Login mobile: autofill só desligado com teclado compacto — done (`tasks/change-requests/549-login-mobile-autofill-so-no-compacto.md`)
+- Task 550 - Mobile: parar fala ao sair do jogo e não cortar o elogio na escrita — done (`tasks/change-requests/550-mobile-parar-fala-ao-sair-e-fila-escrita.md`)
+- Task 128 - Refinar atividades, perfil e avisos do responsavel com a linguagem da home — done (`tasks/change-requests/128-refinar-telas-responsavel-mobile-com-home.md`)
+- Task 129 - Aplicar fundo estrelinha no hero da home do responsavel mobile — done (`tasks/change-requests/129-aplicar-fundo-estrelinha-hero-home-responsavel-mobile.md`)
+- Task 131 - Remover folga do SVG no hero da home mobile — done (`tasks/change-requests/131-remover-folga-do-svg-no-hero-home-mobile.md`)
+- Task 132 - Aplicar fundos SVG nas telas de atividades, perfil e avisos do responsavel mobile — done (`tasks/change-requests/132-aplicar-fundos-svg-nas-telas-responsavel-mobile.md`)
+- Task 133 - Expandir fundos SVG para preenchimento total nas telas mobile — done (`tasks/change-requests/133-expandir-fundos-svg-para-preenchimento-total-mobile.md`)
+- Task 134 - Remover inset do card hero com SVG nas telas mobile — done (`tasks/change-requests/134-remover-inset-do-card-hero-svg-mobile.md`)
+- Task 135 - Restaurar balão, corrigir home e ajustar copy da trilha mobile — done (`tasks/change-requests/135-restaurar-balao-e-ajustar-home-e-copy-trilha-mobile.md`)
+- Task 136 - Quebrar copy do hero de perfil no mobile — done (`tasks/change-requests/136-quebrar-copy-do-hero-perfil-mobile.md`)
+- Task 137 - Quebrar copy do hero de avisos no mobile — done (`tasks/change-requests/137-quebrar-copy-do-hero-avisos-mobile.md`)
+- Task 138 - Cachear SVGs dos heroes mobile — done (`tasks/change-requests/138-cachear-svgs-dos-heroes-mobile.md`)
+- Task 139 - Aplicar selo com icone nos heroes mobile — done (`tasks/change-requests/139-aplicar-selo-com-icone-nos-heroes-mobile.md`)
+- Task 140 - Deixar eyebrows dos headers em laranja no mobile — done (`tasks/change-requests/140-deixar-eyebrows-dos-headers-em-laranja-mobile.md`)
+- Task 141 - Aumentar titulo dos headers das paginas mobile — done (`tasks/change-requests/141-aumentar-titulo-dos-headers-das-paginas-mobile.md`)
+- Task 142 - Corrigir cache dos SVGs dos heroes no Android mobile — done (`tasks/change-requests/142-corrigir-cache-dos-svgs-dos-heroes-no-android-mobile.md`)
+- Task 143 - Usar cover nos SVGs de background dos heroes mobile — done (`tasks/change-requests/143-usar-cover-nos-svgs-de-background-dos-heroes-mobile.md`)
+- Task 144 - Refinar card principal do perfil mobile por print — done (`tasks/change-requests/144-refinar-card-principal-do-perfil-mobile-por-print.md`)
+- Task 145 - Corrigir overflow da pill de assinatura no perfil mobile — done (`tasks/change-requests/145-corrigir-overflow-da-pill-de-assinatura-no-perfil-mobile.md`)
+- Task 146 - Adicionar icones nos botoes do auth mobile — done (`tasks/change-requests/146-adicionar-icones-nos-botoes-do-auth-mobile.md`)
+- Task 147 - Tentar ocultar barra de navegacao nativa no Android mobile — done (`tasks/change-requests/147-tentar-ocultar-barra-de-navegacao-nativa-no-android-mobile.md`)
+- Task 148 - Remover folga inferior da tabbar apos ocultar nav bar mobile — done (`tasks/change-requests/148-remover-folga-inferior-da-tabbar-apos-ocultar-nav-bar-mobile.md`)
+- Task 149 - Eliminar faixa branca da nav bar Android abaixo da tabbar mobile — done (`tasks/change-requests/149-eliminar-faixa-branca-nav-bar-android-abaixo-da-tabbar-mobile.md`)
+- Task 150 - Hardening de auth, storage e acessibilidade mobile — done (`tasks/change-requests/150-hardening-auth-acessibilidade-mobile.md`)
+- Task 158 - Execucao mobile do jogo alfabeto falado — done (`tasks/change-requests/158-execucao-mobile-do-jogo-alfabeto-falado.md`)
+- Task 163 - Refatorar runtime de jogos mobile — done (`tasks/change-requests/163-refatorar-runtime-de-jogos-mobile.md`)
+- Task 131 - Remover folga do SVG no hero da home mobile — done (`tasks/change-requests/131-remover-folga-do-svg-no-hero-home-mobile.md`)
+- Task 130 - Habilitar alias `@/` nas rotas do mobile — done (`tasks/change-requests/130-habilitar-alias-arroba-nas-rotas-mobile.md`)
+
+## Status inicial das tasks
+
+- Task 001 - done
+- Task 002 - done
+- Task 003 - done
+- Task 004 - done
+- Task 005 - done
+- Task 006 - done
+- Task 007 - done
+- Task 008 - done
+- Task 009 - done
+- Task 010 - done
+- Task 011 - done
+- Task 012 - done
+- Task 013 - done
+- Task 014 - done
+- Task 015 - done
+- Task 016 - done
+- Task 017 - done
+- Task 018 - done
+- Task 019 - done
+- Task 020 - done
+- Task 021 - done
+- Task 022 - done
+- Task 023 - done
+- Task 024 - done
+- Task 025 - done
+- Task 026 - done
+- Task 027 - done
+- Task 028 - done
+- Task 029 - done
+- Task 030 - done
+- Task 031 - done
+- Task 032 - done
+- Task 033 - done
+- Task 034 - done
+- Task 035 - done
+- Task 036 - done
+- Task 037 - done
+- Task 038 - done
+- Task 039 - done
+- Task 040 - done
+- Task 041 - done
+- Task 043 - done
+- Task 044 - done
+- Task 045 - done
+- Task 046 - done
+- Task 047 - done
+- Task 048 - done
+- Task 049 - done
+- Task 051 - done
+- Task 052 - done
+- Task 053 - done
+- Task 054 - done
+- Task 055 - done
+- Task 056 - done
+- Task 057 - done
+- Task 058 - done
+- Task 059 - done
+- Task 060 - done
+- Task 061 - done
+- Task 062 - done
+- Task 063 - done
+- Task 064 - done
+- Task 065 - done
+- Task 066 - done
+- Task 067 - done
+- Task 068 - done
+- Task 069 - done
+- Task 070 - done
+- Task 050 - done
+- Task 071 - done
+- Task 072 - cancelled
+- Task 073 - done
+- Task 074 - done
+- Task 075 - done
+- Task 076 - done
+- Task 077 - done
+- Task 078 - done
+- Task 079 - done
+- Task 080 - done
+- Task 081 - done
+- Task 082 - done
+- Task 083 - done
+- Task 084 - done
+- Task 085 - done
+- Task 086 - done
+- Task 087 - done
+- Task 088 - done
+- Task 089 - done
+- Task 090 - done
+- Task 091 - done
+- Task 092 - done
+- Task 093 - done
+- Task 094 - done
+- Task 095 - done
+- Task 096 - done
+- Task 097 - done
+- Task 098 - done
+- Task 099 - done
+- Task 100 - done
+- Task 101 - done
+- Task 102 - done
+- Task 103 - done
+- Task 104 - done
+- Task 105 - done
+- Task 106 - done
+- Task 107 - done
+- Task 108 - done
+- Task 109 - done
+- Task 110 - done
+- Task 111 - done
+- Task 112 - done
+- Task 113 - done
+- Task 114 - done
+- Task 115 - done
+- Task 116 - done
+- Task 117 - done
+- Task 118 - done
+- Task 119 - done
+- Task 120 - done
+- Task 121 - done
+- Task 122 - done
+- Task 123 - done
+- Task 124 - done
+- Task 125 - done
+- Task 126 - done
+- Task 127 - done
+- Task 128 - done
+- Task 129 - done
+- Task 131 - done
+- Task 132 - done
+- Task 133 - done
+- Task 134 - done
+- Task 135 - done
+- Task 136 - done
+- Task 137 - done
+- Task 138 - done
+- Task 139 - done
+- Task 140 - done
+- Task 141 - done
+- Task 142 - done
+- Task 143 - done
+- Task 144 - done
+- Task 145 - done
+- Task 146 - done
+- Task 147 - done
+- Task 148 - done
+- Task 149 - done
+- Task 150 - done
+- Task 151 - done
+- Task 152 - done
+- Task 153 - done
+- Task 131 - done
+- Task 130 - done
+- Task 167 - TTS nativo no jogo do alfabeto sem upload de audio — done (`tasks/change-requests/167-tts-nativo-no-jogo-do-alfabeto-sem-upload-de-audio.md`)
+- Task 175 - Ajustar visual do modal de visualizar jogo — done (`tasks/change-requests/175-ajustar-visual-modal-visualizar-jogo.md`)
+- Task 176 - Remover botao Fechar do rodape do modal de visualizar jogo — done (`tasks/change-requests/176-remover-botao-fechar-rodape-modal-visualizar-jogo.md`)
+- Task 177 - Remover scroll-behavior smooth global no front-end — done (`tasks/change-requests/177-remover-scroll-behavior-smooth-global.md`)
+- Task 178 - Remover backdrop-filter blur do Modal web — done (`tasks/change-requests/178-remover-backdrop-filter-blur-modal.md`)
+- Task 179 - Linha pontilhada no traco escrito do modal de letras — done (`tasks/change-requests/179-linha-pontilhada-guia-modal-escrita-letras.md`)
+- Task 180 - Capa do jogo Escreva a letra no bucket — done (`tasks/change-requests/180-capa-jogo-escreva-a-letra-no-bucket.md`)
+- Task 181 - Icones Lucide em todos os botoes do front-end — done (`tasks/change-requests/181-icones-lucide-em-todos-os-botoes-front.md`)
+- Task 182 - Avatar no sidebar e na página de usuários web — done (`tasks/change-requests/182-avatar-sidebar-e-pagina-usuarios-web.md`)
+- Task 183 - Redesign da página de usuários admin web — done (`tasks/change-requests/183-redesign-pagina-usuarios-admin-web.md`)
+- Task 184 - Botão de filtro só ícone circular na página de usuários — done (`tasks/change-requests/184-botao-filtro-icone-circular-usuarios-web.md`)
+- Task 185 - Icones nas abas da página de usuários web — done (`tasks/change-requests/185-icones-abas-pagina-usuarios-web.md`)
+- Task 186 - Border radius 8px nos modais web — done (`tasks/change-requests/186-border-radius-8px-modais-web.md`)
+- Task 187 - Botão inativar só ícone na página de usuários — done (`tasks/change-requests/187-botao-inativar-icone-usuarios-web.md`)
+- Task 188 - Refinar modal de confirmação de inativação de usuários — done (`tasks/change-requests/188-refinar-modal-confirmacao-inativacao-usuarios.md`)
+- Task 189 - Ajustar footer do modal de inativação de usuários — done (`tasks/change-requests/189-footer-modal-inativacao-botoes-lado-a-lado.md`)
+- Task 190 - Ajustar largura e footer do modal de inativação — done (`tasks/change-requests/190-largura-e-footer-modal-inativacao.md`)
+- Task 191 - Corrigir footer do modal de inativação — done (`tasks/change-requests/191-corrigir-footer-modal-inativacao.md`)
+- Task 192 - Colunas de vínculo profissional-paciente na página de usuários — done (`tasks/change-requests/192-colunas-vinculo-profissional-paciente-usuarios.md`)
+- Task 193 - Refinar coluna profissional na tabela de pacientes — done (`tasks/change-requests/193-refinar-coluna-profissional-tabela-pacientes.md`)
+- Task 194 - Bolinha à esquerda no badge de status da tabela de usuários — done (`tasks/change-requests/194-bolinha-esquerda-badge-status-usuarios.md`)
+- Task 195 - Abrir pacientes vinculados ao clicar no profissional — done (`tasks/change-requests/195-abrir-pacientes-vinculados-ao-clicar-profissional.md`)
+- Task 196 - Trocar ícone do botão Novo usuário para SavePlus — done (`tasks/change-requests/196-icone-save-plus-botao-novo-usuario.md`)
+- Task 197 - Ícone SavePlus no botão criar usuário master — done (`tasks/change-requests/197-icone-save-plus-criar-usuario-master.md`)
+- Task 198 - Visualizar jogo no perfil profissional da biblioteca — done (`tasks/change-requests/198-visualizar-jogo-no-perfil-profissional-da-biblioteca.md`)
+
+## Dependencias cruzadas
+
+- 002/003/004 → 001
+- 005 → 002; 006/007 → 005
+- 008 → 005; 009 → 008
+- 010 → 005; 011 → 010
+- 012 → 008+010; 013 → 012
+- 014 → 002; 015 → 014
+- 016 → 008+010+012; 017 → 016
+- 018 → 014+016; 019/020 → 018
+- 021 → 005+012; 022/023 → 021
+- 024 → 007+020
+- 025 → 018
+- 026 → 006 (refino visual login + bypass acesso livre)
+- 027 → 026 (lucide como padrao de icones)
+- 028 → 026 (template auth unificado)
+- 029 → 026 (reverter bypass de acesso livre; auth obrigatoria)
+- 030 → 005+006+009+011 (politica de senha forte cadastro/reset)
+- 032 → 028+029 (ajuste visual no template auth compartilhado)
+- 033 → 032 (novo fundo SVG animado apos remocao das formas antigas)
+- 034 → 033 (substituicao integral do SVG anterior por ilustracao alinhada ao produto)
+- 035 → 034 (remocao definitiva do fundo auth)
+- 036 → 035; 037 → 036; 038 → 037; 039 → 038
+- 040 → 039 (fidelidade visual com novos prints internos)
+- 041 → 040 (nova iteracao de fidelidade visual por referencia de chat)
+- 043 → 041 (reorganizacao do modulo master em rotas dedicadas)
+- 044 → 043 (refino visual dos modais compartilhados por nova referencia de chat)
+- 045 → 017+044 (paginacao local na listagem de pacientes apos os refinamentos do modulo)
+- 046 → 016+017+045 (responsavel na listagem exige payload do backend e refino da paginacao)
+- 047 → 038+044 (novo refino visual da tela de relatorios por referencia de chat)
+- 048 → 037+047 (novo refino visual da tabela da pagina de planejamentos por referencia de chat)
+- 049 → 031 (continuidade de higiene de scaffold e configuracao local por stack)
+- 050 → 019+046+048 (lista de planejamentos reaproveita payload de pacientes e o refino visual previo da tabela)
+- 051 → 046 (refino visual incremental do perfil do paciente reaproveitando a base recente de pacientes)
+- 052 → 039 (refino visual incremental do perfil do usuario dentro de configuracoes)
+- 053 → 041 (refino visual incremental do dashboard profissional na rota `/dashboard`)
+- 054 → 005+006 (renovacao automatica da sessao web sobre a base de auth existente)
+- 055 → 053 (refino funcional incremental do dashboard profissional com remocao de widgets genericos)
+- 056 → 055 (troca de mocks do dashboard profissional por dados reais das APIs existentes)
+- 057 → 056 (ajuste visual pontual no card de prioridades apos integracao com dados reais)
+- 058 → 057 (reorganizacao da grade do dashboard mantendo o topo de metricas)
+- 059 → 058 (correcao pontual de alinhamento do icone no destaque de prioridades)
+- 060 → 059 (correcao visual residual no proprio SVG do sino)
+- 061 → 060 (ajuste pontual de layout dos atalhos do card de prioridades)
+- 062 → 061 (ajuste pontual de composicao da grade principal do dashboard)
+- 063 → 062 (refino visual incremental do CTA do card de cadencia)
+- 064 → 063 (correcao pontual da altura do CTA do card de cadencia)
+- 065 → 064 (refino visual incremental do CTA de planejamentos)
+- 066 → 046+040 (novo refino visual da tabela de pacientes por referência de chat)
+- 067 → 066 (completar a composição visual da tabela de pacientes com barra de progresso)
+- 068 → 067 (simplificação da tabela com remoção do vínculo e menu de ações)
+- 069 → 068 (correção do dropdown para fora do overflow da tabela)
+- 070 → 041 (refino visual localizado do sidebar sobre o shell autenticado consolidado)
+- 071 → 046+050 (alinhar visual da paginação de planejamentos ao padrão compacto de pacientes)
+- 072 → 028+035+070 (efeito de fundo suave no AuthLayout, sem voltar à ilustração pesada removida)
+- 073 → 054 (endurece o refresh e a hidratação web sobre a base da renovação automática já entregue)
+- 074 → 051+068 (corrige datas locais do perfil e elimina buscas redundantes no menu de ações da listagem)
+- 075 → 056+070 (reduz fan-out do dashboard real e melhora o isolamento do sidebar persistente)
+- 076 → 049 (documenta operacionalmente backend, front-end e mobile sobre a base de scaffold ja consolidada)
+- 077 → 039+043 (refino visual incremental da pagina dedicada de usuarios do admin sobre a base reorganizada do modulo master)
+- 078 → 045+071+077 (paginação da tabela de usuarios do admin reaproveitando o padrão visual e a base recente da rota)
+- 079 → 078 (correção de overflow externo percebido após os ajustes recentes no shell autenticado)
+- 080 → 077+078 (confirmação de inativação sobre a tabela paginada e refinada de usuários do admin)
+- 081 → 078+080 (limpeza textual após paginação e confirmação da tabela de usuários do admin)
+- 082 → 077+081 (refino visual incremental do bloco de profissionais e vínculos sobre a rota de usuários já consolidada)
+- 083 → 043+047 (materializa a rota dedicada de relatórios do master sobre a base visual já refinada de relatórios e módulos administrativos)
+- 084 → 083 (refino textual incremental do hero já estruturado na central de relatórios do master)
+- 085 → 043+083+084 (ativa exportações CSV reais sobre a central administrativa de relatórios já estruturada)
+- 086 → 085 (refino visual incremental da área de exportações após a ativação dos downloads reais)
+- 087 → 086 (refino visual incremental da grade do catálogo após os ajustes recentes da página)
+- 088 → 085+087 (refino operacional da tabela de logs após a consolidação recente do módulo master)
+- 089 → 088 (correção funcional do pageSize excedente após o enriquecimento da tabela de logs)
+- 090 → 075 (ajuste pontual do shell autenticado para garantir exclusão mútua entre menus do sidebar)
+- 091 → 044 (ajuste textual e de usabilidade no modal de conteúdo sobre a base visual compartilhada dos modais web)
+- 092 → 004 (ajuste operacional da execucao web sobre o shell mobile consolidado)
+- 093 → 007 (refino visual incremental das telas auth mobile sobre a base funcional ja concluida)
+- 094 → 093 (substitui o refino livre anterior por fidelidade ao print concreto de login mobile)
+- 095 → 094 (lucide como padrao de icones mobile apos login fiel ao print)
+- 096 → 094+095 (refino de fidelidade com nuvem SVG real apos Lucide/react-native-svg)
+- 097 → 096 (menina atras da nuvem + shapes mais espaçados)
+- 098 → 097 (nuvem mais alta, input e-mail, emoji e shapes fora do texto)
+- 099 → 098 (menina atras da nuvem com SVG de onda e stacking corrigido)
+- 100 → 099 (restauracao fiel ao print apos regressao de layout/camadas)
+- 101 → 100 (asset unico menina_nuvem + ajustes de texto/logo)
+- 102 → 101 (copy descida, quebra de linha e shapes ao lado da logo)
+- 103 → 102 (remoção das formas geometricas do login)
+- 104 → 103 (formulario de recuperacao alinhado ao login)
+- 105 → 104 (layout completo da recuperacao igual ao shell do login)
+- 106 → 105 (bloquear scroll em login e recuperacao)
+- 107 → 106 (restaurar espacamento full-bleed sem scroll)
+- 108 → 107 (splash loading com selo e textos girando)
+- 109 → 105+107 (efeito animado de fundo sobre o layout auth mobile consolidado, sem reabrir scroll nem shell)
+- 110 → 109 (refino do movimento das massas coloridas para comportamento mais viscoso e irregular)
+- 111 → 110 (substitui o lava lamp aproximado por massas SVG com fusao visual mais proxima do sidebar web)
+- 112 → 111 (remove integralmente o fundo animado e retorna ao canvas limpo no auth mobile)
+- 113 → 112 (troca erro inline do login mobile por modal central de confirmacao)
+- 114 → 113 (desliza nuvem e formulario para cima ao focar inputs do login mobile)
+- 115 → 114 (reduz a amplitude da subida do bloco nuvem+form no login mobile)
+- 116 → 115 (remove o encolhimento lateral da nuvem mantendo apenas o deslocamento vertical)
+- 117 → 114+116 (replica na recuperacao a mesma elevacao do login sem encolhimento lateral da nuvem)
+- 118 → 117 (ajusta a altura do topo na recuperacao para voltar a mostrar o subtitulo completo)
+- 119 → 114+118 (amplia a area superior do login e da recuperacao para comportar a copy completa sem corte)
+- 120 → 007+092 (corrige o acesso local da API no auth mobile sobre a base funcional do login e a execucao consolidada do Expo)
+- 121 → 007+120 (login biometrico mobile sobre auth funcional e sessao SecureStore)
+- 122 → 024+095 (redesign da home do responsavel sobre a base funcional entregue e o padrao Lucide de icones)
+- 123 → 122 (fidelidade da home do responsavel ao print de referencia sobre a componentizacao recente)
+- 124 → 123 (estende a linguagem visual do print da home para as demais telas mobile)
+- 125 → 120+124 (endurece perfil, avisos e atividades do responsavel contra indisponibilidade de rede no mobile sem alterar escrita)
+- 126 → 120+125 (remove fallback automatico para mock e exige API real nas leituras do responsavel quando demo estiver desligado)
+- 127 → 120+126+073 (reaproveita a base de API local e o padrao web de refresh para evitar 401 por token expirado no mobile)
+- 128 → 123+124 (refina composicao visual de atividades, perfil e avisos a partir da home ja consolidada e move o logout para o perfil)
+- 129 → 123+128 (substitui a decoracao manual do hero da home pelo asset local `fundo_estrelinha.svg`)
+- 131 → 129 (remove a folga do fundo SVG no hero da home ajustando o asset e o encaixe)
+- 132 → 128+129+131 (substitui fundos decorativos manuais por SVGs dedicados em perfil, avisos e atividades)
+- 133 → 129+131+132 (expande os SVGs e força preenchimento total em todos os heroes com fundo vetorial)
+- 134 → 133 (remove o inset residual do hero movendo o padding do card para a camada de conteúdo)
+- 135 → 129+134 (restaura gradiente do balão, corrige o fundo da home e reduz a copy da trilha)
+- 136 → 135 (ajusta apenas a quebra visual da copy do hero de perfil)
+- 137 → 135 (ajusta apenas a quebra visual da copy do hero de avisos)
+- 138 → 129+132+137 (pre-carrega e reutiliza em memoria os SVGs dos heroes mobile)
+- 139 → 138 (troca o eyebrow simples por selo com icone compartilhado nos heroes mobile)
+- 140 → 139 (ajusta a cor do eyebrow do header compartilhado para laranja)
+- 141 → 140 (aumenta a escala tipografica do titulo no header compartilhado)
+- 142 → 138 (corrige a leitura local dos SVGs em cache no Android sem mudar os consumidores)
+- 143 → 138 (troca o preenchimento dos SVGs compartilhados para comportamento equivalente a cover)
+- 144 → 139 (refina o card principal do perfil mantendo a linguagem visual recente dos heroes e status)
+- 145 → 144 (corrige o layout das pills de status do card principal do perfil)
+- 146 → 095 (aplica icones Lucide nos CTAs de auth sobre o padrao compartilhado de botao)
+- 147 → 146 (ativa a tentativa global de ocultar a navigation bar do Android no app mobile)
+- 148 → 147 (remove o padding inferior residual da tab bar no Android apos ocultar a nav bar)
+- 149 → 147+148 (remove a faixa branca residual da system nav Android sem alterar o design da ShellTabBar)
+- 150 → 121+123+127+149 (endurece sessao/storage, acessibilidade da home e config Expo sobre a base recente de auth, home e shell mobile)
+- 151 → 021+085+089 (endurece exportacoes CSV e consultas admin sobre a API master e os refinos recentes de relatorios/logs)
+- 152 → 079+080+085+088+089+151 (endurece shell autenticado, logs/admin users e exportação web sobre a base recente do módulo master)
+- 153 → 088+089+152 (otimiza lookup dos logs, paginação de usuários e bloqueio de exportações concorrentes no admin web)
+- 154 → 079+152 (restaura o bloqueio do scroll externo do documento no shell autenticado após regressão observada na área interna)
+- 155 → 022+077+154 (adiciona criação operacional de outro login master na rota dedicada de usuários sobre a base visual e comportamental já consolidada)
+- 156 → 014+018+020 (estende contents e trilhas para suportar conteudo jogavel sem quebrar audio/video e leitura mobile existente)
+- 157 → 015+019+156 (aplica o novo tipo jogavel na biblioteca e na montagem de trilha web mantendo RBAC atual)
+- 158 → 020+156 (abre o primeiro renderer interativo no app do responsavel sobre a trilha já consolidada)
+- 159 → 014 (substitui o fallback local por provider S3-compativel real no storage de conteúdos)
+- 160 → 159 (organiza as novas keys do storage por prefixo de ambiente e pasta `original`)
+- 161 → 159+160 (documenta o inventário de uso atual do bucket e a convenção recomendada para expansões futuras)
+- 162 → 051+052+159+160+161 (ativa fotos de perfil em `users` e `patients` com persistência no bucket e ajuste nas páginas web de perfil)
+- 357 → 287+314 (expõe no perfil mobile o resumo dos relatórios já compartilhados ao responsável, reaproveitando os cards consolidados do perfil e a semântica recente do relatório da criança)
+- 358 → 323+357 (emite aviso in-app ao responsável quando o profissional disponibiliza um relatório, reaproveitando a central de notificações existente e o fluxo de share já consolidado)
+- 362 → 323 (refina o feedback visual de sucesso após disponibilizar o relatório, reaproveitando o fluxo de compartilhamento já confirmado na tela web)
+- 364 → 362 (reorganiza a página de relatórios separando criação e filtro após o refino visual recente do fluxo web)
+- 365 → 364 (promove o filtro ao topo, adiciona recorte por datas e melhora a copy da página sobre a separação já criada)
+- 366 → 365 (aumenta o respiro entre geração e tabela após a reorganização visual recente da página)
+- 373 → 364+365+372 (remove a criação CSV do fluxo de relatórios, fixa o novo arquivo em PDF e preserva compatibilidade de leitura no histórico mobile)
+- 372 → 199 (refina o aproveitamento horizontal do modal de catálogo sobre a base já compacta e paginada dos planejamentos)
+- 363 → 362 (refina a leitura da tabela de relatórios convertendo `Gerado em` em badge após o ajuste visual recente da página)
+- 256 → 162+243 (endurece a substituição de avatar para evitar perda da imagem anterior em falhas)
+- 253 → 243+247 (corrige sincronização do avatar e limpeza explícita do telefone na edição do responsável)
+- 198 → 176 (expõe o preview jogável também para o perfil profissional na biblioteca sem liberar mutações)
+- 199 → 157+048+071 (refina o modal de catálogo dos planejamentos com cards, filtro, busca compacta e paginação local)
+- 200 → 199 (permite desmarcar o card já selecionado no mesmo modal de catálogo)
+- 201 → 200 (reduz a ação de remover do card do dia para ícone único vermelho)
+- 202 → 201 (reorganiza o layout do item diário após a troca para ícone único de remoção)
+- 203 → 202 (ajusta as cores dos CTAs principais do header do planejamento)
+- 204 → 020+163 (remove chrome superior e esconde a tab bar durante a execução da atividade no app)
+- 205 → 158+204 (garante scroll, fullscreen refinado, voltar e confirmação explícita na execução da atividade)
+- 206 → 205 (remove padding estrutural e concentra voltar/concluir apenas no topo da tela de atividade)
+- 207 → 206 (troca a pseudo-tela interna por uma rota real da stack para a execução da atividade)
+- 254 → 167+169+227 (corrige cancelamento de fala e replay duplicado no jogo de escrita guiada)
+- 255 → 159+165+174+180 (endurece fallback público de assets e unicidade do bootstrap do catálogo de jogos)
+- 257 → 249+250+251 (corrige catálogo difícil e publicação da capa do caça-palavras)
+- 258 → 155 (normaliza e valida telefone opcional no modal de criação de usuário master)
+- 259 → 169+249 (corrige migração de config entre caça-palavras e jogos alfabéticos no modal da biblioteca)
+- 324 → 015+164+159+160 (reabre a criação operacional de audio/video na biblioteca sobre o storage e fluxo editorial já existentes)
+- 325 → 324 (compacta as ações da tabela da biblioteca após a reabertura da criação)
+- 326 → 324+325+159+160 (adiciona exclusão real no catálogo após a reabertura da criação, UI compacta e storage consolidado)
+- 327 → 324+325+326 (adiciona a visualização direta de áudio e vídeo após a reabertura da criação e compactação das ações da tabela)
+- 328 → 324+325+327 (refina os textos e a badge da tabela após a reabertura da criação e da visualização)
+- 329 → 156+157+159+160+327 (vincula áudio gravado por letra ao jogo de alfabeto sobre o catálogo jogável, storage real e preview existente)
+- 330 → 325+326+327 (refina o shape visual das ações compactas já consolidadas na tabela da biblioteca)
+- 331 → 182+183+192+193+295 (expõe `avatarUrl` do paciente na árvore admin e reaproveita o fallback web já consolidado na aba Pacientes da página de usuários)
+- 332 → 182+183+331 (torna circular o avatar exibido nas abas Profissionais e Admins da página de usuários)
+- 333 → 155+183+258+332 (refina o feedback de criação de usuário master e aplica máscara de telefone no modal da página de usuários)
+- 334 → 038+324+325+326+327+328+330 (refina a composição visual da biblioteca sem reabrir comportamento do catálogo)
+- 335 → 334 (refina a leitura visual dos metadados nos cards da biblioteca após o redesign editorial da página)
+- 336 → 334+335 (reduz a escala dos cards dos jogos mantendo o redesign editorial recente da biblioteca)
+- 337 → 334+335+336 (aproxima o shape e a composição dos cards de jogo da referência visual enviada no chat)
+- 338 → 337 (corrige largura e distribuição interna dos cards de jogo após a aproximação com a referência visual)
+- 339 → 337+338 (refina a hierarquia da badge de status e compacta as badges de metadados dos cards de jogo)
+- 340 → 325+328+339 (adiciona paginação local à tabela editorial da biblioteca preservando a composição e as ações consolidadas)
+- 438 → 340+405 (pagina o grid de jogos e cacheia a listagem da biblioteca sem alterar o contrato)
+- 439 → 056+346 (redesenha o dashboard profissional sobre dados reais e o CTA abaixo do header)
+- 440 → 439 (melhora o conteudo informacional dos 4 cards superiores do dashboard profissional)
+- 441 → 439+440 (reorganiza a grade inferior: atividades+relatorios / carrossel)
+- 442 → 047 (alinha o botao Gerar relatório na mesma linha dos filtros Paciente/De/Até)
+- 443 → 027+011 (exibe avatar do paciente na coluna Paciente da tabela de relatorios)
+- 444 → 365+442 (alinha filtros e acoes do historico de relatorios na mesma linha)
+- 445 → 444 (renomeia o botao Limpar filtros para Limpar)
+- 446 → 444 (troca a variante do botao Ir para planejamentos para info/azul)
+- 447 → 009 (adiciona graficos operacionais ao dashboard master com APIs admin existentes)
+- 448 → 447 (melhora layout dos cards de Modulos do dashboard master)
+- 449 → 448 (renomeia o titulo Dashboard master para Dashboard)
+- 450 → 009 (redesenha o modal de novo usuario master com layout split)
+- 451 → 450 (corrige espacamento e icones dos inputs do modal master)
+- 452 → 009 (melhora layout do modal de inativar usuario)
+- 483 → 436 (habilita áudio gravado por etapa no runtime mobile de fluência sem reabrir microfone)
+- 484 → 023 (endurece o dashboard master mobile para falhas de assinaturas e limita lookups paralelos nos logs)
+- 485 → 475+478+479 (mantém o setup mobile do quebra-cabeça compatível com rodadas legadas sem `difficulty`)
+- 487 → 420+421 (bloqueia supersede local quando o cancelamento remoto do checkout pendente falha)
+- 488 → 417+434+436+437+486 (preserva edições persistidas dos jogos no bootstrap e corrige publicação de assets)
+- 489 → 162+256 (rejeita `name: null` no PATCH do perfil próprio antes da persistência)
+- 490 → 151+421+484 (propaga falhas reais de lookup admin e limita o PDF de logs aos registros mais recentes)
+- 341 → 324+340 (refina o campo de upload do modal da biblioteca sobre a base reaberta de criação e a composição visual recente da página)
+- 342 → 337+339 (ajusta o encaixe da capa no card de jogo sem reabrir sua hierarquia interna)
+- 401 → 356+393 (atualiza as abas da seção `Conteúdos` e o objetivo da aba ativa sem reabrir contrato nem o catálogo jogável)
+- 402 → 401 (restaura `Todas` como aba inicial e mantém as demais como recortes por categorias vinculadas)
+- 403 → 402 (alinha o dropdown `Categoria` do modal da biblioteca às categorias aprovadas no chat sem alterar a API)
+- 404 → 403 (expõe `Salvar conteúdo` no header do modal e preserva o fluxo de persistência já existente)
+- 486 → 324+327+401+434+436+437 (endurece a biblioteca web para configs mínimas válidas de jogos e preview imune a resposta tardia)
+- 131 → 129 (remove a folga do fundo SVG no hero da home ajustando o asset e o encaixe)
+- 130 → 004+129 (habilita alias `@/*` no shell mobile e o aplica ao eixo de rotas/linking)
+- 547 → 538+542 (corrige cleanup de áudio da prévia web e o corte do parabéns na conclusão)
+- 548 → 502 (persiste add/remove da trilha no ramo demo mobile)
+- 549 → 495 (restaura autofill do login fora do estado compacto)
+- 550 → 526+527+254 (para fala ao sair do jogo e encadeia elogio na escrita)
+- 551 → 501+506 (alinha PATCH da trilha a canManage do responsável)
+- 552 → 488+544 (mescla palavras do Descubra a palavra por ID no bootstrap)
+- 553 → 538+488 (preserva intro/conclusão persistidos sobre o URL gerado)
+
+## Handoffs
+
+- Historico scaffold: `tasks/archive/scaffold/handoffs/`
+- Handoffs do produto: criados na execucao em `.agents/state/handoffs/`
+
+## Duvidas para validacao humana
+
+1. Provedor de push
+2. Campos obrigatorios de clinica
+3. Paciente com multiplos profissionais?
+4. Relatorio no mobile nesta fase?
+
+~~Resolvidas: gateway Asaas; R$ 79 / R$ 49 mensal; ciclo PENDING→ACTIVE→OVERDUE→SUSPENDED→CANCELED; master isento; cancel/refund com bloqueio imediato (Slice 039 / Task 419).~~
+
+## Observacoes finais
+
+- Slice 001–020 **done**
+- Slice 039 **done** — Asaas (Tasks 419–425)
+- CR 026–030 concluídas
+- CR 031–050 concluídas
+- Handoffs recentes: `.agents/state/handoffs/TASK-044.md`, `.agents/state/handoffs/TASK-045.md`, `.agents/state/handoffs/TASK-046.md`, `.agents/state/handoffs/TASK-047.md`, `.agents/state/handoffs/TASK-048.md`, `.agents/state/handoffs/TASK-049.md`, `.agents/state/handoffs/TASK-050.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-051.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-052.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-053.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-070.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-071.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-072.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-091.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-092.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-093.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-094.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-095.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-096.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-097.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-098.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-099.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-100.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-101.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-102.md`
+- Auth web: autenticacao obrigatoria + politica de senha forte em cadastro/reset + renovacao automatica da sessao por refresh token
+- Handoff recente adicional: `.agents/state/handoffs/TASK-109.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-110.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-111.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-112.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-113.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-114.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-115.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-116.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-117.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-118.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-119.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-120.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-121.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-122.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-123.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-124.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-125.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-126.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-127.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-128.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-129.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-131.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-132.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-133.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-134.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-135.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-136.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-137.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-138.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-139.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-140.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-141.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-142.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-143.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-144.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-145.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-146.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-147.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-148.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-131.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-130.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-150.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-151.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-153.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-208.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-209.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-210.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-211.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-212.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-213.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-214.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-215.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-216.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-217.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-218.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-219.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-220.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-253.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-254.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-255.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-256.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-257.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-258.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-259.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-387.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-388.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-389.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-390.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-391.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-392.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-393.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-394.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-395.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-396.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-397.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-398.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-399.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-400.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-401.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-402.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-403.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-404.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-405.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-406.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-407.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-408.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-409.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-411.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-412.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-414.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-415.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-416.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-417.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-418.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-419.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-420.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-421.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-422.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-424.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-425.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-429.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-430.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-431.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-432.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-433.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-486.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-483.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-484.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-485.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-487.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-488.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-489.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-490.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-545.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-546.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-547.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-548.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-549.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-550.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-551.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-552.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-553.md`
