@@ -19,7 +19,7 @@ O sistema oferece:
 | Web | Master, profissional e responsável (cadastro, pagamento e dashboards) |
 | Mobile | Master e responsável/paciente |
 
-> No mobile, o responsável acessa o perfil, a home, a trilha e as notificações. O master acessa as mesmas capacidades da web, adaptadas à interface mobile.
+> No mobile, após o login o responsável escolhe o filho e acessa home, perfil, trilha e notificações. O master acessa as mesmas capacidades da web, adaptadas à interface mobile.
 
 ## 3. Perfis de usuário
 
@@ -73,15 +73,15 @@ No cadastro, o profissional também informa se atua como:
 
 **Web**
 
-- cadastro, anamnese e pagamento;
-- após pagamento: orientação para baixar o app e continuar no mobile.
+- cadastro só do responsável e pagamento (assinatura por conta, não por filho);
+- após pagamento: dashboard com os filhos cadastrados, cadastro de um ou mais filhos (dados + anamnese), relatórios disponibilizados e configuração de perfil;
+- cada filho tem perfil, código único de paciente e trilha individualizada (categorias da anamnese).
 
 **Mobile**
 
-- home (conta);
-- perfil;
-- trilha a seguir;
-- notificações relacionadas às trilhas.
+- após o login, selecionar qual filho gerenciar;
+- home, perfil, trilha e notificações do filho selecionado;
+- cadastro de novo filho nesta fase ocorre na web.
 
 ## 5. Conteúdos e atividades (fase atual)
 
@@ -112,8 +112,9 @@ Profissional
   → Vincular/criar pacientes → Montar trilha semanal → Acompanhar evolução → Relatórios
 
 Responsável
-  Cadastro (responsável + criança) → Anamnese → Pagamento
-  → Baixar app → Seguir trilha no mobile → Receber notificações
+  Cadastro (só responsável) → Pagamento
+  → Web: dashboard / cadastrar filhos (anamnese, código, trilha) / relatórios / perfil
+  → App: selecionar filho → Seguir trilha → Receber notificações
 
 Master
   Gestão de usuários, planos, conteúdos, métricas, relatórios e logs

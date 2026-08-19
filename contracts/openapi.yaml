@@ -10,7 +10,7 @@ info:
     - usuários e papéis (master, profissional, responsável)
     - status ativo/inativo (inativação; sem exclusão definitiva nesta fase)
     - cadastro de profissional (individual/clínica) sem liberar acesso completo
-    - cadastro de responsável + criança + anamnese (sem login da criança)
+    - cadastro público só do responsável; criança + anamnese no POST autenticado de filho (sem login da criança)
     - assinatura/gate de acesso com gateway Asaas (provider fake ainda disponível em dev)
     - catálogo de conteúdos áudio/vídeo com mídia em storage (não no banco)
     - gestão de pacientes do profissional (vínculo por código, isolamento, inativação)
@@ -38,7 +38,7 @@ tags:
   - name: Professionals
     description: Cadastro e perfil de profissionais
   - name: Guardians
-    description: Cadastro de responsável, criança e anamnese
+    description: Cadastro público do responsável; filhos e anamnese após pagamento
   - name: Subscriptions
     description: |
       Assinatura mensal Asaas, checkout (cartão/PIX/boleto) e gate de acesso.
@@ -92,14 +92,16 @@ paths:
     post:
       tags: [Guardians]
       operationId: registerGuardian
-      summary: Cadastrar responsável, criança e anamnese
+      summary: Cadastrar responsável
       description: |
-        Registro atômico multi-etapa: responsável autenticável, criança sem login
-        (com código único de paciente) e anamnese completa (perguntas 1–8).
-        Valida maioridade do responsável e CPF.
-        A pergunta 6 gera suggestedTrailCategories; montagem da trilha pode
-        permanecer pendente se o catálogo ainda não existir.
+        Breaking change: o payload legado com `child` e `anamnese` deixa de ser
+        aceito (400). Cria apenas a conta autenticável do responsável.
+        Valida maioridade (>= 18) e CPF. Parentesco não é coletado aqui.
         accessGranted permanece false até pagamento.
+        Filho, anamnese, código único e categorias de trilha são criados em
+        POST /guardians/me/children após a assinatura.
+        Contas antigas que já nasceram com um filho no register atômico
+        continuam válidas na listagem.
       security: []
       requestBody:
         required: true
@@ -109,7 +111,7 @@ paths:
               $ref: '#/components/schemas/RegisterGuardianRequest'
       responses:
         '201':
-          description: Responsável, criança e anamnese cadastrados
+          description: Responsável cadastrado (sem sessão e sem filho)
           content:
             application/json:
               schema:
@@ -124,7 +126,8 @@ paths:
       operationId: listMyChildren
       summary: Listar crianças do responsável autenticado
       description: |
-        Usado pelo app mobile para resolver patientId antes de carregar a trilha.
+        Usado pela web e pelo app para listar todos os filhos da conta.
+        A lista pode estar vazia após o pagamento, antes do primeiro cadastro.
       security:
         - bearerAuth: []
       responses:
@@ -138,6 +141,39 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
+    post:
+      tags: [Guardians]
+      operationId: createMyChild
+      summary: Cadastrar filho com anamnese
+      description: |
+        Exige responsável autenticado com accessGranted.
+        Cria criança sem login, código único de paciente, anamnese (perguntas 1–8)
+        e suggestedTrailCategories a partir da pergunta 6.
+        Parentesco é do filho. Sem teto de filhos nesta versão.
+        A montagem da trilha semanal pode permanecer pendente.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGuardianChildRequest'
+      responses:
+        '201':
+          description: Filho e anamnese cadastrados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGuardianChildResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
 
   /auth/login:
     post:
@@ -928,8 +964,10 @@ paths:
       operationId: createPatient
       summary: Criar responsável + criança + anamnese e vincular ao profissional
       description: |
-        Reutiliza as regras de POST /guardians/register e cria o vínculo
-        com o profissional autenticado (mono-vínculo).
+        Fluxo profissional separado e ainda atômico: cria responsável, criança
+        (com parentesco e código único), anamnese e o vínculo inicial com o
+        profissional autenticado. Não usa POST /guardians/register (que agora
+        cadastra só o responsável).
       security:
         - bearerAuth: []
       requestBody:
@@ -937,7 +975,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterGuardianRequest'
+              $ref: '#/components/schemas/CreatePatientRequest'
       responses:
         '201':
           description: Paciente criado e vinculado
@@ -959,8 +997,9 @@ paths:
       operationId: linkPatientByCode
       summary: Vincular paciente existente pelo código único
       description: |
-        Premissa mono-vínculo: se a criança já estiver vinculada a qualquer
-        profissional, retorna 409.
+        Cada profissional pode solicitar o vínculo uma única vez por criança.
+        A solicitação nasce pendente e só libera o acompanhamento após a
+        aprovação do responsável.
       security:
         - bearerAuth: []
       requestBody:
@@ -971,7 +1010,7 @@ paths:
               $ref: '#/components/schemas/LinkPatientRequest'
       responses:
         '201':
-          description: Paciente vinculado
+          description: Solicitação de vínculo criada ou vínculo já existente do profissional
           content:
             application/json:
               schema:
@@ -1101,6 +1140,104 @@ paths:
                 $ref: '#/components/schemas/PatientDetail'
         '400':
           $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /patients/{patientId}/in-person-consultations:
+    get:
+      tags: [Patients]
+      operationId: listInPersonConsultations
+      summary: Listar consultas presenciais do profissional
+      security: [{ bearerAuth: [] }]
+      parameters: [{ $ref: '#/components/parameters/PatientId' }]
+      responses:
+        '200':
+          description: Histórico de consultas presenciais do profissional
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InPersonConsultationList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      tags: [Patients]
+      operationId: createInPersonConsultation
+      summary: Registrar consulta presencial
+      security: [{ bearerAuth: [] }]
+      parameters: [{ $ref: '#/components/parameters/PatientId' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateInPersonConsultationRequest'
+      responses:
+        '201':
+          description: Consulta presencial registrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InPersonConsultation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /patients/{patientId}/in-person-consultations/{consultationId}:
+    patch:
+      tags: [Patients]
+      operationId: updateInPersonConsultation
+      summary: Editar consulta presencial
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/PatientId'
+        - $ref: '#/components/parameters/ConsultationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateInPersonConsultationRequest'
+      responses:
+        '200':
+          description: Consulta presencial atualizada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InPersonConsultation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [Patients]
+      operationId: deleteInPersonConsultation
+      summary: Remover consulta presencial
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - $ref: '#/components/parameters/PatientId'
+        - $ref: '#/components/parameters/ConsultationId'
+      responses:
+        '200':
+          description: Consulta presencial removida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteInPersonConsultationResponse'
         '401':
           $ref: '#/components/responses/Unauthorized'
         '403':
@@ -1346,6 +1483,64 @@ paths:
           $ref: '#/components/responses/NotFound'
         '409':
           $ref: '#/components/responses/Conflict'
+  /guardians/me/children/{childId}/professional-links:
+    get:
+      tags: [Guardians]
+      operationId: listMyChildProfessionalLinks
+      summary: Listar vínculos profissionais da criança do responsável
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/ChildId'
+      responses:
+        '200':
+          description: Vínculos profissionais, incluindo solicitações pendentes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianProfessionalLinkListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /guardians/me/children/{childId}/professional-links/{linkId}/approval:
+    patch:
+      tags: [Guardians]
+      operationId: resolveMyChildProfessionalLink
+      summary: Aprovar ou recusar solicitação de profissional
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/ChildId'
+        - name: linkId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResolveProfessionalLinkRequest'
+      responses:
+        '200':
+          description: Vínculo resolvido pelo responsável
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianProfessionalLink'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
   /guardians/me:
     get:
       tags: [Guardians]
@@ -1371,7 +1566,8 @@ paths:
       operationId: updateMyGuardianProfile
       summary: Atualizar campos seguros do perfil do responsável
       description: |
-        Permite atualizar `name` (usuário), `phone` (usuário) e/ou `kinship`.
+        Permite atualizar `name` (usuário) e/ou `phone` (usuário).
+        `kinship` no perfil do responsável é legado; o parentesco canônico é do filho.
         E-mail, CPF, nascimento e sexo não são editáveis por este endpoint.
       security:
         - bearerAuth: []
@@ -1397,12 +1593,41 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
   /guardians/me/children/{childId}:
+    get:
+      tags: [Guardians]
+      operationId: getMyChild
+      summary: Obter perfil e anamnese de um filho do responsável
+      description: |
+        Isolamento: filho de outra conta retorna 403.
+        Usado pela área web do responsável para o perfil individual.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: childId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Filho e anamnese
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardianChildDetailResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
     patch:
       tags: [Guardians]
       operationId: updateMyChild
       summary: Atualizar campos seguros da criança do responsável
       description: |
-        Permite atualizar apenas `fullName` e/ou `sex`.
+        Permite atualizar `fullName`, `sex` e/ou `kinship`.
         Código do paciente, CPF e data de nascimento não são editáveis.
       security:
         - bearerAuth: []
@@ -1998,6 +2223,22 @@ components:
       schema:
         type: string
         format: uuid
+    ConsultationId:
+      name: consultationId
+      in: path
+      required: true
+      description: ID da consulta presencial
+      schema:
+        type: string
+        format: uuid
+    ChildId:
+      name: childId
+      in: path
+      required: true
+      description: ID da criança (child.id)
+      schema:
+        type: string
+        format: uuid
     TrailId:
       name: trailId
       in: path
@@ -2308,6 +2549,29 @@ components:
         - matematica
     RegisterGuardianRequest:
       type: object
+      description: |
+        Breaking change: apenas `guardian`. Payloads com `child` ou `anamnese`
+        devem ser rejeitados (400).
+      required:
+        - guardian
+      properties:
+        guardian:
+          $ref: '#/components/schemas/GuardianRegistrationData'
+    CreateGuardianChildRequest:
+      type: object
+      required:
+        - child
+        - anamnese
+      properties:
+        child:
+          $ref: '#/components/schemas/ChildRegistrationData'
+        anamnese:
+          $ref: '#/components/schemas/AnamneseData'
+    CreatePatientRequest:
+      type: object
+      description: |
+        Fluxo profissional atômico. Independente de POST /guardians/register.
+        Parentesco vai em `child.kinship`.
       required:
         - guardian
         - child
@@ -2327,7 +2591,6 @@ components:
         - cpf
         - phone
         - sex
-        - kinship
         - email
         - password
       properties:
@@ -2346,9 +2609,6 @@ components:
           type: string
         sex:
           $ref: '#/components/schemas/BiologicalSex'
-        kinship:
-          type: string
-          description: Grau de parentesco com a criança
         email:
           type: string
           format: email
@@ -2368,6 +2628,7 @@ components:
         - birthDate
         - cpf
         - sex
+        - kinship
       properties:
         fullName:
           type: string
@@ -2380,6 +2641,11 @@ components:
           type: string
         sex:
           $ref: '#/components/schemas/BiologicalSex'
+        kinship:
+          type: string
+          minLength: 2
+          maxLength: 80
+          description: Grau de parentesco do responsável com esta criança
     AnamneseData:
       type: object
       required:
@@ -2450,7 +2716,6 @@ components:
         - birthDate
         - cpf
         - sex
-        - kinship
         - accessGranted
         - createdAt
         - updatedAt
@@ -2470,6 +2735,8 @@ components:
           $ref: '#/components/schemas/BiologicalSex'
         kinship:
           type: string
+          nullable: true
+          description: Legado de contas antigas; parentesco canônico está em Child.kinship
         accessGranted:
           type: boolean
         createdAt:
@@ -2490,6 +2757,7 @@ components:
           type: string
           minLength: 2
           maxLength: 60
+          description: Campo legado. Preferir PATCH do filho.
         phone:
           type: string
           minLength: 8
@@ -2506,6 +2774,10 @@ components:
           maxLength: 120
         sex:
           $ref: '#/components/schemas/BiologicalSex'
+        kinship:
+          type: string
+          minLength: 2
+          maxLength: 80
     Child:
       type: object
       required:
@@ -2515,6 +2787,7 @@ components:
         - birthDate
         - cpf
         - sex
+        - kinship
         - patientCode
         - avatarUrl
         - avatarMimeType
@@ -2538,6 +2811,11 @@ components:
           type: string
         sex:
           $ref: '#/components/schemas/BiologicalSex'
+        kinship:
+          type: string
+          description: >
+            Grau de parentesco do responsável com esta criança. Em filhos
+            criados no register atômico legado, pode espelhar GuardianProfile.kinship.
         patientCode:
           type: string
           description: Código único de paciente para vínculo profissional
@@ -2608,17 +2886,32 @@ components:
       required:
         - user
         - guardian
-        - child
-        - anamnese
       properties:
         user:
           $ref: '#/components/schemas/User'
         guardian:
           $ref: '#/components/schemas/GuardianProfile'
+    CreateGuardianChildResponse:
+      type: object
+      required:
+        - child
+        - anamnese
+      properties:
         child:
           $ref: '#/components/schemas/Child'
         anamnese:
           $ref: '#/components/schemas/Anamnese'
+    GuardianChildDetailResponse:
+      type: object
+      required:
+        - child
+      properties:
+        child:
+          $ref: '#/components/schemas/Child'
+        anamnese:
+          allOf:
+            - $ref: '#/components/schemas/Anamnese'
+          nullable: true
     GuardianChildrenResponse:
       type: object
       required:
@@ -4293,7 +4586,7 @@ components:
       enum: [facil, medio, dificil]
     ContentStatus:
       type: string
-      enum: [active, inactive]
+      enum: [pending, active, inactive, rejected]
     ContentCategory:
       type: string
       description: Categorias alinhadas à pergunta 6 da anamnese
@@ -4328,6 +4621,7 @@ components:
         - mediaOriginalName
         - mediaSizeBytes
         - status
+        - approvedAt
         - createdByUserId
         - createdAt
         - updatedAt
@@ -4503,6 +4797,11 @@ components:
           format: uuid
         status:
           $ref: '#/components/schemas/PatientLinkStatus'
+        approvedAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
         linkedAt:
           type: string
           format: date-time
@@ -4517,6 +4816,43 @@ components:
         updatedAt:
           type: string
           format: date-time
+    GuardianProfessionalLink:
+      type: object
+      required: [link, professional]
+      properties:
+        link:
+          $ref: '#/components/schemas/ProfessionalPatientLink'
+        professional:
+          type: object
+          required: [id, name, avatarUrl, specialties]
+          properties:
+            id:
+              type: string
+              format: uuid
+            name:
+              type: string
+            avatarUrl:
+              type: [string, 'null']
+              format: uri
+            specialties:
+              type: array
+              items:
+                type: string
+    GuardianProfessionalLinkListResponse:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/GuardianProfessionalLink'
+    ResolveProfessionalLinkRequest:
+      type: object
+      required: [decision]
+      properties:
+        decision:
+          type: string
+          enum: [approve, reject]
     PatientListItem:
       type: object
       required:
@@ -4537,7 +4873,6 @@ components:
       required:
         - userId
         - name
-        - kinship
       properties:
         userId:
           type: string
@@ -4546,7 +4881,8 @@ components:
           type: string
         kinship:
           type: string
-    PatientListResponse:
+          nullable: true
+          description: Legado. Preferir Child.kinship.
       type: object
       required:
         - items
@@ -4555,6 +4891,72 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PatientListItem'
+    InPersonConsultationList:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/InPersonConsultation'
+    InPersonConsultation:
+      type: object
+      required:
+        - id
+        - occurredAt
+        - status
+        - notes
+      properties:
+        id:
+          type: string
+          format: uuid
+        occurredAt:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/InPersonConsultationStatus'
+        notes:
+          type: string
+    InPersonConsultationStatus:
+      type: string
+      enum: [completed, canceled, interrupted]
+    CreateInPersonConsultationRequest:
+      type: object
+      required:
+        - occurredAt
+        - status
+        - notes
+      properties:
+        occurredAt:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/InPersonConsultationStatus'
+        notes:
+          type: string
+          minLength: 1
+          maxLength: 10000
+    UpdateInPersonConsultationRequest:
+      type: object
+      properties:
+        occurredAt:
+          type: string
+          format: date-time
+        status:
+          $ref: '#/components/schemas/InPersonConsultationStatus'
+        notes:
+          type: string
+          minLength: 1
+          maxLength: 10000
+    DeleteInPersonConsultationResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          format: uuid
     PatientDetail:
       type: object
       required:

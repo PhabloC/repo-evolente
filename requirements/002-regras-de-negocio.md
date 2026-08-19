@@ -46,35 +46,46 @@ Após o cadastro, o profissional é direcionado ao **pagamento**. O acesso compl
 
 ---
 
-## 3. Cadastro de responsável e criança
+## 3. Cadastro de responsável e filhos
 
-O fluxo ocorre em etapas. O **responsável** é quem faz login. A **criança** é quem recebe o acompanhamento.
+O **responsável** é quem faz login. A **criança** não tem login próprio. O cadastro público cria só a conta do responsável. Cada filho é cadastrado depois, já autenticado e com assinatura ativa.
 
-### 3.1 Etapa 1 — Dados do responsável
+### 3.1 Cadastro público do responsável
+
+Após o cadastro, o responsável é direcionado ao **pagamento**. O acesso completo só é liberado após a confirmação. A assinatura é **por conta**, não por filho.
 
 | Campo | Obrigatório | Observação |
 | --- | --- | --- |
 | Nome completo | Sim | — |
 | Data de nascimento | Sim | Validar maioridade |
-| CPF | Sim | — |
+| CPF | Sim | Único |
 | Telefone | Sim | — |
 | Sexo | Sim | — |
-| Grau de parentesco | Sim | Relação com a criança |
 | E-mail | Sim | Credencial de acesso à plataforma |
 | Senha | Sim | Credencial de acesso à plataforma |
 
-### 3.2 Etapa 2 — Dados da criança
+Parentesco **não** é coletado neste passo (ainda não há criança).
+
+### 3.2 Cadastro autenticado de filho
+
+Depois do pagamento, o responsável cadastra um ou mais filhos **dentro da plataforma** (web). Não há teto de filhos nesta versão. Cada filho recebe:
+
+- perfil próprio;
+- **código único de paciente** (vínculo profissional);
+- anamnese completa;
+- categorias sugeridas de trilha a partir da pergunta 6.
 
 | Campo | Obrigatório |
 | --- | --- |
 | Nome completo | Sim |
 | Data de nascimento | Sim |
-| CPF | Sim |
+| CPF | Sim (único e diferente do responsável) |
 | Sexo | Sim |
+| Grau de parentesco | Sim (relação deste responsável com esta criança) |
 
-Cada criança recebe um **código único de paciente**, usado depois pelo profissional para vínculo.
+O fluxo do profissional `POST /patients` continua **atômico** (responsável + criança + anamnese + vínculo) e independe do cadastro público.
 
-### 3.3 Etapa 3 — Anamnese
+### 3.3 Anamnese (por filho)
 
 #### Pergunta 1 — Motivo principal de uso do Evolente
 
@@ -179,9 +190,10 @@ Regra geral:
 
 ### 5.2 Responsável que se cadastra por conta própria
 
-1. Conclui cadastro + anamnese.
+1. Conclui o cadastro **só do responsável**.
 2. É direcionado à tela de pagamento.
-3. Após o pagamento, é instruído a **baixar o app mobile** e acessar por lá.
+3. Após o pagamento, acessa a **área web** (dashboard, filhos, relatórios, perfil) e cadastra os filhos.
+4. No app, após o login, seleciona qual filho gerenciar.
 
 ### 5.3 Ciclo de estados da assinatura
 

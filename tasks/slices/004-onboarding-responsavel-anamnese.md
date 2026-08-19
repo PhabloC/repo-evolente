@@ -105,6 +105,7 @@ Responsavel autenticavel, crianca com codigo unico, anamnese persistida e trilha
 - Personalizacao usa pergunta 6; pode nascer vazia se catalogo ainda nao existir.
 - API cadastro+anamnese entregue na Task 010 (`POST /guardians/register`).
 - Wizard web entregue na Task 011 (`/cadastro/responsavel` → `/assinatura` com `patientCode`).
+- **Supersedido no fluxo público** pelos Slices 049–051 (Tasks 556–561): o cadastro público passa a ser só do responsável; criança/anamnese/código/trilha ficam no cadastro autenticado de cada filho; a web do responsável é liberada; o mobile seleciona o filho após o login. Este slice permanece `done` como histórico.
 
 ## Progresso das tasks relacionadas
 

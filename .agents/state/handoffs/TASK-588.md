@@ -1,0 +1,29 @@
+# TASK-588
+
+- Slice vertical: `tasks/slices/053-vinculos-multiplos-profissionais-aprovacao.md`
+- Status final: `done`
+- Decisões preservadas:
+  - consultas presenciais ficam no perfil web do profissional;
+  - timeline aceita filtro por status e período no cliente;
+  - vínculo `inactive` continua acessível ao profissional, enquanto `pending/rejected` seguem bloqueados.
+- Contexto usado:
+  - task 588, slice 053, OpenAPI de pacientes, serviço/backend de patients e perfil web do paciente.
+- Arquivos alterados:
+  - `backend/src/modules/patients/patients.service.ts`
+  - `backend/src/modules/patients/patients.service.spec.ts`
+  - `contracts/openapi.yaml`
+  - `front-end/src/types/patient.ts`
+  - `front-end/src/services/patients/patientService.ts`
+  - `front-end/src/pages/Main/Patients/PatientProfile/index.tsx`
+  - `front-end/src/pages/Main/Patients/utils/inPersonConsultations.ts`
+  - `front-end/src/pages/Main/Patients/utils/inPersonConsultations.test.ts`
+  - ajustes de tipagem auxiliares em testes/helpers do front para restaurar o build
+- Validações executadas:
+  - `npx jest src/modules/patients/patients.service.spec.ts --runInBand`
+  - `npm run lint` / `npm run build` em `backend`
+  - `npx vitest run src/pages/Main/Patients/utils/inPersonConsultations.test.ts --pool=threads --maxWorkers=1`
+  - `npm run lint` / `npm run build` em `front-end`
+- Pendências ou bloqueios:
+  - nenhuma dentro do escopo da task
+- Próximo contexto recomendado:
+  - retomar pelo handoff mais recente do próximo change request que tocar perfil profissional/paciente ou relatórios.

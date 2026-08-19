@@ -101,6 +101,7 @@ Sem assinatura ativa fica no gate; com assinatura acessa o restante.
 ## Observacoes de rastreabilidade
 
 - Gateway e valores a definir: abstracao + fake provider.
+- Slice 049 mantém o gate de pagamento após o cadastro só do responsável; o destino pós-`accessGranted` na web deixa de ser `/baixar-app` (Slice 050).
 - API gate entregue na Task 012.
 - UI gate entregue na Task 013 (`/assinatura`, login no gate, fake pay, CTA app para responsável).
 - Gateway Asaas + regras de ciclo: Slice 039 (`tasks/slices/039-gateway-asaas-assinatura.md`) — não reabre este slice.

@@ -101,6 +101,10 @@ Home/conta, perfil e notificacoes in-app de trilha.
 - `tasks/change-requests/369-abrir-lista-e-download-de-relatorios-a-partir-do-perfil-mobile.md` - Abrir tela e download dos relatórios a partir do perfil do responsável — **done**
 - `tasks/change-requests/370-exibir-tab-bar-do-responsavel-nas-edicoes-de-perfil-e-relatorios-mobile.md` - Exibir tab bar do responsável nas edições de perfil e relatórios — **done**
 - `tasks/change-requests/388-consumir-parametro-de-aba-inicial-no-shell-do-responsavel-mobile.md` - Consumir e limpar `initialTab` no shell do responsável — **done**
+- `tasks/change-requests/574-claymorphism-cards-perfil-responsavel-mobile.md` - Claymorphism nos cards do perfil do responsável — **done**
+- `tasks/change-requests/575-uniformizar-pastilhas-icones-cards-clay-mobile.md` - Uniformizar pastilhas dos cards clay do perfil — **done**
+- `tasks/change-requests/576-claymorphism-cards-home-avisos-mobile.md` - Claymorphism nos cards de Home e Avisos — **done**
+- `tasks/change-requests/578-claymorphism-cards-editar-responsavel-mobile.md` - Claymorphism nos cards de editar responsável — **done**
 
 ## Dependencias do slice
 
@@ -179,6 +183,12 @@ Home/conta, perfil e notificacoes in-app de trilha.
 - Task 369: o card de relatórios do perfil passou a abrir uma tela dedicada com a lista de arquivos compartilhados e botão de download por item.
 - Task 370: as telas de editar responsável, editar criança e relatórios passaram a exibir a mesma tab bar do responsável fora do shell principal.
 - Task 388: o shell do responsável passou a aplicar e limpar `initialTab`, devolvendo o controle da aba visível ao estado local e restaurando o efeito do `Voltar` em trilha, perfil e avisos.
+- Task 574: a variação claymorphism foi aplicada somente aos cards do perfil, preservando o comportamento e a aparência dos cards de outras telas.
+- Task 575: removida a borda destoante das pastilhas de ícone dos cards clay, preservando o relevo suave.
+
+## Observacoes de rastreabilidade
+
+- Slice 051 (Task 561) passa a exigir seleção de filho após o login; este slice permanece `done` como home/perfil/avisos. A home continua a fonte visual adjacente, sem reabrir o layout.
 
 ## Status final
 

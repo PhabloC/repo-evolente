@@ -72,6 +72,7 @@ Arvore isolada por vinculo; codigo unico; inativacao; sem exclusao.
 - `tasks/change-requests/045-paginacao-tabela-pacientes-web.md` - paginação na tabela de pacientes web
 - `tasks/change-requests/046-coluna-responsavel-e-refino-paginacao-pacientes.md` - coluna de responsável e refino da paginação
 - `tasks/change-requests/051-refinar-perfil-paciente-web.md` - refino visual incremental da página de perfil do paciente
+- `tasks/change-requests/555-grafico-evolucao-diaria-perfil-paciente.md` - grafico diario individual no perfil da crianca — **done**
 - `tasks/change-requests/074-corrigir-data-local-e-buscas-redundantes-em-pacientes.md` - correcoes pontuais de data local e menu de ações
 - `tasks/change-requests/394-recarregar-progressos-descartados-pela-paginacao-de-pacientes-web.md` - progresso deixa de ficar preso em carregando ao paginar
 
@@ -114,6 +115,7 @@ Arvore isolada por vinculo; codigo unico; inativacao; sem exclusao.
 - Task 074 corrigiu timezone em datas puras e limpou buscas redundantes no portal de ações.
 - Slice 007 fechado; trilha fica no Slice 008.
 - Task 394 reabriu o slice apenas para corrigir o descarte de progressos em voo na paginação: o guard virou por geração de dados e os resultados por paciente passam a ser sempre aplicados.
+- Task 555 adiciona o grafico diario individual no perfil da crianca, reusando trails/progress e o componente da Task 554.
 
 ## Status final
 

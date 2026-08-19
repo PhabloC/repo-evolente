@@ -4,6 +4,10 @@
 
 done
 
+## Atualizações relacionadas
+
+- `tasks/change-requests/577-claymorphism-cards-trilha-mobile.md` — **done** (cards da Trilha com acabamento claymorphism).
+
 ## Objetivo de negocio
 
 Permitir que o responsável, sem vínculo com profissional, monte e personalize a trilha semanal no mobile (biblioteca, dia a dia e geração pela anamnese), mantendo o modo execução quando houver vínculo profissional.

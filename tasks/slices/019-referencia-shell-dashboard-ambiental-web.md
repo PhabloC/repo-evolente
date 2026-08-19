@@ -40,6 +40,7 @@ Elevar a fidelidade visual da home autenticada web com base em uma nova referenc
 - `tasks/change-requests/439-redesenhar-dashboard-profissional-web.md` - redesenho do conteudo do dashboard profissional (graficos, atividades de hoje, carrossel e relatorios)
 - `tasks/change-requests/440-melhorar-metricas-cards-dashboard-profissional.md` - troca das metricas dos 4 cards superiores por indicadores operacionais
 - `tasks/change-requests/441-reorganizar-grade-atividades-relatorios-carrossel-dashboard.md` - grade inferior: atividades+relatorios / carrossel
+- `tasks/change-requests/554-grafico-evolucao-diaria-dashboard-profissional.md` - grafico diario agregado da carteira — **done**
 
 ## Contexto mínimo
 
@@ -71,3 +72,4 @@ Elevar a fidelidade visual da home autenticada web com base em uma nova referenc
 - Task 346 move o CTA principal do dashboard profissional para uma segunda linha abaixo do heading, preservando busca e notificacoes no topo.
 - Task 439 substitui o conteudo operacional por metricas limpas, grafico de evolucao, pizza por area, atividades de hoje, carrossel de progresso e relatorios semanais.
 - Task 440 troca os 4 cards superiores por indicadores operacionais (atividades de hoje, engajamento e relatorios pendentes).
+- Task 554 adiciona o grafico diario da carteira (planejado vs concluido vs adesao nos ultimos 7 dias), reusando trails/progress ja carregados.

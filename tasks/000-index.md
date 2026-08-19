@@ -65,6 +65,11 @@
 - `tasks/slices/046-dialogos-em-acao.md` - Slice 046: diálogos em ação (diálogo) — **done**
 - `tasks/slices/047-trilha-self-serve-responsavel-mobile.md` - Slice 047: trilha self-serve do responsável no mobile — **done**
 - `tasks/slices/048-narracao-intro-conclusao-jogos.md` - Slice 048: narração intro/conclusão dos jogos — **done**
+- `tasks/slices/049-cadastro-responsavel-sem-filho.md` - Slice 049: cadastro público só do responsável — **done**
+- `tasks/slices/050-area-web-responsavel-multiplos-filhos.md` - Slice 050: área web do responsável e cadastro de filhos — **done**
+- `tasks/slices/051-seletor-filho-mobile.md` - Slice 051: seletor de filho no mobile — **done**
+- `tasks/slices/052-dashboard-analitico-responsavel-web.md` - Slice 052: dashboard analítico web do responsável — **done**
+- `tasks/slices/053-vinculos-multiplos-profissionais-aprovacao.md` - Slice 053: vínculos múltiplos de profissionais com aprovação — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -83,6 +88,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - conflito: DS mobile menciona gamificacao — requisito prevalece (fora de escopo)
 - novo slice 026: jogos reentram em escopo de forma controlada, sem gamificacao e com execucao no app do responsavel
 - novo slice 039: substitui provider fake pelo Asaas (Slice 005 permanece done)
+- novo fluxo do responsável (Slices 049–051, Tasks 556–561): cadastro público só do responsável → pagamento → N filhos na plataforma (perfil, anamnese, código, trilha por filho) → web com dashboard/filhos/relatórios/config → mobile seleciona o filho após o login
+- premissas deste fluxo: assinatura por conta (não por filho); parentesco no filho; sem cadastro de filho no mobile neste planejamento; sem edição de trilha na web do responsável; sem prints da área web do responsável nem da tela de seleção mobile
 
 ## Premissas adotadas
 
@@ -98,6 +105,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 2. 006 → 007 → 008
 3. 009 → 010 → 011
 4. Uma task por vez via `executar-task`
+5. Novo fluxo do responsável: 556 → 557 → 558, depois 559 → 560; 561 pode seguir em paralelo após 557
+6. Dashboard analítico do responsável na web: 562
 
 ## Tasks por tipo
 
@@ -233,6 +242,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 439 - Redesenhar dashboard profissional web — done (`tasks/change-requests/439-redesenhar-dashboard-profissional-web.md`)
 - Task 440 - Melhorar métricas dos cards do dashboard profissional — done (`tasks/change-requests/440-melhorar-metricas-cards-dashboard-profissional.md`)
 - Task 441 - Reorganizar grade atividades, relatórios e carrossel do dashboard — done (`tasks/change-requests/441-reorganizar-grade-atividades-relatorios-carrossel-dashboard.md`)
+- Task 554 - Gráfico de evolução diária no dashboard profissional — done (`tasks/change-requests/554-grafico-evolucao-diaria-dashboard-profissional.md`)
+- Task 555 - Gráfico de evolução diária no perfil da criança — done (`tasks/change-requests/555-grafico-evolucao-diaria-perfil-paciente.md`)
 - Task 442 - Alinhar botão gerar relatório na mesma linha dos filtros — done (`tasks/change-requests/442-alinhar-botao-gerar-relatorio-mesma-linha-filtros.md`)
 - Task 443 - Exibir foto do paciente na tabela de relatórios web — done (`tasks/change-requests/443-foto-paciente-tabela-relatorios-web.md`)
 - Task 444 - Alinhar filtros e ações do histórico de relatórios na mesma linha — done (`tasks/change-requests/444-alinhar-filtros-acoes-historico-relatorios-mesma-linha.md`)
@@ -388,6 +399,36 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 006 - Telas auth web — done
 - Task 009 - Fluxo cadastro profissional web — done
 - Task 011 - Fluxo cadastro responsavel web — done
+- Task 558 - Wizard web: cadastro só do responsável e redirect ao pagamento — done (`tasks/change-requests/558-wizard-cadastro-so-responsavel-web.md`)
+- Task 559 - Área web do responsável: shell, dashboard, relatórios e configuração — done (`tasks/change-requests/559-area-web-responsavel-shell-dashboard.md`)
+- Task 560 - Cadastro autenticado de filho na web — done (`tasks/change-requests/560-cadastro-filho-autenticado-web.md`)
+- Task 562 - Dashboard analítico web do responsável (gráficos e evolução) — done (`tasks/change-requests/562-dashboard-analitico-responsavel-web.md`)
+- Task 563 - Remover cards de filhos duplicados do dashboard web do responsável — done (`tasks/change-requests/563-remover-cards-filhos-dashboard-responsavel.md`)
+- Task 564 - Ajustar CTA e notificações no cabeçalho do dashboard do responsável — done (`tasks/change-requests/564-ajustar-acoes-cabecalho-dashboard-responsavel.md`)
+- Task 565 - Remover CTA do dashboard do responsável e reduzir espaçamento — done (`tasks/change-requests/565-remover-cta-dashboard-responsavel-reduzir-espacamento.md`)
+- Task 566 - Dashboard do responsável: visão consolidada e filtro por filho — done (`tasks/change-requests/566-dashboard-responsavel-visao-consolidada-filhos.md`)
+- Task 567 - Balão de download do app na sidebar do responsável — done (`tasks/change-requests/567-balao-download-app-sidebar-responsavel.md`)
+- Task 568 - Aplicar claymorphism ao balão de download da sidebar — done (`tasks/change-requests/568-claymorphism-balao-download-sidebar-responsavel.md`)
+- Task 569 - Reduzir espaço entre CTA e ícones do header — done (`tasks/change-requests/569-reduzir-espaco-cta-icones-header.md`)
+- Task 570 - Refinar layout da página Filhos — done (`tasks/change-requests/570-refinar-layout-pagina-filhos.md`)
+- Task 571 - Alinhar perfil do filho ao perfil de paciente — done (`tasks/change-requests/571-alinhar-perfil-filho-responsavel-perfil-paciente.md`)
+- Task 572 - Reproduzir composição do perfil profissional no perfil do filho — done (`tasks/change-requests/572-reproduzir-composicao-perfil-profissional-filho.md`)
+- Task 573 - Remover card de acesso à plataforma do perfil do responsável — done (`tasks/change-requests/573-remover-card-acesso-plataforma-perfil-responsavel.md`)
+- Task 574 - Aplicar claymorphism aos cards do perfil do responsável mobile — done (`tasks/change-requests/574-claymorphism-cards-perfil-responsavel-mobile.md`)
+- Task 575 - Uniformizar pastilhas de ícone dos cards clay mobile — done (`tasks/change-requests/575-uniformizar-pastilhas-icones-cards-clay-mobile.md`)
+- Task 576 - Claymorphism nos cards de Home e Avisos mobile — done (`tasks/change-requests/576-claymorphism-cards-home-avisos-mobile.md`)
+- Task 577 - Claymorphism nos cards da Trilha mobile — done (`tasks/change-requests/577-claymorphism-cards-trilha-mobile.md`)
+- Task 578 - Claymorphism nos cards de editar responsável mobile — done (`tasks/change-requests/578-claymorphism-cards-editar-responsavel-mobile.md`)
+- Task 579 - Remover parentesco do card de filho na web — done (`tasks/change-requests/579-remover-parentesco-card-filho-web.md`)
+- Task 580 - Evitar sobreposição entre pesquisa e ações do cabeçalho — done (`tasks/change-requests/580-evitar-sobreposicao-pesquisa-acoes-header.md`)
+- Task 581 - API de vínculos múltiplos com aprovação do responsável — done (`tasks/change-requests/581-vinculos-multiplos-api-aprovacao.md`)
+- Task 582 - Aprovação de vínculos de profissionais na web — done (`tasks/change-requests/582-vinculos-multiplos-web-aprovacao.md`)
+- Task 583 - Aprovação de vínculos de profissionais no app móvel — done (`tasks/change-requests/583-vinculos-multiplos-mobile-aprovacao.md`)
+- Task 584 - Exibir avatar do profissional nos vínculos da criança — done (`tasks/change-requests/584-avatar-profissional-vinculo-web-mobile.md`)
+- Task 585 - Especialidade profissional no perfil e nos vínculos — done (`tasks/change-requests/585-especialidade-profissional-perfil-e-vinculos.md`)
+- Task 586 - Indicar troca de foto no hover do perfil da criança — done (`tasks/change-requests/586-indicador-camera-hover-foto-crianca-web.md`)
+- Task 587 - Corrigir lint das stacks backend, web e mobile — done (`tasks/change-requests/587-corrigir-lint-backend-web-mobile.md`)
+- Task 588 - Consultas presenciais e timeline no perfil do paciente — done (`tasks/change-requests/588-consultas-presenciais-timeline-paciente.md`)
 - Task 013 - Tela pagamento web — done
 - Task 015 - UI catalogo master web — done
 - Task 017 - Dashboard pacientes web — done (vínculo apenas por código no fluxo do profissional)
@@ -578,6 +619,15 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 551 - PATCH da trilha para responsável com canManage — done (`tasks/change-requests/551-patch-trilha-responsavel-canmanage.md`)
 - Task 552 - Bootstrap Descubra a palavra: mesclar palavras por ID — done (`tasks/change-requests/552-bootstrap-descubra-palavra-mesclar-por-id.md`)
 - Task 553 - Bootstrap: preservar intro/conclusão personalizados — done (`tasks/change-requests/553-bootstrap-preservar-intro-conclusao-custom.md`)
+- Task 554 - Gráfico de evolução diária no dashboard profissional — done (`tasks/change-requests/554-grafico-evolucao-diaria-dashboard-profissional.md`)
+- Task 555 - Gráfico de evolução diária no perfil da criança — done (`tasks/change-requests/555-grafico-evolucao-diaria-perfil-paciente.md`)
+- Task 556 - Contrato e requisitos: cadastro só do responsável + filhos autenticados — done (`tasks/change-requests/556-contrato-cadastro-responsavel-sem-filho.md`)
+- Task 557 - API: cadastro só do responsável e criação autenticada de filhos — done (`tasks/change-requests/557-api-cadastro-responsavel-e-filhos.md`)
+- Task 558 - Wizard web: cadastro só do responsável e redirect ao pagamento — done (`tasks/change-requests/558-wizard-cadastro-so-responsavel-web.md`)
+- Task 559 - Área web do responsável: shell, dashboard, relatórios e configuração — done (`tasks/change-requests/559-area-web-responsavel-shell-dashboard.md`)
+- Task 560 - Cadastro autenticado de filho na web — done (`tasks/change-requests/560-cadastro-filho-autenticado-web.md`)
+- Task 561 - Mobile: selecionar o filho após o login — done (`tasks/change-requests/561-seletor-filho-pos-login-mobile.md`)
+- Task 562 - Dashboard analítico web do responsável (gráficos e evolução) — done (`tasks/change-requests/562-dashboard-analitico-responsavel-web.md`)
 - Task 272 - Alinhar CTAs dos heroes home e trilha mobile — done (`tasks/change-requests/272-alinhar-ctas-dos-heroes-home-e-trilha-mobile.md`)
 - Task 272 - Alinhar CTAs dos heroes home e trilha mobile — done (`tasks/change-requests/272-alinhar-ctas-dos-heroes-home-e-trilha-mobile.md`)
 - Task 271 - Aumentar ainda mais o radius dos heroes mobile — done (`tasks/change-requests/271-aumentar-ainda-mais-o-radius-dos-heroes-mobile.md`)
@@ -593,6 +643,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 005 - API autenticacao — done
 - Task 008 - API cadastro profissional — done
 - Task 010 - API cadastro responsavel/anamnese — done
+- Task 556 - Contrato e requisitos: cadastro só do responsável + filhos autenticados — done (`tasks/change-requests/556-contrato-cadastro-responsavel-sem-filho.md`)
+- Task 557 - API: cadastro só do responsável e criação autenticada de filhos — done (`tasks/change-requests/557-api-cadastro-responsavel-e-filhos.md`)
 - Task 012 - API assinatura/gate — done
 - Task 014 - API conteudos/storage — done
 - Task 016 - API pacientes/vinculo — done
@@ -630,6 +682,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 020 — done
 - Task 023 — done
 - Task 024 — done
+- Task 561 - Mobile: selecionar o filho após o login — done (`tasks/change-requests/561-seletor-filho-pos-login-mobile.md`)
 - Task 092 - Ajustar execucao web do Expo mobile — done (`tasks/change-requests/092-ajustar-execucao-web-expo-mobile.md`)
 - Task 093 - Refinar telas auth mobile com placeholders e visualizacao de senha — done (`tasks/change-requests/093-refinar-auth-mobile-placeholders-visualizacao-senha.md`)
 - Task 094 - Login mobile fiel ao print sem CTA de cadastro — done (`tasks/change-requests/094-login-mobile-fiel-ao-print-sem-cadastro.md`)
@@ -1330,3 +1383,5 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-551.md`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-552.md`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-553.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-554.md`
+- Handoff recente adicional: `.agents/state/handoffs/TASK-555.md`
