@@ -118,3 +118,7 @@ No app, depois do login, o responsável escolhe qual filho vai gerenciar. Home, 
 ## Status final
 
 done
+
+## Correcoes posteriores
+
+- Task 589 - done (cache de filhos isolado por responsável).

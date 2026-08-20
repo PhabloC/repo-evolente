@@ -55,3 +55,8 @@ Permitir que uma criança seja acompanhada por mais de um profissional, preserva
 - Task 587 — in_progress
 - Task 587 — done
 - Task 588 — done
+- Task 590 — done (erro de vínculos no mobile)
+- Task 591 — done (falha parcial no perfil do filho web)
+- Task 593 — done (erro de consultas no perfil do paciente web)
+- Task 595 — done (anamnese protegida e resolução atômica de vínculo)
+- Task 596 — done (consultas presenciais compatíveis com modo sem banco)

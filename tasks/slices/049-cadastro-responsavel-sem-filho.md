@@ -125,3 +125,7 @@ O visitante cadastra apenas a conta do responsável e segue para o pagamento. Cr
 ## Status final
 
 done
+
+## Correcoes posteriores
+
+- Task 594 - done (validação integral do agregado antes da persistência familiar).

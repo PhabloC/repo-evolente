@@ -1237,6 +1237,10 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ## Observacoes finais
 
+- Code review backend: Tasks 594–596 — done.
+
+- Correções do code review: Tasks 589–593 — done.
+
 - Slice 001–020 **done**
 - Slice 039 **done** — Asaas (Tasks 419–425)
 - CR 026–030 concluídas

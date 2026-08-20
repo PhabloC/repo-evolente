@@ -1,0 +1,7 @@
+1 - src/modules/patients/patients.service.ts: Quando o vínculo existente está pending ou rejected, repetir linkByCode entra neste ramo e devolve a anamnese completa, contornando a aprovação do responsável e expondo dados sensíveis. Retorne a anamnese somente para vínculos previamente aprovados e mantenha null ou rejeite a chamada nos demais estados.
+
+2 - src/modules/guardians/guardians.service.ts: Se a validação posterior do filho falhar por CPF inválido, duplicado ou igual ao do responsável, register já terá persistido usuário e perfil, deixando um cadastro órfão e impedindo nova tentativa com o mesmo e-mail. Valide todo o agregado antes da primeira gravação ou execute usuário, perfil, filho e anamnese na mesma transação.
+
+3 - src/modules/patients/patients.service.ts: Com DATABASE_ENABLED ausente ou false, o módulo escolhe repositórios em memória, mas este repositório TypeORM continua ligado ao DataSource não inicializado, fazendo todos os endpoints de consultas presenciais falharem. Encapsule essas operações em implementações in-memory e TypeORM selecionadas pela mesma configuração.
+
+4 - src/modules/patients/patients.service.ts: Se duas decisões concorrentes lerem o vínculo ainda pending, ambas passam pela verificação e a última gravação sobrescreve a primeira, apesar da regra de vínculo já resolvido. Faça uma atualização atômica condicionada a status = pending ou use bloqueio transacional e trate zero linhas alteradas como conflito.

@@ -134,3 +134,7 @@ O responsável, na web, acompanha a evolução do filho com o mesmo tipo de pain
 ## Status final
 
 done
+
+## Correcoes posteriores
+
+- Task 592 - done (respostas obsoletas do summary ignoradas).
