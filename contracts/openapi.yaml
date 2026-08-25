@@ -76,18 +76,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterProfessionalRequest'
+              $ref: "#/components/schemas/RegisterProfessionalRequest"
       responses:
-        '201':
+        "201":
           description: Profissional cadastrado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProfessionalRegistrationResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/ProfessionalRegistrationResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /guardians/register:
     post:
       tags: [Guardians]
@@ -108,18 +108,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterGuardianRequest'
+              $ref: "#/components/schemas/RegisterGuardianRequest"
       responses:
-        '201':
+        "201":
           description: Responsável cadastrado (sem sessão e sem filho)
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianRegistrationResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/GuardianRegistrationResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /guardians/me/children:
     get:
       tags: [Guardians]
@@ -131,16 +131,16 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Filhos do responsável
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianChildrenResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/GuardianChildrenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
     post:
       tags: [Guardians]
       operationId: createMyChild
@@ -158,22 +158,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateGuardianChildRequest'
+              $ref: "#/components/schemas/CreateGuardianChildRequest"
       responses:
-        '201':
+        "201":
           description: Filho e anamnese cadastrados
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateGuardianChildResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/CreateGuardianChildResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "409":
+          $ref: "#/components/responses/Conflict"
 
   /auth/login:
     post:
@@ -189,24 +189,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoginRequest'
+              $ref: "#/components/schemas/LoginRequest"
       responses:
-        '200':
+        "200":
           description: Autenticação bem-sucedida
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
+                $ref: "#/components/schemas/AuthResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
           description: Conta inativa ou sem permissão de acesso
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
   /auth/logout:
     post:
       tags: [Auth]
@@ -215,10 +215,10 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: Sessão encerrada
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /auth/refresh:
     post:
       tags: [Auth]
@@ -233,22 +233,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RefreshTokenRequest'
+              $ref: "#/components/schemas/RefreshTokenRequest"
       responses:
-        '200':
+        "200":
           description: Sessão renovada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
+                $ref: "#/components/schemas/AuthResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
           description: Refresh token inválido ou expirado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
   /auth/password-recovery:
     post:
       tags: [Auth]
@@ -263,16 +263,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PasswordRecoveryRequest'
+              $ref: "#/components/schemas/PasswordRecoveryRequest"
       responses:
-        '202':
+        "202":
           description: Solicitação aceita para processamento
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PasswordRecoveryResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
+                $ref: "#/components/schemas/PasswordRecoveryResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
   /auth/password-reset:
     post:
       tags: [Auth]
@@ -284,18 +284,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PasswordResetRequest'
+              $ref: "#/components/schemas/PasswordResetRequest"
       responses:
-        '204':
+        "204":
           description: Senha redefinida com sucesso
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
           description: Token inválido ou expirado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
   /users/me:
     get:
       tags: [Users]
@@ -304,14 +304,14 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Usuário atual
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/User"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
     patch:
       tags: [Users]
       operationId: updateCurrentUserProfile
@@ -323,18 +323,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateOwnProfileRequest'
+              $ref: "#/components/schemas/UpdateOwnProfileRequest"
       responses:
-        '200':
+        "200":
           description: Perfil atualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/User"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /users/me/avatar:
     post:
       tags: [Users]
@@ -350,18 +350,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UploadImageBase64Request'
+              $ref: "#/components/schemas/UploadImageBase64Request"
       responses:
-        '200':
+        "200":
           description: Usuário atualizado com foto de perfil
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/User"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /users:
     post:
       tags: [Users]
@@ -377,29 +377,30 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateUserRequest'
+              $ref: "#/components/schemas/CreateUserRequest"
       responses:
-        '201':
+        "201":
           description: Usuário criado com sucesso
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/User"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "409":
+          $ref: "#/components/responses/Conflict"
     get:
       tags: [Users]
       operationId: listUsers
       summary: Listar usuários
       description: |
         Listagem administrativa. Destinada ao papel master nesta fase.
-        Suporta filtro por papel e status (ativo/inativo).
+        Suporta filtro por papel, status (ativo/inativo) e termo parcial de
+        nome ou e-mail, sem diferenciação de maiúsculas, minúsculas ou acentos.
       security:
         - bearerAuth: []
       parameters:
@@ -407,12 +408,19 @@ paths:
           in: query
           required: false
           schema:
-            $ref: '#/components/schemas/Role'
+            $ref: "#/components/schemas/Role"
         - name: status
           in: query
           required: false
           schema:
-            $ref: '#/components/schemas/UserStatus'
+            $ref: "#/components/schemas/UserStatus"
+        - name: search
+          in: query
+          required: false
+          description: Termo parcial para buscar no nome ou e-mail do usuário.
+          schema:
+            type: string
+            maxLength: 100
         - name: page
           in: query
           required: false
@@ -429,16 +437,16 @@ paths:
             maximum: 100
             default: 20
       responses:
-        '200':
+        "200":
           description: Lista paginada de usuários
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/UserListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /users/{userId}:
     get:
       tags: [Users]
@@ -447,20 +455,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/UserId'
+        - $ref: "#/components/parameters/UserId"
       responses:
-        '200':
+        "200":
           description: Usuário encontrado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/User"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /users/{userId}/status:
     patch:
       tags: [Users]
@@ -473,28 +481,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/UserId'
+        - $ref: "#/components/parameters/UserId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateUserStatusRequest'
+              $ref: "#/components/schemas/UpdateUserStatusRequest"
       responses:
-        '200':
+        "200":
           description: Status atualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/User"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /roles:
     get:
       tags: [Roles]
@@ -506,16 +514,16 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Papéis disponíveis
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RoleListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/RoleListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /subscriptions/me:
     get:
       tags: [Subscriptions]
@@ -533,14 +541,14 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Status de assinatura
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionStatusResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/SubscriptionStatusResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /subscriptions/access:
     get:
       tags: [Subscriptions]
@@ -554,16 +562,16 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Acesso liberado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionAccessResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/SubscriptionAccessResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /subscriptions/checkout:
     post:
       tags: [Subscriptions]
@@ -585,22 +593,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateSubscriptionCheckoutRequest'
+              $ref: "#/components/schemas/CreateSubscriptionCheckoutRequest"
       responses:
-        '201':
+        "201":
           description: Checkout criado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionCheckoutResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/SubscriptionCheckoutResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /subscriptions/confirm:
     post:
       tags: [Subscriptions]
@@ -618,22 +626,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConfirmSubscriptionRequest'
+              $ref: "#/components/schemas/ConfirmSubscriptionRequest"
       responses:
-        '200':
+        "200":
           description: Resultado da confirmação
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionConfirmResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/SubscriptionConfirmResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /subscriptions/cancel:
     post:
       tags: [Subscriptions]
@@ -647,20 +655,20 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Assinatura cancelada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionConfirmResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/SubscriptionConfirmResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /subscriptions/refund:
     post:
       tags: [Subscriptions]
@@ -674,20 +682,44 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Reembolso processado e assinatura cancelada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionConfirmResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/SubscriptionConfirmResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /subscriptions/verify:
+    post:
+      tags: [Subscriptions]
+      operationId: verifySubscriptionPayment
+      summary: Verificar pagamento no provedor (fallback do webhook)
+      description: |
+        Usado pelo botão "Já paguei" no gate. Consulta o Asaas (ou fake) se o
+        checkout/assinatura pendente já foi pago e, se sim, libera o acesso
+        mesmo sem o webhook ter chegado. Idempotente quando já active/overdue.
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Resultado da verificação
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscriptionVerifyResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /subscriptions/webhooks/asaas:
     post:
       tags: [Subscriptions]
@@ -697,9 +729,11 @@ paths:
         Callback autenticado pelo header/token configurado em
         PAYMENT_GATEWAY_WEBHOOK_SECRET (sem JWT de usuário).
         Deve ser idempotente. Eventos típicos atualizam o ciclo:
-        pagamento confirmado → active; atraso → overdue; carência
-        esgotada (3 dias) → suspended (inativa conta); cancelamento
-        externo → canceled.
+        pagamento confirmado / CHECKOUT_PAID → active; atraso → overdue;
+        carência esgotada (3 dias) → suspended (inativa conta);
+        cancelamento/estorno externo → canceled;
+        PAYMENT_CREATED e PAYMENT_REFUND_IN_PROGRESS atualizam vínculo
+        da cobrança sem mudar o ciclo; captura de cartão recusada → refused.
         Disponível quando PAYMENT_PROVIDER=asaas.
       security: []
       parameters:
@@ -714,18 +748,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AsaasSubscriptionWebhookRequest'
+              $ref: "#/components/schemas/AsaasSubscriptionWebhookRequest"
       responses:
-        '200':
+        "200":
           description: Evento processado (ou ignorado de forma idempotente)
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionWebhookAck'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/SubscriptionWebhookAck"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /subscriptions/webhooks/fake:
     post:
       tags: [Subscriptions]
@@ -741,16 +775,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FakeSubscriptionWebhookRequest'
+              $ref: "#/components/schemas/FakeSubscriptionWebhookRequest"
       responses:
-        '200':
+        "200":
           description: Resultado do webhook simulado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubscriptionConfirmResponse'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/SubscriptionConfirmResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /contents:
     get:
       tags: [Contents]
@@ -769,28 +803,28 @@ paths:
           in: query
           required: false
           schema:
-            $ref: '#/components/schemas/ContentCategory'
+            $ref: "#/components/schemas/ContentCategory"
         - name: mediaType
           in: query
           required: false
           schema:
-            $ref: '#/components/schemas/ContentMediaType'
+            $ref: "#/components/schemas/ContentMediaType"
         - name: status
           in: query
           required: false
           schema:
-            $ref: '#/components/schemas/ContentStatus'
+            $ref: "#/components/schemas/ContentStatus"
       responses:
-        '200':
+        "200":
           description: Lista de conteúdos
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ContentListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/ContentListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
     post:
       tags: [Contents]
       operationId: createContent
@@ -807,20 +841,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateContentRequest'
+              $ref: "#/components/schemas/CreateContentRequest"
       responses:
-        '201':
+        "201":
           description: Conteúdo criado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Content'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/Content"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /contents/{contentId}:
     get:
       tags: [Contents]
@@ -829,20 +863,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ContentId'
+        - $ref: "#/components/parameters/ContentId"
       responses:
-        '200':
+        "200":
           description: Conteúdo
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Content'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Content"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     delete:
       tags: [Contents]
       operationId: deleteContent
@@ -853,18 +887,18 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ContentId'
+        - $ref: "#/components/parameters/ContentId"
       responses:
-        '204':
+        "204":
           description: Conteúdo excluído com sucesso
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     patch:
       tags: [Contents]
       operationId: updateContent
@@ -874,28 +908,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ContentId'
+        - $ref: "#/components/parameters/ContentId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateContentRequest'
+              $ref: "#/components/schemas/UpdateContentRequest"
       responses:
-        '200':
+        "200":
           description: Conteúdo atualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Content'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Content"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /contents/{contentId}/media:
     post:
       tags: [Contents]
@@ -910,28 +944,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ContentId'
+        - $ref: "#/components/parameters/ContentId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UploadContentMediaRequest'
+              $ref: "#/components/schemas/UploadContentMediaRequest"
       responses:
-        '200':
+        "200":
           description: Mídia associada ao conteúdo
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Content'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Content"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients:
     get:
       tags: [Patients]
@@ -947,18 +981,18 @@ paths:
           in: query
           required: false
           schema:
-            $ref: '#/components/schemas/PatientLinkStatus'
+            $ref: "#/components/schemas/PatientLinkStatus"
       responses:
-        '200':
+        "200":
           description: Lista de pacientes do profissional
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/PatientListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
     post:
       tags: [Patients]
       operationId: createPatient
@@ -975,22 +1009,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreatePatientRequest'
+              $ref: "#/components/schemas/CreatePatientRequest"
       responses:
-        '201':
+        "201":
           description: Paciente criado e vinculado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/PatientDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /patients/link:
     post:
       tags: [Patients]
@@ -1007,24 +1041,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LinkPatientRequest'
+              $ref: "#/components/schemas/LinkPatientRequest"
       responses:
-        '201':
+        "201":
           description: Solicitação de vínculo criada ou vínculo já existente do profissional
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/PatientDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /patients/{patientId}:
     get:
       tags: [Patients]
@@ -1035,20 +1069,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       responses:
-        '200':
+        "200":
           description: Perfil do paciente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientDetail'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/PatientDetail"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients/{patientId}/avatar:
     post:
       tags: [Patients]
@@ -1060,28 +1094,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UploadImageBase64Request'
+              $ref: "#/components/schemas/UploadImageBase64Request"
       responses:
-        '200':
+        "200":
           description: Perfil do paciente atualizado com foto
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/PatientDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     patch:
       tags: [Patients]
       operationId: updatePatient
@@ -1091,28 +1125,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdatePatientRequest'
+              $ref: "#/components/schemas/UpdatePatientRequest"
       responses:
-        '200':
+        "200":
           description: Paciente atualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/PatientDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients/{patientId}/status:
     patch:
       tags: [Patients]
@@ -1124,75 +1158,75 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdatePatientStatusRequest'
+              $ref: "#/components/schemas/UpdatePatientStatusRequest"
       responses:
-        '200':
+        "200":
           description: Status do vínculo atualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PatientDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/PatientDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients/{patientId}/in-person-consultations:
     get:
       tags: [Patients]
       operationId: listInPersonConsultations
       summary: Listar consultas presenciais do profissional
       security: [{ bearerAuth: [] }]
-      parameters: [{ $ref: '#/components/parameters/PatientId' }]
+      parameters: [{ $ref: "#/components/parameters/PatientId" }]
       responses:
-        '200':
+        "200":
           description: Histórico de consultas presenciais do profissional
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InPersonConsultationList'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/InPersonConsultationList"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     post:
       tags: [Patients]
       operationId: createInPersonConsultation
       summary: Registrar consulta presencial
       security: [{ bearerAuth: [] }]
-      parameters: [{ $ref: '#/components/parameters/PatientId' }]
+      parameters: [{ $ref: "#/components/parameters/PatientId" }]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateInPersonConsultationRequest'
+              $ref: "#/components/schemas/CreateInPersonConsultationRequest"
       responses:
-        '201':
+        "201":
           description: Consulta presencial registrada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InPersonConsultation'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/InPersonConsultation"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients/{patientId}/in-person-consultations/{consultationId}:
     patch:
       tags: [Patients]
@@ -1200,50 +1234,50 @@ paths:
       summary: Editar consulta presencial
       security: [{ bearerAuth: [] }]
       parameters:
-        - $ref: '#/components/parameters/PatientId'
-        - $ref: '#/components/parameters/ConsultationId'
+        - $ref: "#/components/parameters/PatientId"
+        - $ref: "#/components/parameters/ConsultationId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateInPersonConsultationRequest'
+              $ref: "#/components/schemas/UpdateInPersonConsultationRequest"
       responses:
-        '200':
+        "200":
           description: Consulta presencial atualizada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InPersonConsultation'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/InPersonConsultation"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     delete:
       tags: [Patients]
       operationId: deleteInPersonConsultation
       summary: Remover consulta presencial
       security: [{ bearerAuth: [] }]
       parameters:
-        - $ref: '#/components/parameters/PatientId'
-        - $ref: '#/components/parameters/ConsultationId'
+        - $ref: "#/components/parameters/PatientId"
+        - $ref: "#/components/parameters/ConsultationId"
       responses:
-        '200':
+        "200":
           description: Consulta presencial removida
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteInPersonConsultationResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/DeleteInPersonConsultationResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients/{patientId}/trails:
     get:
       tags: [Trails]
@@ -1258,7 +1292,7 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
         - name: weekStartDate
           in: query
           required: false
@@ -1266,16 +1300,16 @@ paths:
             type: string
             format: date
       responses:
-        '200':
+        "200":
           description: Lista de trilhas
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TrailListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/TrailListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
     post:
       tags: [Trails]
       operationId: createPatientTrail
@@ -1288,30 +1322,30 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateTrailRequest'
+              $ref: "#/components/schemas/CreateTrailRequest"
       responses:
-        '201':
+        "201":
           description: Trilha criada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TrailDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/TrailDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /patients/{patientId}/trails/suggest:
     post:
       tags: [Trails]
@@ -1324,28 +1358,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SuggestTrailRequest'
+              $ref: "#/components/schemas/SuggestTrailRequest"
       responses:
-        '201':
+        "201":
           description: Trilha sugerida
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TrailDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/TrailDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /patients/{patientId}/progress:
     get:
       tags: [Progress]
@@ -1354,20 +1388,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/PatientId'
+        - $ref: "#/components/parameters/PatientId"
       responses:
-        '200':
+        "200":
           description: Registros de evolução
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProgressListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/ProgressListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /trails/{trailId}:
     get:
       tags: [Trails]
@@ -1376,20 +1410,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/TrailId'
+        - $ref: "#/components/parameters/TrailId"
       responses:
-        '200':
+        "200":
           description: Detalhe da trilha
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TrailDetail'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/TrailDetail"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     patch:
       tags: [Trails]
       operationId: updateTrail
@@ -1400,28 +1434,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/TrailId'
+        - $ref: "#/components/parameters/TrailId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateTrailRequest'
+              $ref: "#/components/schemas/UpdateTrailRequest"
       responses:
-        '200':
+        "200":
           description: Trilha atualizada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TrailDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/TrailDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /trails/{trailId}/items:
     put:
       tags: [Trails]
@@ -1433,28 +1467,28 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/TrailId'
+        - $ref: "#/components/parameters/TrailId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ReplaceTrailItemsRequest'
+              $ref: "#/components/schemas/ReplaceTrailItemsRequest"
       responses:
-        '200':
+        "200":
           description: Itens atualizados
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TrailDetail'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/TrailDetail"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /progress/completions:
     post:
       tags: [Progress]
@@ -1467,22 +1501,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CompleteTrailItemRequest'
+              $ref: "#/components/schemas/CompleteTrailItemRequest"
       responses:
-        '201':
+        "201":
           description: Evolução registrada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EvolutionRecord'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/EvolutionRecord"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /guardians/me/children/{childId}/professional-links:
     get:
       tags: [Guardians]
@@ -1491,20 +1525,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ChildId'
+        - $ref: "#/components/parameters/ChildId"
       responses:
-        '200':
+        "200":
           description: Vínculos profissionais, incluindo solicitações pendentes
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianProfessionalLinkListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/GuardianProfessionalLinkListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /guardians/me/children/{childId}/professional-links/{linkId}/approval:
     patch:
       tags: [Guardians]
@@ -1513,7 +1547,7 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ChildId'
+        - $ref: "#/components/parameters/ChildId"
         - name: linkId
           in: path
           required: true
@@ -1525,22 +1559,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ResolveProfessionalLinkRequest'
+              $ref: "#/components/schemas/ResolveProfessionalLinkRequest"
       responses:
-        '200':
+        "200":
           description: Vínculo resolvido pelo responsável
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianProfessionalLink'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/GuardianProfessionalLink"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /guardians/me:
     get:
       tags: [Guardians]
@@ -1549,18 +1583,18 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Perfil do responsável
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianProfile'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/GuardianProfile"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     patch:
       tags: [Guardians]
       operationId: updateMyGuardianProfile
@@ -1576,22 +1610,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateMyGuardianProfileRequest'
+              $ref: "#/components/schemas/UpdateMyGuardianProfileRequest"
       responses:
-        '200':
+        "200":
           description: Perfil atualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianProfile'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/GuardianProfile"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /guardians/me/children/{childId}:
     get:
       tags: [Guardians]
@@ -1610,18 +1644,18 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Filho e anamnese
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GuardianChildDetailResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/GuardianChildDetailResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     patch:
       tags: [Guardians]
       operationId: updateMyChild
@@ -1643,22 +1677,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateMyChildRequest'
+              $ref: "#/components/schemas/UpdateMyChildRequest"
       responses:
-        '200':
+        "200":
           description: Criança atualizada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Child'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Child"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /guardians/me/children/{childId}/avatar:
     post:
       tags: [Guardians]
@@ -1682,22 +1716,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UploadImageBase64Request'
+              $ref: "#/components/schemas/UploadImageBase64Request"
       responses:
-        '200':
+        "200":
           description: Criança atualizada com foto de perfil
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Child'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Child"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /notifications:
     get:
       tags: [Notifications]
@@ -1723,16 +1757,16 @@ paths:
             maximum: 100
             default: 50
       responses:
-        '200':
+        "200":
           description: Lista de notificações
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotificationListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/NotificationListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /notifications/{notificationId}/read:
     patch:
       tags: [Notifications]
@@ -1748,18 +1782,18 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Notificação atualizada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Notification'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Notification"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /reports:
     post:
       tags: [Reports]
@@ -1775,20 +1809,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateEvolutionReportRequest'
+              $ref: "#/components/schemas/CreateEvolutionReportRequest"
       responses:
-        '201':
+        "201":
           description: Relatório gerado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EvolutionReport'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/EvolutionReport"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     get:
       tags: [Reports]
       operationId: listEvolutionReports
@@ -1806,16 +1840,16 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Lista de relatórios
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EvolutionReportListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/EvolutionReportListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /reports/{reportId}:
     get:
       tags: [Reports]
@@ -1824,20 +1858,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ReportId'
+        - $ref: "#/components/parameters/ReportId"
       responses:
-        '200':
+        "200":
           description: Metadados
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EvolutionReport'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/EvolutionReport"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     delete:
       tags: [Reports]
       operationId: deleteEvolutionReport
@@ -1847,16 +1881,16 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ReportId'
+        - $ref: "#/components/parameters/ReportId"
       responses:
-        '204':
+        "204":
           description: Relatório excluído
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /reports/{reportId}/download:
     get:
       tags: [Reports]
@@ -1867,9 +1901,9 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ReportId'
+        - $ref: "#/components/parameters/ReportId"
       responses:
-        '200':
+        "200":
           description: Arquivo gerado (PDF ou CSV legado)
           content:
             application/pdf:
@@ -1880,12 +1914,12 @@ paths:
               schema:
                 type: string
                 format: binary
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /reports/{reportId}/share:
     patch:
       tags: [Reports]
@@ -1896,20 +1930,20 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/ReportId'
+        - $ref: "#/components/parameters/ReportId"
       responses:
-        '200':
+        "200":
           description: Relatório disponibilizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EvolutionReport'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/EvolutionReport"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /admin/metrics:
     get:
       tags: [Admin]
@@ -1922,16 +1956,16 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Métricas
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdminMetrics'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/AdminMetrics"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/audit-logs:
     get:
       tags: [Admin]
@@ -1949,16 +1983,16 @@ paths:
             maximum: 200
             default: 50
       responses:
-        '200':
+        "200":
           description: Logs recentes
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdminAuditLogListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/AdminAuditLogListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/professionals-tree:
     get:
       tags: [Admin]
@@ -1970,16 +2004,38 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Árvore
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdminProfessionalsTreeResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/AdminProfessionalsTreeResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+  /admin/guardians-tree:
+    get:
+      tags: [Admin]
+      operationId: getAdminGuardiansTree
+      summary: Árvore de responsáveis e filhos cadastrados
+      description: |
+        Lista todas as contas de responsáveis e os respectivos filhos cadastrados,
+        sem expor dados sensíveis da criança. Consulta disponível somente ao master
+        e destinada à visualização, sem operações de alteração.
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Árvore de responsáveis e filhos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminGuardiansTreeResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/patients/{childId}:
     get:
       tags: [Admin]
@@ -1998,18 +2054,18 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Perfil do paciente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdminPatientDetail'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/AdminPatientDetail"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /admin/subscriptions:
     get:
       tags: [Admin]
@@ -2021,16 +2077,16 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Assinaturas
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdminSubscriptionListResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                $ref: "#/components/schemas/AdminSubscriptionListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/reports/users/export:
     get:
       tags: [Admin]
@@ -2047,7 +2103,7 @@ paths:
             default: csv
           description: Formato do arquivo exportado
       responses:
-        '200':
+        "200":
           description: Arquivo CSV ou PDF
           content:
             text/csv:
@@ -2058,10 +2114,10 @@ paths:
               schema:
                 type: string
                 format: binary
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/reports/professionals/export:
     get:
       tags: [Admin]
@@ -2078,7 +2134,7 @@ paths:
             default: csv
           description: Formato do arquivo exportado
       responses:
-        '200':
+        "200":
           description: Arquivo CSV ou PDF
           content:
             text/csv:
@@ -2089,10 +2145,10 @@ paths:
               schema:
                 type: string
                 format: binary
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/reports/subscriptions/export:
     get:
       tags: [Admin]
@@ -2109,7 +2165,7 @@ paths:
             default: csv
           description: Formato do arquivo exportado
       responses:
-        '200':
+        "200":
           description: Arquivo CSV ou PDF
           content:
             text/csv:
@@ -2120,10 +2176,10 @@ paths:
               schema:
                 type: string
                 format: binary
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/reports/audit-logs/export:
     get:
       tags: [Admin]
@@ -2140,7 +2196,7 @@ paths:
             default: csv
           description: Formato do arquivo exportado
       responses:
-        '200':
+        "200":
           description: Arquivo CSV ou PDF
           content:
             text/csv:
@@ -2151,10 +2207,10 @@ paths:
               schema:
                 type: string
                 format: binary
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /admin/subscriptions/{subscriptionId}/status:
     patch:
       tags: [Admin]
@@ -2178,22 +2234,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateAdminSubscriptionStatusRequest'
+              $ref: "#/components/schemas/UpdateAdminSubscriptionStatusRequest"
       responses:
-        '200':
+        "200":
           description: Assinatura atualizada
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Subscription'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Subscription"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
 components:
   securitySchemes:
     bearerAuth:
@@ -2259,31 +2315,31 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     Unauthorized:
       description: Não autenticado ou credenciais inválidas
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     Forbidden:
       description: Autenticado, mas sem permissão
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     NotFound:
       description: Recurso não encontrado
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     Conflict:
-      description: 'Conflito de recurso (ex.: e-mail já cadastrado)'
+      description: "Conflito de recurso (ex.: e-mail já cadastrado)"
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
   schemas:
     Role:
       type: string
@@ -2319,7 +2375,7 @@ components:
           type: string
           minLength: 8
           maxLength: 64
-          pattern: '^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$'
+          pattern: "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$"
           description: >-
             Mínimo 8 caracteres, com pelo menos uma letra maiúscula, um número
             e um caractere especial.
@@ -2328,7 +2384,7 @@ components:
           maxLength: 32
           nullable: true
         role:
-          $ref: '#/components/schemas/Role'
+          $ref: "#/components/schemas/Role"
     UpdateOwnProfileRequest:
       type: object
       description: Atualização parcial do próprio perfil (nome e/ou telefone).
@@ -2382,9 +2438,9 @@ components:
           type: integer
           nullable: true
         role:
-          $ref: '#/components/schemas/Role'
+          $ref: "#/components/schemas/Role"
         status:
-          $ref: '#/components/schemas/UserStatus'
+          $ref: "#/components/schemas/UserStatus"
         createdAt:
           type: string
           format: date-time
@@ -2443,7 +2499,7 @@ components:
           format: password
           minLength: 8
           maxLength: 64
-          pattern: '^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$'
+          pattern: "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$"
           description: >-
             Mínimo 8 caracteres, com pelo menos uma letra maiúscula, um número
             e um caractere especial.
@@ -2460,9 +2516,9 @@ components:
           maxLength: 64
           description: Registro profissional opcional (CRFa, CRP, CREFITO, etc.)
         practiceType:
-          $ref: '#/components/schemas/PracticeType'
+          $ref: "#/components/schemas/PracticeType"
         clinic:
-          $ref: '#/components/schemas/ClinicData'
+          $ref: "#/components/schemas/ClinicData"
           description: Obrigatório quando practiceType=clinica
     ProfessionalProfile:
       type: object
@@ -2490,10 +2546,10 @@ components:
           type: string
           nullable: true
         practiceType:
-          $ref: '#/components/schemas/PracticeType'
+          $ref: "#/components/schemas/PracticeType"
         clinic:
           allOf:
-            - $ref: '#/components/schemas/ClinicData'
+            - $ref: "#/components/schemas/ClinicData"
           nullable: true
         accessGranted:
           type: boolean
@@ -2511,9 +2567,9 @@ components:
         - professional
       properties:
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
         professional:
-          $ref: '#/components/schemas/ProfessionalProfile'
+          $ref: "#/components/schemas/ProfessionalProfile"
     BiologicalSex:
       type: string
       enum:
@@ -2556,7 +2612,7 @@ components:
         - guardian
       properties:
         guardian:
-          $ref: '#/components/schemas/GuardianRegistrationData'
+          $ref: "#/components/schemas/GuardianRegistrationData"
     CreateGuardianChildRequest:
       type: object
       required:
@@ -2564,9 +2620,9 @@ components:
         - anamnese
       properties:
         child:
-          $ref: '#/components/schemas/ChildRegistrationData'
+          $ref: "#/components/schemas/ChildRegistrationData"
         anamnese:
-          $ref: '#/components/schemas/AnamneseData'
+          $ref: "#/components/schemas/AnamneseData"
     CreatePatientRequest:
       type: object
       description: |
@@ -2578,11 +2634,11 @@ components:
         - anamnese
       properties:
         guardian:
-          $ref: '#/components/schemas/GuardianRegistrationData'
+          $ref: "#/components/schemas/GuardianRegistrationData"
         child:
-          $ref: '#/components/schemas/ChildRegistrationData'
+          $ref: "#/components/schemas/ChildRegistrationData"
         anamnese:
-          $ref: '#/components/schemas/AnamneseData'
+          $ref: "#/components/schemas/AnamneseData"
     GuardianRegistrationData:
       type: object
       required:
@@ -2608,7 +2664,7 @@ components:
         phone:
           type: string
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
         email:
           type: string
           format: email
@@ -2617,7 +2673,7 @@ components:
           format: password
           minLength: 8
           maxLength: 64
-          pattern: '^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$'
+          pattern: "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$"
           description: >-
             Mínimo 8 caracteres, com pelo menos uma letra maiúscula, um número
             e um caractere especial.
@@ -2640,7 +2696,7 @@ components:
         cpf:
           type: string
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
         kinship:
           type: string
           minLength: 2
@@ -2659,7 +2715,7 @@ components:
         - expectativaUso
       properties:
         motivoPrincipal:
-          $ref: '#/components/schemas/AnamneseMotivo'
+          $ref: "#/components/schemas/AnamneseMotivo"
         motivoPrincipalOutro:
           type: string
         possuiDiagnostico:
@@ -2699,7 +2755,7 @@ components:
           type: array
           minItems: 1
           items:
-            $ref: '#/components/schemas/AnamneseAreaDificuldade'
+            $ref: "#/components/schemas/AnamneseAreaDificuldade"
         desenvolvimentoGeral:
           type: integer
           minimum: 1
@@ -2732,7 +2788,7 @@ components:
         cpf:
           type: string
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
         kinship:
           type: string
           nullable: true
@@ -2773,7 +2829,7 @@ components:
           minLength: 2
           maxLength: 120
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
         kinship:
           type: string
           minLength: 2
@@ -2810,7 +2866,7 @@ components:
         cpf:
           type: string
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
         kinship:
           type: string
           description: >
@@ -2869,11 +2925,11 @@ components:
           type: string
           format: uuid
         answers:
-          $ref: '#/components/schemas/AnamneseData'
+          $ref: "#/components/schemas/AnamneseData"
         suggestedTrailCategories:
           type: array
           items:
-            $ref: '#/components/schemas/AnamneseAreaDificuldade'
+            $ref: "#/components/schemas/AnamneseAreaDificuldade"
           description: Derivado da pergunta 6; trilha pode ficar pendente
         createdAt:
           type: string
@@ -2888,9 +2944,9 @@ components:
         - guardian
       properties:
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
         guardian:
-          $ref: '#/components/schemas/GuardianProfile'
+          $ref: "#/components/schemas/GuardianProfile"
     CreateGuardianChildResponse:
       type: object
       required:
@@ -2898,19 +2954,19 @@ components:
         - anamnese
       properties:
         child:
-          $ref: '#/components/schemas/Child'
+          $ref: "#/components/schemas/Child"
         anamnese:
-          $ref: '#/components/schemas/Anamnese'
+          $ref: "#/components/schemas/Anamnese"
     GuardianChildDetailResponse:
       type: object
       required:
         - child
       properties:
         child:
-          $ref: '#/components/schemas/Child'
+          $ref: "#/components/schemas/Child"
         anamnese:
           allOf:
-            - $ref: '#/components/schemas/Anamnese'
+            - $ref: "#/components/schemas/Anamnese"
           nullable: true
     GuardianChildrenResponse:
       type: object
@@ -2920,7 +2976,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Child'
+            $ref: "#/components/schemas/Child"
     LoginRequest:
       type: object
       required:
@@ -2969,9 +3025,9 @@ components:
         - tokens
       properties:
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
         tokens:
-          $ref: '#/components/schemas/AuthTokens'
+          $ref: "#/components/schemas/AuthTokens"
     PasswordRecoveryRequest:
       type: object
       required:
@@ -3002,7 +3058,7 @@ components:
           format: password
           minLength: 8
           maxLength: 64
-          pattern: '^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$'
+          pattern: "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$"
           description: >-
             Mínimo 8 caracteres, com pelo menos uma letra maiúscula, um número
             e um caractere especial.
@@ -3012,7 +3068,7 @@ components:
         - status
       properties:
         status:
-          $ref: '#/components/schemas/UserStatus'
+          $ref: "#/components/schemas/UserStatus"
     UserListResponse:
       type: object
       required:
@@ -3024,7 +3080,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/User'
+            $ref: "#/components/schemas/User"
         page:
           type: integer
           minimum: 1
@@ -3041,7 +3097,7 @@ components:
         - description
       properties:
         role:
-          $ref: '#/components/schemas/Role'
+          $ref: "#/components/schemas/Role"
         description:
           type: string
     RoleListResponse:
@@ -3052,7 +3108,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/RoleDefinition'
+            $ref: "#/components/schemas/RoleDefinition"
     SubscriptionStatus:
       type: string
       description: |
@@ -3087,7 +3143,7 @@ components:
         - interval
       properties:
         audience:
-          $ref: '#/components/schemas/SubscriptionAudience'
+          $ref: "#/components/schemas/SubscriptionAudience"
         amountCents:
           type: integer
           description: |
@@ -3126,9 +3182,9 @@ components:
           type: string
           format: uuid
         audience:
-          $ref: '#/components/schemas/SubscriptionAudience'
+          $ref: "#/components/schemas/SubscriptionAudience"
         status:
-          $ref: '#/components/schemas/SubscriptionStatus'
+          $ref: "#/components/schemas/SubscriptionStatus"
         provider:
           type: string
           description: Nome do PaymentProvider (`asaas` ou `fake`)
@@ -3138,7 +3194,7 @@ components:
         amountCents:
           type:
             - integer
-            - 'null'
+            - "null"
           description: |
             Valor do plano em centavos. profissional=7900; responsavel=4900.
             Com PAYMENT_PROVIDER=fake pode permanecer null apenas em legado de testes.
@@ -3150,30 +3206,30 @@ components:
           const: monthly
         paymentMethod:
           oneOf:
-            - $ref: '#/components/schemas/SubscriptionPaymentMethod'
-            - type: 'null'
+            - $ref: "#/components/schemas/SubscriptionPaymentMethod"
+            - type: "null"
         confirmedAt:
           type:
             - string
-            - 'null'
+            - "null"
           format: date-time
           description: Momento da transição pending → active
         firstPaidAt:
           type:
             - string
-            - 'null'
+            - "null"
           format: date-time
           description: Confirmação do 1º pagamento (base da janela de reembolso)
         overdueSince:
           type:
             - string
-            - 'null'
+            - "null"
           format: date-time
           description: Início do status overdue; após 3 dias → suspended
         refundEligibleUntil:
           type:
             - string
-            - 'null'
+            - "null"
           format: date-time
           description: firstPaidAt + 3 dias; null se não elegível
         createdAt:
@@ -3197,13 +3253,18 @@ components:
           type: boolean
         subscription:
           oneOf:
-            - $ref: '#/components/schemas/Subscription'
-            - type: 'null'
+            - $ref: "#/components/schemas/Subscription"
+            - type: "null"
         plans:
           type: array
           items:
-            $ref: '#/components/schemas/SubscriptionPlan'
+            $ref: "#/components/schemas/SubscriptionPlan"
           description: Planos oficiais (profissional 7900; responsável 4900)
+        pendingCheckout:
+          oneOf:
+            - $ref: "#/components/schemas/SubscriptionPendingCheckout"
+            - type: "null"
+          description: Presente quando há assinatura pending (para retomar fatura sem criar outra)
     SubscriptionAccessResponse:
       type: object
       required:
@@ -3218,14 +3279,19 @@ components:
           type: string
           format: uuid
         role:
-          $ref: '#/components/schemas/Role'
+          $ref: "#/components/schemas/Role"
     CreateSubscriptionCheckoutRequest:
       type: object
       properties:
         paymentMethod:
           allOf:
-            - $ref: '#/components/schemas/SubscriptionPaymentMethod'
+            - $ref: "#/components/schemas/SubscriptionPaymentMethod"
           description: Meio preferido; obrigatório com Asaas quando o fluxo exigir
+        forceNew:
+          type: boolean
+          description: |
+            Se true, cancela o checkout pendente anterior e cria um novo.
+            Se omitido/false e já existir pendente, a API retoma o checkout existente.
     SubscriptionCheckoutResponse:
       type: object
       required:
@@ -3233,7 +3299,7 @@ components:
         - checkout
       properties:
         subscription:
-          $ref: '#/components/schemas/Subscription'
+          $ref: "#/components/schemas/Subscription"
         checkout:
           type: object
           required:
@@ -3257,7 +3323,7 @@ components:
             amountCents:
               type:
                 - integer
-                - 'null'
+                - "null"
               description: profissional=7900; responsavel=4900; null só no fake legado
             currency:
               type: string
@@ -3268,24 +3334,24 @@ components:
             paymentMethods:
               type: array
               items:
-                $ref: '#/components/schemas/SubscriptionPaymentMethod'
+                $ref: "#/components/schemas/SubscriptionPaymentMethod"
               minItems: 1
               description: credit_card, pix e boleto
             invoiceUrl:
               type:
                 - string
-                - 'null'
+                - "null"
               format: uri
               description: URL de checkout/fatura Asaas quando aplicável
             pixQrCode:
               type:
                 - string
-                - 'null'
+                - "null"
               description: Payload/QR PIX quando paymentMethod=pix
             boletoIdentification:
               type:
                 - string
-                - 'null'
+                - "null"
               description: Linha digitável do boleto quando aplicável
             note:
               type: string
@@ -3338,12 +3404,12 @@ components:
           const: true
         subscription:
           oneOf:
-            - $ref: '#/components/schemas/Subscription'
-            - type: 'null'
+            - $ref: "#/components/schemas/Subscription"
+            - type: "null"
         accessGranted:
           type:
             - boolean
-            - 'null'
+            - "null"
     SubscriptionConfirmResponse:
       type: object
       required:
@@ -3351,15 +3417,94 @@ components:
         - accessGranted
       properties:
         subscription:
-          $ref: '#/components/schemas/Subscription'
+          $ref: "#/components/schemas/Subscription"
         accessGranted:
           type: boolean
+    SubscriptionVerifyResponse:
+      type: object
+      required:
+        - subscription
+        - accessGranted
+        - syncedFromProvider
+      properties:
+        subscription:
+          $ref: "#/components/schemas/Subscription"
+        accessGranted:
+          type: boolean
+        syncedFromProvider:
+          type: boolean
+          description: true quando a API do provedor foi consultada nesta chamada
+        pendingCheckout:
+          oneOf:
+            - $ref: "#/components/schemas/SubscriptionPendingCheckout"
+            - type: "null"
+    SubscriptionPendingCheckout:
+      type: object
+      required:
+        - provider
+        - checkoutId
+        - status
+        - amountCents
+        - currency
+        - interval
+        - paymentMethods
+        - note
+      properties:
+        provider:
+          type: string
+        checkoutId:
+          type: string
+        status:
+          type: string
+          enum: [pending]
+        amountCents:
+          type: integer
+        currency:
+          type: string
+        interval:
+          type: string
+          enum: [monthly]
+        paymentMethods:
+          type: array
+          items:
+            $ref: "#/components/schemas/SubscriptionPaymentMethod"
+        invoiceUrl:
+          type:
+            - string
+            - "null"
+        pixQrCode:
+          type:
+            - string
+            - "null"
+        boletoIdentification:
+          type:
+            - string
+            - "null"
+        note:
+          type: string
     ContentMediaType:
       type: string
       enum: [audio, video, game]
     ContentGameType:
       type: string
-      enum: [alphabet, alphabet-writing, word-search, memory, spot-difference, whats-missing, shadow-match, jigsaw, traffic-light, odd-one-out, sentence-fill, word-spell, emotions, fluency, dialogue]
+      enum:
+        [
+          alphabet,
+          alphabet-writing,
+          word-search,
+          memory,
+          spot-difference,
+          whats-missing,
+          shadow-match,
+          jigsaw,
+          traffic-light,
+          odd-one-out,
+          sentence-fill,
+          word-spell,
+          emotions,
+          fluency,
+          dialogue,
+        ]
     AlphabetGameConfig:
       type: object
       required:
@@ -3382,7 +3527,7 @@ components:
           maxItems: 26
           items:
             type: string
-            pattern: '^[A-Z]$'
+            pattern: "^[A-Z]$"
         locale:
           type: string
           example: pt-BR
@@ -3392,20 +3537,20 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
           description: URL pública da capa do jogo no storage
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
           description: |
             Capa ilustrada do modal de prévia (alfabeto falado ou escrita de letras).
         letterImages:
           type:
             - object
-            - 'null'
+            - "null"
           description: Mapa de letra (A-Z) para URL pública da arte no storage
           additionalProperties:
             type: string
@@ -3415,20 +3560,20 @@ components:
             B: https://storage.example/evolente/dev/games/alphabet/letters/b.webp
     ContentGameConfig:
       oneOf:
-        - $ref: '#/components/schemas/AlphabetGameConfig'
-        - $ref: '#/components/schemas/WordSearchGameConfig'
-        - $ref: '#/components/schemas/MemoryGameConfig'
-        - $ref: '#/components/schemas/SpotDifferenceGameConfig'
-        - $ref: '#/components/schemas/WhatsMissingGameConfig'
-        - $ref: '#/components/schemas/ShadowMatchGameConfig'
-        - $ref: '#/components/schemas/JigsawGameConfig'
-        - $ref: '#/components/schemas/TrafficLightGameConfig'
-        - $ref: '#/components/schemas/OddOneOutGameConfig'
-        - $ref: '#/components/schemas/SentenceFillGameConfig'
-        - $ref: '#/components/schemas/WordSpellGameConfig'
-        - $ref: '#/components/schemas/EmotionsGameConfig'
-        - $ref: '#/components/schemas/FluencyGameConfig'
-        - $ref: '#/components/schemas/DialogueGameConfig'
+        - $ref: "#/components/schemas/AlphabetGameConfig"
+        - $ref: "#/components/schemas/WordSearchGameConfig"
+        - $ref: "#/components/schemas/MemoryGameConfig"
+        - $ref: "#/components/schemas/SpotDifferenceGameConfig"
+        - $ref: "#/components/schemas/WhatsMissingGameConfig"
+        - $ref: "#/components/schemas/ShadowMatchGameConfig"
+        - $ref: "#/components/schemas/JigsawGameConfig"
+        - $ref: "#/components/schemas/TrafficLightGameConfig"
+        - $ref: "#/components/schemas/OddOneOutGameConfig"
+        - $ref: "#/components/schemas/SentenceFillGameConfig"
+        - $ref: "#/components/schemas/WordSpellGameConfig"
+        - $ref: "#/components/schemas/EmotionsGameConfig"
+        - $ref: "#/components/schemas/FluencyGameConfig"
+        - $ref: "#/components/schemas/DialogueGameConfig"
     WordSearchDifficultyConfig:
       type: object
       required:
@@ -3456,7 +3601,7 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         words:
           type: array
@@ -3479,12 +3624,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
           description: |
             Capa ilustrada do modal de prévia/seleção de categoria do caça-palavras.
@@ -3492,7 +3637,7 @@ components:
           type: array
           minItems: 1
           items:
-            $ref: '#/components/schemas/WordSearchCategoryConfig'
+            $ref: "#/components/schemas/WordSearchCategoryConfig"
         difficulties:
           type: object
           required:
@@ -3501,11 +3646,11 @@ components:
             - dificil
           properties:
             facil:
-              $ref: '#/components/schemas/WordSearchDifficultyConfig'
+              $ref: "#/components/schemas/WordSearchDifficultyConfig"
             medio:
-              $ref: '#/components/schemas/WordSearchDifficultyConfig'
+              $ref: "#/components/schemas/WordSearchDifficultyConfig"
             dificil:
-              $ref: '#/components/schemas/WordSearchDifficultyConfig'
+              $ref: "#/components/schemas/WordSearchDifficultyConfig"
     MemoryGameCardConfig:
       type: object
       required:
@@ -3523,7 +3668,7 @@ components:
         instruction:
           type:
             - string
-            - 'null'
+            - "null"
           description: |
             Orientação curta do exercício oral após acertar o par
             (usada no jogo da memória de articulação).
@@ -3546,13 +3691,13 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         cards:
           type: array
           minItems: 3
           items:
-            $ref: '#/components/schemas/MemoryGameCardConfig'
+            $ref: "#/components/schemas/MemoryGameCardConfig"
     MemoryGameConfig:
       type: object
       required:
@@ -3569,17 +3714,17 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         cardBackUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
           description: |
             Capa ilustrada do modal de prévia/seleção de categoria do jogo da memória.
@@ -3591,7 +3736,7 @@ components:
           type: array
           minItems: 1
           items:
-            $ref: '#/components/schemas/MemoryGameCategoryConfig'
+            $ref: "#/components/schemas/MemoryGameCategoryConfig"
     SpotDifferenceHotspot:
       type: object
       required:
@@ -3641,7 +3786,7 @@ components:
           type: array
           minItems: 3
           items:
-            $ref: '#/components/schemas/SpotDifferenceHotspot'
+            $ref: "#/components/schemas/SpotDifferenceHotspot"
         exercise:
           type: object
           required:
@@ -3672,19 +3817,19 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         rounds:
           type: array
           minItems: 1
           maxItems: 10
           items:
-            $ref: '#/components/schemas/SpotDifferenceRound'
+            $ref: "#/components/schemas/SpotDifferenceRound"
     WhatsMissingItem:
       type: object
       required:
@@ -3721,7 +3866,7 @@ components:
           minItems: 3
           maxItems: 8
           items:
-            $ref: '#/components/schemas/WhatsMissingItem'
+            $ref: "#/components/schemas/WhatsMissingItem"
         missingItemId:
           type: string
         bottomSlots:
@@ -3733,14 +3878,14 @@ components:
             Os demais itens devem ser os da prateleira de cima, exceto o missingItemId, em ordem diferente.
           items:
             oneOf:
-              - $ref: '#/components/schemas/WhatsMissingItem'
-              - type: 'null'
+              - $ref: "#/components/schemas/WhatsMissingItem"
+              - type: "null"
         options:
           type: array
           minItems: 2
           maxItems: 6
           items:
-            $ref: '#/components/schemas/WhatsMissingItem'
+            $ref: "#/components/schemas/WhatsMissingItem"
     WhatsMissingGameConfig:
       type: object
       required:
@@ -3756,19 +3901,19 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         rounds:
           type: array
           minItems: 1
           maxItems: 12
           items:
-            $ref: '#/components/schemas/WhatsMissingRound'
+            $ref: "#/components/schemas/WhatsMissingRound"
     ShadowMatchPair:
       type: object
       required:
@@ -3807,7 +3952,7 @@ components:
           minItems: 3
           maxItems: 8
           items:
-            $ref: '#/components/schemas/ShadowMatchPair'
+            $ref: "#/components/schemas/ShadowMatchPair"
         shadowOrder:
           type: array
           minItems: 3
@@ -3830,19 +3975,19 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         rounds:
           type: array
           minItems: 1
           maxItems: 12
           items:
-            $ref: '#/components/schemas/ShadowMatchRound'
+            $ref: "#/components/schemas/ShadowMatchRound"
     JigsawPiece:
       type: object
       required:
@@ -3888,7 +4033,7 @@ components:
         prompt:
           type: string
         difficulty:
-          $ref: '#/components/schemas/JigsawDifficulty'
+          $ref: "#/components/schemas/JigsawDifficulty"
         rows:
           type: integer
           minimum: 2
@@ -3908,7 +4053,7 @@ components:
           minItems: 4
           maxItems: 36
           items:
-            $ref: '#/components/schemas/JigsawPiece'
+            $ref: "#/components/schemas/JigsawPiece"
         preFilledPieceIds:
           type: array
           items:
@@ -3930,19 +4075,19 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         rounds:
           type: array
           minItems: 1
           maxItems: 20
           items:
-            $ref: '#/components/schemas/JigsawRound'
+            $ref: "#/components/schemas/JigsawRound"
     TrafficLightColor:
       type: string
       enum: [red, yellow, green]
@@ -3974,7 +4119,7 @@ components:
           type: integer
           minimum: 1
         light:
-          $ref: '#/components/schemas/TrafficLightColor'
+          $ref: "#/components/schemas/TrafficLightColor"
         label:
           type: string
           example: Casa
@@ -4004,12 +4149,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4020,17 +4165,17 @@ components:
           required: [red, yellow, green]
           properties:
             red:
-              $ref: '#/components/schemas/TrafficLightRule'
+              $ref: "#/components/schemas/TrafficLightRule"
             yellow:
-              $ref: '#/components/schemas/TrafficLightRule'
+              $ref: "#/components/schemas/TrafficLightRule"
             green:
-              $ref: '#/components/schemas/TrafficLightRule'
+              $ref: "#/components/schemas/TrafficLightRule"
         steps:
           type: array
           minItems: 1
           maxItems: 32
           items:
-            $ref: '#/components/schemas/TrafficLightStep'
+            $ref: "#/components/schemas/TrafficLightStep"
     OddOneOutItem:
       type: object
       required:
@@ -4063,14 +4208,14 @@ components:
         criterion:
           type:
             - string
-            - 'null'
+            - "null"
           description: Critério pedagógico do intruso (opcional).
         items:
           type: array
           minItems: 4
           maxItems: 4
           items:
-            $ref: '#/components/schemas/OddOneOutItem'
+            $ref: "#/components/schemas/OddOneOutItem"
         intruderId:
           type: string
           description: Id do item que não combina com o grupo.
@@ -4092,12 +4237,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4108,7 +4253,7 @@ components:
           minItems: 1
           maxItems: 12
           items:
-            $ref: '#/components/schemas/OddOneOutRound'
+            $ref: "#/components/schemas/OddOneOutRound"
     SentenceFillOption:
       type: object
       required:
@@ -4148,7 +4293,7 @@ components:
           minItems: 2
           maxItems: 6
           items:
-            $ref: '#/components/schemas/SentenceFillOption'
+            $ref: "#/components/schemas/SentenceFillOption"
         correctOptionId:
           type: string
         sentenceText:
@@ -4175,12 +4320,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4191,7 +4336,7 @@ components:
           minItems: 1
           maxItems: 20
           items:
-            $ref: '#/components/schemas/SentenceFillRound'
+            $ref: "#/components/schemas/SentenceFillRound"
     WordSpellWord:
       type: object
       required:
@@ -4241,13 +4386,13 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         words:
           type: array
           minItems: 1
           items:
-            $ref: '#/components/schemas/WordSpellWord'
+            $ref: "#/components/schemas/WordSpellWord"
     WordSpellGameConfig:
       type: object
       required:
@@ -4271,12 +4416,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4291,7 +4436,7 @@ components:
           minItems: 1
           maxItems: 20
           items:
-            $ref: '#/components/schemas/WordSpellCategory'
+            $ref: "#/components/schemas/WordSpellCategory"
     EmotionsOption:
       type: object
       required:
@@ -4307,7 +4452,7 @@ components:
         imageUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         tone:
           type: string
@@ -4334,22 +4479,22 @@ components:
         sceneEmoji:
           type:
             - string
-            - 'null'
+            - "null"
         sceneText:
           type:
             - string
-            - 'null'
+            - "null"
         sceneImageUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         options:
           type: array
           minItems: 2
           maxItems: 6
           items:
-            $ref: '#/components/schemas/EmotionsOption'
+            $ref: "#/components/schemas/EmotionsOption"
         correctOptionId:
           type: string
     EmotionsGameConfig:
@@ -4371,12 +4516,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4391,7 +4536,7 @@ components:
           minItems: 1
           maxItems: 40
           items:
-            $ref: '#/components/schemas/EmotionsStage'
+            $ref: "#/components/schemas/EmotionsStage"
     FluencyWordChip:
       type: object
       required:
@@ -4426,25 +4571,25 @@ components:
         highlightWords:
           type:
             - array
-            - 'null'
+            - "null"
           items:
             type: string
           description: Palavras destacadas na etapa passage.
         sceneEmoji:
           type:
             - string
-            - 'null'
+            - "null"
         sceneImageUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         words:
           type:
             - array
-            - 'null'
+            - "null"
           items:
-            $ref: '#/components/schemas/FluencyWordChip'
+            $ref: "#/components/schemas/FluencyWordChip"
           description: Chips de palavras na etapa rhythm.
     FluencyGameConfig:
       type: object
@@ -4469,12 +4614,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4489,7 +4634,7 @@ components:
           minItems: 1
           maxItems: 40
           items:
-            $ref: '#/components/schemas/FluencyStage'
+            $ref: "#/components/schemas/FluencyStage"
     DialogueOption:
       type: object
       required:
@@ -4524,24 +4669,24 @@ components:
         sceneEmoji:
           type:
             - string
-            - 'null'
+            - "null"
         sceneImageUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         options:
           type: array
           minItems: 2
           maxItems: 6
           items:
-            $ref: '#/components/schemas/DialogueOption'
+            $ref: "#/components/schemas/DialogueOption"
         correctOptionId:
           type: string
         successMessage:
           type:
             - string
-            - 'null'
+            - "null"
     DialogueGameConfig:
       type: object
       required:
@@ -4560,12 +4705,12 @@ components:
         coverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         modalCoverUrl:
           type:
             - string
-            - 'null'
+            - "null"
           format: uri
         title:
           type: string
@@ -4580,7 +4725,7 @@ components:
           minItems: 1
           maxItems: 40
           items:
-            $ref: '#/components/schemas/DialogueStage'
+            $ref: "#/components/schemas/DialogueStage"
     ContentDifficulty:
       type: string
       enum: [facil, medio, dificil]
@@ -4634,45 +4779,45 @@ components:
         description:
           type:
             - string
-            - 'null'
+            - "null"
         mediaType:
-          $ref: '#/components/schemas/ContentMediaType'
+          $ref: "#/components/schemas/ContentMediaType"
         gameType:
           oneOf:
-            - $ref: '#/components/schemas/ContentGameType'
-            - type: 'null'
+            - $ref: "#/components/schemas/ContentGameType"
+            - type: "null"
         gameConfig:
           oneOf:
-            - $ref: '#/components/schemas/ContentGameConfig'
-            - type: 'null'
+            - $ref: "#/components/schemas/ContentGameConfig"
+            - type: "null"
         category:
-          $ref: '#/components/schemas/ContentCategory'
+          $ref: "#/components/schemas/ContentCategory"
         ageMinYears:
           type: integer
         ageMaxYears:
           type: integer
         difficulty:
-          $ref: '#/components/schemas/ContentDifficulty'
+          $ref: "#/components/schemas/ContentDifficulty"
         therapeuticObjective:
           type: string
         mediaUrl:
           type:
             - string
-            - 'null'
+            - "null"
         mediaMimeType:
           type:
             - string
-            - 'null'
+            - "null"
         mediaOriginalName:
           type:
             - string
-            - 'null'
+            - "null"
         mediaSizeBytes:
           type:
             - integer
-            - 'null'
+            - "null"
         status:
-          $ref: '#/components/schemas/ContentStatus'
+          $ref: "#/components/schemas/ContentStatus"
         createdByUserId:
           type: string
           format: uuid
@@ -4689,7 +4834,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Content'
+            $ref: "#/components/schemas/Content"
     CreateContentRequest:
       type: object
       required:
@@ -4706,13 +4851,13 @@ components:
         description:
           type: string
         mediaType:
-          $ref: '#/components/schemas/ContentMediaType'
+          $ref: "#/components/schemas/ContentMediaType"
         gameType:
-          $ref: '#/components/schemas/ContentGameType'
+          $ref: "#/components/schemas/ContentGameType"
         gameConfig:
-          $ref: '#/components/schemas/ContentGameConfig'
+          $ref: "#/components/schemas/ContentGameConfig"
         category:
-          $ref: '#/components/schemas/ContentCategory'
+          $ref: "#/components/schemas/ContentCategory"
         ageMinYears:
           type: integer
           minimum: 0
@@ -4722,7 +4867,7 @@ components:
           minimum: 0
           maximum: 18
         difficulty:
-          $ref: '#/components/schemas/ContentDifficulty'
+          $ref: "#/components/schemas/ContentDifficulty"
         therapeuticObjective:
           type: string
     UpdateContentRequest:
@@ -4733,29 +4878,29 @@ components:
         description:
           type:
             - string
-            - 'null'
+            - "null"
         mediaType:
-          $ref: '#/components/schemas/ContentMediaType'
+          $ref: "#/components/schemas/ContentMediaType"
         gameType:
           oneOf:
-            - $ref: '#/components/schemas/ContentGameType'
-            - type: 'null'
+            - $ref: "#/components/schemas/ContentGameType"
+            - type: "null"
         gameConfig:
           oneOf:
-            - $ref: '#/components/schemas/ContentGameConfig'
-            - type: 'null'
+            - $ref: "#/components/schemas/ContentGameConfig"
+            - type: "null"
         category:
-          $ref: '#/components/schemas/ContentCategory'
+          $ref: "#/components/schemas/ContentCategory"
         ageMinYears:
           type: integer
         ageMaxYears:
           type: integer
         difficulty:
-          $ref: '#/components/schemas/ContentDifficulty'
+          $ref: "#/components/schemas/ContentDifficulty"
         therapeuticObjective:
           type: string
         status:
-          $ref: '#/components/schemas/ContentStatus'
+          $ref: "#/components/schemas/ContentStatus"
     UploadContentMediaRequest:
       type: object
       required:
@@ -4773,7 +4918,7 @@ components:
           description: Arquivo em Base64 sem prefixo data-URL
     PatientLinkStatus:
       type: string
-      enum: [active, inactive]
+      enum: [active, inactive, canceled]
     ProfessionalPatientLink:
       type: object
       required:
@@ -4796,11 +4941,11 @@ components:
           type: string
           format: uuid
         status:
-          $ref: '#/components/schemas/PatientLinkStatus'
+          $ref: "#/components/schemas/PatientLinkStatus"
         approvedAt:
           type:
             - string
-            - 'null'
+            - "null"
           format: date-time
         linkedAt:
           type: string
@@ -4808,7 +4953,7 @@ components:
         inactivatedAt:
           type:
             - string
-            - 'null'
+            - "null"
           format: date-time
         createdAt:
           type: string
@@ -4821,7 +4966,7 @@ components:
       required: [link, professional]
       properties:
         link:
-          $ref: '#/components/schemas/ProfessionalPatientLink'
+          $ref: "#/components/schemas/ProfessionalPatientLink"
         professional:
           type: object
           required: [id, name, avatarUrl, specialties]
@@ -4832,7 +4977,7 @@ components:
             name:
               type: string
             avatarUrl:
-              type: [string, 'null']
+              type: [string, "null"]
               format: uri
             specialties:
               type: array
@@ -4845,7 +4990,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/GuardianProfessionalLink'
+            $ref: "#/components/schemas/GuardianProfessionalLink"
     ResolveProfessionalLinkRequest:
       type: object
       required: [decision]
@@ -4861,18 +5006,19 @@ components:
         - guardian
       properties:
         link:
-          $ref: '#/components/schemas/ProfessionalPatientLink'
+          $ref: "#/components/schemas/ProfessionalPatientLink"
         child:
-          $ref: '#/components/schemas/Child'
+          $ref: "#/components/schemas/Child"
         guardian:
           anyOf:
-            - $ref: '#/components/schemas/PatientGuardianSummary'
-            - type: 'null'
+            - $ref: "#/components/schemas/PatientGuardianSummary"
+            - type: "null"
     PatientGuardianSummary:
       type: object
       required:
         - userId
         - name
+        - subscriptionAccessGranted
       properties:
         userId:
           type: string
@@ -4883,6 +5029,10 @@ components:
           type: string
           nullable: true
           description: Legado. Preferir Child.kinship.
+        subscriptionAccessGranted:
+          type: boolean
+          description: Indica se a assinatura do responsável mantém o acesso liberado. Quando falsa e o vínculo estiver `canceled`, o profissional só pode removê-lo; não pode consultar dados clínicos nem trilhas.
+    PatientListResponse:
       type: object
       required:
         - items
@@ -4890,7 +5040,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/PatientListItem'
+            $ref: "#/components/schemas/PatientListItem"
     InPersonConsultationList:
       type: object
       required:
@@ -4899,7 +5049,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/InPersonConsultation'
+            $ref: "#/components/schemas/InPersonConsultation"
     InPersonConsultation:
       type: object
       required:
@@ -4915,7 +5065,7 @@ components:
           type: string
           format: date-time
         status:
-          $ref: '#/components/schemas/InPersonConsultationStatus'
+          $ref: "#/components/schemas/InPersonConsultationStatus"
         notes:
           type: string
     InPersonConsultationStatus:
@@ -4932,7 +5082,7 @@ components:
           type: string
           format: date-time
         status:
-          $ref: '#/components/schemas/InPersonConsultationStatus'
+          $ref: "#/components/schemas/InPersonConsultationStatus"
         notes:
           type: string
           minLength: 1
@@ -4944,7 +5094,7 @@ components:
           type: string
           format: date-time
         status:
-          $ref: '#/components/schemas/InPersonConsultationStatus'
+          $ref: "#/components/schemas/InPersonConsultationStatus"
         notes:
           type: string
           minLength: 1
@@ -4963,15 +5113,20 @@ components:
         - link
         - child
         - anamnese
+        - guardian
       properties:
         link:
-          $ref: '#/components/schemas/ProfessionalPatientLink'
+          $ref: "#/components/schemas/ProfessionalPatientLink"
         child:
-          $ref: '#/components/schemas/Child'
+          $ref: "#/components/schemas/Child"
         anamnese:
           oneOf:
-            - $ref: '#/components/schemas/Anamnese'
-            - type: 'null'
+            - $ref: "#/components/schemas/Anamnese"
+            - type: "null"
+        guardian:
+          anyOf:
+            - $ref: "#/components/schemas/PatientGuardianSummary"
+            - type: "null"
     LinkPatientRequest:
       type: object
       required:
@@ -4993,14 +5148,14 @@ components:
           type: string
           format: date
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
     UpdatePatientStatusRequest:
       type: object
       required:
         - status
       properties:
         status:
-          $ref: '#/components/schemas/PatientLinkStatus'
+          $ref: "#/components/schemas/PatientLinkStatus"
     TrailStatus:
       type: string
       enum: [active, inactive]
@@ -5074,7 +5229,7 @@ components:
         professionalUserId:
           type:
             - string
-            - 'null'
+            - "null"
           format: uuid
           description: |
             UUID do profissional que criou a trilha, ou null quando montada pelo responsável (self-serve).
@@ -5083,7 +5238,7 @@ components:
           format: date
           description: Segunda-feira da semana (ISO)
         status:
-          $ref: '#/components/schemas/TrailStatus'
+          $ref: "#/components/schemas/TrailStatus"
         seededFromAnamnese:
           type: boolean
         createdAt:
@@ -5099,11 +5254,11 @@ components:
         - items
       properties:
         trail:
-          $ref: '#/components/schemas/WeeklyTrail'
+          $ref: "#/components/schemas/WeeklyTrail"
         items:
           type: array
           items:
-            $ref: '#/components/schemas/TrailItem'
+            $ref: "#/components/schemas/TrailItem"
     TrailListResponse:
       type: object
       required:
@@ -5114,7 +5269,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/TrailDetail'
+            $ref: "#/components/schemas/TrailDetail"
         canManage:
           type: boolean
           description: |
@@ -5137,7 +5292,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/TrailItemInput'
+            $ref: "#/components/schemas/TrailItemInput"
     SuggestTrailRequest:
       type: object
       required:
@@ -5154,12 +5309,12 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/TrailItemInput'
+            $ref: "#/components/schemas/TrailItemInput"
     UpdateTrailRequest:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/TrailStatus'
+          $ref: "#/components/schemas/TrailStatus"
     EvolutionRecord:
       type: object
       required:
@@ -5204,7 +5359,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/EvolutionRecord'
+            $ref: "#/components/schemas/EvolutionRecord"
     CompleteTrailItemRequest:
       type: object
       required:
@@ -5285,7 +5440,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/AdminAuditLog'
+            $ref: "#/components/schemas/AdminAuditLog"
     AdminProfessionalPatientNode:
       type: object
       required:
@@ -5311,9 +5466,9 @@ components:
           format: uri
           nullable: true
         sex:
-          $ref: '#/components/schemas/BiologicalSex'
+          $ref: "#/components/schemas/BiologicalSex"
         linkStatus:
-          $ref: '#/components/schemas/PatientLinkStatus'
+          $ref: "#/components/schemas/PatientLinkStatus"
         linkedAt:
           type: string
           format: date-time
@@ -5324,11 +5479,11 @@ components:
         - patients
       properties:
         professional:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
         patients:
           type: array
           items:
-            $ref: '#/components/schemas/AdminProfessionalPatientNode'
+            $ref: "#/components/schemas/AdminProfessionalPatientNode"
     AdminProfessionalsTreeResponse:
       type: object
       required:
@@ -5337,7 +5492,67 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/AdminProfessionalTreeNode'
+            $ref: "#/components/schemas/AdminProfessionalTreeNode"
+    AdminGuardianChildLinkStatus:
+      type:
+        - string
+        - "null"
+      enum: [active, inactive, null]
+      description: >-
+        Status agregado dos vínculos profissionais da criança. `active` tem
+        precedência sobre `inactive`; `null` indica ausência desses estados.
+    AdminGuardianChildNode:
+      type: object
+      required:
+        - childId
+        - fullName
+        - patientCode
+        - avatarUrl
+        - sex
+        - linkStatus
+      properties:
+        childId:
+          type: string
+          format: uuid
+        fullName:
+          type: string
+        patientCode:
+          type: string
+        avatarUrl:
+          type: string
+          format: uri
+          nullable: true
+        sex:
+          $ref: "#/components/schemas/BiologicalSex"
+        linkStatus:
+          $ref: "#/components/schemas/AdminGuardianChildLinkStatus"
+    AdminGuardianTreeNode:
+      type: object
+      required:
+        - guardian
+        - subscriptionActive
+        - children
+      properties:
+        guardian:
+          $ref: "#/components/schemas/User"
+        subscriptionActive:
+          type: boolean
+          description: >-
+            Indica se a assinatura mais recente do responsável está com status
+            `active`.
+        children:
+          type: array
+          items:
+            $ref: "#/components/schemas/AdminGuardianChildNode"
+    AdminGuardiansTreeResponse:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/AdminGuardianTreeNode"
     AdminPatientGuardianSummary:
       type: object
       required:
@@ -5366,19 +5581,19 @@ components:
         - guardian
       properties:
         child:
-          $ref: '#/components/schemas/Child'
+          $ref: "#/components/schemas/Child"
         link:
           oneOf:
-            - $ref: '#/components/schemas/ProfessionalPatientLink'
-            - type: 'null'
+            - $ref: "#/components/schemas/ProfessionalPatientLink"
+            - type: "null"
         professional:
           oneOf:
-            - $ref: '#/components/schemas/User'
-            - type: 'null'
+            - $ref: "#/components/schemas/User"
+            - type: "null"
         guardian:
           oneOf:
-            - $ref: '#/components/schemas/AdminPatientGuardianSummary'
-            - type: 'null'
+            - $ref: "#/components/schemas/AdminPatientGuardianSummary"
+            - type: "null"
     AdminSubscriptionListResponse:
       type: object
       required:
@@ -5387,14 +5602,14 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Subscription'
+            $ref: "#/components/schemas/Subscription"
     UpdateAdminSubscriptionStatusRequest:
       type: object
       required:
         - status
       properties:
         status:
-          $ref: '#/components/schemas/SubscriptionStatus'
+          $ref: "#/components/schemas/SubscriptionStatus"
     Notification:
       type: object
       required:
@@ -5443,7 +5658,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Notification'
+            $ref: "#/components/schemas/Notification"
     CreateEvolutionReportRequest:
       type: object
       required:
@@ -5522,7 +5737,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/EvolutionReport'
+            $ref: "#/components/schemas/EvolutionReport"
     Error:
       type: object
       required:
