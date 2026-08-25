@@ -43,6 +43,7 @@ Permitir que uma criança seja acompanhada por mais de um profissional, preserva
 - `tasks/change-requests/586-indicador-camera-hover-foto-crianca-web.md`
 - `tasks/change-requests/587-corrigir-lint-backend-web-mobile.md`
 - `tasks/change-requests/588-consultas-presenciais-timeline-paciente.md`
+- `tasks/change-requests/602-status-assinatura-responsavel-perfil-profissional.md`
 
 ## Progresso
 
@@ -60,3 +61,4 @@ Permitir que uma criança seja acompanhada por mais de um profissional, preserva
 - Task 593 — done (erro de consultas no perfil do paciente web)
 - Task 595 — done (anamnese protegida e resolução atômica de vínculo)
 - Task 596 — done (consultas presenciais compatíveis com modo sem banco)
+- Task 602 — done (status de assinatura do responsável no perfil profissional)
