@@ -92,6 +92,9 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/421-webhook-ciclo-atraso-cancel-refund-asaas.md`
 - `tasks/change-requests/422-tela-checkout-asaas-web.md`
 - `tasks/change-requests/423-cancelamento-reembolso-web-e-gate-mobile.md`
+- `tasks/change-requests/599-cancelar-reembolsar-assinatura-perfil-mobile.md`
+- `tasks/change-requests/600-simplificar-cta-confirmacao-cancelamento-mobile.md`
+- `tasks/change-requests/603-gate-assinatura-antes-login-mobile.md`
 - `tasks/change-requests/424-pagina-planos-master-valores-asaas.md`
 - `tasks/change-requests/425-gate-assinatura-confirmacao-e-valores.md`
 
@@ -138,9 +141,14 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/421-webhook-ciclo-atraso-cancel-refund-asaas.md` — done
 - `tasks/change-requests/422-tela-checkout-asaas-web.md` — done
 - `tasks/change-requests/423-cancelamento-reembolso-web-e-gate-mobile.md` — done
+- `tasks/change-requests/599-cancelar-reembolsar-assinatura-perfil-mobile.md` — done
+- `tasks/change-requests/600-simplificar-cta-confirmacao-cancelamento-mobile.md` — done
+- `tasks/change-requests/603-gate-assinatura-antes-login-mobile.md` — done
 - `tasks/change-requests/424-pagina-planos-master-valores-asaas.md` — done
 - `tasks/change-requests/425-gate-assinatura-confirmacao-e-valores.md` — done
 - `tasks/change-requests/487-hardening-supersede-checkout-asaas.md` — done
+- `tasks/change-requests/597-layout-gate-assinatura-login-e-pagamento.md` — done
+- `tasks/change-requests/598-layout-aguardando-pagamento-e-botao-ja-paguei.md` — done
 
 ## Status final
 
