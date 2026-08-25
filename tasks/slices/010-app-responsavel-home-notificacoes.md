@@ -103,6 +103,8 @@ Home/conta, perfil e notificacoes in-app de trilha.
 - `tasks/change-requests/388-consumir-parametro-de-aba-inicial-no-shell-do-responsavel-mobile.md` - Consumir e limpar `initialTab` no shell do responsável — **done**
 - `tasks/change-requests/574-claymorphism-cards-perfil-responsavel-mobile.md` - Claymorphism nos cards do perfil do responsável — **done**
 - `tasks/change-requests/575-uniformizar-pastilhas-icones-cards-clay-mobile.md` - Uniformizar pastilhas dos cards clay do perfil — **done**
+- `tasks/change-requests/624-remover-borda-duplicada-icones-perfil-mobile.md` - Remover borda duplicada dos ícones no perfil — **done**
+- `tasks/change-requests/625-corrigir-card-duplicado-e-pastilha-avisos-home-mobile.md` - Corrigir card duplicado e pastilha de avisos na Home — **done**
 - `tasks/change-requests/576-claymorphism-cards-home-avisos-mobile.md` - Claymorphism nos cards de Home e Avisos — **done**
 - `tasks/change-requests/578-claymorphism-cards-editar-responsavel-mobile.md` - Claymorphism nos cards de editar responsável — **done**
 
