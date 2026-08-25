@@ -102,6 +102,9 @@ Usuario autenticado acessa a area do perfil; recovery envia link e permite redef
 - `tasks/change-requests/495-login-resize-form-topo-acima-teclado.md` - resize Android + form no topo; reduz Samsung Pass no login
 - `tasks/change-requests/496-estabilizar-elevacao-login-baixar-form.md` - mesma elevação e-mail/senha; restore só ao fechar teclado
 - `tasks/change-requests/549-login-mobile-autofill-so-no-compacto.md` - autofill só desligado no estado compacto
+- `tasks/change-requests/607-recovery-mobile-aplicar-lift-do-login.md` - recovery aplica a elevação de teclado do login
+- `tasks/change-requests/608-fundo-liquid-glass-auth-mobile.md` - fundo liquid glass com bolhas no login e recuperação mobile
+- `tasks/change-requests/609-transparencia-painel-auth-teclado-mobile.md` - painel do formulário transparente com teclado aberto no login e recuperação mobile
 
 ## Dependencias do slice
 
@@ -162,6 +165,9 @@ Usuario autenticado acessa a area do perfil; recovery envia link e permite redef
 - Task 054 concluiu a renovacao automatica da sessao web por refresh token.
 - Task 073 endureceu o fluxo de refresh e a compatibilidade de hidratacao sem reabrir mobile.
 - Task 127 estende ao mobile a renovacao automatica da sessao ao receber `401` com `refreshToken` valido.
+- Task 607 reutiliza o hook de elevação do login na recuperação, preservando o debounce de fechamento do teclado.
+- Task 608 reintroduz no auth mobile bolhas ascendentes e camada liquid glass por solicitação explícita do usuário.
+- Task 609 torna transparente o painel claro do formulário enquanto o teclado está aberto no login e na recuperação mobile.
 - Slice 002 concluido.
 
 ## Progresso das tasks relacionadas
@@ -196,6 +202,9 @@ Usuario autenticado acessa a area do perfil; recovery envia link e permite redef
 - `tasks/change-requests/456-template-email-recuperacao-senha-logo-s3.md` — done
 - `tasks/change-requests/457-evitar-timeout-password-recovery-smtp.md` — done
 - `tasks/change-requests/458-logo-png-email-recuperacao-senha.md` — done
+- `tasks/change-requests/607-recovery-mobile-aplicar-lift-do-login.md` — done
+- `tasks/change-requests/608-fundo-liquid-glass-auth-mobile.md` — done
+- `tasks/change-requests/609-transparencia-painel-auth-teclado-mobile.md` — done
 
 ## Status final
 
