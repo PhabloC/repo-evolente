@@ -73,6 +73,9 @@ Admin completa sem exclusao; metricas e logs; mobile com capacidades essenciais.
 - `tasks/change-requests/484-hardening-dashboard-master-mobile-assinaturas-logs.md` - hardening do dashboard master mobile para assinaturas e logs — **done**
 - `tasks/change-requests/447-adicionar-graficos-dashboard-master-web.md` - gráficos operacionais no dashboard master — **done**
 - `tasks/change-requests/490-hardening-admin-logs-e-lookups-backend.md` - hardening dos lookups e da exportação PDF de logs no backend — **done**
+- `tasks/change-requests/610-visualizar-perfis-usuarios-master-web.md` - consulta somente-leitura de perfis na página de usuários — **done**
+- `tasks/change-requests/611-listar-responsaveis-filhos-aba-pacientes-master.md` - responsáveis com expansão de filhos na aba Pacientes — **done**
+- `tasks/change-requests/612-status-responsavel-assinatura-ativa-master.md` - status do responsável conforme assinatura ativa — **done**
 
 ## Dependencias do slice
 
@@ -108,7 +111,11 @@ Admin completa sem exclusao; metricas e logs; mobile com capacidades essenciais.
 - Sem conflitos adicionais alem das premissas.
 - Task 021 (API), Task 022 (web) e Task 023 (mobile MVP) concluidas.
 - Mobile: metricas + usuarios/inativar + logs curtos; catalogo permanece na web.
+- Task 610 adiciona consulta somente-leitura dos perfis exibidos no diretório de usuários web do master.
+- Task 611 substitui a listagem isolada de crianças na aba Pacientes pela relação responsável → filhos, disponível ao master em modo consulta.
+- Task 612 faz o status do responsável no master refletir a assinatura ativa, em vez de apenas o status técnico da conta.
 
 ## Status final
 
 done
+- Task 619 adicionou busca, abas por papel e paginação à lista de usuários do master no app mobile.
