@@ -100,6 +100,8 @@ Elevar a qualidade visual e a consistencia de toda a area autenticada web da Evo
 - Task 044 - refinamento visual dos modais compartilhados
 - Task 047 - refinamento visual da tela de relatórios por referência de chat
 - Task 048 - refinamento visual da tabela de planejamentos por referência de chat
+- `tasks/change-requests/613-remover-botao-fechar-pesquisa-header-web.md` - remoção do botão X da pesquisa global — **done**
+- `tasks/change-requests/614-busca-global-debounced-header-web.md` - busca global com debounce e localização dos resultados — **in_progress**
 
 ## Contexto mínimo
 
@@ -189,3 +191,9 @@ Elevar a qualidade visual e a consistencia de toda a area autenticada web da Evo
 - Task 402 restaurou `Todas` como primeira aba da biblioteca para exibir o acervo completo, mantendo as demais abas como recortes por categorias vinculadas.
 - Task 403 alinhou o dropdown `Categoria` do modal da biblioteca às categorias novas da seção `Conteúdos`, removendo os labels antigos do select sem reabrir a API.
 - Task 404 adicionou um botão `Salvar conteúdo` no header do modal de edição da biblioteca e passou a habilitá-lo somente após mudanças reais no formulário.
+- Task 614 transformou a pesquisa global do header em busca de destinos autorizados com debounce de 350 ms, exibindo o termo, a localização encontrada e navegação pelo resultado.
+- Task 615 corrige a camada e a abertura da busca global e estende, para master, os resultados aos usuários reais do ambiente.
+- Task 616 elevou os z-index do header e do balão da pesquisa para garantir sobreposição sobre CTAs.
+- Task 617 colocou o `main` do shell em camada inferior ao Header, corrigindo o balão atrás do dashboard.
+- Task 618 aplicou a extensão de banco necessária para a busca de usuários da Task 615 funcionar no ambiente local.
+- Task 618 aplica a extensão de banco necessária para a busca de usuários da Task 615 funcionar no ambiente local.
