@@ -70,6 +70,8 @@
 - `tasks/slices/051-seletor-filho-mobile.md` - Slice 051: seletor de filho no mobile — **done**
 - `tasks/slices/052-dashboard-analitico-responsavel-web.md` - Slice 052: dashboard analítico web do responsável — **done**
 - `tasks/slices/053-vinculos-multiplos-profissionais-aprovacao.md` - Slice 053: vínculos múltiplos de profissionais com aprovação — **done**
+- `tasks/slices/054-cancelamento-conta-responsavel-acesso-profissional.md` - Slice 054: cancelamento da conta do responsável e restrição de acesso profissional — **done**
+- `tasks/slices/055-cadastro-filho-perfil-mobile.md` - Slice 055: cadastro de filho no perfil mobile — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -89,7 +91,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - novo slice 026: jogos reentram em escopo de forma controlada, sem gamificacao e com execucao no app do responsavel
 - novo slice 039: substitui provider fake pelo Asaas (Slice 005 permanece done)
 - novo fluxo do responsável (Slices 049–051, Tasks 556–561): cadastro público só do responsável → pagamento → N filhos na plataforma (perfil, anamnese, código, trilha por filho) → web com dashboard/filhos/relatórios/config → mobile seleciona o filho após o login
-- premissas deste fluxo: assinatura por conta (não por filho); parentesco no filho; sem cadastro de filho no mobile neste planejamento; sem edição de trilha na web do responsável; sem prints da área web do responsável nem da tela de seleção mobile
+- premissas deste fluxo: assinatura por conta (não por filho); parentesco no filho; cadastro de filho também disponível no perfil mobile (Task 621); sem edição de trilha na web do responsável; sem prints da área web do responsável nem da tela de seleção mobile
 
 ## Premissas adotadas
 
@@ -437,6 +439,35 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 422 - Tela checkout Asaas web — done (`tasks/change-requests/422-tela-checkout-asaas-web.md`)
 - Task 424 - Página de planos do master com valores Asaas — done (`tasks/change-requests/424-pagina-planos-master-valores-asaas.md`)
 - Task 425 - Gate de assinatura: confirmação e valores oficiais — done (`tasks/change-requests/425-gate-assinatura-confirmacao-e-valores.md`)
+- Task 597 - Layout do gate de assinatura (login e pagamento) — done (`tasks/change-requests/597-layout-gate-assinatura-login-e-pagamento.md`)
+- Task 598 - Layout aguardando pagamento e botão Já paguei — done (`tasks/change-requests/598-layout-aguardando-pagamento-e-botao-ja-paguei.md`)
+- Task 599 - Cancelar e reembolsar assinatura no perfil mobile — done (`tasks/change-requests/599-cancelar-reembolsar-assinatura-perfil-mobile.md`)
+- Task 600 - Simplificar CTA de confirmação de cancelamento no mobile — done (`tasks/change-requests/600-simplificar-cta-confirmacao-cancelamento-mobile.md`)
+- Task 601 - Adicionar botão sair ao seletor de filho mobile — done (`tasks/change-requests/601-botao-sair-seletor-filho-mobile.md`)
+- Task 602 - Exibir status da assinatura do responsável no perfil profissional — done (`tasks/change-requests/602-status-assinatura-responsavel-perfil-profissional.md`)
+- Task 603 - Validar assinatura antes de autenticar no mobile — done (`tasks/change-requests/603-gate-assinatura-antes-login-mobile.md`)
+- Task 604 - Alinhar ações do perfil de paciente web — done (`tasks/change-requests/604-alinhar-acoes-perfil-paciente-web.md`)
+- Task 605 - Cancelamento em cascata da conta e bloqueio profissional na API — done (`tasks/change-requests/605-cancelamento-em-cascata-e-bloqueio-profissional-api.md`)
+- Task 606 - Paciente cancelado com ações restritas na web profissional — done (`tasks/change-requests/606-paciente-cancelado-acoes-restritas-web.md`)
+- Task 607 - Recovery mobile aplica elevação do login ao focar input — done (`tasks/change-requests/607-recovery-mobile-aplicar-lift-do-login.md`)
+- Task 608 - Fundo liquid glass com bolhas no auth mobile — done (`tasks/change-requests/608-fundo-liquid-glass-auth-mobile.md`)
+- Task 609 - Transparência do painel auth ao abrir teclado no mobile — done (`tasks/change-requests/609-transparencia-painel-auth-teclado-mobile.md`)
+- Task 610 - Visualizar perfis de usuários no master web — done (`tasks/change-requests/610-visualizar-perfis-usuarios-master-web.md`)
+- Task 611 - Listar responsáveis e filhos na aba Pacientes do master — done (`tasks/change-requests/611-listar-responsaveis-filhos-aba-pacientes-master.md`)
+- Task 612 - Status do responsável pela assinatura no master — done (`tasks/change-requests/612-status-responsavel-assinatura-ativa-master.md`)
+- Task 613 - Remover botão de fechar da pesquisa no header web — done (`tasks/change-requests/613-remover-botao-fechar-pesquisa-header-web.md`)
+- Task 614 - Busca global com debounce no header web — done (`tasks/change-requests/614-busca-global-debounced-header-web.md`)
+- Task 615 - Ajustes da busca global no ambiente master — done (`tasks/change-requests/615-ajustes-busca-global-master-web.md`)
+- Task 616 - Elevar camada do balão da pesquisa web — done (`tasks/change-requests/616-elevar-camada-balao-pesquisa-web.md`)
+- Task 617 - Corrigir empilhamento da busca sobre dashboard web — done (`tasks/change-requests/617-corrigir-empilhamento-busca-dashboard-web.md`)
+- Task 618 - Aplicar migration da busca de usuários local — done (`tasks/change-requests/618-aplicar-migration-busca-usuarios-local.md`)
+- Task 619 - Usuários master mobile: busca, abas e paginação — done (`tasks/change-requests/619-usuarios-master-mobile-busca-abas-paginacao.md`)
+- Task 620 - Paginação do Acervo master mobile — done (`tasks/change-requests/620-acervo-master-mobile-paginacao.md`)
+- Task 621 - Cadastro de filho no perfil do responsável mobile — done (`tasks/change-requests/621-cadastro-filho-perfil-responsavel-mobile.md`)
+- Task 622 - CTA de cadastro de filho no seletor mobile — done (`tasks/change-requests/622-cta-cadastro-filho-seletor-mobile.md`)
+- Task 623 - Refinar formulário de cadastro de filho mobile — done (`tasks/change-requests/623-refinar-formulario-cadastro-filho-mobile.md`)
+- Task 624 - Remover borda duplicada dos ícones no perfil mobile — done (`tasks/change-requests/624-remover-borda-duplicada-icones-perfil-mobile.md`)
+- Task 625 - Corrigir card duplicado e pastilha de avisos na Home mobile — done (`tasks/change-requests/625-corrigir-card-duplicado-e-pastilha-avisos-home-mobile.md`)
 - Task 426 - Fundo capa na tela de login web — done (`tasks/change-requests/426-fundo-capa-login-web.md`)
 - Task 427 - Efeito de vidro sobre a capa do login web — done (`tasks/change-requests/427-efeito-vidro-capa-login-web.md`)
 - Task 428 - Capa e vidro nas telas auth de cadastro e recovery — done (`tasks/change-requests/428-capa-vidro-auth-cadastro-recovery.md`)
