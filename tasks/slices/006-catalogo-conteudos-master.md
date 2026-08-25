@@ -179,3 +179,4 @@ Atividades publicadas com categoria/idade/dificuldade/objetivo; arquivos em stor
 ## Status final
 
 done
+- Task 620 adicionou paginação ao Acervo master no app mobile.
