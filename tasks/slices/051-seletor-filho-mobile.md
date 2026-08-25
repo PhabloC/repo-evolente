@@ -78,6 +78,7 @@ No app, depois do login, o responsável escolhe qual filho vai gerenciar. Home, 
 ## Tasks relacionadas
 
 - `tasks/change-requests/561-seletor-filho-pos-login-mobile.md`
+- `tasks/change-requests/601-botao-sair-seletor-filho-mobile.md`
 
 ## Dependencias do slice
 
@@ -114,6 +115,7 @@ No app, depois do login, o responsável escolhe qual filho vai gerenciar. Home, 
 ## Progresso das tasks relacionadas
 
 - Task 561 — done
+- Task 601 — done
 
 ## Status final
 
