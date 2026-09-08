@@ -15,7 +15,7 @@ Documento de referência do fluxo de assinatura via **Asaas** no monorepo Evolen
 
 ## 1. Objetivo
 
-Substituir o provider fake de pagamento por integração real com Asaas, permitindo que **profissional** e **responsável** assinem planos mensais (cartão, PIX ou boleto) e só tenham acesso completo após confirmação do pagamento.
+Substituir o provider fake de pagamento por integração real com Asaas, permitindo que **profissional** e **responsável** assinem planos mensais (cartão ou PIX) e só tenham acesso completo após confirmação do pagamento.
 
 O **master** é isento: não passa por checkout e já possui `accessGranted=true`.
 
@@ -29,7 +29,7 @@ O **master** é isento: não passa por checkout e já possui `accessGranted=true
 | Plano profissional | **R$ 79,00**/mês (`7900` centavos) |
 | Plano responsável | **R$ 49,00**/mês (`4900` centavos) |
 | Periodicidade | Mensal |
-| Meios | Cartão, PIX, boleto |
+| Meios | Cartão, PIX |
 | Moeda | BRL |
 | Master | Isento |
 | Assinatura | Por **conta** (não por filho) |
@@ -139,16 +139,15 @@ Arquivo principal: `backend/src/modules/subscriptions/providers/asaas-payment.pr
 |---|---|
 | **Cartão** | Checkout Session **RECURRENT** / mensal (`CREDIT_CARD` apenas) |
 | **PIX** | Assinatura clássica `POST /subscriptions` + 1ª cobrança + QR (`/payments/{id}/pixQrCode`); tenta garantir chave PIX EVP |
-| **Boleto** | Assinatura clássica `POST /subscriptions` + URL da 1ª cobrança / boleto |
 
-Motivo da divisão: Checkout Session do Asaas **não aceita boleto**; PIX no Checkout Session só em cobrança avulsa — por isso PIX/boleto usam assinatura clássica.
+Motivo da divisão: PIX no Checkout Session só atende cobrança avulsa; por isso o PIX mensal usa assinatura clássica.
 
 Outros pontos:
 
 - DI via `PAYMENT_PROVIDER=asaas|fake`
 - `/subscriptions/confirm` e webhook fake **bloqueados** quando provider = asaas
 - Callbacks `successUrl` / `cancelUrl` exigem **HTTPS** (`APP_PUBLIC_URL`)
-- PIX/boleto exigem **CPF** (responsável) ou **CNPJ** (profissional) no perfil
+- PIX exige **CPF** (responsável) ou **CNPJ** (profissional) no perfil
 - `externalReference` no formato `userId:audience`
 
 ### 5.3 Backend — webhook e ciclo (Task 421)
@@ -181,7 +180,7 @@ Rota: `/assinatura` (`SubscriptionGate`)
 Etapas principais:
 
 1. Pós-cadastro → autenticar (“Entrar e continuar”)
-2. Escolher meio (cartão / PIX / boleto) → “Pagar com Asaas”
+2. Escolher meio (cartão / PIX) → “Pagar com Asaas”
 3. Aguardar confirmação (poll ~4s + botão “Já paguei — verificar agora”)
 4. Acesso liberado → dashboard
 
@@ -235,9 +234,7 @@ flowchart TD
   B -->|credit_card| C[Asaas Checkout Session<br/>RECURRENT + CREDIT_CARD]
   B -->|pix| D[Garante chave PIX EVP]
   D --> E[POST /subscriptions Asaas<br/>billingType=PIX]
-  B -->|boleto| F[POST /subscriptions Asaas<br/>billingType=BOLETO]
   E --> G[Busca 1ª cobrança]
-  F --> G
   C --> H[Retorna checkoutId + invoiceUrl]
   G --> I[Retorna checkoutId + invoiceUrl<br/>+ pixQrCode se PIX]
   H --> J[Front abre fatura / sessão]
@@ -385,7 +382,7 @@ Após **15 falhas** consecutivas o Asaas pausa a fila (“Interrompido”). Corr
 6. `APP_PUBLIC_URL` deve ser HTTPS válido para cartão (callbacks). Em dev estrito local HTTP o Checkout Session de cartão pode falhar — use URL pública HTTPS do front ou ambiente já publicado
 7. Fluxo: cadastrar/logar → `/assinatura` → pagar no sandbox → webhook 2xx → “Já paguei” ou poll libera acesso
 
-Simular pagamento PIX/boleto no sandbox: abrir a cobrança no painel Asaas → **Simular pagamento**.
+Simular pagamento PIX no sandbox: abrir a cobrança no painel Asaas → **Simular pagamento**.
 
 ---
 
@@ -407,7 +404,7 @@ Definido no Slice 039 e requirements:
 - Webhook apontando para host público saudável (ngrok em local ou API deployada)
 - Secret do painel = `.env`
 - Fila Asaas ativa (não interrompida)
-- Perfis com CPF/CNPJ para PIX/boleto
+- Perfis com CPF/CNPJ para PIX
 
 ---
 
