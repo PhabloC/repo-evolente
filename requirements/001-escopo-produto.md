@@ -131,7 +131,7 @@ Master
 | Valor profissional | **R$ 79,00** / mês (`7900` centavos) |
 | Valor responsável | **R$ 49,00** / mês (`4900` centavos) |
 | Periodicidade | **Mensal** |
-| Meios de pagamento | **Cartão, PIX e boleto** |
+| Meios de pagamento | **Cartão e PIX** |
 | Master | **Isento** de pagamento |
 | Ciclo de estados | `PENDING` → `ACTIVE` → `OVERDUE` → `SUSPENDED` → `CANCELED` |
 | Atraso | `ACTIVE` → `OVERDUE` (carência 3 dias); depois → `SUSPENDED` (**inativa a conta**) |
