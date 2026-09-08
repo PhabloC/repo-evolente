@@ -186,7 +186,7 @@ Regra geral:
 | Responsável | R$ 49,00 | Asaas |
 
 - Periodicidade: **mensal**.
-- Meios aceitos: **cartão, PIX e boleto**.
+- Meios aceitos: **cartão e PIX**.
 
 ### 5.2 Responsável que se cadastra por conta própria
 
