@@ -72,6 +72,10 @@
 - `tasks/slices/053-vinculos-multiplos-profissionais-aprovacao.md` - Slice 053: vínculos múltiplos de profissionais com aprovação — **done**
 - `tasks/slices/054-cancelamento-conta-responsavel-acesso-profissional.md` - Slice 054: cancelamento da conta do responsável e restrição de acesso profissional — **done**
 - `tasks/slices/055-cadastro-filho-perfil-mobile.md` - Slice 055: cadastro de filho no perfil mobile — **done**
+- `tasks/slices/056-build-ios-testflight.md` - Slice 056: build iOS para TestFlight — **blocked**
+- `tasks/slices/057-configuracao-api-publica-mobile.md` - Slice 057: configuração da API pública no mobile — **done**
+- `tasks/slices/058-area-segura-tab-bar-mobile.md` - Slice 058: área segura da tab bar mobile — **done**
+- `tasks/slices/059-estabilidade-nativa-expo-ios.md` - Slice 059: estabilidade nativa Expo para iOS — **in_progress**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -86,7 +90,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 - permissoes: master, profissional, responsavel; crianca sem login; mobile = master + responsavel
 - decisoes humanas pendentes: push, campos de clinica, multi-vinculo
-- decisoes humanas confirmadas (pagamento): gateway Asaas; profissional R$ 79/mês; responsável R$ 49/mês; mensal; cartão/PIX/boleto; master isento; ciclo PENDING→ACTIVE→OVERDUE→SUSPENDED→CANCELED; OVERDUE 3 dias → SUSPENDED (inativa conta); cancel/refund → CANCELED com bloqueio imediato
+- decisoes humanas confirmadas (pagamento): gateway Asaas; profissional R$ 79/mês; responsável R$ 49/mês; mensal; cartão/PIX; master isento; ciclo PENDING→ACTIVE→OVERDUE→SUSPENDED→CANCELED; OVERDUE 3 dias → SUSPENDED (inativa conta); cancel/refund → CANCELED com bloqueio imediato
 - conflito: DS mobile menciona gamificacao — requisito prevalece (fora de escopo)
 - novo slice 026: jogos reentram em escopo de forma controlada, sem gamificacao e com execucao no app do responsavel
 - novo slice 039: substitui provider fake pelo Asaas (Slice 005 permanece done)
@@ -114,6 +118,9 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+
+- Task 629 - Remover boleto do checkout Asaas — done (`tasks/change-requests/629-remover-boleto-checkout-asaas.md`)
+- Task 636 - Criar atividade de vídeo por URL do YouTube — done (`tasks/change-requests/636-criar-atividade-video-por-url-youtube.md`)
 - Task 001 - Contrato OpenAPI base — done
 - Task 025 - Relatorios PDF/CSV — done
 - Task 030 - Politica de senha forte e confirmacao no reset — done (`tasks/change-requests/030-politica-senha-forte-web.md`)
@@ -397,6 +404,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 485 - Compatibilizar quebra-cabeça legado sem `difficulty` no mobile — done (`tasks/change-requests/485-compatibilizar-quebra-cabeca-legado-sem-difficulty-mobile.md`)
 ### Front
 
+- Task 634 - Login web mobile apenas com formulário — done (`tasks/change-requests/634-login-web-mobile-apenas-formulario.md`)
+- Task 635 - Login web mobile manter cabeçalho do card — done (`tasks/change-requests/635-login-web-mobile-manter-cabecalho-card.md`)
 - Task 003 - Shell web React — done
 - Task 006 - Telas auth web — done
 - Task 009 - Fluxo cadastro profissional web — done
@@ -710,6 +719,11 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 499 - Reverter fundo do sidebar web ao vidro anterior — done (`tasks/change-requests/499-reverter-fundo-sidebar-web-vidro.md`)
 
 ### Mobile
+
+- Task 630 - Corrigir assets iOS para TestFlight — blocked (`tasks/change-requests/630-corrigir-assets-ios-testflight.md`)
+- Task 631 - Configurar API pública no EAS para mobile — done (`tasks/change-requests/631-configurar-api-publica-eas-mobile.md`)
+- Task 632 - Ajustar área segura da tab bar mobile — done (`tasks/change-requests/632-ajustar-area-segura-tab-bar-mobile.md`)
+- Task 633 - Corrigir incompatibilidade nativa Expo no iOS — in_progress (`tasks/change-requests/633-corrigir-incompatibilidade-nativa-expo-ios.md`)
 
 - Task 004 - Shell mobile Expo — done
 - Task 007 - Telas auth mobile — done
