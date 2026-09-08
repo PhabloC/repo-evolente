@@ -86,6 +86,7 @@ Atividades publicadas com categoria/idade/dificuldade/objetivo; arquivos em stor
 - `tasks/change-requests/340-adicionar-paginacao-na-tabela-da-biblioteca-web.md` - paginação local da tabela editorial de áudio e vídeo na biblioteca
 - `tasks/change-requests/341-refinar-input-de-upload-da-biblioteca-web.md` - refino visual do controle de upload no modal da biblioteca
 - `tasks/change-requests/636-criar-atividade-video-por-url-youtube.md` - criação de atividade de vídeo por URL do YouTube no modal Nova atividade
+- `tasks/change-requests/637-corrigir-preview-e-validacao-youtube-biblioteca.md` - correção do preview e validação de URLs do YouTube na biblioteca
 - `tasks/change-requests/342-encostar-capa-dos-jogos-nas-bordas-do-card.md` - ajuste do encaixe da capa dos jogos no card da biblioteca
 - `tasks/change-requests/486-hardening-biblioteca-web-config-preview.md` - hardening da biblioteca web para configs mínimas válidas e preview sem resposta tardia — **done**
 - `tasks/change-requests/159-storage-s3-compativel-minio-backend.md` - provider S3/MinIO real
@@ -142,6 +143,7 @@ Atividades publicadas com categoria/idade/dificuldade/objetivo; arquivos em stor
 - Task 340 adiciona paginação local na tabela editorial de áudio e vídeo, com resumo de faixa visível e navegação compacta.
 - Task 341 substitui o input de arquivo cru do modal da biblioteca por um controle composto mais claro e consistente com a UI editorial.
 - Task 636 adiciona a alternativa de URL do YouTube para criar atividade de vídeo, persistindo a URL em `mediaUrl` sem upload de arquivo.
+- Task 637 corrige o preview web de vídeos do YouTube e restringe validação backend a URLs com identificador de vídeo.
 - Task 342 remove a moldura interna superior do card de jogo para a capa encostar nas laterais e no topo.
 - Task 486 garante config mínima válida ao trocar o tipo de certos jogos na biblioteca web e impede resposta tardia de reabrir/substituir o preview.
 - Task 159 reabre o slice apenas para substituir o adapter local por provider S3-compativel real em bucket público.
@@ -171,6 +173,7 @@ Atividades publicadas com categoria/idade/dificuldade/objetivo; arquivos em stor
 - `tasks/change-requests/438-paginacao-e-cache-biblioteca-web.md` — done
 - `tasks/change-requests/341-refinar-input-de-upload-da-biblioteca-web.md` — done
 - `tasks/change-requests/636-criar-atividade-video-por-url-youtube.md` — done
+- `tasks/change-requests/637-corrigir-preview-e-validacao-youtube-biblioteca.md` — done
 - `tasks/change-requests/342-encostar-capa-dos-jogos-nas-bordas-do-card.md` — done
 - `tasks/change-requests/486-hardening-biblioteca-web-config-preview.md` — done
 - `tasks/change-requests/159-storage-s3-compativel-minio-backend.md` — done
