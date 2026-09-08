@@ -41,7 +41,7 @@ tags:
     description: Cadastro público do responsável; filhos e anamnese após pagamento
   - name: Subscriptions
     description: |
-      Assinatura mensal Asaas, checkout (cartão/PIX/boleto) e gate de acesso.
+      Assinatura mensal Asaas, checkout (cartão/PIX) e gate de acesso.
       Ciclo canônico: PENDING → ACTIVE → OVERDUE → SUSPENDED → CANCELED.
       Master é isento.
   - name: Contents
@@ -581,9 +581,9 @@ paths:
         Cria assinatura em status pending via PaymentProvider.
         Com PAYMENT_PROVIDER=asaas: cobrança/assinatura mensal no Asaas.
         Planos: profissional 7900 centavos; responsável 4900 centavos; BRL; mensal.
-        Meios aceitos: credit_card (Checkout recorrente), pix e boleto
+        Meios aceitos: credit_card (Checkout recorrente) e pix
         (assinatura clássica Asaas). Informe `paymentMethod` no body.
-        PIX/boleto exigem CPF (responsável) ou CNPJ da clínica (profissional).
+        PIX exige CPF (responsável) ou CNPJ da clínica (profissional).
         Master não pode iniciar checkout.
         Com PAYMENT_PROVIDER=fake: mantém fluxo simulado (dev/testes).
       security:
@@ -832,6 +832,7 @@ paths:
       description: |
         Cria atividade áudio, vídeo ou jogo com metadados.
         Para áudio e vídeo, o upload da mídia é feito em POST /contents/{contentId}/media.
+        Para vídeo, `mediaUrl` pode apontar para uma URL HTTPS do YouTube como alternativa ao upload.
         Para jogo, `gameType` e `gameConfig` definem o renderer consumido pelo app.
         Mídia nunca é persistida no banco — apenas chave/URL de storage.
       security:
@@ -3133,6 +3134,12 @@ components:
         - credit_card
         - pix
         - boleto
+    SubscriptionCheckoutPaymentMethod:
+      type: string
+      description: Meios aceitos para iniciar um novo checkout Asaas
+      enum:
+        - credit_card
+        - pix
     SubscriptionPlan:
       type: object
       description: Planos mensais oficiais (BRL)
@@ -3206,7 +3213,7 @@ components:
           const: monthly
         paymentMethod:
           oneOf:
-            - $ref: "#/components/schemas/SubscriptionPaymentMethod"
+            - $ref: "#/components/schemas/SubscriptionCheckoutPaymentMethod"
             - type: "null"
         confirmedAt:
           type:
@@ -3336,7 +3343,7 @@ components:
               items:
                 $ref: "#/components/schemas/SubscriptionPaymentMethod"
               minItems: 1
-              description: credit_card, pix e boleto
+              description: credit_card ou pix; boleto pode aparecer apenas em checkout histórico retomado
             invoiceUrl:
               type:
                 - string
@@ -4852,6 +4859,11 @@ components:
           type: string
         mediaType:
           $ref: "#/components/schemas/ContentMediaType"
+        mediaUrl:
+          type: string
+          format: uri
+          maxLength: 1024
+          description: URL HTTPS do YouTube para conteúdo de vídeo, como alternativa ao upload.
         gameType:
           $ref: "#/components/schemas/ContentGameType"
         gameConfig:
