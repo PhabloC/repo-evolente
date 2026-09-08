@@ -56,6 +56,8 @@ Alinhar a pagina de login web ao print de referencia e permitir exploracao da pl
 ## Tasks relacionadas
 
 - Task 026 (CR) - Login visual e acesso livre web — **done**
+- Task 634 (CR) - Login web mobile apenas com formulário — **done**
+- Task 635 (CR) - Login web mobile manter cabeçalho do card — **done**
 
 ## Contexto mínimo
 
@@ -81,3 +83,5 @@ baixo — UI single-stack, um print, sem API
 - **Atualizacao:** bypass revertido na Task 029 / Slice 015 (auth obrigatoria).
 - **Atualizacao:** Task 426 — fundo `capa-tela-login.webp` no login via prop `coverBackground` do AuthLayout.
 - **Atualizacao:** Task 427 — efeito de vidro (blur + verniz) sobre a capa do login.
+- **Atualizacao:** Task 634 concluiu a variante responsiva do login web, mantendo apenas o formulário em telas de até 560px.
+- **Atualizacao:** Task 635 preserva o cabeçalho e a superfície do card conforme a referência mobile enviada.
