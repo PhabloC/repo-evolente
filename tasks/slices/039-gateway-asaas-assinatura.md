@@ -10,7 +10,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 
 ## Entrega verificavel
 
-- Checkout Asaas (cartão, PIX, boleto) libera acesso após confirmação.
+- Checkout Asaas (cartão ou PIX) libera acesso após confirmação.
 - Atraso > 3 dias inativa a conta.
 - Cancelamento e reembolso (até 3 dias de uso) bloqueiam na hora.
 - Master permanece isento.
@@ -44,7 +44,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 
 - tipo: artefato de design system
 - fonte primaria: `design-system/front/Design_System_Evolente_Desktop.md` (assinatura)
-- lacunas: meios PIX/cartão/boleto, cancelamento e reembolso sem print dedicado — copiar tokens e layout do gate atual
+- lacunas: meios PIX/cartão, cancelamento e reembolso sem print dedicado — copiar tokens e layout do gate atual
 
 ### Mobile
 
@@ -59,7 +59,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 
 ## Casos de erro e borda
 
-- Pagamento pendente (PIX/boleto)
+- Pagamento pendente (PIX)
 - Pagamento recusado
 - Webhook duplicado ou fora de ordem
 - Atraso no limite de 3 dias
@@ -71,7 +71,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - Gateway: Asaas
 - Valores: profissional R$ 79/mês; responsável R$ 49/mês
 - Periodicidade: mensal
-- Meios: cartão, PIX, boleto
+- Meios para novas assinaturas: cartão e PIX. Boletos históricos permanecem apenas consultáveis/gerenciáveis.
 - Master isento
 - Ciclo: `PENDING` → `ACTIVE` → `OVERDUE` → `SUSPENDED` → `CANCELED`
 - Atraso: `OVERDUE` (3 dias) → `SUSPENDED` (inativa conta)
@@ -97,6 +97,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/603-gate-assinatura-antes-login-mobile.md`
 - `tasks/change-requests/424-pagina-planos-master-valores-asaas.md`
 - `tasks/change-requests/425-gate-assinatura-confirmacao-e-valores.md`
+- `tasks/change-requests/629-remover-boleto-checkout-asaas.md`
 
 ## Dependencias do slice
 
@@ -149,6 +150,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/487-hardening-supersede-checkout-asaas.md` — done
 - `tasks/change-requests/597-layout-gate-assinatura-login-e-pagamento.md` — done
 - `tasks/change-requests/598-layout-aguardando-pagamento-e-botao-ja-paguei.md` — done
+- `tasks/change-requests/629-remover-boleto-checkout-asaas.md` — done
 
 ## Status final
 
