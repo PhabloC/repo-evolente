@@ -121,6 +121,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 - Task 629 - Remover boleto do checkout Asaas — done (`tasks/change-requests/629-remover-boleto-checkout-asaas.md`)
 - Task 636 - Criar atividade de vídeo por URL do YouTube — done (`tasks/change-requests/636-criar-atividade-video-por-url-youtube.md`)
+- Task 637 - Corrigir preview e validação YouTube na biblioteca — done (`tasks/change-requests/637-corrigir-preview-e-validacao-youtube-biblioteca.md`)
 - Task 001 - Contrato OpenAPI base — done
 - Task 025 - Relatorios PDF/CSV — done
 - Task 030 - Politica de senha forte e confirmacao no reset — done (`tasks/change-requests/030-politica-senha-forte-web.md`)
