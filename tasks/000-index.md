@@ -122,6 +122,11 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 629 - Remover boleto do checkout Asaas — done (`tasks/change-requests/629-remover-boleto-checkout-asaas.md`)
 - Task 636 - Criar atividade de vídeo por URL do YouTube — done (`tasks/change-requests/636-criar-atividade-video-por-url-youtube.md`)
 - Task 637 - Corrigir preview e validação YouTube na biblioteca — done (`tasks/change-requests/637-corrigir-preview-e-validacao-youtube-biblioteca.md`)
+- Task 638 - Logar ausência de assinatura no verify — done (`tasks/change-requests/638-log-verify-assinatura-ausente.md`)
+- Task 639 - Diagnosticar webhook Asaas retornando 404 — done (`tasks/change-requests/639-diagnostico-webhook-asaas-404.md`)
+- Task 640 - Reaproveitar responsável órfão sem assinatura — done (`tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md`)
+- Task 641 - Gate de assinatura não verifica sem checkout — done (`tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md`)
+- Task 642 - Diagnosticar erro Asaas ao criar assinatura PIX — done (`tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md`)
 - Task 001 - Contrato OpenAPI base — done
 - Task 025 - Relatorios PDF/CSV — done
 - Task 030 - Politica de senha forte e confirmacao no reset — done (`tasks/change-requests/030-politica-senha-forte-web.md`)
