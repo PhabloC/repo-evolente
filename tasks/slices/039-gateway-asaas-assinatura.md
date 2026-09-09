@@ -98,6 +98,11 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/424-pagina-planos-master-valores-asaas.md`
 - `tasks/change-requests/425-gate-assinatura-confirmacao-e-valores.md`
 - `tasks/change-requests/629-remover-boleto-checkout-asaas.md`
+- `tasks/change-requests/638-log-verify-assinatura-ausente.md`
+- `tasks/change-requests/639-diagnostico-webhook-asaas-404.md`
+- `tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md`
+- `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md`
+- `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md`
 
 ## Dependencias do slice
 
@@ -151,6 +156,11 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/597-layout-gate-assinatura-login-e-pagamento.md` — done
 - `tasks/change-requests/598-layout-aguardando-pagamento-e-botao-ja-paguei.md` — done
 - `tasks/change-requests/629-remover-boleto-checkout-asaas.md` — done
+- `tasks/change-requests/638-log-verify-assinatura-ausente.md` — done
+- `tasks/change-requests/639-diagnostico-webhook-asaas-404.md` — done
+- `tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md` — done
+- `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md` — done
+- `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md` — in_progress
 
 ## Status final
 
