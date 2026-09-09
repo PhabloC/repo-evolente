@@ -81,6 +81,8 @@ O visitante cadastra apenas a conta do responsável e segue para o pagamento. Cr
 - `tasks/change-requests/556-contrato-cadastro-responsavel-sem-filho.md`
 - `tasks/change-requests/557-api-cadastro-responsavel-e-filhos.md`
 - `tasks/change-requests/558-wizard-cadastro-so-responsavel-web.md`
+- `tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md`
+- `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md`
 
 ## Dependencias do slice
 
@@ -121,6 +123,8 @@ O visitante cadastra apenas a conta do responsável e segue para o pagamento. Cr
 - Task 556 — done
 - Task 557 — done
 - Task 558 — done
+- Task 640 — done
+- Task 641 — done
 
 ## Status final
 
@@ -129,3 +133,5 @@ done
 ## Correcoes posteriores
 
 - Task 594 - done (validação integral do agregado antes da persistência familiar).
+- Task 640 - done (recadastro de responsável órfão sem assinatura reaproveita a conta e atualiza credenciais).
+- Task 641 - done (gate web usa status inicial antes de verificar pagamento).
