@@ -1443,3 +1443,4 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-553.md`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-554.md`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-555.md`
+- `tasks/change-requests/643-hardening-review-assinatura-cadastro-webhook.md` — **done**
