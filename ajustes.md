@@ -1,6 +1,0 @@
-1 - src/pages/Auth/SubscriptionGate/index.tsx: Quando uma conta com assinatura overdue ou suspended regulariza o pagamento fora do retorno ?checkout=success, este GET preserva o estado local e, como apenas pending inicia o polling, /subscriptions/verify nunca é chamado para liberar o acesso. Use o status apenas para detectar subscription: null, mas execute verifySubscriptionPayment() quando já existir uma assinatura ou permita a verificação manual nesses estados.
-
-2 - src/modules/guardians/guardians.service.ts: Como POST /guardians/register não usa guard, qualquer pessoa que conheça o e-mail e o CPF de um responsável sem filhos e com accessGranted=false consegue definir uma nova senha aqui, entrar na conta e assumir inclusive um checkout pendente. Exija a senha atual ou um token de recuperação válido antes de atualizar password.
-
-3 - src/modules/subscriptions/subscriptions.service.ts: Como a rota é pública e os campos registrados não têm limite de tamanho, requisições com token ausente ou inválido agora podem gerar logs volumosos e eventos falsos antes de serem rejeitadas. Mova assertWebhookSecret para antes de logger.log e registre o payload somente após autenticar o webhook.
-OK — os apontamentos 1, 2 e 3 foram corrigidos e validados pela Task 643.
