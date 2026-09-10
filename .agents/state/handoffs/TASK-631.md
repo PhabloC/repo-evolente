@@ -12,3 +12,4 @@
 - **Próxima ação sugerida:** abrir o link da build EAS, baixar o AAB concluído e subir a versão 4 na Google Play.
 - **Próximo contexto recomendado:** página/logs da build EAS e a faixa Teste interno do Play Console.
 - **Contexto que não deve ser carregado:** requisitos, design system, contrato OpenAPI completo, telas web e código de backend além do prefixo da API.
+
