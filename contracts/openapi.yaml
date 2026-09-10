@@ -2716,7 +2716,10 @@ components:
         - expectativaUso
       properties:
         motivoPrincipal:
-          $ref: "#/components/schemas/AnamneseMotivo"
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/AnamneseMotivo"
         motivoPrincipalOutro:
           type: string
         possuiDiagnostico:
@@ -2739,13 +2742,16 @@ components:
         acompanhamentoOutro:
           type: string
         comunicacao:
-          type: string
-          enum:
-            - adequada
-            - fala_pouco
-            - nao_fala
-            - dificuldade_para_compreender
-            - dificuldade_para_se_expressar
+          type: array
+          minItems: 1
+          items:
+            type: string
+            enum:
+              - adequada
+              - fala_pouco
+              - nao_fala
+              - dificuldade_para_compreender
+              - dificuldade_para_se_expressar
         desempenhoEscolar:
           type: string
           enum:
