@@ -118,6 +118,37 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 651 - Informar extremos da escala de desenvolvimento geral — done (`tasks/change-requests/651-legenda-desenvolvimento-geral-anamnese.md`)
+- Task 653 - Ajustar cartas do jogo de memória de articulação no tablet — done (`tasks/change-requests/653-ajustar-cartas-memoria-articulacao-tablet.md`)
+- Task 654 - Ajustar jogo dos erros no tablet — done (`tasks/change-requests/654-ajustar-jogo-dos-erros-tablet.md`)
+- Task 655 - Reduzir letras da caça-palavras no tablet horizontal — done (`tasks/change-requests/655-reduzir-letras-caca-palavras-tablet-horizontal.md`)
+- Task 656 - Corrigir conteúdo do jogo de alfabeto falado — done (`tasks/change-requests/656-corrigir-conteudo-jogo-alfabeto-falado.md`)
+- Task 657 - Corrigir layout do alfabeto falado no tablet — done (`tasks/change-requests/657-corrigir-layout-alfabeto-tablet.md`)
+- Task 658 - Exibir cinco cards do alfabeto por linha no tablet — done (`tasks/change-requests/658-cinco-cards-alfabeto-tablet.md`)
+- Task 659 - Alinhar última carta do jogo da memória no tablet — done (`tasks/change-requests/659-alinhar-ultima-carta-memoria-tablet.md`)
+- Task 660 - Equilibrar margens do jogo Quem é o intruso — done (`tasks/change-requests/660-equilibrar-margens-quem-e-o-intruso.md`)
+- Task 661 - Corrigir categoria do intruso na rodada de roupas — done (`tasks/change-requests/661-corrigir-categoria-intruso-roupas.md`)
+- Task 662 - Corrigir intruso da rodada Meios de transporte — done (`tasks/change-requests/662-corrigir-intruso-meios-de-transporte.md`)
+- Task 663 - Propagar correção da rodada de roupas persistida — done (`tasks/change-requests/663-forcar-correcao-rodada-roupas-persistida.md`)
+- Task 664 - Corrigir intruso da rodada Animais — done (`tasks/change-requests/664-corrigir-intruso-animais.md`)
+- Task 665 - Ajustar Fluência em ação no tablet — done (`tasks/change-requests/665-ajustar-fluencia-em-acao-tablet.md`)
+- Task 666 - Padronizar frases da Fluência em ação — done (`tasks/change-requests/666-padronizar-frases-fluencia-em-acao.md`)
+- Task 667 - Equilibrar margens do jogo da memória no tablet — done (`tasks/change-requests/667-equilibrar-margens-memoria-tablet.md`)
+- Task 668 - Revisar responsividade do jogo da memória no tablet — done (`tasks/change-requests/668-responsividade-memoria-tablet.md`)
+- Task 669 - Adicionar botão Verificar ao jogo Quem é o intruso — done (`tasks/change-requests/669-adicionar-verificar-quem-e-o-intruso.md`)
+- Task 670 - Reproduzir áudio dos cards do jogo Quem é o intruso — done (`tasks/change-requests/670-audio-dos-cards-quem-e-o-intruso.md`)
+- Task 671 - Publicar áudios dos cards do intruso no S3 — done (`tasks/change-requests/671-upload-audios-cards-intruso-s3.md`)
+- Task 672 - Permitir trocar seleção antes de verificar o intruso — done (`tasks/change-requests/672-permitir-trocar-selecao-intruso.md`)
+- Task 673 - Exibir feedback do intruso apenas após verificar — done (`tasks/change-requests/673-feedback-intruso-apenas-apos-verificar.md`)
+- Task 674 - Usar bolinha na seleção do jogo Quem é o intruso — done (`tasks/change-requests/674-bolinha-selecao-intruso.md`)
+- Task 675 - Adicionar Verificar ao jogo Diálogos em ação — done (`tasks/change-requests/675-verificar-dialogos-em-acao.md`)
+- Task 676 - Reproduzir áudio de tentativa novamente nos diálogos — done (`tasks/change-requests/676-audio-tentar-novamente-dialogos.md`)
+- Task 677 - Publicar áudios das opções dos diálogos no S3 — done (`tasks/change-requests/677-audios-opcoes-dialogos-s3.md`)
+- Task 652 - Visualizar atividade na Biblioteca da trilha mobile — done (`tasks/change-requests/652-visualizar-atividade-na-biblioteca-mobile.md`)
+- Task 650 - Multisseleção de motivo principal e comunicação na anamnese — done (`tasks/change-requests/650-multisselecao-anamnese-filho-web-mobile.md`)
+
+### Shared
+
 
 - Task 629 - Remover boleto do checkout Asaas — done (`tasks/change-requests/629-remover-boleto-checkout-asaas.md`)
 - Task 636 - Criar atividade de vídeo por URL do YouTube — done (`tasks/change-requests/636-criar-atividade-video-por-url-youtube.md`)
@@ -467,6 +498,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 607 - Recovery mobile aplica elevação do login ao focar input — done (`tasks/change-requests/607-recovery-mobile-aplicar-lift-do-login.md`)
 - Task 608 - Fundo liquid glass com bolhas no auth mobile — done (`tasks/change-requests/608-fundo-liquid-glass-auth-mobile.md`)
 - Task 609 - Transparência do painel auth ao abrir teclado no mobile — done (`tasks/change-requests/609-transparencia-painel-auth-teclado-mobile.md`)
+- Task 610 - Responsividade da página de login para tablet no mobile — done (`tasks/change-requests/610-responsividade-login-tablet-mobile.md`)
 - Task 610 - Visualizar perfis de usuários no master web — done (`tasks/change-requests/610-visualizar-perfis-usuarios-master-web.md`)
 - Task 611 - Listar responsáveis e filhos na aba Pacientes do master — done (`tasks/change-requests/611-listar-responsaveis-filhos-aba-pacientes-master.md`)
 - Task 612 - Status do responsável pela assinatura no master — done (`tasks/change-requests/612-status-responsavel-assinatura-ativa-master.md`)
@@ -477,6 +509,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 617 - Corrigir empilhamento da busca sobre dashboard web — done (`tasks/change-requests/617-corrigir-empilhamento-busca-dashboard-web.md`)
 - Task 618 - Aplicar migration da busca de usuários local — done (`tasks/change-requests/618-aplicar-migration-busca-usuarios-local.md`)
 - Task 619 - Usuários master mobile: busca, abas e paginação — done (`tasks/change-requests/619-usuarios-master-mobile-busca-abas-paginacao.md`)
+- Task 644 - Corrigir salto de scroll nas abas de usuários master mobile — done (`tasks/change-requests/644-corrigir-salto-scroll-abas-usuarios-master-mobile.md`)
+- Task 678 - Visualizar atividade no acervo master mobile — done (`tasks/change-requests/678-visualizar-atividade-acervo-master-mobile.md`)
 - Task 620 - Paginação do Acervo master mobile — done (`tasks/change-requests/620-acervo-master-mobile-paginacao.md`)
 - Task 621 - Cadastro de filho no perfil do responsável mobile — done (`tasks/change-requests/621-cadastro-filho-perfil-responsavel-mobile.md`)
 - Task 622 - CTA de cadastro de filho no seletor mobile — done (`tasks/change-requests/622-cta-cadastro-filho-seletor-mobile.md`)
@@ -1444,3 +1478,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-554.md`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-555.md`
 - `tasks/change-requests/643-hardening-review-assinatura-cadastro-webhook.md` — **done**
+
+
+
+
+
