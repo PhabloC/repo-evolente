@@ -43,3 +43,4 @@ done
 ## Proximo contexto recomendado
 
 - Se ainda houver travas de cadastro no front, carregar `front-end/src/pages/Auth/RegisterGuardian/` e o retorno de erro real da API.
+
