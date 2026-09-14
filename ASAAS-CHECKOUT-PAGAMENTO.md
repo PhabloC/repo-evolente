@@ -137,7 +137,7 @@ Arquivo principal: `backend/src/modules/subscriptions/providers/asaas-payment.pr
 
 | Meio | Estratégia na API Asaas |
 |---|---|
-| **Cartão** | Checkout Session **RECURRENT** / mensal (`CREDIT_CARD` apenas) |
+| **Cartão** | Checkout Session **RECURRENT** / mensal (`CREDIT_CARD`; o Asaas pode oferecer crédito ou débito na fatura conforme elegibilidade) |
 | **PIX** | Assinatura clássica `POST /subscriptions` + 1ª cobrança + QR (`/payments/{id}/pixQrCode`); tenta garantir chave PIX EVP |
 
 Motivo da divisão: PIX no Checkout Session só atende cobrança avulsa; por isso o PIX mensal usa assinatura clássica.
