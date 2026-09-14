@@ -581,7 +581,7 @@ paths:
         Cria assinatura em status pending via PaymentProvider.
         Com PAYMENT_PROVIDER=asaas: cobrança/assinatura mensal no Asaas.
         Planos: profissional 7900 centavos; responsável 4900 centavos; BRL; mensal.
-        Meios aceitos: credit_card (Checkout recorrente) e pix
+        Meios aceitos: credit_card (Checkout recorrente; pode exibir crédito ou débito conforme elegibilidade do Asaas) e pix
         (assinatura clássica Asaas). Informe `paymentMethod` no body.
         PIX exige CPF (responsável) ou CNPJ da clínica (profissional).
         Master não pode iniciar checkout.
