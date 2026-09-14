@@ -118,6 +118,9 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 696 - Manter pagamento somente na página Asaas — done (`tasks/change-requests/696-remover-pix-copia-cola-local.md`)
+- Task 695 - Implementar cartão de débito na assinatura — done (`tasks/change-requests/695-implementar-cartao-debito-assinatura.md`)
+- Task 652 - Configurar webhook Asaas para produção — blocked (`tasks/change-requests/652-configurar-webhook-asaas-producao.md`)
 - Task 651 - Informar extremos da escala de desenvolvimento geral — done (`tasks/change-requests/651-legenda-desenvolvimento-geral-anamnese.md`)
 - Task 653 - Ajustar cartas do jogo de memória de articulação no tablet — done (`tasks/change-requests/653-ajustar-cartas-memoria-articulacao-tablet.md`)
 - Task 654 - Ajustar jogo dos erros no tablet — done (`tasks/change-requests/654-ajustar-jogo-dos-erros-tablet.md`)
@@ -511,6 +514,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 619 - Usuários master mobile: busca, abas e paginação — done (`tasks/change-requests/619-usuarios-master-mobile-busca-abas-paginacao.md`)
 - Task 644 - Corrigir salto de scroll nas abas de usuários master mobile — done (`tasks/change-requests/644-corrigir-salto-scroll-abas-usuarios-master-mobile.md`)
 - Task 678 - Visualizar atividade no acervo master mobile — done (`tasks/change-requests/678-visualizar-atividade-acervo-master-mobile.md`)
+- Task 679 - Remover scroll da atividade Escreva a letra mobile — done (`tasks/change-requests/679-remover-scroll-atividade-escreva-letra-mobile.md`)
 - Task 620 - Paginação do Acervo master mobile — done (`tasks/change-requests/620-acervo-master-mobile-paginacao.md`)
 - Task 621 - Cadastro de filho no perfil do responsável mobile — done (`tasks/change-requests/621-cadastro-filho-perfil-responsavel-mobile.md`)
 - Task 622 - CTA de cadastro de filho no seletor mobile — done (`tasks/change-requests/622-cta-cadastro-filho-seletor-mobile.md`)
@@ -759,6 +763,15 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 499 - Reverter fundo do sidebar web ao vidro anterior — done (`tasks/change-requests/499-reverter-fundo-sidebar-web-vidro.md`)
 
 ### Mobile
+
+- Task 687 - Narrar frase ao início da rodada de Fluência em Ação — done (`tasks/change-requests/687-narrar-frase-inicio-fluencia-mobile.md`)
+- Task 686 - Publicar e reproduzir áudios das situações em Diálogos em Ação — done (`tasks/change-requests/686-audios-situacoes-dialogos-mobile.md`)
+- Task 685 - Remover margem branca no final do jogo da memória mobile — done (`tasks/change-requests/685-remover-margem-branca-final-jogo-mobile.md`)
+- Task 684 - Corrigir altura das cartas do jogo da memória mobile — done (`tasks/change-requests/684-corrigir-altura-cartas-memoria-mobile.md`)
+- Task 683 - Equalizar altura dos cards do acervo master mobile — done (`tasks/change-requests/683-equalizar-altura-cards-acervo-master-mobile.md`)
+- Task 682 - Fixar altura dos cards da Biblioteca mobile — done (`tasks/change-requests/682-fixar-altura-cards-biblioteca-mobile.md`)
+- Task 681 - Equalizar altura e largura dos cards da Biblioteca mobile — done (`tasks/change-requests/681-equalizar-dimensoes-cards-biblioteca-mobile.md`)
+- Task 680 - Remover margem lateral das capas nos cards de atividades mobile — done (`tasks/change-requests/680-remover-margem-lateral-capas-cards-mobile.md`)
 
 - Task 630 - Corrigir assets iOS para TestFlight — blocked (`tasks/change-requests/630-corrigir-assets-ios-testflight.md`)
 - Task 631 - Configurar API pública no EAS para mobile — done (`tasks/change-requests/631-configurar-api-publica-eas-mobile.md`)
@@ -1478,6 +1491,13 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-554.md`
 - Handoff recente adicional: `.agents/state/handoffs/TASK-555.md`
 - `tasks/change-requests/643-hardening-review-assinatura-cadastro-webhook.md` — **done**
+- `tasks/change-requests/688-audio-instrucao-complete-frase-s3.md` — **done**
+- `tasks/change-requests/689-impedir-sobreposicao-caca-palavras.md` — **done**
+- `tasks/change-requests/690-alinhar-esquerda-letras-alfabeto-mobile.md` — **done**
+- `tasks/change-requests/691-equalizar-margens-laterais-alfabeto-mobile.md` — **done**
+- `tasks/change-requests/692-suavizar-scroll-alfabeto-falado.md` — **done**
+- `tasks/change-requests/693-narrar-titulo-complete-frase.md` — **done**
+- `tasks/change-requests/694-remover-via-tts-objetivo-complete-frase.md` — **done**
 
 
 
