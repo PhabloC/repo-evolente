@@ -1,10 +1,9 @@
-# TASK-652
+# Handoff Task 652
 
-- Slice: `047-trilha-self-serve-responsavel-mobile`
-- Status final: done
-- Decisão: Biblioteca abre a tela existente em modo preview; conclusão fica indisponível nesse modo.
-- Correção: wrapper do item preserva a largura da célula do grid; botão fica dentro da mesma coluna.
-- Refinamento: ação virou pill com ícone de olho e área de toque mobile.
-- Arquivos: `TrailLibraryPane`, `TrailActivityScreen`, navegação e params mobile.
-- Validação: typecheck executado; bloqueado por erros globais preexistentes, sem erro novo do fluxo após correção.
-- Próximo contexto: Biblioteca/trilha mobile apenas se houver novo refinamento.
+- Slice: 039 - Gateway Asaas e ciclo de assinatura
+- Status final: blocked
+- Decisão: o webhook de produção deve usar `https://evolente-api.fasters.app/api/subscriptions/webhooks/asaas`; o front público para callbacks é `https://evolente.fasters.app`.
+- Validação: POST sem token no endpoint publicado respondeu 401, confirmando rota e autenticação.
+- Arquivos alterados: task 652 e índice.
+- Pendência: aplicar variáveis de produção no deploy e cadastrar/ativar o webhook na conta Asaas de produção.
+- Próximo contexto: painel de deploy do backend e Integrações → Webhooks da conta Asaas de produção.
