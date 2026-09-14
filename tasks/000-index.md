@@ -706,6 +706,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 551 - PATCH da trilha para responsável com canManage — done (`tasks/change-requests/551-patch-trilha-responsavel-canmanage.md`)
 - Task 552 - Bootstrap Descubra a palavra: mesclar palavras por ID — done (`tasks/change-requests/552-bootstrap-descubra-palavra-mesclar-por-id.md`)
 - Task 553 - Bootstrap: preservar intro/conclusão personalizados — done (`tasks/change-requests/553-bootstrap-preservar-intro-conclusao-custom.md`)
+- Task 702 - Preservar áudios de instrução dos jogos — done (`tasks/change-requests/702-preservar-audios-instrucao-jogos.md`)
 - Task 554 - Gráfico de evolução diária no dashboard profissional — done (`tasks/change-requests/554-grafico-evolucao-diaria-dashboard-profissional.md`)
 - Task 555 - Gráfico de evolução diária no perfil da criança — done (`tasks/change-requests/555-grafico-evolucao-diaria-perfil-paciente.md`)
 - Task 556 - Contrato e requisitos: cadastro só do responsável + filhos autenticados — done (`tasks/change-requests/556-contrato-cadastro-responsavel-sem-filho.md`)
@@ -763,6 +764,11 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 499 - Reverter fundo do sidebar web ao vidro anterior — done (`tasks/change-requests/499-reverter-fundo-sidebar-web-vidro.md`)
 
 ### Mobile
+
+- Task 700 - Reproduzir instrução de jogo sem intro mobile — done (`tasks/change-requests/700-reproduzir-instrucao-sem-intro-mobile.md`)
+- Task 699 - Cancelar narração antiga ao avançar Fluência mobile — done (`tasks/change-requests/699-cancelar-narracao-fluencia-mobile.md`)
+- Task 698 - Garantir fallback individual de áudio em Diálogos mobile — done (`tasks/change-requests/698-fallback-audio-dialogos-mobile.md`)
+- Task 697 - Restaurar scroll acessível na escrita de letras mobile — done (`tasks/change-requests/697-corrigir-scroll-escrita-letra-mobile.md`)
 
 - Task 687 - Narrar frase ao início da rodada de Fluência em Ação — done (`tasks/change-requests/687-narrar-frase-inicio-fluencia-mobile.md`)
 - Task 686 - Publicar e reproduzir áudios das situações em Diálogos em Ação — done (`tasks/change-requests/686-audios-situacoes-dialogos-mobile.md`)
@@ -1498,6 +1504,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/692-suavizar-scroll-alfabeto-falado.md` — **done**
 - `tasks/change-requests/693-narrar-titulo-complete-frase.md` — **done**
 - `tasks/change-requests/694-remover-via-tts-objetivo-complete-frase.md` — **done**
+- `tasks/change-requests/701-corrigir-rotulo-cartao-checkout.md` — **done**
 
 
 
