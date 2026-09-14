@@ -1,0 +1,3 @@
+[ok] 1 - scripts/upload-game-session-audios.mjs: Ao executar este upload para sentence-fill, o valor é gravado diretamente, mas SentenceFillGameConfig e buildDefaultSentenceFillGameConfig não preservam o campo, portanto o bootstrap seguinte apaga o áudio após reinício. Adicione instructionAudioUrl ao contrato e preserve/valide o campo no builder e no fluxo de normalização.
+
+[ok] 2 - src/modules/contents/entities/content.entity.ts: Em qualquer criação ou edição de conteúdo fluency pela API, validateFluencyGameConfig reconstrói cada etapa sem copiar este novo campo, apagando silenciosamente instructionAudioUrl antes da persistência. Inclua a validação e a cópia do URL na normalização das etapas e cubra os fluxos de criação e atualização.
