@@ -1,10 +1,10 @@
 # Handoff Task 702
 
-- Slice: `tasks/slices/042-complete-a-frase.md` + `tasks/slices/045-fluencia-em-acao.md`
+- Slice: `tasks/slices/060-cartao-debito-assinatura.md`
 - Status final: done
-- Decisões: preservar `instructionAudioUrl` no config de sentence-fill e validar/copiar por etapa em fluency.
-- Contexto usado: tipos, builder, validator, script de upload e QA do backend.
-- Arquivos alterados: três arquivos do backend e `ajustes.md`.
-- Validações: build iniciado, travou sem saída e foi interrompido.
-- Pendências: reexecutar checks completos do backend.
-- Próximo contexto: toolchain/testes do backend.
+- Decisão: remover `autoRedirect=true` das URLs e do callback de assinaturas PIX; a página Asaas deve permanecer aberta para o pagamento.
+- Contexto usado: provider Asaas, teste do provider, Task 696 e fluxo PIX hospedado.
+- Arquivos alterados: `backend/src/modules/subscriptions/providers/asaas-payment.provider.ts`, `backend/src/modules/subscriptions/providers/asaas-payment.provider.spec.ts`.
+- Validação: suíte do provider aprovada, 15 testes.
+- Pendências: nenhuma.
+- Próximo contexto: validar manualmente em sandbox com uma cobrança PIX real.
