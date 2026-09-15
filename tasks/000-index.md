@@ -1505,6 +1505,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/693-narrar-titulo-complete-frase.md` — **done**
 - `tasks/change-requests/694-remover-via-tts-objetivo-complete-frase.md` — **done**
 - `tasks/change-requests/701-corrigir-rotulo-cartao-checkout.md` — **done**
+- `tasks/change-requests/702-corrigir-redirecionamento-fatura-pix-asaas.md` — **done**
 
 
 
