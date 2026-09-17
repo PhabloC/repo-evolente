@@ -118,6 +118,13 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 705 - Endurecer runtime e configuração de produção do OneSignal — done (`tasks/change-requests/705-hardening-configuracao-onesignal-ios.md`)
+
+### Backend
+
+- Task 706 - Tornar envio OneSignal resiliente — done (`tasks/change-requests/706-resiliencia-envio-onesignal.md`)
+- Task 707 - Corrigir seleção semanal do lembrete de trilha — done (`tasks/change-requests/707-corrigir-selecao-semanal-lembrete-trilha.md`)
+
 - Task 696 - Manter pagamento somente na página Asaas — done (`tasks/change-requests/696-remover-pix-copia-cola-local.md`)
 - Task 695 - Implementar cartão de débito na assinatura — done (`tasks/change-requests/695-implementar-cartao-debito-assinatura.md`)
 - Task 652 - Configurar webhook Asaas para produção — blocked (`tasks/change-requests/652-configurar-webhook-asaas-producao.md`)
