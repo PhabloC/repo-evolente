@@ -23,6 +23,7 @@ Incluir jogo de atenção e nomeação guiado por cores de semáforo no catálog
 ## Tasks relacionadas
 
 - Task 429
+- Task 708 (hardening de concorrência e cancelamento de áudio)
 
 ## Dependencias do slice
 
