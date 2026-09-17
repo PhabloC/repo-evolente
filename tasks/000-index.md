@@ -707,6 +707,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 552 - Bootstrap Descubra a palavra: mesclar palavras por ID — done (`tasks/change-requests/552-bootstrap-descubra-palavra-mesclar-por-id.md`)
 - Task 553 - Bootstrap: preservar intro/conclusão personalizados — done (`tasks/change-requests/553-bootstrap-preservar-intro-conclusao-custom.md`)
 - Task 702 - Preservar áudios de instrução dos jogos — done (`tasks/change-requests/702-preservar-audios-instrucao-jogos.md`)
+- Task 703 - Integrar OneSignal para push mobile — done (`tasks/change-requests/703-integrar-onesignal-push-mobile.md`)
+- Task 704 - Adapter OneSignal no backend — done (`tasks/change-requests/704-adapter-onesignal-backend.md`)
 - Task 554 - Gráfico de evolução diária no dashboard profissional — done (`tasks/change-requests/554-grafico-evolucao-diaria-dashboard-profissional.md`)
 - Task 555 - Gráfico de evolução diária no perfil da criança — done (`tasks/change-requests/555-grafico-evolucao-diaria-perfil-paciente.md`)
 - Task 556 - Contrato e requisitos: cadastro só do responsável + filhos autenticados — done (`tasks/change-requests/556-contrato-cadastro-responsavel-sem-filho.md`)
