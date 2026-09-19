@@ -32,6 +32,7 @@ Incluir um jogo da memória terapêutico de articulação (motricidade orofacial
 - Task 412 — done
 - Task 413 — done
 - Task 712 — done (áudio de instrução após o feedback de acerto)
+- Task 713 — done (cancelamento do áudio ao abandonar o exercício na prévia web)
 
 ## Dependencias do slice
 
@@ -48,3 +49,4 @@ Incluir um jogo da memória terapêutico de articulação (motricidade orofacial
 - Modo fácil com 9 cartas (413)
 - Pendente: polish de capas/prompt (410)
 - Áudio global de instrução pós-acerto publicado e encadeado no mobile e na prévia web (712)
+- Prévia web invalida e interrompe a sequência de áudio ao continuar, trocar categoria ou fechar (713)
