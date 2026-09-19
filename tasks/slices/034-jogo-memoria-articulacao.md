@@ -19,7 +19,7 @@ Incluir um jogo da memória terapêutico de articulação (motricidade orofacial
 ## Fora de escopo
 
 - Validação automática do exercício por câmera/IA
-- Narração/áudio por carta
+- Narração/áudio específico por carta
 - Multiplayer ou ranking
 - Editor visual de cartas pela UI
 
@@ -31,6 +31,7 @@ Incluir um jogo da memória terapêutico de articulação (motricidade orofacial
 - Task 411 — done
 - Task 412 — done
 - Task 413 — done
+- Task 712 — done (áudio de instrução após o feedback de acerto)
 
 ## Dependencias do slice
 
@@ -46,3 +47,4 @@ Incluir um jogo da memória terapêutico de articulação (motricidade orofacial
 - Modo difícil (ex-intermediário) com 12 cartas (412)
 - Modo fácil com 9 cartas (413)
 - Pendente: polish de capas/prompt (410)
+- Áudio global de instrução pós-acerto publicado e encadeado no mobile e na prévia web (712)
