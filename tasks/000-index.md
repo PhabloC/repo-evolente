@@ -1525,6 +1525,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/708-hardening-concorrencia-semaforo.md` — **done**
 - `tasks/change-requests/709-hardening-audio-preview-semaforo.md` — **done**
 - `tasks/change-requests/710-preservar-audios-semaforo.md` — **done**
+- `tasks/change-requests/712-audio-exercicio-memoria-articulacao.md` — **done**
 - `tasks/change-requests/711-corrigir-erro-500-geracao-relatorio.md` — **done**
 
 
