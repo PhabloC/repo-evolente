@@ -64,7 +64,7 @@ done
 
 ## Resultado da execucao
 
-O renderizador PDF passou a aceitar explicitamente os caminhos de Chromium mais comuns em ambientes de deploy, priorizando `PUPPETEER_EXECUTABLE_PATH`, depois `CHROME_BIN` e `GOOGLE_CHROME_BIN`, e mantendo o Chromium baixado pelo Puppeteer como fallback.
+O renderizador PDF passou a validar o executável configurado antes de usá-lo, detectar caminhos comuns de Chromium em containers Linux e usar o executável gerenciado pelo Puppeteer como fallback. Também foi adicionado `--disable-dev-shm-usage`, reduzindo falhas do Chromium em ambientes com `/dev/shm` restrito. Durante a subida local foi corrigido o uso assíncrono de `puppeteer.executablePath()`.
 
 ## Contexto utilizado
 
@@ -88,11 +88,14 @@ Correção concluída no runtime do PDF. Em produção, configurar `PUPPETEER_EX
 
 ## Validacoes executadas
 
-- `npm test -- --runInBand --forceExit src/modules/reports/utils/report-export.util.spec.ts` — passou (5 testes).
-- `npm run build` — iniciou, mas ficou sem saída e foi interrompido após aguardar.
+- `npm test -- --runInBand --forceExit src/modules/reports/utils/report-export.util.spec.ts` — passou (6 testes).
+- smoke test local do Puppeteer — gerou bytes PDF válidos (`%PDF-1.4`).
+- `npm run start:dev` — compilação sem erros e Nest iniciou com sucesso.
+- ESLint/typecheck completos — o typecheck permanece bloqueado por erros preexistentes em specs de outros módulos; o processo ficou sem saída após iniciar e foi interrompido.
+- teste focado novamente após o ajuste — 6 testes passaram.
 - `git diff --check` — executado junto ao comando de validação.
 
 ## Pendencias pos-task
 
-- Definir a variável de ambiente no provedor de deploy caso o Chromium não esteja disponível no caminho padrão.
-- Reexecutar o build completo em CI/ambiente de deploy.
+- Publicar esta correção no ambiente da API e testar `POST /api/reports` autenticado; sem acesso às credenciais/logs do provedor não é possível validar o deploy diretamente.
+- Se o 500 persistir após o deploy, coletar a stack trace do processo; o filtro HTTP já registra o erro real no log sem expô-lo ao cliente.
