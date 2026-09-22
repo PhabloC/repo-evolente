@@ -118,7 +118,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
-- Task 719 - Corrigir persistência e restauração da sessão mobile — done (`tasks/change-requests/719-corrigir-persistencia-sessao-mobile.md`)
+- Task 719 - Corrigir persistência e restauração da sessão mobile — done (`tasks/change-requests/719-corrigir-persistencia-sessao-mobile.md`, revalidada em 2026-09-22 para fallback web em memória e validação do papel após refresh)
 - Task 718 - Aplicar layout tablet na recuperação de senha mobile — done (`tasks/change-requests/718-layout-recuperacao-tablet-mobile.md`)
 - Task 717 - Corrigir sobreposição do login tablet — done (`tasks/change-requests/717-corrigir-sobreposicao-login-tablet-mobile.md`)
 - Task 716 - Centralizar formulário e boas-vindas no login tablet — done (`tasks/change-requests/716-centralizar-login-tablet-mobile.md`)
@@ -1536,7 +1536,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/710-preservar-audios-semaforo.md` — **done**
 - `tasks/change-requests/712-audio-exercicio-memoria-articulacao.md` — **done**
 - `tasks/change-requests/713-cancelar-audio-instrucao-memoria-web.md` — **done**
-- `tasks/change-requests/711-corrigir-erro-500-geracao-relatorio.md` — **done**
+- `tasks/change-requests/711-corrigir-erro-500-geracao-relatorio.md` — **done** (revalidada em 2026-09-22: fallback do Chromium protegido contra erro em `puppeteer.executablePath()`)
 
 
 
