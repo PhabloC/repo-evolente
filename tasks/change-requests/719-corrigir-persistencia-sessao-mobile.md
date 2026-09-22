@@ -87,7 +87,9 @@ done
 
 - A restauração da sessão agora tenta renovar o access token quando a validação protegida falha.
 - A renovação usa o refresh token persistido e salva o novo par de tokens no SecureStore.
+- O papel retornado pelo refresh é validado antes da persistência e do retorno; perfis sem shell mobile são limpos e rejeitados.
 - Falhas de gravação da sessão no SecureStore deixaram de ser silenciosamente ignoradas.
+- No alvo web, onde o expo-secure-store não possui implementação, a sessão fica somente em memória para não bloquear o login nem persistir tokens em armazenamento inseguro.
 - A senha não é persistida e o logout continua limpando a sessão local.
 
 ## Contexto utilizado
@@ -107,16 +109,22 @@ done
 - `mobile/src/features/auth/services/authService.ts`
 - `mobile/src/features/auth/services/authService.test.ts`
 - `mobile/src/shared/storage/secureStorage.ts`
+- `mobile/src/shared/storage/secureStorage.test.ts`
 - `tasks/change-requests/719-corrigir-persistencia-sessao-mobile.md`
 - `tasks/000-index.md`
 - `.agents/state/handoffs/TASK-719.md`
 
 ## Validacoes executadas
 
-- `npx jest src/features/auth/services/authService.test.ts src/shared/storage/secureStorage.test.ts --runInBand --forceExit`: 2 suites e 12 testes passaram.
+- `npx jest src/shared/storage/secureStorage.test.ts --runInBand --forceExit`: passou (7 testes).
+- `npx jest src/features/auth/services/authService.test.ts --runInBand --forceExit`: passou (7 testes).
+- `npx eslint src/shared/storage/secureStorage.ts src/shared/storage/secureStorage.test.ts`: passou.
+- `npx eslint src/features/auth/services/authService.ts src/features/auth/services/authService.test.ts`: passou.
 - `git -C mobile diff --check`: concluído sem erros.
+- `npm run typecheck`: bloqueado por erros preexistentes em outros módulos; após a correção do tipo do teste novo, não restaram erros em `secureStorage.ts` ou `secureStorage.test.ts`.
 - Revisão do diff: concluída.
 
 ## Pendencias pos-task
 
 - Validar em dispositivo/emulador o cenário: login, fechar app, reabrir após expiração do access token e confirmar entrada sem redigitar senha.
+- Validar manualmente o login web sabendo que a sessão em memória será perdida ao recarregar a página; persistência web segura permanece fora do escopo desta correção.
