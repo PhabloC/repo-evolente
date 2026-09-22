@@ -64,7 +64,7 @@ done
 
 ## Resultado da execucao
 
-O renderizador PDF passou a validar o executável configurado antes de usá-lo, detectar caminhos comuns de Chromium em containers Linux e usar o executável gerenciado pelo Puppeteer como fallback. Também foi adicionado `--disable-dev-shm-usage`, reduzindo falhas do Chromium em ambientes com `/dev/shm` restrito. Durante a subida local foi corrigido o uso assíncrono de `puppeteer.executablePath()`.
+O renderizador PDF passou a validar os caminhos explícitos e os binários comuns de Chromium antes de consultar o executável gerenciado pelo Puppeteer. A consulta ao caminho gerenciado agora é protegida por `try/catch`, evitando que uma configuração inválida de `PUPPETEER_EXECUTABLE_PATH` impeça os demais fallbacks. Também foi adicionado `--disable-dev-shm-usage`, reduzindo falhas do Chromium em ambientes com `/dev/shm` restrito.
 
 ## Contexto utilizado
 
@@ -89,11 +89,9 @@ Correção concluída no runtime do PDF. Em produção, configurar `PUPPETEER_EX
 ## Validacoes executadas
 
 - `npm test -- --runInBand --forceExit src/modules/reports/utils/report-export.util.spec.ts` — passou (6 testes).
-- smoke test local do Puppeteer — gerou bytes PDF válidos (`%PDF-1.4`).
-- `npm run start:dev` — compilação sem erros e Nest iniciou com sucesso.
-- ESLint/typecheck completos — o typecheck permanece bloqueado por erros preexistentes em specs de outros módulos; o processo ficou sem saída após iniciar e foi interrompido.
-- teste focado novamente após o ajuste — 6 testes passaram.
-- `git diff --check` — executado junto ao comando de validação.
+- `npx eslint src/modules/reports/utils/report-export.util.ts` — passou.
+- `git diff --check` — passou.
+- `npm run build` — iniciou sem erro reportado, mas ficou sem saída e foi interrompido após aproximadamente 1 minuto.
 
 ## Pendencias pos-task
 
