@@ -116,8 +116,17 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ## Tasks por tipo
 
+### Mobile
+
+- Task 719 - Corrigir persistência e restauração da sessão mobile — done (`tasks/change-requests/719-corrigir-persistencia-sessao-mobile.md`)
+- Task 718 - Aplicar layout tablet na recuperação de senha mobile — done (`tasks/change-requests/718-layout-recuperacao-tablet-mobile.md`)
+- Task 717 - Corrigir sobreposição do login tablet — done (`tasks/change-requests/717-corrigir-sobreposicao-login-tablet-mobile.md`)
+- Task 716 - Centralizar formulário e boas-vindas no login tablet — done (`tasks/change-requests/716-centralizar-login-tablet-mobile.md`)
+- Task 715 - Novo layout de login para tablet no mobile — done (`tasks/change-requests/715-layout-login-tablet-mobile.md`)
+
 ### Shared
 
+- Task 714 - Diagnosticar e corrigir push OneSignal em produção — done (`tasks/change-requests/714-diagnosticar-push-onesignal-em-producao.md`)
 - Task 705 - Endurecer runtime e configuração de produção do OneSignal — done (`tasks/change-requests/705-hardening-configuracao-onesignal-ios.md`)
 
 ### Backend
