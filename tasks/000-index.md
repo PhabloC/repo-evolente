@@ -118,6 +118,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
+- Task 732 - Corrigir áudio de erro do Jogo dos erros — done (`tasks/change-requests/732-corrigir-audio-erro-jogo-dos-erros.md`)
 - Task 719 - Corrigir persistência e restauração da sessão mobile — done (`tasks/change-requests/719-corrigir-persistencia-sessao-mobile.md`, revalidada em 2026-09-22 para fallback web em memória e validação do papel após refresh)
 - Task 718 - Aplicar layout tablet na recuperação de senha mobile — done (`tasks/change-requests/718-layout-recuperacao-tablet-mobile.md`)
 - Task 717 - Corrigir sobreposição do login tablet — done (`tasks/change-requests/717-corrigir-sobreposicao-login-tablet-mobile.md`)
@@ -126,11 +127,28 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 731 - Alterar palavras de Animais no difícil — done (`tasks/change-requests/731-alterar-palavras-animais-dificil.md`)
+- Task 730 - Alterar palavras de Insetos no difícil — done (`tasks/change-requests/730-alterar-palavras-insetos-dificil.md`)
+- Task 729 - Alterar uva na dificuldade difícil de Frutas — done (`tasks/change-requests/729-alterar-uva-dificil-frutas.md`)
+- Task 728 - Alterar palavras de Transporte no difícil — done (`tasks/change-requests/728-alterar-palavras-transporte-dificil.md`)
+- Task 727 - Usar áudio de introdução gravado do Complete a frase — done (`tasks/change-requests/727-usar-audio-intro-gravado-complete-frase.md`)
+- Task 726 - Falar introdução ao abrir o Complete a frase — done (`tasks/change-requests/726-falar-intro-ao-abrir-complete-frase.md`)
+- Task 725 - Intro específico do Complete a frase — done (`tasks/change-requests/725-intro-complete-a-frase.md`)
+- Task 724 - Remover introdução genérica do Complete a frase — done (`tasks/change-requests/724-remover-intro-generico-complete-frase.md`)
+- Task 723 - Preservar promptAudioUrl nos clientes do Complete a frase — done (`tasks/change-requests/723-preservar-prompt-audio-sentence-fill-clientes.md`)
+- Task 722 - Reproduzir áudio da cena ao entrar no Complete a frase — done (`tasks/change-requests/722-reproduzir-audio-ao-entrar-na-frase.md`)
+- Task 721 - Subir áudios das cenas do Complete a frase — done (`tasks/change-requests/721-upload-audios-complete-frase-cenas.md`)
 - Task 714 - Diagnosticar e corrigir push OneSignal em produção — done (`tasks/change-requests/714-diagnosticar-push-onesignal-em-producao.md`)
+- Task 720 - Fazer deploy Android e iOS do mobile — in_progress (`tasks/change-requests/720-deploy-mobile-lojas.md`)
 - Task 705 - Endurecer runtime e configuração de produção do OneSignal — done (`tasks/change-requests/705-hardening-configuracao-onesignal-ios.md`)
 
 ### Backend
 
+- Task 737 - Recalibrar hotspots do acampamento no Jogo dos erros — done (`tasks/change-requests/737-recalibrar-hotspots-acampamento-jogo-dos-erros.md`)
+- Task 736 - Recalibrar hotspot do vestido no Jogo dos erros — done (`tasks/change-requests/736-recalibrar-hotspot-vestido-jogo-dos-erros.md`)
+- Task 735 - Recalibrar hotspots da praia no Jogo dos erros — done (`tasks/change-requests/735-recalibrar-hotspots-praia-jogo-dos-erros.md`)
+- Task 734 - Recalibrar hotspot da bola no Jogo dos erros — done (`tasks/change-requests/734-recalibrar-hotspot-bola-jogo-dos-erros.md`)
+- Task 733 - Recalibrar hotspots da cozinha no Jogo dos erros — done (`tasks/change-requests/733-recalibrar-hotspots-cozinha-jogo-dos-erros.md`)
 - Task 706 - Tornar envio OneSignal resiliente — done (`tasks/change-requests/706-resiliencia-envio-onesignal.md`)
 - Task 707 - Corrigir seleção semanal do lembrete de trilha — done (`tasks/change-requests/707-corrigir-selecao-semanal-lembrete-trilha.md`)
 
