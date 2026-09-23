@@ -40,6 +40,12 @@ Incluir um jogo terapêutico de “encontre as diferenças” no catálogo de ar
 - Task 523 — done (estrela meio img5 + balde img6)
 - Task 524 — done (mobile: aspect ratio 4/3 nas imagens do runtime)
 - Task 655 — done (avançar, dicas e título articulatório)
+- Task 732 — done (corrigir áudio de erro no runtime mobile)
+- Task 733 — done (recalibrar hotspots da rodada 4 — cozinha)
+- Task 734 — done (recalibrar hotspot da bola da rodada 5)
+- Task 735 — done (recalibrar hotspots da praia — rodada 6)
+- Task 736 — done (recalibrar hotspot do vestido da rodada 7)
+- Task 737 — done (recalibrar hotspots da rodada 10 — acampamento)
 
 ## Dependencias do slice
 
