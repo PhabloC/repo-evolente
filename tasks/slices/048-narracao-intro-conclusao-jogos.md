@@ -32,6 +32,7 @@ Reproduzir áudios gravados ao entrar e ao concluir os jogos terapêuticos, e co
 - Task 547 — done (prévia web: parar áudio ao fechar e não cortar o parabéns)
 - Task 550 — done (mobile: parar fala ao sair do jogo e não cortar o elogio na escrita)
 - Task 553 — done (bootstrap: preservar intro/conclusão personalizados)
+- Task 738 — done (remove fallback TTS inalcançável da introdução mobile)
 
 ## Dependencias do slice
 
@@ -45,3 +46,4 @@ Reproduzir áudios gravados ao entrar e ao concluir os jogos terapêuticos, e co
 - Task 547 corrigiu cleanup da prévia web ao fechar e o corte do áudio de parabéns na conclusão
 - Task 550 corrigiu stop ao sair do jogo mobile e a fila elogio → enunciado na escrita
 - Task 553: bootstrap preserva intro/conclusão (e feedbacks) persistidos sobre o URL gerado
+- Task 738: provider mobile usa somente URLs gravadas para a sequência de introdução
