@@ -24,3 +24,4 @@ Incluir jogo de completar frases no catálogo: escolher a palavra correta e ouvi
 ## Tasks relacionadas
 
 - Task 432 — done
+- Task 739 — done (cancela prompt pendente após seleção antecipada no mobile)
