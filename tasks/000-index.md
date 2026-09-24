@@ -119,6 +119,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 ### Mobile
 
 - Task 732 - Corrigir áudio de erro do Jogo dos erros — done (`tasks/change-requests/732-corrigir-audio-erro-jogo-dos-erros.md`)
+- Task 738 - Remover fallback TTS da introdução dos jogos mobile — done (`tasks/change-requests/738-remover-fallback-tts-intro-jogos-mobile.md`)
+- Task 739 - Cancelar prompt ao selecionar no Complete a frase mobile — done (`tasks/change-requests/739-cancelar-prompt-ao-selecionar-complete-frase-mobile.md`)
 - Task 719 - Corrigir persistência e restauração da sessão mobile — done (`tasks/change-requests/719-corrigir-persistencia-sessao-mobile.md`, revalidada em 2026-09-22 para fallback web em memória e validação do papel após refresh)
 - Task 718 - Aplicar layout tablet na recuperação de senha mobile — done (`tasks/change-requests/718-layout-recuperacao-tablet-mobile.md`)
 - Task 717 - Corrigir sobreposição do login tablet — done (`tasks/change-requests/717-corrigir-sobreposicao-login-tablet-mobile.md`)
