@@ -144,6 +144,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 740 - Corrigir apresentação do push OneSignal — done (`tasks/change-requests/740-corrigir-apresentacao-push-onesignal.md`)
 - Task 741 - Trocar logo usada na configuração do app — done (`tasks/change-requests/741-trocar-logo-notificacao-onesignal.md`)
 - Task 743 - Corrigir ícone pequeno da notificação OneSignal — done (`tasks/change-requests/743-corrigir-icone-pequeno-notificacao-onesignal.md`)
+- Task 744 - Corrigir prebuild iOS para assets da logo — done (`tasks/change-requests/744-corrigir-prebuild-ios-assets-webp.md`)
 - Task 720 - Fazer deploy Android e iOS do mobile — in_progress (`tasks/change-requests/720-deploy-mobile-lojas.md`)
 - Task 705 - Endurecer runtime e configuração de produção do OneSignal — done (`tasks/change-requests/705-hardening-configuracao-onesignal-ios.md`)
 
