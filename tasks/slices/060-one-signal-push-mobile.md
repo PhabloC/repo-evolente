@@ -23,6 +23,7 @@ Permitir que usuários autenticados do app responsável recebam notificações p
 - `tasks/change-requests/703-integrar-onesignal-push-mobile.md`
 - `tasks/change-requests/714-diagnosticar-push-onesignal-em-producao.md`
 - `tasks/change-requests/740-corrigir-apresentacao-push-onesignal.md`
+- `tasks/change-requests/743-corrigir-icone-pequeno-notificacao-onesignal.md`
 
 ## Status
 
