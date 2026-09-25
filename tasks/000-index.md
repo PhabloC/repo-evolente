@@ -141,6 +141,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 722 - Reproduzir áudio da cena ao entrar no Complete a frase — done (`tasks/change-requests/722-reproduzir-audio-ao-entrar-na-frase.md`)
 - Task 721 - Subir áudios das cenas do Complete a frase — done (`tasks/change-requests/721-upload-audios-complete-frase-cenas.md`)
 - Task 714 - Diagnosticar e corrigir push OneSignal em produção — done (`tasks/change-requests/714-diagnosticar-push-onesignal-em-producao.md`)
+- Task 740 - Corrigir apresentação do push OneSignal — done (`tasks/change-requests/740-corrigir-apresentacao-push-onesignal.md`)
+- Task 741 - Trocar logo usada na configuração do app — done (`tasks/change-requests/741-trocar-logo-notificacao-onesignal.md`)
 - Task 720 - Fazer deploy Android e iOS do mobile — in_progress (`tasks/change-requests/720-deploy-mobile-lojas.md`)
 - Task 705 - Endurecer runtime e configuração de produção do OneSignal — done (`tasks/change-requests/705-hardening-configuracao-onesignal-ios.md`)
 
@@ -1557,6 +1559,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/712-audio-exercicio-memoria-articulacao.md` — **done**
 - `tasks/change-requests/713-cancelar-audio-instrucao-memoria-web.md` — **done**
 - `tasks/change-requests/711-corrigir-erro-500-geracao-relatorio.md` — **done** (revalidada em 2026-09-22: fallback do Chromium protegido contra erro em `puppeteer.executablePath()`)
+- `tasks/change-requests/742-aumentar-timeout-geracao-relatorio.md` — **done**
 
 
 
