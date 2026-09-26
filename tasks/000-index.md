@@ -118,6 +118,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
+- Task 745 - Completar imagens do Alfabeto falado no demo mobile — done (`tasks/change-requests/745-completar-imagens-alfabeto-demo-mobile.md`)
+
 - Task 732 - Corrigir áudio de erro do Jogo dos erros — done (`tasks/change-requests/732-corrigir-audio-erro-jogo-dos-erros.md`)
 - Task 738 - Remover fallback TTS da introdução dos jogos mobile — done (`tasks/change-requests/738-remover-fallback-tts-intro-jogos-mobile.md`)
 - Task 739 - Cancelar prompt ao selecionar no Complete a frase mobile — done (`tasks/change-requests/739-cancelar-prompt-ao-selecionar-complete-frase-mobile.md`)
@@ -149,6 +151,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 705 - Endurecer runtime e configuração de produção do OneSignal — done (`tasks/change-requests/705-hardening-configuracao-onesignal-ios.md`)
 
 ### Backend
+
+- Task 746 - Normalizar letras do Alfabeto falado real — done (`tasks/change-requests/746-normalizar-letras-alfabeto-real.md`)
 
 - Task 737 - Recalibrar hotspots do acampamento no Jogo dos erros — done (`tasks/change-requests/737-recalibrar-hotspots-acampamento-jogo-dos-erros.md`)
 - Task 736 - Recalibrar hotspot do vestido no Jogo dos erros — done (`tasks/change-requests/736-recalibrar-hotspot-vestido-jogo-dos-erros.md`)
