@@ -63,7 +63,8 @@ Baixo; correção localizada no bootstrap e nos testes do backend.
 
 ## Resultado da execucao
 
-- O bootstrap do backend agora normaliza configurações incompletas para A–Z.
+- O bootstrap do backend normaliza para A–Z só o jogo padrão "Alfabeto falado". Um jogo `ALPHABET` com outro título mantém `letters`.
+- Capa e imagens já gravadas permanecem. O catálogo só preenche `coverUrl` e `letterImages` quando esses campos estão vazios.
 - O bootstrap mantém as URLs das 26 imagens geradas a partir do prefixo S3 configurado.
 - O app mobile também inclui as letras presentes em `letterImages`, permitindo renderizar as imagens disponíveis mesmo antes da persistência ser atualizada pelo bootstrap.
 - Teste do bootstrap reproduz a configuração incompleta A–L + N e espera A–Z após a inicialização.
@@ -102,7 +103,8 @@ Baixo; correção localizada no bootstrap e nos testes do backend.
 
 ## Critérios de aceite
 
-- [x] Conteúdo existente com letras incompletas passa a usar A–Z.
+- [x] O jogo padrão "Alfabeto falado" com letras incompletas passa a usar A–Z.
+- [x] Um jogo de alfabeto com outro título mantém a lista de letras gravada.
 - [x] As 26 imagens continuam apontando para `games/alphabet/letters/{letra}.webp` no S3.
 - [x] Teste do bootstrap cobre a correção de conteúdo existente.
 
