@@ -41,6 +41,7 @@ Elevar a fidelidade visual da home autenticada web com base em uma nova referenc
 - `tasks/change-requests/440-melhorar-metricas-cards-dashboard-profissional.md` - troca das metricas dos 4 cards superiores por indicadores operacionais
 - `tasks/change-requests/441-reorganizar-grade-atividades-relatorios-carrossel-dashboard.md` - grade inferior: atividades+relatorios / carrossel
 - `tasks/change-requests/554-grafico-evolucao-diaria-dashboard-profissional.md` - grafico diario agregado da carteira — **done**
+- `tasks/change-requests/747-responsividade-dashboard-sidebar-web.md` - gaveta da sidebar e empilhamento do dashboard no celular — **done**
 
 ## Contexto mínimo
 
