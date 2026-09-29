@@ -44,6 +44,28 @@ Exemplos válidos:
 - `fix: corrige renderização da aba de período do curso`
 - `docs: atualiza instruções de commit para agentes`
 
+## Título e descrição do pull request
+
+Ao terminar os commits, entregar no mesmo retorno um título e uma descrição prontos para colar no pull request. Fazer um par por repositório que recebeu commits (`front-end`, `mobile`, `backend` ou raiz).
+
+Regras:
+
+1. Escrever em português, com ortografia e acentuação revisadas.
+2. O título é uma linha curta que resume a alteração do pull request.
+3. A descrição é um único parágrafo em texto corrido, sem lista, sem tópicos e sem copiar as mensagens de commit.
+4. O parágrafo deve dizer o que mudou e qual efeito isso tem para quem usa a tela, o jogo ou a API.
+5. Se o mesmo repositório tiver mais de um assunto, o título e o parágrafo cobrem todos.
+6. Descrever só o que foi commitado. Não inventar escopo, testes ou telas que não entraram nos commits.
+7. Atualização de ponteiro de submódulo não entra no título nem na descrição, salvo quando for a única alteração daquele repositório.
+
+Exemplo de formato:
+
+**Front**
+
+**Título:** Adiciona a política de privacidade e usa só áudio gravado nas prévias
+
+**Descrição:** A web passa a ter uma página pública de política de privacidade, com acesso aberto e link no login, nos cadastros e nas configurações. Nas prévias da biblioteca, a reprodução fica restrita aos áudios gravados da atividade e, se o arquivo não existir ou falhar, a prévia permanece em silêncio.
+
 ## Reforço operacional
 
 - Quando o usuário pedir para "subir" alterações, interpretar como necessidade de commitar seguindo este padrão.
