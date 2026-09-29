@@ -76,6 +76,7 @@
 - `tasks/slices/057-configuracao-api-publica-mobile.md` - Slice 057: configuração da API pública no mobile — **done**
 - `tasks/slices/058-area-segura-tab-bar-mobile.md` - Slice 058: área segura da tab bar mobile — **done**
 - `tasks/slices/059-estabilidade-nativa-expo-ios.md` - Slice 059: estabilidade nativa Expo para iOS — **in_progress**
+- `tasks/slices/062-contato-politica-privacidade-web.md` - Slice 062: contato na política de privacidade web — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -495,6 +496,10 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 485 - Compatibilizar quebra-cabeça legado sem `difficulty` no mobile — done (`tasks/change-requests/485-compatibilizar-quebra-cabeca-legado-sem-difficulty-mobile.md`)
 ### Front
 
+- Task 750 - Retirar Asaas da política de privacidade — done (`tasks/change-requests/750-retirar-asaas-politica-privacidade.md`)
+- Task 749 - Remover o bloco de pagamento da política de privacidade — done (`tasks/change-requests/749-remover-pagamento-politica-privacidade.md`)
+- Task 748 - Contato na política de privacidade web — done (`tasks/change-requests/748-contato-politica-privacidade-web.md`)
+- Task 747 - Responsividade do dashboard e da sidebar web — done (`tasks/change-requests/747-responsividade-dashboard-sidebar-web.md`)
 - Task 634 - Login web mobile apenas com formulário — done (`tasks/change-requests/634-login-web-mobile-apenas-formulario.md`)
 - Task 635 - Login web mobile manter cabeçalho do card — done (`tasks/change-requests/635-login-web-mobile-manter-cabecalho-card.md`)
 - Task 003 - Shell web React — done
