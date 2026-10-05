@@ -75,6 +75,7 @@ Permitir que o responsável descubra profissionais cadastrados na Evolente a par
 - `tasks/change-requests/767-api-filtro-area-diretorio-profissionais.md`
 - `tasks/change-requests/768-ui-filtro-area-diretorio-profissionais.md`
 - `tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md`
+- `tasks/change-requests/771-paginacao-diretorio-profissionais.md`
 
 ## Progresso
 
@@ -85,6 +86,7 @@ Permitir que o responsável descubra profissionais cadastrados na Evolente a par
 - Task 767 — done (filtro por área, API)
 - Task 768 — done (filtro por área, web)
 - Task 769 — done (opções do filtro pelas especialidades cadastradas)
+- Task 771 — done (paginação independente)
 
 ## Contexto mínimo recomendado
 
