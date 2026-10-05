@@ -133,6 +133,14 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
+- Task 779 - Equalizar padding vertical dos cards colapsados no perfil — done (`tasks/change-requests/779-equalizar-padding-cards-colapsados-perfil.md`)
+- Task 778 - Remover borda dos ícones nos cards de avisos — done (`tasks/change-requests/778-remover-borda-icones-cards-avisos.md`)
+- Task 777 - Alinhar cards de Últimos avisos ao Resumo rápido — done (`tasks/change-requests/777-alinhar-cards-ultimos-avisos-resumo-rapido.md`)
+- Task 776 - Ocultar badge de assinatura no card do responsável — done (`tasks/change-requests/776-ocultar-badge-assinatura-card-responsavel.md`)
+- Task 775 - Remover card Outro filho do perfil mobile — done (`tasks/change-requests/775-remover-card-outro-filho-perfil-mobile.md`)
+- Task 774 - Ocultar card Assinatura no perfil mobile — done (`tasks/change-requests/774-ocultar-card-assinatura-perfil-mobile.md`)
+- Task 773 - Cards do perfil mobile colapsados (ícone + nome) — done (`tasks/change-requests/773-cards-perfil-mobile-colapsados.md`)
+- Task 772 - Copy do login mobile sem menção a pagamento — done (`tasks/change-requests/772-copy-login-mobile-sem-mencao-pagamento.md`)
 - Task 745 - Completar imagens do Alfabeto falado no demo mobile — done (`tasks/change-requests/745-completar-imagens-alfabeto-demo-mobile.md`)
 
 - Task 732 - Corrigir áudio de erro do Jogo dos erros — done (`tasks/change-requests/732-corrigir-audio-erro-jogo-dos-erros.md`)
@@ -1616,3 +1624,11 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md` - **done** (opções do filtro vêm das especialidades cadastradas; slice 063)
 - `tasks/change-requests/770-refinar-layout-modal-contato-diretorio.md` - **done** (modal: botões lado a lado, ícone WhatsApp, mais infos; slice 067)
 - `tasks/change-requests/771-paginacao-diretorio-profissionais.md` - **done** (paginação independente em Próximos e Outros; slice 063)
+- `tasks/change-requests/772-copy-login-mobile-sem-mencao-pagamento.md` - **done** (modal de login sem copy de pagamento/assinatura/site; slice 039)
+- `tasks/change-requests/773-cards-perfil-mobile-colapsados.md` - **done** (cards do perfil colapsados ícone+nome; slice 010)
+- `tasks/change-requests/774-ocultar-card-assinatura-perfil-mobile.md` - **done** (card Assinatura oculto no perfil; slice 010)
+- `tasks/change-requests/775-remover-card-outro-filho-perfil-mobile.md` - **done** (card Outro filho removido do perfil; slice 010)
+- `tasks/change-requests/776-ocultar-badge-assinatura-card-responsavel.md` - **done** (badge Assinatura oculta no card do responsável; slice 010)
+- `tasks/change-requests/777-alinhar-cards-ultimos-avisos-resumo-rapido.md` - **done** (Últimos avisos com design do Resumo rápido; slice 010)
+- `tasks/change-requests/778-remover-borda-icones-cards-avisos.md` - **done** (ícones dos cards de avisos sem borda/sombra; slice 010)
+- `tasks/change-requests/779-equalizar-padding-cards-colapsados-perfil.md` - **done** (padding top/bottom igual nos cards colapsados; slice 010)
