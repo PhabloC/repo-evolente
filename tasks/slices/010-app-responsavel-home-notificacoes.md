@@ -107,6 +107,13 @@ Home/conta, perfil e notificacoes in-app de trilha.
 - `tasks/change-requests/625-corrigir-card-duplicado-e-pastilha-avisos-home-mobile.md` - Corrigir card duplicado e pastilha de avisos na Home — **done**
 - `tasks/change-requests/576-claymorphism-cards-home-avisos-mobile.md` - Claymorphism nos cards de Home e Avisos — **done**
 - `tasks/change-requests/578-claymorphism-cards-editar-responsavel-mobile.md` - Claymorphism nos cards de editar responsável — **done**
+- `tasks/change-requests/773-cards-perfil-mobile-colapsados.md` - Cards do perfil colapsados (ícone + nome) — **done**
+- `tasks/change-requests/774-ocultar-card-assinatura-perfil-mobile.md` - Ocultar card Assinatura no perfil — **done**
+- `tasks/change-requests/775-remover-card-outro-filho-perfil-mobile.md` - Remover card Outro filho do perfil — **done**
+- `tasks/change-requests/776-ocultar-badge-assinatura-card-responsavel.md` - Ocultar badge de assinatura no card do responsável — **done**
+- `tasks/change-requests/777-alinhar-cards-ultimos-avisos-resumo-rapido.md` - Alinhar cards de Últimos avisos ao Resumo rápido — **done**
+- `tasks/change-requests/778-remover-borda-icones-cards-avisos.md` - Remover borda dos ícones nos cards de avisos — **done**
+- `tasks/change-requests/779-equalizar-padding-cards-colapsados-perfil.md` - Equalizar padding dos cards colapsados no perfil — **done**
 
 ## Dependencias do slice
 
