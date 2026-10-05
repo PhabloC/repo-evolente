@@ -77,6 +77,13 @@
 - `tasks/slices/058-area-segura-tab-bar-mobile.md` - Slice 058: área segura da tab bar mobile — **done**
 - `tasks/slices/059-estabilidade-nativa-expo-ios.md` - Slice 059: estabilidade nativa Expo para iOS — **in_progress**
 - `tasks/slices/062-contato-politica-privacidade-web.md` - Slice 062: contato na política de privacidade web — **done**
+- `tasks/slices/063-diretorio-profissionais-responsavel-web.md` - Slice 063: diretório de profissionais para o responsável (web) — **done**
+- `tasks/slices/064-endereco-cadastro-profissional-responsavel.md` - Slice 064: endereço no cadastro de profissional e responsável — **done**
+- `tasks/slices/065-autopreencher-endereco-por-cep.md` - Slice 065: autopreenchimento de endereço por CEP — **done**
+- `tasks/slices/066-profissionais-proximos-diretorio.md` - Slice 066: profissionais próximos no diretório — **done**
+- `tasks/slices/067-modal-contato-profissional-diretorio.md` - Slice 067: modal de contato WhatsApp no diretório — **done**
+- `tasks/slices/068-endereco-perfil-configuracoes.md` - Slice 068: endereço no perfil/configurações — **done**
+- `tasks/slices/069-numero-obrigatorio-complemento-endereco.md` - Slice 069: número obrigatório e complemento — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -114,6 +121,13 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 4. Uma task por vez via `executar-task`
 5. Novo fluxo do responsável: 556 → 557 → 558, depois 559 → 560; 561 pode seguir em paralelo após 557
 6. Dashboard analítico do responsável na web: 562
+7. Diretório de profissionais (Slice 063): 751 → 752; filtro por área 767 → 768 → 769
+8. Endereço no cadastro (Slice 064): 755 → 756
+9. Autopreenchimento CEP (Slice 065): 757
+10. Profissionais próximos (Slice 066): 758 → 759
+11. Modal contato WhatsApp (Slice 067): 760 → 761
+12. Endereço no perfil (Slice 068): 762 → 763
+13. Número obrigatório + complemento (Slice 069): 764 → 765
 
 ## Tasks por tipo
 
@@ -132,6 +146,14 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 769 - Opções de área a partir das especialidades cadastradas — done (`tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md`)
+- Task 767 - Filtro por área no diretório de profissionais (API) — done (`tasks/change-requests/767-api-filtro-area-diretorio-profissionais.md`)
+- Task 764 - API: número obrigatório e complemento no endereço — done (`tasks/change-requests/764-api-numero-obrigatorio-complemento-endereco.md`)
+- Task 762 - API de endereço no perfil do usuário — done (`tasks/change-requests/762-api-endereco-perfil-usuario.md`)
+- Task 760 - Telefone de contato no diretório de profissionais — done (`tasks/change-requests/760-api-telefone-contato-diretorio-profissionais.md`)
+- Task 758 - API de profissionais próximos no diretório — done (`tasks/change-requests/758-api-profissionais-proximos-diretorio.md`)
+- Task 755 - API e contrato de endereço no cadastro — done (`tasks/change-requests/755-api-endereco-cadastro-profissional-responsavel.md`)
+- Task 751 - API do diretório de profissionais para o responsável — done (`tasks/change-requests/751-api-diretorio-profissionais-responsavel.md`)
 - Task 731 - Alterar palavras de Animais no difícil — done (`tasks/change-requests/731-alterar-palavras-animais-dificil.md`)
 - Task 730 - Alterar palavras de Insetos no difícil — done (`tasks/change-requests/730-alterar-palavras-insetos-dificil.md`)
 - Task 729 - Alterar uva na dificuldade difícil de Frutas — done (`tasks/change-requests/729-alterar-uva-dificil-frutas.md`)
@@ -496,6 +518,17 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 485 - Compatibilizar quebra-cabeça legado sem `difficulty` no mobile — done (`tasks/change-requests/485-compatibilizar-quebra-cabeca-legado-sem-difficulty-mobile.md`)
 ### Front
 
+- Task 770 - Refinar layout do modal de contato do diretório — done (`tasks/change-requests/770-refinar-layout-modal-contato-diretorio.md`)
+- Task 768 - Filtro por área no diretório de profissionais (web) — done (`tasks/change-requests/768-ui-filtro-area-diretorio-profissionais.md`)
+- Task 765 - Forms web: número obrigatório e complemento — done (`tasks/change-requests/765-forms-numero-complemento-endereco-web.md`)
+- Task 763 - Formulário de endereço no perfil web — done (`tasks/change-requests/763-formulario-endereco-perfil-configuracoes-web.md`)
+- Task 761 - Modal de contato WhatsApp no diretório web — done (`tasks/change-requests/761-modal-contato-whatsapp-diretorio-web.md`)
+- Task 759 - UI de profissionais próximos no diretório web — done (`tasks/change-requests/759-ui-profissionais-proximos-diretorio-web.md`)
+- Task 757 - Autopreencher endereço por CEP no cadastro web — done (`tasks/change-requests/757-autopreencher-endereco-por-cep-cadastro-web.md`)
+- Task 756 - Formulários web de endereço no cadastro — done (`tasks/change-requests/756-formulario-endereco-cadastro-web.md`)
+- Task 754 - Reordenar ícones e CTAs do cabeçalho Filhos — done (`tasks/change-requests/754-reordenar-icones-ctas-cabecalho-filhos.md`)
+- Task 753 - Corrigir layout dos botões do cabeçalho Filhos — done (`tasks/change-requests/753-corrigir-layout-botoes-cabecalho-filhos.md`)
+- Task 752 - Botão e página Encontrar profissionais na web do responsável — done (`tasks/change-requests/752-pagina-encontrar-profissionais-web.md`)
 - Task 750 - Retirar Asaas da política de privacidade — done (`tasks/change-requests/750-retirar-asaas-politica-privacidade.md`)
 - Task 749 - Remover o bloco de pagamento da política de privacidade — done (`tasks/change-requests/749-remover-pagamento-politica-privacidade.md`)
 - Task 748 - Contato na política de privacidade web — done (`tasks/change-requests/748-contato-politica-privacidade-web.md`)
@@ -1576,3 +1609,8 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 
 
+- `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md` - **done** (cancelamento mantém acesso até o fim do ciclo pago; slice 039)
+- `tasks/change-requests/767-api-filtro-area-diretorio-profissionais.md` - **done** (query specialty no diretório; slice 063)
+- `tasks/change-requests/768-ui-filtro-area-diretorio-profissionais.md` - **done** (seletor Área em /profissionais; slice 063)
+- `tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md` - **done** (opções do filtro vêm das especialidades cadastradas; slice 063)
+- `tasks/change-requests/770-refinar-layout-modal-contato-diretorio.md` - **done** (modal: botões lado a lado, ícone WhatsApp, mais infos; slice 067)
