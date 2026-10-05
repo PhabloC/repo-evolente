@@ -76,6 +76,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - Ciclo: `PENDING` → `ACTIVE` → `OVERDUE` → `SUSPENDED` → `CANCELED`
 - Atraso: `OVERDUE` (3 dias) → `SUSPENDED` (inativa conta)
 - Cancelamento/reembolso: → `CANCELED` com bloqueio imediato
+  - revisado em 2026-10-05 (task 766): cancelamento de assinatura `active` mantém o acesso até o fim do ciclo pago (`accessEndsAt`) e só interrompe a renovação; reembolso, cancelamento de `overdue` e cancelamento pelo master continuam imediatos
 - Reembolso: até 3 dias de uso
 - Sem inadimplência aberta além de `OVERDUE`
 
@@ -103,6 +104,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md`
 - `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md`
 - `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md`
+- `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md`
 
 ## Dependencias do slice
 
@@ -161,6 +163,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md` — done
 - `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md` — done
 - `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md` — in_progress
+- `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md` — done
 
 ## Status final
 
