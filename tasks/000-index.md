@@ -121,7 +121,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 4. Uma task por vez via `executar-task`
 5. Novo fluxo do responsável: 556 → 557 → 558, depois 559 → 560; 561 pode seguir em paralelo após 557
 6. Dashboard analítico do responsável na web: 562
-7. Diretório de profissionais (Slice 063): 751 → 752; filtro por área 767 → 768 → 769
+7. Diretório de profissionais (Slice 063): 751 → 752; filtro por área 767 → 768 → 769; paginação 771
 8. Endereço no cadastro (Slice 064): 755 → 756
 9. Autopreenchimento CEP (Slice 065): 757
 10. Profissionais próximos (Slice 066): 758 → 759
@@ -146,6 +146,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 771 - Paginação independente no diretório de profissionais — done (`tasks/change-requests/771-paginacao-diretorio-profissionais.md`)
 - Task 769 - Opções de área a partir das especialidades cadastradas — done (`tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md`)
 - Task 767 - Filtro por área no diretório de profissionais (API) — done (`tasks/change-requests/767-api-filtro-area-diretorio-profissionais.md`)
 - Task 764 - API: número obrigatório e complemento no endereço — done (`tasks/change-requests/764-api-numero-obrigatorio-complemento-endereco.md`)
@@ -1614,3 +1615,4 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/768-ui-filtro-area-diretorio-profissionais.md` - **done** (seletor Área em /profissionais; slice 063)
 - `tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md` - **done** (opções do filtro vêm das especialidades cadastradas; slice 063)
 - `tasks/change-requests/770-refinar-layout-modal-contato-diretorio.md` - **done** (modal: botões lado a lado, ícone WhatsApp, mais infos; slice 067)
+- `tasks/change-requests/771-paginacao-diretorio-profissionais.md` - **done** (paginação independente em Próximos e Outros; slice 063)
