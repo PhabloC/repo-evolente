@@ -164,6 +164,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md` — done
 - `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md` — in_progress
 - `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md` — done
+- `tasks/change-requests/772-copy-login-mobile-sem-mencao-pagamento.md` — done
 
 ## Status final
 
