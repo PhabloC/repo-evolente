@@ -124,13 +124,33 @@ paths:
           schema:
             type: string
             maxLength: 80
-        - name: page
+        - name: nearbyPage
           in: query
           required: false
+          description: Página da seção de profissionais próximos.
           schema:
             type: integer
             minimum: 1
             default: 1
+        - name: othersPage
+          in: query
+          required: false
+          description: Página da seção de outros profissionais.
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: page
+          in: query
+          required: false
+          description: |
+            Fallback legado aplicado às duas seções quando nearbyPage/othersPage
+            não são enviados.
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+            deprecated: true
         - name: pageSize
           in: query
           required: false
@@ -2750,7 +2770,8 @@ components:
         - others
         - nearbyTotal
         - othersTotal
-        - page
+        - nearbyPage
+        - othersPage
         - pageSize
         - total
         - referenceLocation
@@ -2772,7 +2793,10 @@ components:
         othersTotal:
           type: integer
           minimum: 0
-        page:
+        nearbyPage:
+          type: integer
+          minimum: 1
+        othersPage:
           type: integer
           minimum: 1
         pageSize:
