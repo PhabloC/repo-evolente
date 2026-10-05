@@ -88,6 +88,68 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "409":
           $ref: "#/components/responses/Conflict"
+  /professionals:
+    get:
+      tags: [Professionals]
+      operationId: listProfessionalsDirectory
+      summary: Listar profissionais do diretório (responsável)
+      description: |
+        Diretório autenticado para o responsável descobrir profissionais
+        cadastrados e elegíveis. Retorna apenas contas active com
+        accessGranted=true. Não expõe e-mail pessoal, CPF, CNPJ nem dados
+        de assinatura. Não cria vínculo; o vínculo continua via código da
+        criança com aprovação do responsável.
+
+        A resposta separa `nearby` (mesma cidade normalizada ou mesmo CEP /
+        prefixo de 5 dígitos do responsável autenticado) e `others` (demais).
+        Se o responsável não tiver endereço, `nearby` fica vazio e todos vão
+        para `others`.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: search
+          in: query
+          required: false
+          description: Termo parcial para buscar no nome ou especialidades.
+          schema:
+            type: string
+            maxLength: 100
+        - name: specialty
+          in: query
+          required: false
+          description: |
+            Filtra pela área/especialidade do profissional. Comparação sem
+            acento e sem maiúsculas; aceita correspondência parcial em
+            `specialties`. Combina com `search`.
+          schema:
+            type: string
+            maxLength: 80
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        "200":
+          description: Lista paginada de profissionais públicos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProfessionalDirectoryListResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
   /guardians/register:
     post:
       tags: [Guardians]
@@ -315,7 +377,7 @@ paths:
     patch:
       tags: [Users]
       operationId: updateCurrentUserProfile
-      summary: Atualizar nome e telefone do usuário autenticado
+      summary: Atualizar nome, telefone e endereço do usuário autenticado
       security:
         - bearerAuth: []
       requestBody:
@@ -648,8 +710,11 @@ paths:
       operationId: cancelSubscription
       summary: Cancelar assinatura do usuário autenticado
       description: |
-        Transição para canceled com bloqueio imediato (accessGranted=false).
-        Não espera o fim do ciclo mensal.
+        Transição para canceled e interrupção da renovação no provedor.
+        Assinatura active com pagamento confirmado mantém o acesso até o fim do
+        ciclo mensal pago (`subscription.accessEndsAt`, accessGranted=true);
+        depois disso o acesso é revogado automaticamente.
+        Assinatura overdue (ciclo não pago) é bloqueada na hora (accessGranted=false).
         Aplicável a assinaturas active ou overdue.
         Master não possui assinatura cancelável (isento).
       security:
@@ -2388,7 +2453,7 @@ components:
           $ref: "#/components/schemas/Role"
     UpdateOwnProfileRequest:
       type: object
-      description: Atualização parcial do próprio perfil (nome e/ou telefone).
+      description: Atualização parcial do próprio perfil (nome, telefone e/ou endereço).
       properties:
         name:
           type: string
@@ -2398,6 +2463,8 @@ components:
           type: string
           maxLength: 32
           nullable: true
+        address:
+          $ref: "#/components/schemas/AddressData"
     User:
       type: object
       required:
@@ -2426,6 +2493,11 @@ components:
           type: string
           nullable: true
           description: Telefone de contato; obrigatório no cadastro profissional
+        address:
+          allOf:
+            - $ref: "#/components/schemas/AddressData"
+          nullable: true
+          description: Endereço do usuário; obrigatório nos cadastros de profissional e responsável
         avatarUrl:
           type: string
           nullable: true
@@ -2474,6 +2546,39 @@ components:
           type: string
           minLength: 8
           maxLength: 32
+    AddressData:
+      type: object
+      required:
+        - street
+        - city
+        - postalCode
+        - number
+      properties:
+        street:
+          type: string
+          minLength: 2
+          maxLength: 160
+          description: Rua / logradouro
+        city:
+          type: string
+          minLength: 2
+          maxLength: 80
+          description: Cidade
+        postalCode:
+          type: string
+          minLength: 8
+          maxLength: 9
+          description: CEP com 8 dígitos (máscara opcional)
+        number:
+          type: string
+          minLength: 1
+          maxLength: 20
+          description: Número do endereço (obrigatório)
+        complement:
+          type: string
+          maxLength: 120
+          nullable: true
+          description: Complemento (opcional), ex. apto, bloco
     RegisterProfessionalRequest:
       type: object
       required:
@@ -2483,6 +2588,7 @@ components:
         - password
         - specialties
         - practiceType
+        - address
       properties:
         name:
           type: string
@@ -2504,6 +2610,8 @@ components:
           description: >-
             Mínimo 8 caracteres, com pelo menos uma letra maiúscula, um número
             e um caractere especial.
+        address:
+          $ref: "#/components/schemas/AddressData"
         specialties:
           type: array
           minItems: 1
@@ -2571,6 +2679,118 @@ components:
           $ref: "#/components/schemas/User"
         professional:
           $ref: "#/components/schemas/ProfessionalProfile"
+    ProfessionalDirectoryItem:
+      type: object
+      required:
+        - id
+        - userId
+        - name
+        - specialties
+        - practiceType
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Id do perfil profissional
+        userId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        avatarUrl:
+          type: string
+          format: uri
+          nullable: true
+        city:
+          type: string
+          nullable: true
+          description: Cidade pública do profissional (sem rua/CEP completo)
+        specialties:
+          type: array
+          minItems: 1
+          items:
+            type: string
+        professionalRegistry:
+          type: string
+          nullable: true
+        practiceType:
+          $ref: "#/components/schemas/PracticeType"
+        clinicName:
+          type: string
+          nullable: true
+          description: Razão social quando practiceType=clinica
+        clinicPhone:
+          type: string
+          nullable: true
+          description: Telefone da clínica quando practiceType=clinica
+        phone:
+          type: string
+          nullable: true
+          description: |
+            Telefone de contato para WhatsApp. Em clínicas, prioriza o telefone
+            da clínica; caso contrário usa o telefone do profissional.
+    ProfessionalDirectoryReferenceLocation:
+      type: object
+      nullable: true
+      description: |
+        Cidade/CEP do responsável usados para classificar proximidade.
+        Null quando a conta não tem endereço cadastrado.
+      properties:
+        city:
+          type: string
+          nullable: true
+        postalCode:
+          type: string
+          pattern: "^[0-9]{8}$"
+          nullable: true
+    ProfessionalDirectoryListResponse:
+      type: object
+      required:
+        - nearby
+        - others
+        - nearbyTotal
+        - othersTotal
+        - page
+        - pageSize
+        - total
+        - referenceLocation
+        - availableSpecialties
+      properties:
+        nearby:
+          type: array
+          description: Profissionais na mesma cidade ou CEP/prefixo do responsável
+          items:
+            $ref: "#/components/schemas/ProfessionalDirectoryItem"
+        others:
+          type: array
+          description: Profissionais fora da área de proximidade
+          items:
+            $ref: "#/components/schemas/ProfessionalDirectoryItem"
+        nearbyTotal:
+          type: integer
+          minimum: 0
+        othersTotal:
+          type: integer
+          minimum: 0
+        page:
+          type: integer
+          minimum: 1
+        pageSize:
+          type: integer
+          minimum: 1
+        total:
+          type: integer
+          minimum: 0
+          description: nearbyTotal + othersTotal (após filtro de busca)
+        referenceLocation:
+          $ref: "#/components/schemas/ProfessionalDirectoryReferenceLocation"
+        availableSpecialties:
+          type: array
+          description: |
+            Especialidades únicas dos profissionais elegíveis no diretório,
+            independentemente dos filtros `search` e `specialty`.
+          items:
+            type: string
     BiologicalSex:
       type: string
       enum:
@@ -2650,6 +2870,7 @@ components:
         - sex
         - email
         - password
+        - address
       properties:
         name:
           type: string
@@ -2678,6 +2899,8 @@ components:
           description: >-
             Mínimo 8 caracteres, com pelo menos uma letra maiúscula, um número
             e um caractere especial.
+        address:
+          $ref: "#/components/schemas/AddressData"
     ChildRegistrationData:
       type: object
       required:
@@ -3185,6 +3408,7 @@ components:
         - firstPaidAt
         - overdueSince
         - refundEligibleUntil
+        - accessEndsAt
         - createdAt
         - updatedAt
       properties:
@@ -3245,6 +3469,14 @@ components:
             - "null"
           format: date-time
           description: firstPaidAt + 3 dias; null se não elegível
+        accessEndsAt:
+          type:
+            - string
+            - "null"
+          format: date-time
+          description: |
+            Preenchido quando o usuário cancela uma assinatura active: fim do ciclo
+            mensal pago, até quando o acesso continua liberado. null nos demais casos.
         createdAt:
           type: string
           format: date-time
@@ -3261,7 +3493,7 @@ components:
       properties:
         accessGranted:
           type: boolean
-          description: true para master, active e overdue
+          description: true para master, active, overdue e canceled dentro de accessEndsAt
         subscriptionRequired:
           type: boolean
         subscription:
