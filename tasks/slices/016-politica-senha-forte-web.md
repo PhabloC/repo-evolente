@@ -47,6 +47,7 @@ Garantir que senhas criadas ou redefinidas na web cumpram politica minima de seg
 ## Tasks relacionadas
 
 - Task 030 (CR) - Politica de senha forte e confirmacao no reset — **done**
+- Task 787 (CR) - Aviso quando senhas não coincidem no cadastro web — **done**
 
 ## Dependencias do slice
 
@@ -77,6 +78,7 @@ baixo/medio — shared focado, paths concretos, sem mobile
 
 - Entrega concluida na Task 030.
 - Politica unica front/back/contrato; reset com confirmacao.
+- Task 787: cadastro profissional e responsável também confirmam senha com aviso de divergência.
 
 ## Status final
 

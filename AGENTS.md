@@ -144,6 +144,7 @@ Elas nao devem planejar backlog global.
 - nao usar a referencia visual de uma stack para inferir a outra sem registro explicito na task
 - antes de planejar tasks, confirmar se a stack web sera `front-end` (React/Vite) ou `next-js` (Next.js)
 - antes de planejar tasks, confirmar se o projeto tera `mobile`; se nao tiver, nao gerar tasks nem obrigar leitura local de `mobile/`
+- todo build mobile de loja (`eas build` production) deve incrementar `expo.version` em `mobile/app.json` antes de gerar o binário; o `autoIncrement` do EAS só muda `buildNumber`/`versionCode` e não substitui o bump de versão
 
 ## Commits e PRs para humanos e IAs
 

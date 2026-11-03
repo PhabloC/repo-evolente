@@ -10,8 +10,8 @@ Permitir que o responsável descubra profissionais cadastrados na Evolente a par
 
 ## Entrega verificável
 
-- Na página Filhos do responsável há um botão **Encontrar profissionais**.
-- O botão navega para uma página que lista profissionais cadastrados e elegíveis no sistema.
+- Na sidebar do responsável há o item **Profissionais**, que abre o diretório.
+- O item navega para uma página que lista profissionais cadastrados e elegíveis no sistema.
 - A listagem consome um endpoint autenticado do contrato OpenAPI, com campos públicos seguros.
 - Empty state, loading e erro ficam cobertos na página.
 
@@ -26,7 +26,7 @@ Permitir que o responsável descubra profissionais cadastrados na Evolente a par
 
 ## Decisões confirmadas (a validar na revisão humana)
 
-- O botão fica na página Filhos (`/filhos`), no cabeçalho junto ao CTA de cadastrar filho.
+- O acesso fica na sidebar do responsável (item **Profissionais** → `/profissionais`), não no cabeçalho de Filhos.
 - A página de destino é autenticada e restrita ao papel `responsavel` com `accessGranted`.
 - Só entram profissionais com conta `active`, perfil completo e `accessGranted=true`.
 - Campos exibidos: nome, avatar, especialidades, registro profissional (quando houver), tipo de prática e nome da clínica (quando houver).
@@ -72,6 +72,7 @@ Permitir que o responsável descubra profissionais cadastrados na Evolente a par
 
 - `tasks/change-requests/751-api-diretorio-profissionais-responsavel.md`
 - `tasks/change-requests/752-pagina-encontrar-profissionais-web.md`
+- `tasks/change-requests/793-mover-encontrar-profissionais-sidebar-web.md`
 - `tasks/change-requests/767-api-filtro-area-diretorio-profissionais.md`
 - `tasks/change-requests/768-ui-filtro-area-diretorio-profissionais.md`
 - `tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md`
@@ -87,6 +88,7 @@ Permitir que o responsável descubra profissionais cadastrados na Evolente a par
 - Task 768 — done (filtro por área, web)
 - Task 769 — done (opções do filtro pelas especialidades cadastradas)
 - Task 771 — done (paginação independente)
+- Task 793 — done (item na sidebar; botão removido de Filhos)
 
 ## Contexto mínimo recomendado
 

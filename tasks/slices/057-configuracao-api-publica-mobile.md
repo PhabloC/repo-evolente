@@ -6,7 +6,7 @@ Permitir que a versão Android distribuída pelo Google Play consuma a API públ
 
 ## Entrega verificável
 
-O perfil de produção do EAS recebe `EXPO_PUBLIC_API_URL` com a URL pública da API e uma nova build Android é iniciada.
+O perfil de produção do EAS recebe `EXPO_PUBLIC_API_URL` com a URL pública da API. A URL vigente no app da loja é `https://api.evolente.com.br/api` (Task 797, após o humano confirmar JSON no Chrome).
 
 ## Fora de escopo
 
@@ -20,6 +20,9 @@ O perfil de produção do EAS recebe `EXPO_PUBLIC_API_URL` com a URL pública da
 - `.agents/context-map.md`
 - `tasks/000-index.md`
 - `tasks/change-requests/631-configurar-api-publica-eas-mobile.md`
+- `tasks/change-requests/795-apontar-mobile-producao-api-evolente.md` — done; tentativa de `api.evolente.com.br` quebrou o login no aparelho
+- `tasks/change-requests/796-restaurar-login-mobile-producao.md` — done; rollback temporário para fasters
+- `tasks/change-requests/797-apontar-mobile-api-evolente-apos-teste-chrome.md` — done; URL vigente = `https://api.evolente.com.br/api`
 
 ## Contexto sob demanda
 

@@ -84,6 +84,9 @@
 - `tasks/slices/067-modal-contato-profissional-diretorio.md` - Slice 067: modal de contato WhatsApp no diretório — **done**
 - `tasks/slices/068-endereco-perfil-configuracoes.md` - Slice 068: endereço no perfil/configurações — **done**
 - `tasks/slices/069-numero-obrigatorio-complemento-endereco.md` - Slice 069: número obrigatório e complemento — **done**
+- `tasks/slices/070-iap-storekit-ios.md` - Slice 070: IAP StoreKit no iOS — **in_progress**
+- `tasks/slices/071-diretorio-profissionais-perfil-mobile.md` - Slice 071: diretório de profissionais no perfil mobile — **done**
+- `tasks/slices/072-gestao-operacional-usuarios-master.md` - Slice 072: exclusão, edição e master atuando como profissional no master web — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -121,18 +124,30 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 4. Uma task por vez via `executar-task`
 5. Novo fluxo do responsável: 556 → 557 → 558, depois 559 → 560; 561 pode seguir em paralelo após 557
 6. Dashboard analítico do responsável na web: 562
-7. Diretório de profissionais (Slice 063): 751 → 752; filtro por área 767 → 768 → 769; paginação 771
+7. Diretório de profissionais (Slice 063): 751 → 752; filtro por área 767 → 768 → 769; paginação 771; item na sidebar 793
 8. Endereço no cadastro (Slice 064): 755 → 756
 9. Autopreenchimento CEP (Slice 065): 757
 10. Profissionais próximos (Slice 066): 758 → 759
 11. Modal contato WhatsApp (Slice 067): 760 → 761
 12. Endereço no perfil (Slice 068): 762 → 763
 13. Número obrigatório + complemento (Slice 069): 764 → 765
+14. Diretório de profissionais no perfil mobile (Slice 071): 791
 
 ## Tasks por tipo
 
 ### Mobile
 
+- Task 799 - Versão do login segue a versão publicada — done (`tasks/change-requests/799-versao-login-segue-expo-config.md`)
+- Task 798 - Publicar OTA da API nova no runtime 1.0.2 — done (`tasks/change-requests/798-ota-api-evolente-runtime-1-0-2.md`)
+- Task 797 - Apontar o mobile para api.evolente.com.br após teste no Chrome — done (`tasks/change-requests/797-apontar-mobile-api-evolente-apos-teste-chrome.md`)
+- Task 796 - Restaurar login mobile de produção — done (`tasks/change-requests/796-restaurar-login-mobile-producao.md`)
+- Task 795 - Apontar o mobile de produção para api.evolente.com.br — done (`tasks/change-requests/795-apontar-mobile-producao-api-evolente.md`)
+- Task 791 - Card Encontrar profissionais no perfil mobile — done (`tasks/change-requests/791-card-encontrar-profissionais-perfil-mobile.md`)
+- Task 790 - Manter CTAs visíveis quando o login mostra erro de campo — done (`tasks/change-requests/790-manter-ctas-visiveis-erro-login-mobile.md`)
+- Task 789 - Versão sempre visível no login mobile — done (`tasks/change-requests/789-versao-sempre-visivel-login-mobile.md`)
+- Task 788 - Botão criar conta no login mobile — done (`tasks/change-requests/788-botao-criar-conta-login-mobile.md`)
+- Task 786 - Reproduzir vídeo do YouTube na trilha mobile — done (`tasks/change-requests/786-reproduzir-video-youtube-na-trilha-mobile.md`)
+- Task 785 - Capa exclusiva para cards de vídeo na biblioteca mobile — done (`tasks/change-requests/785-capa-exclusiva-video-biblioteca-mobile.md`)
 - Task 779 - Equalizar padding vertical dos cards colapsados no perfil — done (`tasks/change-requests/779-equalizar-padding-cards-colapsados-perfil.md`)
 - Task 778 - Remover borda dos ícones nos cards de avisos — done (`tasks/change-requests/778-remover-borda-icones-cards-avisos.md`)
 - Task 777 - Alinhar cards de Últimos avisos ao Resumo rápido — done (`tasks/change-requests/777-alinhar-cards-ultimos-avisos-resumo-rapido.md`)
@@ -150,10 +165,16 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 718 - Aplicar layout tablet na recuperação de senha mobile — done (`tasks/change-requests/718-layout-recuperacao-tablet-mobile.md`)
 - Task 717 - Corrigir sobreposição do login tablet — done (`tasks/change-requests/717-corrigir-sobreposicao-login-tablet-mobile.md`)
 - Task 716 - Centralizar formulário e boas-vindas no login tablet — done (`tasks/change-requests/716-centralizar-login-tablet-mobile.md`)
+- Task 805 - Restaurar diretório de profissionais no app via OTA de produção — done (`tasks/change-requests/805-ota-restaura-diretorio-profissionais-mobile.md`)
 - Task 715 - Novo layout de login para tablet no mobile — done (`tasks/change-requests/715-layout-login-tablet-mobile.md`)
 
 ### Shared
 
+- Task 804 - Especialidades do master que atua como profissional — done (`tasks/change-requests/804-especialidades-master-atua-como-profissional.md`)
+- Task 803 - Remover isenção de mensalidade de profissional e responsável — done (`tasks/change-requests/803-remover-isencao-mensalidade-profissional-responsavel.md`)
+- Task 802 - Master que também atua como profissional, sem mensalidade — done (`tasks/change-requests/802-master-atua-como-profissional-sem-mensalidade.md`)
+- Task 784 - Upload áudios Animais/difícil do Descubra a palavra — done (`tasks/change-requests/784-upload-audios-animais-dificil-descubra-palavra.md`)
+- Task 783 - Traço contínuo no Escreva a letra — done (`tasks/change-requests/783-traco-continuo-escreva-letra.md`)
 - Task 771 - Paginação independente no diretório de profissionais — done (`tasks/change-requests/771-paginacao-diretorio-profissionais.md`)
 - Task 769 - Opções de área a partir das especialidades cadastradas — done (`tasks/change-requests/769-opcoes-area-especialidades-cadastradas.md`)
 - Task 767 - Filtro por área no diretório de profissionais (API) — done (`tasks/change-requests/767-api-filtro-area-diretorio-profissionais.md`)
@@ -184,6 +205,9 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Backend
 
+- Task 806 - Aceitar envelope real do webhook Asaas sem 400 — done (`tasks/change-requests/806-aceitar-envelope-real-webhook-asaas.md`)
+- Task 800 - API para excluir, editar perfil e isentar usuário — done (`tasks/change-requests/800-api-excluir-editar-isentar-usuario-master.md`)
+- Task 792 - Remover callback da assinatura PIX Asaas — done (`tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md`)
 - Task 746 - Normalizar letras do Alfabeto falado real — done (`tasks/change-requests/746-normalizar-letras-alfabeto-real.md`)
 
 - Task 737 - Recalibrar hotspots do acampamento no Jogo dos erros — done (`tasks/change-requests/737-recalibrar-hotspots-acampamento-jogo-dos-erros.md`)
@@ -527,6 +551,9 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 485 - Compatibilizar quebra-cabeça legado sem `difficulty` no mobile — done (`tasks/change-requests/485-compatibilizar-quebra-cabeca-legado-sem-difficulty-mobile.md`)
 ### Front
 
+- Task 801 - UI para excluir, editar e isentar usuário no master web — done (`tasks/change-requests/801-ui-excluir-editar-isentar-usuario-master-web.md`)
+- Task 793 - Mover Encontrar profissionais para a sidebar web do responsável — done (`tasks/change-requests/793-mover-encontrar-profissionais-sidebar-web.md`)
+- Task 787 - Aviso quando senhas não coincidem no cadastro web — done (`tasks/change-requests/787-aviso-senhas-nao-coincidem-cadastro-web.md`)
 - Task 770 - Refinar layout do modal de contato do diretório — done (`tasks/change-requests/770-refinar-layout-modal-contato-diretorio.md`)
 - Task 768 - Filtro por área no diretório de profissionais (web) — done (`tasks/change-requests/768-ui-filtro-area-diretorio-profissionais.md`)
 - Task 765 - Forms web: número obrigatório e complemento — done (`tasks/change-requests/765-forms-numero-complemento-endereco-web.md`)
@@ -827,6 +854,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Back
 
+- Task 792 - Remover callback da assinatura PIX Asaas — done (`tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md`)
 - Task 002 - Fundacao backend identidade — done
 - Task 005 - API autenticacao — done
 - Task 008 - API cadastro profissional — done
@@ -1632,3 +1660,13 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/777-alinhar-cards-ultimos-avisos-resumo-rapido.md` - **done** (Últimos avisos com design do Resumo rápido; slice 010)
 - `tasks/change-requests/778-remover-borda-icones-cards-avisos.md` - **done** (ícones dos cards de avisos sem borda/sombra; slice 010)
 - `tasks/change-requests/779-equalizar-padding-cards-colapsados-perfil.md` - **done** (padding top/bottom igual nos cards colapsados; slice 010)
+- `tasks/change-requests/780-documentar-processo-iap-storekit-ios.md` - **done** (doc viva do processo IAP iOS; slice 070)
+- `tasks/change-requests/781-backend-contrato-confirm-apple-iap.md` - **done** (OpenAPI + confirm Apple IAP; slice 070)
+- `tasks/change-requests/782-mobile-paywall-storekit-ios.md` - **done** (paywall StoreKit só iOS — falta Sandbox humano; slice 070)
+- `tasks/change-requests/791-card-encontrar-profissionais-perfil-mobile.md` - **done** (card + diretório no perfil mobile; slice 071)
+- `tasks/change-requests/793-mover-encontrar-profissionais-sidebar-web.md` - **done** (item Profissionais na sidebar do responsável; slice 063)
+- `tasks/change-requests/794-categorias-multiplas-atividade-biblioteca.md` - **done** (várias categorias por atividade na biblioteca; slice 006)
+- Handoff: `.agents/state/handoffs/TASK-794.md`
+- Handoff: `.agents/state/handoffs/TASK-791.md`
+- Doc de processo: `docs/development/ios-iap-storekit.md`
+- Handoffs: `.agents/state/handoffs/TASK-780.md`, `TASK-781.md`, `TASK-782.md`

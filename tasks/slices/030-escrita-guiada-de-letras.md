@@ -125,6 +125,7 @@ Existe um novo conteúdo jogável no catálogo, visível na biblioteca do master
 - `tasks/change-requests/173-alfabeto-completo-jogo-escrita-de-letras.md` — done
 - `tasks/change-requests/174-tolerancia-tracos-tortos-letra-m.md` — done
 - `tasks/change-requests/179-linha-pontilhada-guia-modal-escrita-letras.md` — done
+- `tasks/change-requests/783-traco-continuo-escreva-letra.md` — done
 - `tasks/change-requests/180-capa-jogo-escreva-a-letra-no-bucket.md` — done
 - `tasks/change-requests/254-corrigir-fala-e-fluxo-assincrono-escrita-guiada-mobile.md` — done
 
@@ -139,7 +140,7 @@ Existe um novo conteúdo jogável no catálogo, visível na biblioteca do master
 - `O` exige topo fechado para não confundir com `U`
 - jogo de escrita cobre o alfabeto completo A–Z
 - `M` aceita vale largo/picos irregulares via templates extras e detecção estrutural
-- preview web do modal de escrita exibe o traço do usuário em linha pontilhada
+- preview web e runtime mobile do Escreva a letra exibem o traço do usuário em linha contínua (Task 783; reverte o pontilhado da Task 179)
 - capa do jogo Escreva a letra publicada no bucket e ligada ao `coverUrl` do catálogo
 - o runtime mobile agora encerra cancelamentos de fala sem promessas pendentes e evita replay duplicado da próxima instrução
 

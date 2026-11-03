@@ -92,6 +92,7 @@ Atividades publicadas com categoria/idade/dificuldade/objetivo; arquivos em stor
 - `tasks/change-requests/159-storage-s3-compativel-minio-backend.md` - provider S3/MinIO real
 - `tasks/change-requests/160-prefixo-de-ambiente-no-storage-de-conteudos.md` - organizacao das keys por ambiente
 - `tasks/change-requests/161-mapa-de-uso-do-bucket-no-projeto.md` - inventario dos usos atuais e futuros do bucket
+- `tasks/change-requests/794-categorias-multiplas-atividade-biblioteca.md` - várias categorias por atividade na biblioteca web
 
 ## Dependencias do slice
 

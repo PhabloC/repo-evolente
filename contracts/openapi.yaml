@@ -551,6 +551,67 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "404":
           $ref: "#/components/responses/NotFound"
+    patch:
+      tags: [Users]
+      operationId: updateUser
+      summary: Atualizar usuário (master)
+      description: |
+        Atualização administrativa parcial. Permite alterar nome, e-mail,
+        telefone, senha e atuação profissional do master.
+        O papel do usuário não é alterável por esta rota.
+        `actsAsProfessional` e `professionalSpecialties` só valem para master
+        (400 `ACTS_AS_PROFESSIONAL_MASTER_ONLY` para os demais). Ativar
+        `actsAsProfessional` exige `professionalSpecialties` (400
+        `PROFESSIONAL_SPECIALTIES_REQUIRED`).
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateUserRequest"
+      responses:
+        "200":
+          description: Usuário atualizado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+    delete:
+      tags: [Users]
+      operationId: deleteUser
+      summary: Excluir usuário (master)
+      description: |
+        Exclui a conta autenticável e os dependentes necessários para
+        respeitar a integridade referencial. Master não pode excluir a
+        própria conta (403 CANNOT_DELETE_SELF) nem o último master
+        (403 CANNOT_DELETE_LAST_MASTER).
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      responses:
+        "204":
+          description: Usuário excluído
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /users/{userId}/status:
     patch:
       tags: [Users]
@@ -724,6 +785,42 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "404":
           $ref: "#/components/responses/NotFound"
+  /subscriptions/apple/confirm:
+    post:
+      tags: [Subscriptions]
+      operationId: confirmAppleIapSubscription
+      summary: Confirmar ou restaurar assinatura Apple IAP (StoreKit)
+      description: |
+        Usado pelo app iOS após compra ou restore via StoreKit.
+        Valida o recibo com a Apple (verifyReceipt), exige productId do plano
+        responsável configurado e libera accessGranted com provider=apple.
+        Idempotente para o mesmo originalTransactionId.
+        Não substitui o checkout Asaas na web/Android.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ConfirmAppleIapRequest"
+      responses:
+        "200":
+          description: Assinatura Apple ativa e acesso liberado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscriptionConfirmResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "503":
+          $ref: "#/components/responses/ServiceUnavailable"
   /subscriptions/cancel:
     post:
       tags: [Subscriptions]
@@ -2426,6 +2523,12 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/Error"
+    ServiceUnavailable:
+      description: Serviço externo indisponível ou não configurado
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
   schemas:
     Role:
       type: string
@@ -2485,6 +2588,43 @@ components:
           nullable: true
         address:
           $ref: "#/components/schemas/AddressData"
+    UpdateUserRequest:
+      type: object
+      description: Atualização administrativa parcial de um usuário (master).
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 80
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+          maxLength: 64
+          pattern: "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,64}$"
+        phone:
+          type: string
+          maxLength: 32
+          nullable: true
+        actsAsProfessional:
+          type: boolean
+          description: >
+            Permite que um master também atue como profissional, sem
+            mensalidade e mantendo o papel master. Ao ativar, o perfil
+            profissional é criado com acesso liberado.
+        professionalSpecialties:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            minLength: 2
+            maxLength: 80
+          description: >
+            Especialidades do master que atua como profissional. Obrigatório
+            ao ativar `actsAsProfessional`; pode ser enviado depois para
+            atualizar.
     User:
       type: object
       required:
@@ -2497,6 +2637,7 @@ components:
         - avatarSizeBytes
         - role
         - status
+        - actsAsProfessional
         - createdAt
         - updatedAt
       properties:
@@ -2534,6 +2675,19 @@ components:
           $ref: "#/components/schemas/Role"
         status:
           $ref: "#/components/schemas/UserStatus"
+        actsAsProfessional:
+          type: boolean
+          description: >
+            Master que também atua como profissional. Requisições com o
+            header `X-Acting-Role: profissional` são tratadas como de um
+            profissional, sem cobrança de mensalidade.
+        professionalSpecialties:
+          type: array
+          items:
+            type: string
+          description: >
+            Presente em `GET /users/{userId}` e `PATCH /users/{userId}` apenas
+            para master que atua como profissional.
         createdAt:
           type: string
           format: date-time
@@ -3633,6 +3787,25 @@ components:
           type: string
           enum: [success, refused]
           description: Somente PAYMENT_PROVIDER=fake
+    ConfirmAppleIapRequest:
+      type: object
+      required:
+        - productId
+        - receiptData
+      properties:
+        productId:
+          type: string
+          description: Product ID cadastrado no App Store Connect
+          example: br.com.evolente.responsavel.monthly
+        receiptData:
+          type: string
+          description: Recibo base64 (StoreKit) enviado pelo app iOS
+        transactionId:
+          type: string
+          description: transaction_id da compra (opcional; validado contra o recibo)
+        originalTransactionId:
+          type: string
+          description: original_transaction_id (opcional; preferido para idempotência)
     FakeSubscriptionWebhookRequest:
       type: object
       required:
@@ -3646,12 +3819,14 @@ components:
           enum: [success, refused]
     AsaasSubscriptionWebhookRequest:
       type: object
+      additionalProperties: true
       description: |
         Envelope genérico do webhook Asaas. O backend valida o token e
-        interpreta o evento de forma idempotente.
+        interpreta o evento de forma idempotente. Campos extras de topo
+        (`dateCreated`, `account` e outros que o Asaas adicionar) devem
+        ser aceitos; rejeitá-los com 400 penaliza a fila do webhook.
       required:
         - event
-        - payment
       properties:
         id:
           type: string
@@ -3659,10 +3834,21 @@ components:
         event:
           type: string
           description: Nome do evento Asaas (ex. PAYMENT_RECEIVED, PAYMENT_OVERDUE)
+        dateCreated:
+          type: string
+          description: Data de criação do evento no Asaas
+        account:
+          type: object
+          additionalProperties: true
+          description: Conta Asaas que originou o evento
         payment:
           type: object
           additionalProperties: true
           description: Payload de pagamento/assinatura retornado pelo Asaas
+        checkout:
+          type: object
+          additionalProperties: true
+          description: Payload de Checkout Session (eventos CHECKOUT_*)
     SubscriptionWebhookAck:
       type: object
       required:
@@ -5026,6 +5212,7 @@ components:
         - gameType
         - gameConfig
         - category
+        - categories
         - ageMinYears
         - ageMaxYears
         - difficulty
@@ -5061,6 +5248,11 @@ components:
             - type: "null"
         category:
           $ref: "#/components/schemas/ContentCategory"
+        categories:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/ContentCategory"
         ageMinYears:
           type: integer
         ageMaxYears:
@@ -5132,6 +5324,11 @@ components:
           $ref: "#/components/schemas/ContentGameConfig"
         category:
           $ref: "#/components/schemas/ContentCategory"
+        categories:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/ContentCategory"
         ageMinYears:
           type: integer
           minimum: 0
@@ -5165,6 +5362,11 @@ components:
             - type: "null"
         category:
           $ref: "#/components/schemas/ContentCategory"
+        categories:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/ContentCategory"
         ageMinYears:
           type: integer
         ageMaxYears:

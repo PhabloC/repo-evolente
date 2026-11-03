@@ -142,6 +142,7 @@ Usuario autenticado acessa a area do perfil; recovery envia link e permite redef
 - Telas auth mobile: Task 007 done
 - Task 093 concluiu o refino visual incremental de login e recovery no mobile com branding, placeholders e visualizacao de senha no login.
 - Task 094 concluiu a substituicao do login mobile por uma versao fiel ao print anexado pelo usuario, sem CTA de cadastro.
+- Task 788 adicionou CTA “Criar conta” no login mobile abrindo `https://evolente.com.br/cadastro/responsavel` (desvio documentado do print; sem cadastro in-app).
 - Task 096 refinou a fidelidade com nuvem SVG real (`SignInCloud`), print em `design-system/mobile/prints/login-mobile.png` e sem cadastro.
 - Task 097 ajustou a menina sutilmente atras da nuvem e espaçou shapes top/bottom.
 - Task 098 subiu a nuvem, corrigiu corte do e-mail, removeu emoji e afastou shapes do texto.
@@ -205,6 +206,9 @@ Usuario autenticado acessa a area do perfil; recovery envia link e permite redef
 - `tasks/change-requests/607-recovery-mobile-aplicar-lift-do-login.md` — done
 - `tasks/change-requests/608-fundo-liquid-glass-auth-mobile.md` — done
 - `tasks/change-requests/609-transparencia-painel-auth-teclado-mobile.md` — done
+- `tasks/change-requests/788-botao-criar-conta-login-mobile.md` — done (CTA web para cadastro do responsável)
+- `tasks/change-requests/789-versao-sempre-visivel-login-mobile.md` — done (versão fixa no rodapé do login)
+- `tasks/change-requests/790-manter-ctas-visiveis-erro-login-mobile.md` — done
 
 ## Status final
 

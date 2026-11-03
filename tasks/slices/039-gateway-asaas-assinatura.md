@@ -85,6 +85,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - Checkout e gestão financeira na web; mobile só consome `accessGranted`
 - Valores em centavos: `7900` e `4900`; moeda BRL
 - Conta Asaas sandbox primeiro; produção via env
+- PIX mensal não envia `callback.successUrl` enquanto a conta Asaas não tiver site comercial cadastrado (Task 792); confirmação por webhook/`invoiceUrl`
 
 ## Tasks relacionadas
 
@@ -105,6 +106,8 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md`
 - `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md`
 - `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md`
+- `tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md`
+- `tasks/change-requests/806-aceitar-envelope-real-webhook-asaas.md`
 
 ## Dependencias do slice
 
@@ -162,9 +165,11 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/639-diagnostico-webhook-asaas-404.md` — done
 - `tasks/change-requests/640-reaproveitar-responsavel-orfao-sem-assinatura.md` — done
 - `tasks/change-requests/641-gate-assinatura-nao-verificar-sem-checkout.md` — done
-- `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md` — in_progress
+- `tasks/change-requests/642-diagnosticar-erro-asaas-pix-subscription.md` — done
 - `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md` — done
+- `tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md` — done
 - `tasks/change-requests/772-copy-login-mobile-sem-mencao-pagamento.md` — done
+- `tasks/change-requests/806-aceitar-envelope-real-webhook-asaas.md` — done
 
 ## Status final
 
