@@ -1,0 +1,15 @@
+---
+description: Todo build mobile de produção deve incrementar a versão de marketing antes de gerar o binário.
+alwaysApply: true
+---
+
+# Versão em todo build mobile de loja
+
+Antes de qualquer `eas build` de produção (Android, iOS ou ambos):
+
+1. Incrementar `expo.version` em `mobile/app.json` (patch: `1.0.2` → `1.0.3`).
+2. Não reutilizar uma versão já enviada ou aprovada na App Store / Play Store.
+3. `autoIncrement` do EAS só sobe `ios.buildNumber` / `android.versionCode`. Isso não substitui o bump de `expo.version`.
+4. A Apple rejeita build com o mesmo `CFBundleShortVersionString` de uma versão já aprovada (erros 90062 e 90186).
+
+Nunca gerar build de loja sem mudar a versão de marketing.
