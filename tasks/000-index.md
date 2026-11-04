@@ -87,6 +87,7 @@
 - `tasks/slices/070-iap-storekit-ios.md` - Slice 070: IAP StoreKit no iOS — **in_progress**
 - `tasks/slices/071-diretorio-profissionais-perfil-mobile.md` - Slice 071: diretório de profissionais no perfil mobile — **done**
 - `tasks/slices/072-gestao-operacional-usuarios-master.md` - Slice 072: exclusão, edição e master atuando como profissional no master web — **done**
+- `tasks/slices/073-play-console-qualidade-android.md` - Slice 073: qualidade Android na Play Console (R8 + edge-to-edge) — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -137,6 +138,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
+- Task 807 - Corrigir avisos Play Console (DEX + edge-to-edge) — done (`tasks/change-requests/807-corrigir-avisos-play-console-dex-edge-to-edge.md`)
 - Task 799 - Versão do login segue a versão publicada — done (`tasks/change-requests/799-versao-login-segue-expo-config.md`)
 - Task 798 - Publicar OTA da API nova no runtime 1.0.2 — done (`tasks/change-requests/798-ota-api-evolente-runtime-1-0-2.md`)
 - Task 797 - Apontar o mobile para api.evolente.com.br após teste no Chrome — done (`tasks/change-requests/797-apontar-mobile-api-evolente-apos-teste-chrome.md`)
