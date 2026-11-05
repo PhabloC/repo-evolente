@@ -58,8 +58,11 @@ Sem produtos criados no Connect, a compra no app falha mesmo com código pronto.
 - Novo caminho paralelo: `POST /subscriptions/apple/confirm`
   - Body: `productId`, `transactionId`, `originalTransactionId`, `receiptData` (ou JWS StoreKit 2 — ver implementação)
   - Valida com Apple
-  - Persiste `Subscription` com `provider=apple`, `checkoutId=apple:{originalTransactionId}`
-  - Status `active` + mesmas regras de `accessGranted` já usadas pelo app
+- Persiste `Subscription` com `provider=apple`, `checkoutId=apple:{originalTransactionId}`
+- Grava `accessEndsAt` com a data de expiração da Apple. Sem essa data a confirmação é recusada.
+- Status `active` enquanto o período não venceu. Ao vencer, o acesso cai e a assinatura deixa de contar como ativa.
+- `POST /api/subscriptions/webhooks/apple` recebe App Store Server Notifications V2. O JWS é verificado com a Apple Root CA - G3. Renovação estende o período; cancelamento da renovação mantém o acesso até `accessEndsAt`; expiração, reembolso e revogação cortam o acesso na hora.
+- Cancelar uma assinatura Apple no app só atualiza o banco. A cobrança da Apple é cancelada em Ajustes → Assinaturas. Reembolso não passa pelo Asaas: a Apple estorna e o webhook encerra o acesso.
 
 Env vars previstas:
 
@@ -109,12 +112,12 @@ Env vars previstas:
 | Slice 070 criado | feito | — |
 | Este documento | feito (vivo) | 780 |
 | OpenAPI `apple/confirm` | feito (código) | 781 |
-| Backend confirm + validação Apple | feito (código; JWS decode + verifyReceipt) | 781 |
+| Backend confirm + validação Apple | feito (código; JWS com cadeia Apple e OID de recibo, ou verifyReceipt) | 781 |
 | Paywall mobile iOS (`expo-iap`) | feito (código) | 782 |
 | Env `APPLE_IAP_*` em produção | pendente humano | — |
 | Produtos App Store Connect | pendente humano | — |
 | Build EAS nativo iOS + Sandbox | pendente | — |
-| Apple Server Notifications v2 | fora do MVP | follow-up |
+| Apple Server Notifications v2 | feito (código; URL no App Store Connect é passo humano) | 808 |
 
 ### Env vars backend
 
@@ -135,8 +138,11 @@ APPLE_IAP_ALLOW_JWS_DECODE=true
 - `tasks/change-requests/780-documentar-processo-iap-storekit-ios.md`
 - `tasks/change-requests/781-backend-contrato-confirm-apple-iap.md`
 - `tasks/change-requests/782-mobile-paywall-storekit-ios.md`
+- `tasks/change-requests/808-ciclo-assinatura-apple-iap.md`
 
 ## 11. Histórico curto
 
 - **2026-10-08** — Decisão de implementar IAP só iOS; doc criado; slice/tasks abertas. Fix `expo-audio` background já aplicado em `mobile/app.json` em sessão anterior.
 - **2026-10-08 (tarde)** — Endpoint `POST /subscriptions/apple/confirm`, verifier Apple, paywall `SubscribeScreen` + `expo-iap`, gate iOS no login. Pendente: produtos no Connect, secrets, build nativo e testes Sandbox.
+- **2026-11-04** — `accessEndsAt` da Apple passa a valer; cancel/reembolso Apple não chama o Asaas; webhook `POST /subscriptions/webhooks/apple`. Pendente humano: cadastrar essa URL em App Store Connect (Server Notifications V2). Assinaturas já gravadas sem data de expiração só recebem o prazo na próxima confirmação, restauração ou notificação.
+- **2026-11-04** — JWS sem cadeia ou sem o OID de recibo da App Store é recusado. Notificação sem assinatura local responde 503 para a Apple reenviar. Carência de cobrança estende `accessEndsAt`.
