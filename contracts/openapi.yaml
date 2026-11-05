@@ -821,6 +821,41 @@ paths:
           $ref: "#/components/responses/NotFound"
         "503":
           $ref: "#/components/responses/ServiceUnavailable"
+  /subscriptions/webhooks/apple:
+    post:
+      tags: [Subscriptions]
+      operationId: appleSubscriptionWebhook
+      summary: Webhook App Store Server Notifications V2
+      description: |
+        Callback público da Apple (sem JWT). O corpo traz `signedPayload`,
+        um JWS cuja cadeia termina na Apple Root CA - G3 e cujo certificado
+        folha é o de recibo da App Store. `bundleId` é obrigatório.
+        Renovação estende `accessEndsAt` e mantém o acesso.
+        Falha de renovação em carência estende o acesso até `gracePeriodExpiresDate`.
+        Cancelamento da renovação na Apple mantém o acesso até o fim do período.
+        Expiração, reembolso e revogação encerram o acesso na hora.
+        Se a assinatura local ainda não existe, responde 503 para a Apple reenviar.
+        Compra Apple não é estornada no Asaas. Idempotente por `notificationUUID`.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppleServerNotificationRequest"
+      responses:
+        "200":
+          description: Evento processado ou ignorado de forma idempotente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscriptionWebhookAck"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "503":
+          $ref: "#/components/responses/ServiceUnavailable"
   /subscriptions/cancel:
     post:
       tags: [Subscriptions]
@@ -858,9 +893,11 @@ paths:
       summary: Solicitar reembolso por arrependimento
       description: |
         Permitido apenas até 3 dias de uso após a confirmação do 1º pagamento
-        (firstPaidAt). Em sucesso: status canceled, bloqueio imediato e
-        estorno no Asaas quando PAYMENT_PROVIDER=asaas.
-        Fora da janela: 400 com erro de negócio.
+        (firstPaidAt) para assinaturas Asaas. Em sucesso: status canceled,
+        bloqueio imediato e estorno no Asaas quando PAYMENT_PROVIDER=asaas.
+        Assinatura `provider=apple` responde 400 `APPLE_REFUND_VIA_APP_STORE`:
+        o estorno é feito pela Apple e o acesso só cai quando a notificação chega.
+        Fora da janela Asaas: 400 com erro de negócio.
       security:
         - bearerAuth: []
       responses:
@@ -3817,6 +3854,15 @@ components:
         outcome:
           type: string
           enum: [success, refused]
+    AppleServerNotificationRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - signedPayload
+      properties:
+        signedPayload:
+          type: string
+          description: JWS App Store Server Notifications V2
     AsaasSubscriptionWebhookRequest:
       type: object
       additionalProperties: true
