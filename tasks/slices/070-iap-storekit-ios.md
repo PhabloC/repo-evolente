@@ -5,7 +5,8 @@
 in_progress
 
 > Código MVP (contrato + backend + paywall iOS) entregue nas tasks 780–782.
-> Slice permanece `in_progress` até produto App Store Connect + build Sandbox + reenvio à review.
+> Task 808 grava o prazo da Apple, tira cancel/reembolso do Asaas e recebe Server Notifications V2.
+> Slice permanece `in_progress` até produto App Store Connect + URL do webhook + build Sandbox + reenvio à review.
 
 ## Objetivo de negocio
 
@@ -25,7 +26,8 @@ Atender a rejeição App Store (Guideline 3.1.1): permitir que o responsável co
 - IAP para profissional no mobile (shell mobile do profissional não é suportado)
 - Remover Asaas da web
 - Entitlement External Link Account / Alternative Payments EUA
-- Webhook Apple Server Notifications v2 completo (pode ficar em task follow-up; MVP valida na confirmação)
+- Consulta ativa na App Store Server API (issuer, key id e private key)
+- Reembolso iniciado pelo backend direto na Apple
 
 ## Perfil do projeto
 
@@ -92,6 +94,7 @@ Atender a rejeição App Store (Guideline 3.1.1): permitir que o responsável co
 - `tasks/change-requests/780-documentar-processo-iap-storekit-ios.md`
 - `tasks/change-requests/781-backend-contrato-confirm-apple-iap.md`
 - `tasks/change-requests/782-mobile-paywall-storekit-ios.md`
+- `tasks/change-requests/808-ciclo-assinatura-apple-iap.md`
 
 ## Orçamento de contexto
 
