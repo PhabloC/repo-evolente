@@ -138,6 +138,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
+- Task 809 - Aviso de assinatura expirada no login mobile — done (`tasks/change-requests/809-aviso-assinatura-expirada-login-mobile.md`)
 - Task 807 - Corrigir avisos Play Console (DEX + edge-to-edge) — done (`tasks/change-requests/807-corrigir-avisos-play-console-dex-edge-to-edge.md`)
 - Task 799 - Versão do login segue a versão publicada — done (`tasks/change-requests/799-versao-login-segue-expo-config.md`)
 - Task 798 - Publicar OTA da API nova no runtime 1.0.2 — done (`tasks/change-requests/798-ota-api-evolente-runtime-1-0-2.md`)
@@ -207,6 +208,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Backend
 
+- Task 808 - Ciclo da assinatura Apple IAP — done (`tasks/change-requests/808-ciclo-assinatura-apple-iap.md`)
 - Task 806 - Aceitar envelope real do webhook Asaas sem 400 — done (`tasks/change-requests/806-aceitar-envelope-real-webhook-asaas.md`)
 - Task 800 - API para excluir, editar perfil e isentar usuário — done (`tasks/change-requests/800-api-excluir-editar-isentar-usuario-master.md`)
 - Task 792 - Remover callback da assinatura PIX Asaas — done (`tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md`)
@@ -1665,6 +1667,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - `tasks/change-requests/780-documentar-processo-iap-storekit-ios.md` - **done** (doc viva do processo IAP iOS; slice 070)
 - `tasks/change-requests/781-backend-contrato-confirm-apple-iap.md` - **done** (OpenAPI + confirm Apple IAP; slice 070)
 - `tasks/change-requests/782-mobile-paywall-storekit-ios.md` - **done** (paywall StoreKit só iOS — falta Sandbox humano; slice 070)
+- `tasks/change-requests/808-ciclo-assinatura-apple-iap.md` - **done** (prazo Apple, cancel/reembolso fora do Asaas, webhook; slice 070)
 - `tasks/change-requests/791-card-encontrar-profissionais-perfil-mobile.md` - **done** (card + diretório no perfil mobile; slice 071)
 - `tasks/change-requests/793-mover-encontrar-profissionais-sidebar-web.md` - **done** (item Profissionais na sidebar do responsável; slice 063)
 - `tasks/change-requests/794-categorias-multiplas-atividade-biblioteca.md` - **done** (várias categorias por atividade na biblioteca; slice 006)
