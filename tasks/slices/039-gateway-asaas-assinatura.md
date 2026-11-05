@@ -108,6 +108,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/766-cancelamento-mantem-acesso-ate-fim-do-ciclo.md`
 - `tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md`
 - `tasks/change-requests/806-aceitar-envelope-real-webhook-asaas.md`
+- `tasks/change-requests/809-aviso-assinatura-expirada-login-mobile.md`
 
 ## Dependencias do slice
 
@@ -170,6 +171,7 @@ Substituir o provider fake pelo Asaas com planos mensais reais, meios de pagamen
 - `tasks/change-requests/792-remover-callback-assinatura-pix-asaas.md` — done
 - `tasks/change-requests/772-copy-login-mobile-sem-mencao-pagamento.md` — done
 - `tasks/change-requests/806-aceitar-envelope-real-webhook-asaas.md` — done
+- `tasks/change-requests/809-aviso-assinatura-expirada-login-mobile.md` — done
 
 ## Status final
 
