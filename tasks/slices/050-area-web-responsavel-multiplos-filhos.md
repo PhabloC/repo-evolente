@@ -22,7 +22,7 @@ Depois do pagamento, o responsável usa a web: dashboard dos filhos, cadastro de
 - Cadastro de filho no app mobile
 - Seletor de filho no mobile (Slice 051)
 - Mudança do fluxo `POST /patients` do profissional
-- Limite comercial de filhos
+- Limite comercial de filhos (definido depois no Slice 074: no máximo 3)
 
 ## Perfil do projeto
 
