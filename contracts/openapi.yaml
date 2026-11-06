@@ -231,7 +231,8 @@ paths:
         Exige responsável autenticado com accessGranted.
         Cria criança sem login, código único de paciente, anamnese (perguntas 1–8)
         e suggestedTrailCategories a partir da pergunta 6.
-        Parentesco é do filho. Sem teto de filhos nesta versão.
+        Parentesco é do filho. Cada responsável pode cadastrar no máximo 3 filhos.
+        O quarto cadastro responde 400. Filhos já existentes acima desse número permanecem.
         A montagem da trilha semanal pode permanecer pendente.
       security:
         - bearerAuth: []
