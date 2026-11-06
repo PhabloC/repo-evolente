@@ -87,6 +87,7 @@
 - `tasks/slices/070-iap-storekit-ios.md` - Slice 070: IAP StoreKit no iOS — **in_progress**
 - `tasks/slices/071-diretorio-profissionais-perfil-mobile.md` - Slice 071: diretório de profissionais no perfil mobile — **done**
 - `tasks/slices/072-gestao-operacional-usuarios-master.md` - Slice 072: exclusão, edição e master atuando como profissional no master web — **done**
+- `tasks/slices/074-limite-tres-filhos-responsavel.md` - Slice 074: limite de três filhos por responsável — **done**
 
 Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
@@ -106,6 +107,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - novo slice 026: jogos reentram em escopo de forma controlada, sem gamificacao e com execucao no app do responsavel
 - novo slice 039: substitui provider fake pelo Asaas (Slice 005 permanece done)
 - novo fluxo do responsável (Slices 049–051, Tasks 556–561): cadastro público só do responsável → pagamento → N filhos na plataforma (perfil, anamnese, código, trilha por filho) → web com dashboard/filhos/relatórios/config → mobile seleciona o filho após o login
+- a partir do Slice 074 (Task 810), o responsável cadastra no máximo 3 filhos; contas que já passaram desse número mantêm os filhos atuais
 - premissas deste fluxo: assinatura por conta (não por filho); parentesco no filho; cadastro de filho também disponível no perfil mobile (Task 621); sem edição de trilha na web do responsável; sem prints da área web do responsável nem da tela de seleção mobile
 
 ## Premissas adotadas
@@ -132,6 +134,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 12. Endereço no perfil (Slice 068): 762 → 763
 13. Número obrigatório + complemento (Slice 069): 764 → 765
 14. Diretório de profissionais no perfil mobile (Slice 071): 791
+15. Limite de três filhos (Slice 074): 810
 
 ## Tasks por tipo
 
@@ -170,6 +173,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Shared
 
+- Task 810 - Limite de três filhos por responsável — done (`tasks/change-requests/810-limite-tres-filhos-responsavel.md`)
 - Task 804 - Especialidades do master que atua como profissional — done (`tasks/change-requests/804-especialidades-master-atua-como-profissional.md`)
 - Task 803 - Remover isenção de mensalidade de profissional e responsável — done (`tasks/change-requests/803-remover-isencao-mensalidade-profissional-responsavel.md`)
 - Task 802 - Master que também atua como profissional, sem mensalidade — done (`tasks/change-requests/802-master-atua-como-profissional-sem-mensalidade.md`)
