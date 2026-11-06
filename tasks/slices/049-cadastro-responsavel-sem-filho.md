@@ -74,7 +74,7 @@ O visitante cadastra apenas a conta do responsável e segue para o pagamento. Cr
 - Assinatura permanece **por conta do responsável**, não por filho
 - Parentesco deixa de ser obrigatório no cadastro público (não há criança ainda); passa a ser campo do filho no Slice 050
 - `POST /patients` do profissional **não** muda neste slice
-- Sem limite de filhos declarado; não aplicar teto
+- Este slice não aplica teto. O máximo de 3 filhos por responsável ficou no Slice 074.
 
 ## Tasks relacionadas
 
