@@ -140,6 +140,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 
 ### Mobile
 
+- Task 812 - Botão falar com o suporte no login mobile — done (`tasks/change-requests/812-botao-falar-com-suporte-login-mobile.md`)
 - Task 799 - Versão do login segue a versão publicada — done (`tasks/change-requests/799-versao-login-segue-expo-config.md`)
 - Task 798 - Publicar OTA da API nova no runtime 1.0.2 — done (`tasks/change-requests/798-ota-api-evolente-runtime-1-0-2.md`)
 - Task 797 - Apontar o mobile para api.evolente.com.br após teste no Chrome — done (`tasks/change-requests/797-apontar-mobile-api-evolente-apos-teste-chrome.md`)
@@ -555,6 +556,7 @@ Historico de governanca do scaffold: `tasks/archive/scaffold/`
 - Task 485 - Compatibilizar quebra-cabeça legado sem `difficulty` no mobile — done (`tasks/change-requests/485-compatibilizar-quebra-cabeca-legado-sem-difficulty-mobile.md`)
 ### Front
 
+- Task 811 - Botão falar com o suporte na assinatura web — done (`tasks/change-requests/811-botao-falar-com-suporte-assinatura-web.md`)
 - Task 801 - UI para excluir, editar e isentar usuário no master web — done (`tasks/change-requests/801-ui-excluir-editar-isentar-usuario-master-web.md`)
 - Task 793 - Mover Encontrar profissionais para a sidebar web do responsável — done (`tasks/change-requests/793-mover-encontrar-profissionais-sidebar-web.md`)
 - Task 787 - Aviso quando senhas não coincidem no cadastro web — done (`tasks/change-requests/787-aviso-senhas-nao-coincidem-cadastro-web.md`)
