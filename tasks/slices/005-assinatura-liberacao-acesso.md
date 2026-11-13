@@ -110,6 +110,7 @@ Sem assinatura ativa fica no gate; com assinatura acessa o restante.
 
 - `tasks/012-api-assinatura-gate.md` — done
 - `tasks/013-tela-pagamento-web.md` — done
+- `tasks/change-requests/811-botao-falar-com-suporte-assinatura-web.md` — done (CTA mailto no gate)
 
 ## Status final
 
