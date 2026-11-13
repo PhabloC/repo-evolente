@@ -209,6 +209,7 @@ Usuario autenticado acessa a area do perfil; recovery envia link e permite redef
 - `tasks/change-requests/788-botao-criar-conta-login-mobile.md` — done (CTA web para cadastro do responsável)
 - `tasks/change-requests/789-versao-sempre-visivel-login-mobile.md` — done (versão fixa no rodapé do login)
 - `tasks/change-requests/790-manter-ctas-visiveis-erro-login-mobile.md` — done
+- `tasks/change-requests/812-botao-falar-com-suporte-login-mobile.md` — done (CTA mailto no login)
 
 ## Status final
 
